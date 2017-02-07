@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var TextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        TextField.text = "Zambra est indidualiste."
         // Do any additional setup after loading the view, typically from a nib.
     }
 
