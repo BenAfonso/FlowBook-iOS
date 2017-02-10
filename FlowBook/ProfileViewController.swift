@@ -18,16 +18,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nbEventsLabel: UILabel!
     @IBOutlet weak var nbPostsLabel: UILabel!
     @IBOutlet weak var nbFilesLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var profileImage: UIImageView!
     
-    func getInfos() {
+    func setUIInfos() {
         nbPostsLabel.text = String(self.getNbEvents())
         nbEventsLabel.text = String(self.getNbFiles())
         nbFilesLabel.text = String(self.getNbPosts())
         nbMessagesLabel.text = String(self.getNbMessages())
         profileImage.image = getProfileImage()
-        
+        usernameLabel.text = self.getUsername()
     }
     
     
@@ -48,6 +49,11 @@ class ProfileViewController: UIViewController {
         return 86
     }
     
+    
+    func getUsername() -> String {
+        return "BenjaminAfonso"
+    }
+    
     func getProfileImage() -> UIImage? {
         let image = UIImage(named: "profileImage")
         return image
@@ -58,7 +64,7 @@ class ProfileViewController: UIViewController {
         
         self.styleImageView()
         
-        self.getInfos()
+        self.setUIInfos()
         
         
         

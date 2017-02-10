@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
 
+    
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
     
@@ -20,12 +21,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
         self.messagesTableView.rowHeight = 200
         
-        self.messagesTableView.contentInset = UIEdgeInsetsMake(0, 15, 0, 0)
     }
 
 
@@ -70,7 +73,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         message.messageText.text = self.messages[indexPath.row]
         message.layer.cornerRadius=10 //set corner radius here
         message.layer.borderWidth = 2 // set border width here
-        message.layoutMargins.left = 20
         return message
     }
     
@@ -82,11 +84,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return self.messages.count
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let v: UIView = UIView()
-        v.backgroundColor = UIColor.black
+        v.backgroundColor = UIColor.clear
         return v
     }
+    
+    
+    
+    
+    // TO REFACTOR
+    
+    
     
 }
 
