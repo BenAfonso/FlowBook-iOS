@@ -19,7 +19,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.text = "Zambra est individualiste."        
+        usernameTextField.text = "Zambra est individualiste."
+        //WTF? present(HomeViewController, animated: true, completion: (()->()))
         // Do any additional setup after loading the view, typically from a nib.
     }
 
