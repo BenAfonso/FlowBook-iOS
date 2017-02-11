@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="File" representedClassName="File" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="isA" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FileType" inverseName="regroups" inverseEntity="FileType" syncable="YES"/>
+        <relationship name="isContained" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="newRelationship" inverseEntity="Message" syncable="YES"/>
+    </entity>
+    <entity name="FileType" representedClassName="FileType" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="regroups" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="File" inverseName="isA" inverseEntity="File" syncable="YES"/>
+    </entity>
     <entity name="Flow" representedClassName="Flow" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="allowedTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCategory" inverseName="allowedOn" inverseEntity="UserCategory" syncable="YES"/>
@@ -9,16 +20,21 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="dependsOn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flow" inverseName="contains" inverseEntity="Flow" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="File" inverseName="isContained" inverseEntity="File" syncable="YES"/>
         <relationship name="postedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="post" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Right" representedClassName="Right" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="isGrantedTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCategory" inverseName="allowedTo" inverseEntity="UserCategory" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="isA" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCategory" inverseName="contains" inverseEntity="UserCategory" syncable="YES"/>
         <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="postedBy" inverseEntity="Message" syncable="YES"/>
     </entity>
@@ -29,10 +45,12 @@
         <relationship name="contains" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="isA" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
+        <element name="File" positionX="90" positionY="18" width="128" height="118"/>
         <element name="Flow" positionX="-119" positionY="20" width="128" height="88"/>
-        <element name="Message" positionX="-63" positionY="-171" width="128" height="103"/>
-        <element name="Right" positionX="-317" positionY="137" width="128" height="73"/>
-        <element name="User" positionX="-315" positionY="-162" width="128" height="118"/>
+        <element name="Message" positionX="-63" positionY="-171" width="128" height="118"/>
+        <element name="Right" positionX="-317" positionY="189" width="128" height="90"/>
+        <element name="User" positionX="-324" positionY="-212" width="128" height="163"/>
         <element name="UserCategory" positionX="-351" positionY="18" width="128" height="103"/>
+        <element name="FileType" positionX="61" positionY="177" width="128" height="75"/>
     </elements>
 </model>

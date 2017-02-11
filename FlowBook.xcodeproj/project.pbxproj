@@ -12,6 +12,8 @@
 		602C94641E4DEE4600A02196 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C94631E4DEE4600A02196 /* MenuTableViewCell.swift */; };
 		602C94661E4DEFF600A02196 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C94651E4DEFF600A02196 /* MenuViewController.swift */; };
 		6045C3FB1E4DFB2B00970DCF /* MenuViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045C3FA1E4DFB2B00970DCF /* MenuViewC.swift */; };
+		604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */; };
+		604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */; };
 		6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66B1E49CFAD007D270F /* AppDelegate.swift */; };
 		6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66D1E49CFAD007D270F /* LoginViewController.swift */; };
 		6086D6711E49CFAD007D270F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6086D66F1E49CFAD007D270F /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		602C94631E4DEE4600A02196 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		602C94651E4DEFF600A02196 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6045C3FA1E4DFB2B00970DCF /* MenuViewC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewC.swift; sourceTree = "<group>"; };
+		604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		6086D6681E49CFAD007D270F /* FlowBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6086D66B1E49CFAD007D270F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6086D66D1E49CFAD007D270F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				6086D6981E4A81D9007D270F /* HomeViewController.swift */,
 				6045C3FA1E4DFB2B00970DCF /* MenuViewC.swift */,
 				602C94601E4DD0CF00A02196 /* ProfileViewController.swift */,
+				604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */,
+				604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -287,10 +293,12 @@
 				60C8A2DC1E4EA5B9002E9B6D /* UserCategoryExtension.swift in Sources */,
 				602C945F1E4DC8CC00A02196 /* CustomButton.swift in Sources */,
 				602C94661E4DEFF600A02196 /* MenuViewController.swift in Sources */,
+				604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */,
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
 				6086D69F1E4B9164007D270F /* MessageTableViewCell.swift in Sources */,
 				602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */,
 				6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */,
+				604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */,
 				60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */,
 				6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */,
 				60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */,
