@@ -62,7 +62,7 @@ extension User {
         }
     }
     
-    static func userExists(email: String) -> Bool {
+    static func exists(email: String) -> Bool {
         do {
             
             let _: User = try self.get(withEmail: email)

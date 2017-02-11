@@ -8,8 +8,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
 
+class LoginViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet weak var loginButton: UIButton!
@@ -28,12 +28,11 @@ class LoginViewController: UIViewController {
 
     func checkCredentials(email: String, password: String) -> Bool {
         //SAMPLE CODE
-        if User.userExists(email: email) {
+        if User.exists(email: email) {
             do {
                 let user: User = try User.get(withEmail: email)
                 return user.isRightPassword(password: password)
             } catch {
-                print("An error occured")
                 return false
             }
         } else {
@@ -64,11 +63,13 @@ class LoginViewController: UIViewController {
                     performSegue(withIdentifier: "LoginToHome", sender: self)
                 }else{
                     
-                    self.showError(withMessage: "Nom d'utilisateur et/ou mot de passe incorrect")
+                    self.showError(withMessage: "Email et/ou mot de passe incorrect")
                     //self.badLoginAlert()
                 }
             }
     }
+    
+    
     @IBAction func signInButtonAction(_ sender: Any) {
     }
     

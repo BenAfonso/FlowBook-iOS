@@ -25,8 +25,9 @@ class MessageTableViewCell: UITableViewCell {
         self.authorUsername.text = authorUsername
     }
     
-    
-
+    func setContent(message: String) {
+        self.messageText.text = message
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
