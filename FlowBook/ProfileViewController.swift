@@ -69,8 +69,6 @@ class ProfileViewController: UIViewController {
         menuVC?.hideProfileImage()
         menuVC?.hideUsername()
         
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
