@@ -29,6 +29,7 @@
 		60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D71E4EA58D002E9B6D /* RightExtension.swift */; };
 		60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */; };
 		60C8A2DC1E4EA5B9002E9B6D /* UserCategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */; };
+		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		60C8A2D71E4EA58D002E9B6D /* RightExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightExtension.swift; sourceTree = "<group>"; };
 		60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowExtension.swift; sourceTree = "<group>"; };
 		60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCategoryExtension.swift; sourceTree = "<group>"; };
+		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				602C945E1E4DC8CC00A02196 /* CustomButton.swift */,
 				6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */,
 				60ABEC621E4F339E004B6105 /* RoundedImageView.swift */,
+				92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -229,7 +232,6 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3EQET6CY44;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -297,6 +299,7 @@
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
 				6086D69F1E4B9164007D270F /* MessageTableViewCell.swift in Sources */,
 				602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */,
+				92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */,
 				6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */,
 				604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */,
 				60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */,
@@ -432,7 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -446,7 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
