@@ -27,8 +27,8 @@ extension User {
         let context = appDelegate.persistentContainer.viewContext
         
         let user = User(context: context)
-        user.lastName = lastName
-        user.firstName = firstName
+        user.lastname = lastName
+        user.firstname = firstName
         user.email = email
         
         // Encrypt password
