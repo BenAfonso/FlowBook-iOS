@@ -63,7 +63,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     /// MARK: TableView ---
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return self.messages.count
         return 1
     }
     
@@ -78,10 +77,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         print(self.messages[indexPath.row])
         message.layer.cornerRadius=10 //set corner radius here
-        message.layer.borderWidth = 2 // set border width here
         return message
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30.0
+    }
  
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -93,12 +94,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         v.backgroundColor = UIColor.clear
         return v
     }
-    
-    
-    
-    
-    // TO REFACTOR
-    
     
     
 }

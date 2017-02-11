@@ -18,7 +18,6 @@ class MessageTableViewCell: UITableViewCell {
     
     
     override func awakeFromNib() {
-        self.styleImageView()
     }
     
     func setAuthor(image: UIImage?, authorUsername: String) {
@@ -27,13 +26,7 @@ class MessageTableViewCell: UITableViewCell {
     }
     
     
-    func styleImageView() {
-        self.authorImage.layer.cornerRadius = self.authorImage.frame.size.width / 2
-        
-        self.authorImage.clipsToBounds = true
-        self.authorImage.layer.borderWidth = 4
-        self.authorImage.layer.borderColor = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0).cgColor
-    }
+
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

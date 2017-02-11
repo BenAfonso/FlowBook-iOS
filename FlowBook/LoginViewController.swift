@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
     
     }
     
+    
+    
     @IBAction func loginButtonAction(_ sender: Any) {
 
 
@@ -47,7 +49,7 @@ class LoginViewController: UIViewController {
                 if success{
                     performSegue(withIdentifier: "LoginToHome", sender: self)
                 }else{
-                    print("Erreur")
+                    self.badLoginAlert()
                 }
             }
     }
@@ -57,6 +59,15 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func badLoginAlert() {
+        let alert = UIAlertController(title: "Erreur", message: "Nom d'utilisateur et/ou mot de passe incorrect", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+    
 
 
 }

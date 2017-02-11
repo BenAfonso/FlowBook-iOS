@@ -24,17 +24,10 @@ class MenuViewC: UIViewController {
         return image
     }
     
-    func styleImageView() {
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
-        
-        self.profileImage.clipsToBounds = true
-        self.profileImage.layer.borderWidth = 4
-        self.profileImage.layer.borderColor = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0).cgColor
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.styleImageView()
         self.profileImage.image = self.getProfileImage()
         self.usernameLabel.text = self.getUsername()
         //WTF? present(HomeViewController, animated: true, completion: (()->()))
