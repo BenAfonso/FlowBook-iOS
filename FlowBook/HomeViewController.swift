@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
 
+    
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
     
@@ -20,12 +21,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.messagesTableView.rowHeight = UITableViewAutomaticDimension
-        self.messagesTableView.rowHeight = 200
+
         
-        self.messagesTableView.contentInset = UIEdgeInsetsMake(0, 15, 0, 0)
     }
 
 
@@ -61,32 +63,38 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     /// MARK: TableView ---
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return self.messages.count
         return 1
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
-        message.messageText.text = self.messages[indexPath.row]
+        
+        message.setAuthor(image: UIImage(named: "profileImage"), authorUsername: "BenjaminAfonso")
+        
+        
+        message.messageText.text = self.messages[indexPath.section]
+        
+        print(self.messages[indexPath.row])
         message.layer.cornerRadius=10 //set corner radius here
-        message.layer.borderWidth = 2 // set border width here
-        message.layoutMargins.left = 20
         return message
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 20
+        return 30.0
     }
+ 
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.messages.count
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let v: UIView = UIView()
-        v.backgroundColor = UIColor.black
+        v.backgroundColor = UIColor.clear
         return v
     }
+    
     
 }
 
