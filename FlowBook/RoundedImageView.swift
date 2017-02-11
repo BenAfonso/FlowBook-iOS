@@ -25,8 +25,14 @@ class RoundedImageView: UIImageView {
         self.layer.cornerRadius = self.frame.size.width / 2
         
         self.clipsToBounds = true
-        self.layer.borderWidth = 4
-        self.layer.borderColor = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0).cgColor
+    }
+    
+    func setColor(color: UIColor) {
+        
+    }
+    func addBorders(width: CGFloat, color: UIColor) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
     }
     
     
