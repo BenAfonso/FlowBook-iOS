@@ -26,8 +26,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.messagesTableView.rowHeight = UITableViewAutomaticDimension
-        self.messagesTableView.rowHeight = 200
+
         
     }
 
@@ -68,17 +67,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 1
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
-        message.messageText.text = self.messages[indexPath.row]
+        
+        message.setAuthor(image: UIImage(named: "profileImage"), authorUsername: "BenjaminAfonso")
+        
+        
+        message.messageText.text = self.messages[indexPath.section]
+        
+        print(self.messages[indexPath.row])
         message.layer.cornerRadius=10 //set corner radius here
         message.layer.borderWidth = 2 // set border width here
         return message
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 20
-    }
+ 
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.messages.count
