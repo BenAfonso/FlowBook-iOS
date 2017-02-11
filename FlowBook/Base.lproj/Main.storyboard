@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtV-k6-fyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-920.50781249999989" y="-817.1875"/>
+            <point key="canvasLocation" x="-712" y="-905"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="mBk-4J-Q3p">
@@ -909,7 +909,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3X-sr-HT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="685.83984375" y="-1158.59375"/>
+            <point key="canvasLocation" x="395" y="-1020"/>
         </scene>
     </scenes>
     <resources>
@@ -917,9 +917,9 @@
         <image name="profileImage" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZY6-1r-th9"/>
-        <segue reference="Xkt-aq-qQR"/>
+        <segue reference="jDS-Ve-bYI"/>
         <segue reference="jF0-O3-4Tc"/>
+        <segue reference="91d-RG-tkw"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -6,10 +6,15 @@
 //  Copyright © 2017 Benjamin Afonso. All rights reserved.
 //
 
-import Foundation
+import CoreData
 import UIKit
+
+
 extension User {
     
+    
+    
+    /// MARK: Static methods
     
     static func create(withFirstName firstName: String,
                 withLastName lastName: String,
@@ -19,13 +24,14 @@ extension User {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             throw NSError()
         }
-        
         let context = appDelegate.persistentContainer.viewContext
         
         let user = User(context: context)
         user.lastName = lastName
         user.firstName = firstName
         user.email = email
+        
+        // Encrypt password
         user.password = password
         
         do {
@@ -37,7 +43,56 @@ extension User {
         }
     }
     
-    func save(error: () -> ()) {
-        
+    static func get(withEmail email: String) throws -> User {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            throw NSError()
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let request: NSFetchRequest<User> = User.fetchRequest()
+        request.predicate = NSPredicate(format: "email == %@", email)
+        do {
+            let users: [User] = try context.fetch(request)
+            if (users.count > 0) {
+                return users[0]
+            } else {
+                throw NSError()
+            }
+        } catch let error as NSError {
+            throw error
+        }
     }
+    
+    static func userExists(email: String) -> Bool {
+        do {
+            
+            let _: User = try self.get(withEmail: email)
+            
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    
+    
+    static func getAll() throws -> [User] {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            throw NSError()
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let request: NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let users: [User] = try context.fetch(request)
+            return users
+        } catch let error as NSError {
+            throw error
+        }
+    }
+    
+    
+    /// MARK: Instance methods
+    func isRightPassword(password: String) -> Bool {
+        return password == self.password
+    }
+    
 }

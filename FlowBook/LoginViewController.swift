@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -22,14 +22,24 @@ class LoginViewController: UIViewController {
     // MARK: View Core
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.text = "admin"
+        emailTextField.text = "admin"
         passwordTextField.text = "admin"
     }
 
-    func checkCredentials(username: String, password: String) -> Bool {
+    func checkCredentials(email: String, password: String) -> Bool {
         //SAMPLE CODE
-        
-        return (username == "admin" && password == "admin")
+        if User.userExists(email: email) {
+            do {
+                let user: User = try User.get(withEmail: email)
+                return user.isRightPassword(password: password)
+            } catch {
+                print("An error occured")
+                return false
+            }
+        } else {
+            return false
+        }
+
     
     }
     
@@ -43,11 +53,11 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonAction(_ sender: Any) {
 
 
-        guard let username = usernameTextField.text, let password = passwordTextField.text else {
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
             return;
         }
-            if (username != "" && password != "") {
-                let success = checkCredentials(username: username,password: password)
+            if (email != "" && password != "") {
+                let success = checkCredentials(email: email,password: password)
                 
                 if success{
                     self.dismissErrors()
@@ -74,7 +84,7 @@ class LoginViewController: UIViewController {
     }
     
     func badLoginAlert() {
-        let alert = UIAlertController(title: "Erreur", message: "Nom d'utilisateur et/ou mot de passe incorrect", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Erreur", message: "Email et/ou mot de passe incorrect", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(cancelAction)
         present(alert, animated: true)
