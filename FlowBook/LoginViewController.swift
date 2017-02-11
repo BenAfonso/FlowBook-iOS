@@ -24,9 +24,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         usernameTextField.text = "admin"
         passwordTextField.text = "admin"
-        
-        //WTF? present(HomeViewController, animated: true, completion: (()->()))
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     func checkCredentials(username: String, password: String) -> Bool {
@@ -51,10 +48,9 @@ class LoginViewController: UIViewController {
         }
             if (username != "" && password != "") {
                 let success = checkCredentials(username: username,password: password)
-                //if this is an http request you probably want to do a delegate pattern
-                //and create a callback instead- just create 2 delegate functions-
-                // one for success and one for fail and pass self of vc to http request)
+                
                 if success{
+                    self.dismissErrors()
                     performSegue(withIdentifier: "LoginToHome", sender: self)
                 }else{
                     
@@ -71,6 +67,10 @@ class LoginViewController: UIViewController {
     func showError(withMessage message: String) {
         self.errorLabel.isHidden = false
         self.errorLabel.text = message
+    }
+    
+    func dismissErrors() {
+        self.errorLabel.isHidden = true
     }
     
     func badLoginAlert() {
