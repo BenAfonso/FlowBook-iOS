@@ -10,13 +10,16 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    
+    // MARK: Outlets
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
-
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var errorLabel: UILabel!
     
+    
+    // MARK: View Core
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.text = "admin"
@@ -33,8 +36,13 @@ class LoginViewController: UIViewController {
     
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     
+    // MARK: Actions
     @IBAction func loginButtonAction(_ sender: Any) {
 
 
@@ -49,17 +57,21 @@ class LoginViewController: UIViewController {
                 if success{
                     performSegue(withIdentifier: "LoginToHome", sender: self)
                 }else{
-                    self.badLoginAlert()
+                    
+                    self.showError(withMessage: "Nom d'utilisateur et/ou mot de passe incorrect")
+                    //self.badLoginAlert()
                 }
             }
     }
     @IBAction func signInButtonAction(_ sender: Any) {
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    
+    // MARK: User interactions
+    func showError(withMessage message: String) {
+        self.errorLabel.isHidden = false
+        self.errorLabel.text = message
+    }
     
     func badLoginAlert() {
         let alert = UIAlertController(title: "Erreur", message: "Nom d'utilisateur et/ou mot de passe incorrect", preferredStyle: .alert)

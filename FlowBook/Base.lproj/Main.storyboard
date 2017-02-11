@@ -343,6 +343,13 @@
                                     <segue destination="XbX-de-uOQ" kind="show" id="bwV-Uy-1hV"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq1-vO-poT">
+                                <rect key="frame" x="372" y="273" width="356" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.080588067090000007" blue="0.63739312550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -372,6 +379,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="errorLabel" destination="pq1-vO-poT" id="iBf-SX-cYa"/>
                         <outlet property="loginButton" destination="0bA-Q1-ZZw" id="EN5-g7-N0G"/>
                         <outlet property="passwordTextField" destination="AxL-4c-ZKl" id="FEc-BG-b93"/>
                         <outlet property="usernameTextField" destination="sGz-Kv-Sq0" id="ton-2N-dcs"/>
@@ -380,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54" y="-100"/>
+            <point key="canvasLocation" x="-54.4921875" y="-100"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="M2J-5s-dRr">
