@@ -12,7 +12,6 @@ import UIKit
 class ProfileViewController: UIViewController {
     
 
-    @IBOutlet weak var profileButton: UIButton!
     
     @IBOutlet weak var nbMessagesLabel: UILabel!
     @IBOutlet weak var nbEventsLabel: UILabel!
@@ -20,7 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nbFilesLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: RoundedImageView!
     
     func setUIInfos() {
         nbPostsLabel.text = String(self.getNbEvents())
@@ -62,23 +61,20 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.styleImageView()
+        self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
         
         self.setUIInfos()
         
+        let menuVC = self.childViewControllers[0] as? MenuViewC
+        menuVC?.hideProfileImage()
+        menuVC?.hideUsername()
         
         
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func styleImageView() {
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
-        
-        self.profileImage.clipsToBounds = true
-        self.profileImage.layer.borderWidth = 4
-        self.profileImage.layer.borderColor = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0).cgColor
-    }
+    
     
 
     override func didReceiveMemoryWarning() {
