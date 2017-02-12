@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
     // MARK: Actions
     @IBAction func loginButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
-            return;
+            return
         }
         
         if AuthenticationService.login(email: email, password: password) {
@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
             self.showErrors()
             //self.badLoginAlert()
         }
+        return
 
         
        

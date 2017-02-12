@@ -36,11 +36,38 @@ extension Flow {
         
     }
     
+    static func deleteAllFlows() throws {
+        do {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                throw NSError()
+            }
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let request: NSFetchRequest<Flow> = Flow.fetchRequest()
+            do {
+                let flows: [Flow] = try context.fetch(request)
+                for flow in flows {
+                    context.delete(flow)
+                }
+            } catch let error as NSError {
+                throw error
+            }
+            
+            
+        } catch let error as NSError { // Can't get context
+            throw error
+        }
+    }
     
-    static func get(withName name: String) throws -> Flow {
+    static func get(withName name: String) throws -> Flow? {
         
         do {
-            let context = try self.getContext()
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                throw NSError()
+            }
+            
+            let context = appDelegate.persistentContainer.viewContext
             
             let request: NSFetchRequest<Flow> = Flow.fetchRequest()
             request.predicate = NSPredicate(format: "name == %@", name)
@@ -49,7 +76,7 @@ extension Flow {
                 if (flows.count > 0) {
                     return flows[0]
                 } else {
-                    throw NSError()
+                    return nil
                 }
             } catch let error as NSError {
                 throw error

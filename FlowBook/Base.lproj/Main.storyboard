@@ -531,6 +531,7 @@
                         <outlet property="NewMessageView" destination="JeV-rU-mlx" id="iBW-8T-AS2"/>
                         <outlet property="messageTextField" destination="BIv-em-qMW" id="qfR-9I-ahe"/>
                         <outlet property="messagesTableView" destination="XNp-aJ-wZV" id="lrF-UY-9Qf"/>
+                        <outlet property="newMessageView" destination="JeV-rU-mlx" id="xJl-eZ-x6j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsn-Pg-NUy" userLabel="First Responder" sceneMemberID="firstResponder"/>

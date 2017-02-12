@@ -16,9 +16,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var NewMessageView: UIView!
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
-
+    
     var messages: [Message] = []
-    var flow: Flow = Flow()
+    var flow: Flow? = nil
 
     @IBAction func sendAction(_ sender: Any) {
         _ = self.textFieldShouldReturn(self.messageTextField)
@@ -34,7 +34,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
         do {
-            let messageObject = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: self.flow, withContent: message, withFiles: nil)
+            let messageObject = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: self.flow!, withContent: message, withFiles: nil)
             messages.append(messageObject)
         } catch let error as NSError {
             errorAlert(message: "Erreur lors de la création du message")
@@ -110,7 +110,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
         message.messageText.text = self.messages[indexPath.section].content
-        self.scrollToBottom()
 
         message.layer.cornerRadius=10 //set corner radius here
         return message
@@ -145,10 +144,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.messageTextField.delegate = self
         
         do {
-            self.flow = try Flow.get(withName: "General")
-            self.messages = try self.flow.getMessages()
             
-
+            // TEMPORARY
+            
+            if let flow = try Flow.get(withName: "General") {
+                print("Fetching general flow")
+                self.flow = flow
+                self.messages = try flow.getMessages()
+            } else {
+                print("No general flow, creating one.")
+                self.flow = try Flow.create(withName: "General")
+            }
+            
             
         } catch let error as NSError {
             print(error)
