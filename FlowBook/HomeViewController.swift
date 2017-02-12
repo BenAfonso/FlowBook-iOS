@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, messageTableDelegate {
     
     
 
@@ -114,7 +114,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
-        
+        message.delegate = self
         message.setAuthor(image: UIImage(named: "profileImage"), authorUsername: (self.messages[indexPath.section].author?.getUsername())!)
         
         
@@ -139,6 +139,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         v.backgroundColor = UIColor.clear
         return v
     }
+    
     
     
     
@@ -172,9 +173,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             print(error)
         }
         
+        
+        
     }
     
-    
+
     
     func scrollToBottom() {
         if (self.messagesTableView.contentSize.height > self.messagesTableView.frame.size.height)
@@ -186,6 +189,37 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    
+    
+    // TO REMOVE !!!!! JUST FOR TESTING PURPOSES
+    func swippedCell(cell: MessageTableViewCell) {
+        let cellIndex = messagesTableView.indexPath(for: cell)
+
+        guard let section = cellIndex?.section else {
+            return
+        }
+        print("Swipped \(section)")
+
+        let alert = UIAlertController(title: "Confirmation", message: "Êtes vous sûr de vouloir supprimer ce message ?", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Oui",
+                                          style: .default)
+        {
+            action in
+            _ = self.messages[section].delete()
+            self.messages.remove(at: section)
+            self.messagesTableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Non", style: .default)
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+        
+        
+    }
+    
     
     
 }

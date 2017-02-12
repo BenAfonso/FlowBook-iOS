@@ -489,10 +489,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9907407407407407" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="authorImage" destination="JQg-rI-mRr" id="Whc-9D-RVu"/>
                                             <outlet property="authorUsername" destination="Khx-b3-UVe" id="0C9-mt-G91"/>
                                             <outlet property="messageText" destination="ucE-JA-9AK" id="oMX-f3-nrx"/>
+                                            <outletCollection property="gestureRecognizers" destination="5qU-9I-FIs" appends="YES" id="Gie-08-tpw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -533,6 +535,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsn-Pg-NUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5qU-9I-FIs"/>
             </objects>
             <point key="canvasLocation" x="1415.625" y="-128.125"/>
         </scene>
@@ -828,8 +831,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Igx-jD-Jax"/>
-        <segue reference="jDS-Ve-bYI"/>
-        <segue reference="91d-RG-tkw"/>
+        <segue reference="RFj-8l-fgc"/>
+        <segue reference="Xkt-aq-qQR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>
