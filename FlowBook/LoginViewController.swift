@@ -16,7 +16,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginErrorIcon: UIImageView!
     @IBOutlet weak var passwordErrorIcon: UIImageView!
     // MARK: View Core
@@ -38,8 +37,6 @@ class LoginViewController: UIViewController {
         } else {
             return false
         }
-
-    
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,12 +55,11 @@ class LoginViewController: UIViewController {
             if (email != "" && password != "") {
                 let success = checkCredentials(email: email,password: password)
                 
-                if success{
+                if success {
                     self.dismissErrors()
                     performSegue(withIdentifier: "LoginToHome", sender: self)
                 }else{
-                    
-                    self.showError(withMessage: "Email et/ou mot de passe incorrect")
+                    self.showErrors()
                     //self.badLoginAlert()
                 }
             }
@@ -75,15 +71,13 @@ class LoginViewController: UIViewController {
     
     
     // MARK: User interactions
-    func showError(withMessage message: String) {
-        self.errorLabel.isHidden = false
+    func showErrors() {
         self.loginErrorIcon.isHidden = false
         self.passwordErrorIcon.isHidden = false
-        self.errorLabel.text = message
     }
     
+    
     func dismissErrors() {
-        self.errorLabel.isHidden = true
         self.loginErrorIcon.isHidden = true
         self.passwordErrorIcon.isHidden = true
     }
