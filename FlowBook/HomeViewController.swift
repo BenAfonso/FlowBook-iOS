@@ -27,6 +27,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     /// Send a message
     func sendMessage() {
+        
+        // Check if there is a flow
+        guard let flow = self.flow else {
+            print("No flow to send a message to.")
+            return
+        }
+        
+        // Check if the message isn't empty
         guard let message = self.messageTextField.text, message != "" else {
             errorAlert(message: "Vous ne pouvez pas envoyer un message vide !")
             return
@@ -34,7 +42,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
         do {
-            let messageObject = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: self.flow!, withContent: message, withFiles: nil)
+            
+            let messageObject = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: flow, withContent: message, withFiles: nil)
             messages.append(messageObject)
         } catch let error as NSError {
             errorAlert(message: "Erreur lors de la création du message")
