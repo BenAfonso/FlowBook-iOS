@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
     
-    var messages: [String] = ["Hello world"]
+    var messages: [String] = []
     
     
     @IBAction func sendAction(_ sender: Any) {
@@ -28,10 +28,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /// Send a message
     func sendMessage() {
         guard let message = self.messageTextField.text, message != "" else {
-            
             errorAlert(message: "Vous ne pouvez pas envoyer un message vide !")
             return
         }
+        
+        
         messages.append(message)
         self.messageTextField.text = nil
         self.messagesTableView.reloadData()

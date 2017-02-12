@@ -89,10 +89,30 @@ extension User {
         }
     }
     
+    func getUsername() -> String {
+        if let firstName = self.firstName, let lastName = self.lastName {
+            return firstName.capitalized+lastName.capitalized
+        } else {
+            return ""
+        }
+    }
     
     /// MARK: Instance methods
     func isRightPassword(password: String) -> Bool {
         return password == self.password
     }
+    
+    func getPosts() -> NSSet {
+        if let posts = self.posts {
+            return posts
+        } else {
+            return NSSet()
+        }
+    }
+    
+    func getNbPosts() -> Int {
+        return self.getPosts().count
+    }
+    
     
 }
