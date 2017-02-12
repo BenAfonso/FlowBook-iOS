@@ -14,14 +14,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     @IBOutlet weak var NewMessageView: UIView!
-    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
-    
-    var messages: [String] = []
-    
-    
+    @IBOutlet weak var messageTextField: UITextField!
+
+    var messages: [Message] = []
+    var flow: Flow = Flow()
+
     @IBAction func sendAction(_ sender: Any) {
-        self.sendMessage()
+        _ = self.textFieldShouldReturn(self.messageTextField)
     }
     
     
@@ -33,7 +33,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         
-        messages.append(message)
+        do {
+            let messageObject = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: self.flow, withContent: message, withFiles: nil)
+            messages.append(messageObject)
+        } catch let error as NSError {
+            errorAlert(message: "Erreur lors de la création du message")
+            print(error)
+        }
         self.messageTextField.text = nil
         self.messagesTableView.reloadData()
     }
@@ -59,19 +65,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             textField.resignFirstResponder()
             self.sendMessage()
             textField.endEditing(true)
-            return false
+            return true
         }
-        return true
+        return false
     }
+    
 
     /// Triggered when the keyboard is editing
     func textFieldDidBeginEditing(_ textField: UITextField) {
         animateViewMoving(up: true, moveValue: 392)
+        self.scrollToBottom()
+
     }
     
     /// Triggered when the keyboard is dismissed
     func textFieldDidEndEditing(_ textField: UITextField) {
         animateViewMoving(up: false, moveValue: 392)
+        self.scrollToBottom()
     }
     
     /// Moving view
@@ -96,18 +106,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         
-        message.setAuthor(image: UIImage(named: "profileImage"), authorUsername: "BenjaminAfonso")
+        message.setAuthor(image: UIImage(named: "profileImage"), authorUsername: (self.messages[indexPath.section].author?.getUsername())!)
         
         
-        message.messageText.text = self.messages[indexPath.section]
-        
-        print(self.messages[indexPath.row])
+        message.messageText.text = self.messages[indexPath.section].content
+        self.scrollToBottom()
+
         message.layer.cornerRadius=10 //set corner radius here
         return message
+
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 30.0
+        return 10.0
     }
  
     
@@ -126,9 +137,33 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /// MARK: ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.messagesTableView.rowHeight = UITableViewAutomaticDimension
+        self.messagesTableView.estimatedRowHeight = 140
+        
         self.messageTextField.delegate = self
+        
+        do {
+            self.flow = try Flow.get(withName: "General")
+            self.messages = try self.flow.getMessages()
+            
+
+            
+        } catch let error as NSError {
+            print(error)
+        }
+        
     }
     
+    
+    
+    func scrollToBottom() {
+        if (self.messagesTableView.contentSize.height > self.messagesTableView.frame.size.height)
+        {
+            self.messagesTableView.setContentOffset(CGPoint(x: 0,y: self.messagesTableView.contentSize.height - self.messagesTableView.frame.size.height) , animated: true)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

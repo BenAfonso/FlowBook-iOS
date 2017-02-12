@@ -17,6 +17,7 @@
 		607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */; };
 		607BED051E509D8A004EB98A /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		607BED061E509D8A004EB98A /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		607BED081E50B47C004EB98A /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BED071E50B47C004EB98A /* NSManagedObjectExtension.swift */; };
 		6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66B1E49CFAD007D270F /* AppDelegate.swift */; };
 		6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66D1E49CFAD007D270F /* LoginViewController.swift */; };
 		6086D6711E49CFAD007D270F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6086D66F1E49CFAD007D270F /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateService.swift; sourceTree = "<group>"; };
 		607BED041E509D8A004EB98A /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		607BED071E50B47C004EB98A /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		6086D6681E49CFAD007D270F /* FlowBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6086D66B1E49CFAD007D270F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6086D66D1E49CFAD007D270F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				60C8A2D71E4EA58D002E9B6D /* RightExtension.swift */,
 				60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */,
 				60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */,
+				607BED071E50B47C004EB98A /* NSManagedObjectExtension.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */,
 				607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */,
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
+				607BED081E50B47C004EB98A /* NSManagedObjectExtension.swift in Sources */,
 				6086D69F1E4B9164007D270F /* MessageTableViewCell.swift in Sources */,
 				602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */,
 				92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */,

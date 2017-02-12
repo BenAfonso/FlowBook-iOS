@@ -21,8 +21,8 @@ class LoginViewController: UIViewController {
     // MARK: View Core
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.text = "admin"
-        passwordTextField.text = "admin"
+        emailTextField.text = "benjamin.afonso@etu.umontpellier.fr"
+        passwordTextField.text = "1234567"
     }
 
 

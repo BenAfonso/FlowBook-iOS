@@ -21,26 +21,30 @@ extension User {
                 withEmail email: String,
                 withPassword password: String) throws -> User {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            throw NSError()
-        }
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let user = User(context: context)
-        user.lastName = lastName
-        user.firstName = firstName
-        user.email = email
-        
-        // Encrypt password
-        user.password = password.md5()
-        
         do {
-            try context.save()
-            return user
-        }
-        catch let error as NSError {
+            let context = try self.getContext()
+            let user = User(context: context)
+            user.lastName = lastName
+            user.firstName = firstName
+            user.email = email
+            
+            // Encrypt password
+            user.password = password.md5()
+            
+            do {
+                try context.save()
+                return user
+            }
+            catch let error as NSError {
+                throw error
+            }
+            
+            
+        } catch let error as NSError { // Can't get context
             throw error
         }
+        
+        
     }
     
     static func get(withEmail email: String) throws -> User {
@@ -88,6 +92,7 @@ extension User {
             throw error
         }
     }
+    
     
     func getUsername() -> String {
         if let firstName = self.firstName, let lastName = self.lastName {
