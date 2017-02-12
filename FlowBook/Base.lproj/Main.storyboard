@@ -350,6 +350,14 @@
                                 <color key="textColor" red="1" green="0.080588067090000007" blue="0.63739312550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconError" translatesAutoresizingMaskIntoConstraints="NO" id="WRh-Gv-Gxd">
+                                <rect key="frame" x="660" y="302" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconError" translatesAutoresizingMaskIntoConstraints="NO" id="zIn-wG-h3W">
+                                <rect key="frame" x="660" y="369" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -382,6 +390,8 @@
                         <outlet property="emailTextField" destination="sGz-Kv-Sq0" id="deq-Du-0EF"/>
                         <outlet property="errorLabel" destination="pq1-vO-poT" id="iBf-SX-cYa"/>
                         <outlet property="loginButton" destination="0bA-Q1-ZZw" id="EN5-g7-N0G"/>
+                        <outlet property="loginErrorIcon" destination="WRh-Gv-Gxd" id="C5s-GV-9ft"/>
+                        <outlet property="passwordErrorIcon" destination="zIn-wG-h3W" id="b6Q-1n-Ate"/>
                         <outlet property="passwordTextField" destination="AxL-4c-ZKl" id="FEc-BG-b93"/>
                         <segue destination="QCy-XM-x5m" kind="show" identifier="LoginToHome" id="Xkt-aq-qQR"/>
                     </connections>
@@ -578,7 +588,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHC-W7-QWT">
-                                <rect key="frame" x="186" y="169" width="838" height="73"/>
+                                <rect key="frame" x="186" y="149" width="838" height="93"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIJ-Do-81I">
                                         <rect key="frame" x="143" y="26" width="78" height="21"/>
@@ -810,7 +820,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uU-BB-Cgs" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="245" width="143" height="48"/>
+                                <rect key="frame" x="23" y="225" width="143" height="48"/>
                                 <state key="normal" title="Messages">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -819,19 +829,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdi-Aw-oaW" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="313" width="143" height="48"/>
+                                <rect key="frame" x="23" y="293" width="143" height="48"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-1k-j2b" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="381" width="143" height="48"/>
+                                <rect key="frame" x="23" y="361" width="143" height="48"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-RZ-gMB">
-                                <rect key="frame" x="14" y="116" width="161" height="21"/>
+                                <rect key="frame" x="14" y="96" width="161" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8yV-mZ-CRh"/>
                                 </constraints>
@@ -853,14 +863,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-Lo-UqL" customClass="RoundedImageView" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="54" y="28" width="80" height="80"/>
+                                <rect key="frame" x="54" y="8" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="LRj-na-4QB"/>
                                     <constraint firstAttribute="width" constant="80" id="TZl-OS-Mrp"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-SV-Pu6" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="177" width="143" height="48"/>
+                                <rect key="frame" x="23" y="157" width="143" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="J9d-4g-NT2"/>
                                     <constraint firstAttribute="width" constant="143" id="PDK-5U-1u8"/>
@@ -914,12 +924,13 @@
     </scenes>
     <resources>
         <image name="Logo" width="73" height="78"/>
+        <image name="iconError" width="25" height="22"/>
         <image name="profileImage" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jDS-Ve-bYI"/>
-        <segue reference="jF0-O3-4Tc"/>
         <segue reference="Xkt-aq-qQR"/>
+        <segue reference="jDS-Ve-bYI"/>
+        <segue reference="Igx-jD-Jax"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

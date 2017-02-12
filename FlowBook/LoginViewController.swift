@@ -17,8 +17,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
-    
-    
+    @IBOutlet weak var loginErrorIcon: UIImageView!
+    @IBOutlet weak var passwordErrorIcon: UIImageView!
     // MARK: View Core
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,11 +77,15 @@ class LoginViewController: UIViewController {
     // MARK: User interactions
     func showError(withMessage message: String) {
         self.errorLabel.isHidden = false
+        self.loginErrorIcon.isHidden = false
+        self.passwordErrorIcon.isHidden = false
         self.errorLabel.text = message
     }
     
     func dismissErrors() {
         self.errorLabel.isHidden = true
+        self.loginErrorIcon.isHidden = true
+        self.passwordErrorIcon.isHidden = true
     }
     
     func badLoginAlert() {
