@@ -8,7 +8,7 @@
 
 import CoreData
 import UIKit
-
+import CryptoSwift
 
 extension User {
     
@@ -32,7 +32,7 @@ extension User {
         user.email = email
         
         // Encrypt password
-        user.password = password
+        user.password = password.md5()
         
         do {
             try context.save()
@@ -99,7 +99,7 @@ extension User {
     
     /// MARK: Instance methods
     func isRightPassword(password: String) -> Bool {
-        return password == self.password
+        return password.md5() == self.password
     }
     
     func getPosts() -> NSSet {
