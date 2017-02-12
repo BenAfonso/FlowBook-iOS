@@ -146,7 +146,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let menuVC = self.childViewControllers[0] as? MenuViewC
+        let menuVC = self.childViewControllers[0] as? MenuViewController
         menuVC?.setMessagesButtonActive()
         
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
