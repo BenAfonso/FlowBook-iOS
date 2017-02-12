@@ -25,19 +25,7 @@ class LoginViewController: UIViewController {
         passwordTextField.text = "admin"
     }
 
-    func checkCredentials(email: String, password: String) -> Bool {
-        //SAMPLE CODE
-        if User.exists(email: email) {
-            do {
-                let user: User = try User.get(withEmail: email)
-                return user.isRightPassword(password: password)
-            } catch {
-                return false
-            }
-        } else {
-            return false
-        }
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,22 +35,20 @@ class LoginViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func loginButtonAction(_ sender: Any) {
-
-
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return;
         }
-            if (email != "" && password != "") {
-                let success = checkCredentials(email: email,password: password)
-                
-                if success {
-                    self.dismissErrors()
-                    performSegue(withIdentifier: "LoginToHome", sender: self)
-                }else{
-                    self.showErrors()
-                    //self.badLoginAlert()
-                }
-            }
+        
+        if AuthenticationService.login(email: email, password: password) {
+            self.dismissErrors()
+            performSegue(withIdentifier: "LoginToHome", sender: self)
+        } else {
+            self.showErrors()
+            //self.badLoginAlert()
+        }
+
+        
+       
     }
     
     

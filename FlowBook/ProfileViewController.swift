@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var profileImage: RoundedImageView!
+
     
     func setUIInfos() {
         nbPostsLabel.text = String(self.getNbEvents())
@@ -27,7 +28,9 @@ class ProfileViewController: UIViewController {
         nbFilesLabel.text = String(self.getNbPosts())
         nbMessagesLabel.text = String(self.getNbMessages())
         profileImage.image = getProfileImage()
-        usernameLabel.text = self.getUsername()
+        
+        let menuVC = self.childViewControllers[0] as? MenuViewC
+        usernameLabel.text = menuVC?.getUsername()
     }
     
     
@@ -37,7 +40,19 @@ class ProfileViewController: UIViewController {
     }
     
     func getNbMessages() -> Int {
-        return 210
+
+        if let email = UserDefaults.standard.string(forKey: "currentEmail") {
+            do {
+                let user = try User.get(withEmail: email)
+                return user.getNbPosts()
+            } catch let error as NSError {
+                print(error)
+                return 0
+            }
+        } else {
+            return 0
+        }
+        
     }
     
     func getNbPosts() -> Int {
@@ -48,10 +63,7 @@ class ProfileViewController: UIViewController {
         return 86
     }
     
-    
-    func getUsername() -> String {
-        return "BenjaminAfonso"
-    }
+
     
     func getProfileImage() -> UIImage? {
         let image = UIImage(named: "profileImage")
@@ -60,9 +72,10 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
         
+
         self.setUIInfos()
         
         let menuVC = self.childViewControllers[0] as? MenuViewC

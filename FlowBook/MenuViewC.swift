@@ -16,7 +16,11 @@ class MenuViewC: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     func getUsername() -> String {
-        return "@BenjaminAfonso"
+        if let username = UserDefaults.standard.string(forKey: "currentUsername") {
+            return username
+        } else {
+            return ""
+        }
     }
     
     func getProfileImage() -> UIImage? {
