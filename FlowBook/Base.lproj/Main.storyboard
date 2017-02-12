@@ -391,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54.4921875" y="-100"/>
+            <point key="canvasLocation" x="-53" y="-113"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="M2J-5s-dRr">
@@ -549,7 +549,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoQ-3y-hA1">
-                                <rect key="frame" x="189" y="0.0" width="835" height="172"/>
+                                <rect key="frame" x="189" y="20" width="835" height="172"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-kx-4VU" customClass="RoundedImageView" customModule="FlowBook" customModuleProvider="target">
                                         <rect key="frame" x="361" y="23" width="112" height="112"/>
@@ -579,7 +579,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHC-W7-QWT">
-                                <rect key="frame" x="189" y="172" width="835" height="67"/>
+                                <rect key="frame" x="189" y="192" width="835" height="67"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bVl-eV-BvH">
                                         <rect key="frame" x="21" y="18.5" width="793.5" height="31.5"/>
@@ -666,7 +666,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMk-7Q-Gcw">
-                                <rect key="frame" x="0.0" y="0.0" width="189" height="768"/>
+                                <rect key="frame" x="0.0" y="20" width="189" height="748"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="1JI-XO-gYl"/>
                                 </constraints>
@@ -702,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpH-MN-Ts5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2019.7265624999998" y="-1105.46875"/>
+            <point key="canvasLocation" x="1416" y="-1149"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ycc-5h-P8D">
@@ -831,32 +831,32 @@
                         <viewControllerLayoutGuide type="bottom" id="mcu-xh-aAR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fCL-mB-6Ok">
-                        <rect key="frame" x="0.0" y="0.0" width="189" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="189" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uU-BB-Cgs" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="225" width="143" height="48"/>
+                                <rect key="frame" x="23" y="245" width="143" height="48"/>
                                 <state key="normal" title="Messages">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QCy-XM-x5m" kind="show" id="91d-RG-tkw"/>
+                                    <segue destination="QCy-XM-x5m" kind="show" animates="NO" id="91d-RG-tkw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdi-Aw-oaW" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="293" width="143" height="48"/>
+                                <rect key="frame" x="23" y="313" width="143" height="48"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-1k-j2b" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="361" width="143" height="48"/>
+                                <rect key="frame" x="23" y="381" width="143" height="48"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-RZ-gMB">
-                                <rect key="frame" x="14" y="96" width="161" height="21"/>
+                                <rect key="frame" x="14" y="116" width="161" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8yV-mZ-CRh"/>
                                 </constraints>
@@ -865,7 +865,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-Wl-ZlV" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="31" y="980" width="127" height="36"/>
+                                <rect key="frame" x="31" y="724" width="127" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="2z4-ku-4ZJ"/>
                                     <constraint firstAttribute="height" constant="36" id="viw-Tb-wu0"/>
@@ -878,14 +878,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-Lo-UqL" customClass="RoundedImageView" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="54" y="8" width="80" height="80"/>
+                                <rect key="frame" x="54" y="28" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="LRj-na-4QB"/>
                                     <constraint firstAttribute="width" constant="80" id="TZl-OS-Mrp"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-SV-Pu6" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="157" width="143" height="48"/>
+                                <rect key="frame" x="23" y="177" width="143" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="J9d-4g-NT2"/>
                                     <constraint firstAttribute="width" constant="143" id="PDK-5U-1u8"/>
@@ -894,7 +894,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Osh-fj-9OV" kind="show" id="1Rw-Ld-4jB"/>
+                                    <segue destination="Osh-fj-9OV" kind="show" animates="NO" id="1Rw-Ld-4jB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -925,7 +925,11 @@
                             <constraint firstItem="yk3-SV-Pu6" firstAttribute="top" secondItem="s5g-RZ-gMB" secondAttribute="bottom" constant="40" id="wIv-Qq-e6w"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="189" height="768"/>
                     <connections>
+                        <outlet property="messagesButton" destination="0uU-BB-Cgs" id="VHf-Pm-X9P"/>
+                        <outlet property="profileButton" destination="yk3-SV-Pu6" id="3ux-lp-CuF"/>
                         <outlet property="profileImage" destination="yi5-Lo-UqL" id="fqR-Pr-0YL"/>
                         <outlet property="usernameLabel" destination="s5g-RZ-gMB" id="Ijt-6h-6oI"/>
                     </connections>
@@ -941,9 +945,9 @@
         <image name="profileImage" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xkt-aq-qQR"/>
-        <segue reference="jDS-Ve-bYI"/>
         <segue reference="Igx-jD-Jax"/>
+        <segue reference="91d-RG-tkw"/>
+        <segue reference="jDS-Ve-bYI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

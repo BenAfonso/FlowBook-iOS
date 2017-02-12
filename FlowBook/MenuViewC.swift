@@ -12,6 +12,9 @@ import UIKit
 class MenuViewC: UIViewController {
     
 
+    @IBOutlet weak var profileButton: CustomButton!
+    @IBOutlet weak var messagesButton: CustomButton!
+    
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -28,7 +31,15 @@ class MenuViewC: UIViewController {
         return image
     }
     
-
+    func setProfileButtonActive() {
+        self.profileButton.setActive()
+        self.messagesButton.setInactive()
+    }
+    
+    func setMessagesButtonActive() {
+        self.messagesButton.setActive()
+        self.profileButton.setInactive()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

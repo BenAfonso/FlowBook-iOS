@@ -81,6 +81,7 @@ class ProfileViewController: UIViewController {
         let menuVC = self.childViewControllers[0] as? MenuViewC
         menuVC?.hideProfileImage()
         menuVC?.hideUsername()
+        menuVC?.setProfileButtonActive()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
