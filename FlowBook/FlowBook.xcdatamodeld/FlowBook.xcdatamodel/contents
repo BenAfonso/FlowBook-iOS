@@ -50,7 +50,7 @@
         <element name="Flow" positionX="-119" positionY="20" width="128" height="88"/>
         <element name="Message" positionX="-63" positionY="-171" width="128" height="118"/>
         <element name="Right" positionX="-317" positionY="189" width="128" height="88"/>
-        <element name="User" positionX="-324" positionY="-212" width="128" height="163"/>
+        <element name="User" positionX="-324" positionY="-212" width="128" height="165"/>
         <element name="UserCategory" positionX="-351" positionY="18" width="128" height="103"/>
     </elements>
 </model>

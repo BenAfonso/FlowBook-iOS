@@ -14,42 +14,114 @@ extension Flow {
     
     static func create(withName name: String) throws -> Flow {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            throw NSError()
-        }
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let flow = Flow(context: context)
-        
-        
-        // Encrypt password
-        flow.name = name
-        
         do {
-            try context.save()
-            return flow
+            let context = try self.getContext()
+            
+            let flow = Flow(context: context)
+            
+            
+            flow.name = name
+            
+            do {
+                try context.save()
+                return flow
+            }
+            catch let error as NSError {
+                throw error
+            }
+            
+        } catch let error as NSError { // Can't get context
+            throw error
         }
-        catch let error as NSError {
+        
+    }
+    
+    static func deleteAllFlows() throws {
+        do {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                throw NSError()
+            }
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let request: NSFetchRequest<Flow> = Flow.fetchRequest()
+            do {
+                let flows: [Flow] = try context.fetch(request)
+                for flow in flows {
+                    context.delete(flow)
+                }
+            } catch let error as NSError {
+                throw error
+            }
+            
+            
+        } catch let error as NSError { // Can't get context
             throw error
         }
     }
     
+    static func get(withName name: String) throws -> Flow? {
+        
+        do {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                throw NSError()
+            }
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let request: NSFetchRequest<Flow> = Flow.fetchRequest()
+            request.predicate = NSPredicate(format: "name == %@", name)
+            do {
+                let flows: [Flow] = try context.fetch(request)
+                if (flows.count > 0) {
+                    return flows[0]
+                } else {
+                    return nil
+                }
+            } catch let error as NSError {
+                throw error
+            }
+            
+            
+        } catch let error as NSError { // Can't get context
+            throw error
+        }
     
-    func getAllMessages() throws -> [Message] {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+        
+
+    }
+
+    
+    func clearAllMessages() throws {
+        
+        guard let messages: [Message] = self.messages?.allObjects as! [Message]? else {
             throw NSError()
         }
-        let context = appDelegate.persistentContainer.viewContext
-        let request: NSFetchRequest<Message> = Message.fetchRequest()
         
-        request.predicate = NSPredicate(format: "flow == %@", self)
+        for message in messages {
+            _ = message.delete()
+        }
+        
+    }
+    
+    
+    func getMessages() throws -> [Message] {
         do {
-            let messages: [Message] = try context.fetch(request)
+            let context = try getContext()
+            let request: NSFetchRequest<Message> = Message.fetchRequest()
+            request.predicate = NSPredicate(format: "flow == %@", self)
+            do {
+                let messages = try context.fetch(request)
                 return messages
-        } catch let error as NSError {
+            } catch let error as NSError { // Can't fetch messages
+                throw error
+            }
+        } catch let error as NSError { // Can't get context
             throw error
         }
     }
+    
+    
     
     
 }

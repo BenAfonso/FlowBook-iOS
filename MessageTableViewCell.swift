@@ -13,7 +13,7 @@ class MessageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var authorImage: UIImageView!
     @IBOutlet weak var authorUsername: UILabel!
-    @IBOutlet weak var messageText: UITextView!
+    @IBOutlet weak var messageText: UILabel!
     
     
     
