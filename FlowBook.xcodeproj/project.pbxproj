@@ -14,10 +14,8 @@
 		604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */; };
 		607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */; };
 		607BED081E50B47C004EB98A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BED071E50B47C004EB98A /* CoreDataManager.swift */; };
-		6086A5851E526A0B000DA9B6 /* CustomInputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086A5841E526A0B000DA9B6 /* CustomInputName.swift */; };
 		6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66B1E49CFAD007D270F /* AppDelegate.swift */; };
 		6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66D1E49CFAD007D270F /* LoginViewController.swift */; };
-		6086D6711E49CFAD007D270F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6086D66F1E49CFAD007D270F /* Main.storyboard */; };
 		6086D6741E49CFAD007D270F /* FlowBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6086D6721E49CFAD007D270F /* FlowBook.xcdatamodeld */; };
 		6086D6761E49CFAD007D270F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6086D6751E49CFAD007D270F /* Assets.xcassets */; };
 		6086D6841E49CFAD007D270F /* FlowBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D6831E49CFAD007D270F /* FlowBookTests.swift */; };
@@ -34,6 +32,9 @@
 		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
+		9291615D1E52755F00D60CD5 /* CustomInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291615C1E52755F00D60CD5 /* CustomInput.swift */; };
+		9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291615E1E52777900D60CD5 /* CustomInputUser.swift */; };
+		92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E1F1D41E5253A8006C26A5 /* Main.storyboard */; };
 		92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A181E51D80700F74D86 /* CustomInputMail.swift */; };
 		92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */; };
 /* End PBXBuildFile section */
@@ -71,11 +72,9 @@
 		607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateService.swift; sourceTree = "<group>"; };
 		607BED041E509D8A004EB98A /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		607BED071E50B47C004EB98A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		6086A5841E526A0B000DA9B6 /* CustomInputName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputName.swift; sourceTree = "<group>"; };
 		6086D6681E49CFAD007D270F /* FlowBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6086D66B1E49CFAD007D270F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6086D66D1E49CFAD007D270F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		6086D6701E49CFAD007D270F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6086D6731E49CFAD007D270F /* FlowBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlowBook.xcdatamodel; sourceTree = "<group>"; };
 		6086D6751E49CFAD007D270F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6086D67A1E49CFAD007D270F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +92,9 @@
 		60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowExtension.swift; sourceTree = "<group>"; };
 		60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCategoryExtension.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
+		9291615C1E52755F00D60CD5 /* CustomInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
+		9291615E1E52777900D60CD5 /* CustomInputUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputUser.swift; sourceTree = "<group>"; };
+		92E1F1D51E5253A8006C26A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92FE3A181E51D80700F74D86 /* CustomInputMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputMail.swift; sourceTree = "<group>"; };
 		92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,9 +144,9 @@
 				60C8A2D01E4EA4E3002E9B6D /* UI */,
 				60C8A2D11E4EA4F7002E9B6D /* ViewControllers */,
 				6086D66B1E49CFAD007D270F /* AppDelegate.swift */,
-				6086D66F1E49CFAD007D270F /* Main.storyboard */,
 				6086D6751E49CFAD007D270F /* Assets.xcassets */,
 				6086D67A1E49CFAD007D270F /* Info.plist */,
+				92E1F1D41E5253A8006C26A5 /* Main.storyboard */,
 				607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */,
 			);
 			path = FlowBook;
@@ -163,13 +165,14 @@
 			isa = PBXGroup;
 			children = (
 				6086D6921E4A71C2007D270F /* LaunchScreen.storyboard */,
-				602C945E1E4DC8CC00A02196 /* CustomButton.swift */,
 				6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */,
 				60ABEC621E4F339E004B6105 /* RoundedImageView.swift */,
+				602C945E1E4DC8CC00A02196 /* CustomButton.swift */,
 				92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */,
+				9291615C1E52755F00D60CD5 /* CustomInput.swift */,
 				92FE3A181E51D80700F74D86 /* CustomInputMail.swift */,
 				92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */,
-				6086A5841E526A0B000DA9B6 /* CustomInputName.swift */,
+				9291615E1E52777900D60CD5 /* CustomInputUser.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -256,7 +259,7 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3EQET6CY44;
+						DevelopmentTeam = QW5R6973G4;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -291,9 +294,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */,
 				6086D6931E4A71C2007D270F /* LaunchScreen.storyboard in Resources */,
 				6086D6761E49CFAD007D270F /* Assets.xcassets in Resources */,
-				6086D6711E49CFAD007D270F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,16 +314,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6086A5851E526A0B000DA9B6 /* CustomInputName.swift in Sources */,
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,
 				60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */,
 				609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */,
 				92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */,
 				6086D6741E49CFAD007D270F /* FlowBook.xcdatamodeld in Sources */,
+				9291615D1E52755F00D60CD5 /* CustomInput.swift in Sources */,
 				6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */,
 				6086D6991E4A81D9007D270F /* HomeViewController.swift in Sources */,
 				60C8A2DC1E4EA5B9002E9B6D /* UserCategoryExtension.swift in Sources */,
 				602C945F1E4DC8CC00A02196 /* CustomButton.swift in Sources */,
+				9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */,
 				604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */,
 				607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */,
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
@@ -356,10 +360,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6086D66F1E49CFAD007D270F /* Main.storyboard */ = {
+		92E1F1D41E5253A8006C26A5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6086D6701E49CFAD007D270F /* Base */,
+				92E1F1D51E5253A8006C26A5 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -464,7 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -472,7 +476,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -482,7 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -490,7 +494,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
