@@ -12,53 +12,32 @@ extension UserCategory {
     
     static func create(withName name: String, withDefaultFlow hasDefaultFlow: Bool) throws -> UserCategory {
         
+        let userCategory = UserCategory(context: CoreDataManager.context)
+        
+        userCategory.name = name
+        
+        
+        CoreDataManager.save()
         
         do {
-            let context = try self.getContext()
-            
-            let userCategory = UserCategory(context: context)
-            
-            userCategory.name = name
-            
-            
-            do {
-                try context.save()
-                
-                
-                if hasDefaultFlow {
-                    let defaultFlow = try userCategory.createDefaultFlow()
-                    userCategory.addToFlows(defaultFlow)
-                }
-    
-                return userCategory
+            if hasDefaultFlow {
+                let defaultFlow = try userCategory.createDefaultFlow()
+                userCategory.addToFlows(defaultFlow)
             }
-            catch let error as NSError {    // Can't save object
-                throw error
-            }
-            
-            
-
-            
-        } catch let error as NSError { // Can't get context
+            return userCategory
+        } catch let error as NSError {
             throw error
         }
-        
-        
-        
-        
+
     }
+    
     
     func createDefaultFlow() throws -> Flow {
         
         guard let name = self.name else {
             throw NSError()
         }
-        do {
-            return try Flow.create(withName: name)
-            
-        } catch let error as NSError { // Can't get context
-            throw error
-        }
+        return Flow.create(withName: name)
     }
     
     

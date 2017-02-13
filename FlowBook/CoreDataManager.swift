@@ -9,29 +9,6 @@
 import CoreData
 import UIKit
 
-extension NSManagedObject {
-    
-    static func getContext() throws -> NSManagedObjectContext {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            throw NSError()
-        }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        return context
-    }
-    
-    func getContext() throws -> NSManagedObjectContext {
-        do {
-            return try NSManagedObject.getContext()
-        } catch let error as NSError {
-            throw error
-        }
-    }
-    
-    
-}
-
-
 class CoreDataManager : NSObject{
     static var context : NSManagedObjectContext {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -52,4 +29,5 @@ class CoreDataManager : NSObject{
             return error
         }
     }
+    
 }
