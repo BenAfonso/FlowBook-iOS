@@ -31,6 +31,8 @@
 		60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D71E4EA58D002E9B6D /* RightExtension.swift */; };
 		60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */; };
 		60C8A2DC1E4EA5B9002E9B6D /* UserCategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */; };
+		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
+		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,13 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		607BED0B1E510035004EB98A /* Embed Frameworks */ = {
+		9260BD091E50F81500D32B4D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				607BED0A1E510035004EB98A /* CryptoSwift.framework in Embed Frameworks */,
+				9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607BED091E510035004EB98A /* CryptoSwift.framework in Frameworks */,
+				9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +202,7 @@
 				6086D6641E49CFAD007D270F /* Sources */,
 				6086D6651E49CFAD007D270F /* Frameworks */,
 				6086D6661E49CFAD007D270F /* Resources */,
-				607BED0B1E510035004EB98A /* Embed Frameworks */,
+				9260BD091E50F81500D32B4D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,7 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -466,7 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
