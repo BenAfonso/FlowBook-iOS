@@ -173,15 +173,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailErrorIcon" destination="zEJ-to-rLm" id="uDH-DG-RvY"/>
                         <outlet property="emailErrorLabel" destination="8RW-ZC-6Qe" id="cqM-Bd-qmn"/>
                         <outlet property="emailTextField" destination="KP5-tO-KTV" id="p8c-gZ-FSW"/>
                         <outlet property="errorMessageLabel" destination="Cqe-uh-zsX" id="Hfg-cH-z9J"/>
                         <outlet property="firstNameTextField" destination="ZBV-AY-Uli" id="2rA-Yt-Kx6"/>
-                        <outlet property="fnameErrorIcon" destination="Y6V-5D-HpC" id="cDi-Oz-dGQ"/>
                         <outlet property="lastNameTextField" destination="vU1-D1-1up" id="qUb-hF-gXs"/>
-                        <outlet property="lnameErrorIcon" destination="VtP-Wy-557" id="470-ch-CMY"/>
-                        <outlet property="passwordErrorIcon" destination="VZm-CO-u5a" id="JSR-yk-zb3"/>
                         <outlet property="passwordErrorLabel" destination="udw-yd-aZN" id="KXd-6m-ITy"/>
                         <outlet property="passwordTextField" destination="sjU-TV-NJt" id="wf1-8T-iNe"/>
                         <outlet property="profileImage" destination="wIM-1s-9EL" id="8Mk-8R-1rC"/>
@@ -759,7 +755,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uU-BB-Cgs" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="245" width="143" height="48"/>
+                                <rect key="frame" x="23" y="225" width="143" height="48"/>
                                 <state key="normal" title="Messages">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -768,19 +764,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdi-Aw-oaW" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="313" width="143" height="48"/>
+                                <rect key="frame" x="23" y="293" width="143" height="48"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-1k-j2b" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="381" width="143" height="48"/>
+                                <rect key="frame" x="23" y="361" width="143" height="48"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-RZ-gMB">
-                                <rect key="frame" x="14" y="116" width="161" height="21"/>
+                                <rect key="frame" x="14" y="96" width="161" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8yV-mZ-CRh"/>
                                 </constraints>
@@ -802,14 +798,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-Lo-UqL" customClass="RoundedImageView" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="54" y="28" width="80" height="80"/>
+                                <rect key="frame" x="54" y="8" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="LRj-na-4QB"/>
                                     <constraint firstAttribute="width" constant="80" id="TZl-OS-Mrp"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-SV-Pu6" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="177" width="143" height="48"/>
+                                <rect key="frame" x="23" y="157" width="143" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="J9d-4g-NT2"/>
                                     <constraint firstAttribute="width" constant="143" id="PDK-5U-1u8"/>

@@ -29,7 +29,7 @@ class CustomButton: UIButton {
     
     func setActive() {
         self.isEnabled = false
-        self.backgroundColor = UIColor(red: 121.0/255.0, green: 17.0/255.0, blue: 124.0/255.0, alpha: 0.5)
+        self.backgroundColor = UIColor(red: 49.0/255.0, green: 46.0/255.0, blue: 63.0/255.0, alpha: 1)
     }
     
     func setInactive() {
