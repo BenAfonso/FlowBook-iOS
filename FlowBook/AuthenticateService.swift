@@ -27,6 +27,7 @@ class AuthenticationService {
                     UserDefaults.standard.set(currentUser.lastName, forKey: "currentLastName")
                     UserDefaults.standard.set(currentUser.email, forKey: "currentEmail")
                     UserDefaults.standard.set(currentUser.image, forKey: "currentImage")
+                    UserDefaults.standard.set(currentUser.email, forKey: "lastEmail")
                     return true
 
                 } catch let error as NSError {

@@ -21,7 +21,8 @@ class LoginViewController: UIViewController {
     // MARK: View Core
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.text = "benjamin.afonso@etu.umontpellier.fr"
+        
+        emailTextField.text = UserDefaults.standard.string(forKey: "lastEmail")
         passwordTextField.text = "1234567"
     }
 
