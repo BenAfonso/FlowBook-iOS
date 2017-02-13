@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomInputMail: UITextField {
+class CustomInputMail: CustomInput {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,18 +18,11 @@ class CustomInputMail: UITextField {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.styleInput()
+        
     }
     
-    func styleInput() {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: self.frame.size.height - 2.0, width: self.frame.size.width, height: self.frame.size.height)
-        bottomLine.borderColor = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0).cgColor
-        bottomLine.borderWidth = 2.0
-        self.layer.addSublayer(bottomLine)
-        self.layer.masksToBounds = true
-        
-        
+    func styleInputMail() {
+        self.styleInput()
         let imageView = UIImageView();
         let image = UIImage(named: "iconMail")
         imageView.image = image;

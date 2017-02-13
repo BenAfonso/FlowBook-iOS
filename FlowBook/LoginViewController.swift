@@ -14,8 +14,8 @@ class LoginViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: CustomInputMail!
+    @IBOutlet weak var passwordTextField: CustomInputPassword!
     @IBOutlet weak var loginErrorIcon: UIImageView!
     @IBOutlet weak var passwordErrorIcon: UIImageView!
     
@@ -23,8 +23,8 @@ class LoginViewController: UIViewController {
     // MARK: View Core
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
+        emailTextField.styleInputMail()
+        passwordTextField.styleInputPassword()
         emailTextField.text = UserDefaults.standard.string(forKey: "lastEmail")
         passwordTextField.text = "1234567"
         self.emailTextField.addTarget(self, action: #selector(checkEmailFieldOnChange(_:)), for: .editingChanged)
