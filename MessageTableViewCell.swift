@@ -15,6 +15,8 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var authorUsername: UILabel!
     @IBOutlet weak var messageText: UILabel!
     
+    @IBOutlet weak var timeStampLabel: UILabel!
+    
     var delegate: messageTableDelegate?
 
 
@@ -30,8 +32,17 @@ class MessageTableViewCell: UITableViewCell {
             self.authorImage.image = author.getImage()
             self.authorUsername.text = author.getUsername()
         }
-            
-
+    }
+    
+    func setTimeStamp(time: NSDate?) {
+        
+        if let time = time {
+            let calendar = Calendar.current
+            let hour = calendar.component(.hour, from: time as Date)
+            let minutes = calendar.component(.minute, from: time as Date)
+            self.timeStampLabel.text = "\(hour):\(minutes)"
+        }
+        
     }
     
     func setContent(message: String) {

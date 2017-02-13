@@ -118,7 +118,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         message.delegate = self
         
         message.setAuthor(author: (self.messages[indexPath.section].author))
-
+        message.setTimeStamp(time: self.messages[indexPath.section].timestamp)
         message.messageText.text = self.messages[indexPath.section].content
 
         message.layer.cornerRadius=10 //set corner radius here
@@ -164,6 +164,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print("Fetching general flow")
                 self.flow = flow
                 self.messages = try flow.getMessages()
+                
             } else {
                 print("No general flow, creating one.")
                 self.flow = Flow.create(withName: "General")
@@ -212,6 +213,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 {
                     action in
                     swippedMessage.delete()
+                    CoreDataManager.save()
                     self.messages.remove(at: section)
                     self.messagesTableView.reloadData()
                 }

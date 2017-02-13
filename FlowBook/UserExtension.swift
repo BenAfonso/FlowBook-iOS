@@ -59,6 +59,7 @@ extension User {
             let users: [User] = try CoreDataManager.context.fetch(request)
             for user in users {
                 CoreDataManager.context.delete(user)
+                print("Supprimé")
             }
         } catch let error as NSError {
             throw error

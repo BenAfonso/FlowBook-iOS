@@ -532,14 +532,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtP-UB-Ajs">
+                                                    <rect key="frame" x="114" y="16" width="37" height="21"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ucE-JA-9AK" firstAttribute="top" secondItem="JQg-rI-mRr" secondAttribute="bottom" constant="14" id="3Do-Xj-br4"/>
+                                                <constraint firstItem="JtP-UB-Ajs" firstAttribute="height" secondItem="Khx-b3-UVe" secondAttribute="height" id="C41-Jd-G1I"/>
                                                 <constraint firstItem="JQg-rI-mRr" firstAttribute="top" secondItem="Oeo-Ku-ugo" secondAttribute="topMargin" constant="3" id="P4n-nF-hRl"/>
                                                 <constraint firstItem="JQg-rI-mRr" firstAttribute="leading" secondItem="Oeo-Ku-ugo" secondAttribute="leadingMargin" constant="8" id="bPQ-Fx-skW"/>
+                                                <constraint firstItem="JtP-UB-Ajs" firstAttribute="leading" secondItem="Khx-b3-UVe" secondAttribute="trailing" constant="17" id="fXQ-jg-Zd2"/>
                                                 <constraint firstItem="Khx-b3-UVe" firstAttribute="centerY" secondItem="JQg-rI-mRr" secondAttribute="centerY" id="gPH-En-1sz"/>
                                                 <constraint firstItem="Khx-b3-UVe" firstAttribute="leading" secondItem="JQg-rI-mRr" secondAttribute="trailing" constant="8" symbolic="YES" id="qeL-hh-gjl"/>
                                                 <constraint firstItem="Khx-b3-UVe" firstAttribute="top" secondItem="Oeo-Ku-ugo" secondAttribute="topMargin" constant="8" id="s38-1P-Wa9"/>
+                                                <constraint firstItem="JtP-UB-Ajs" firstAttribute="top" secondItem="Khx-b3-UVe" secondAttribute="top" id="v3Y-cs-Kab"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ucE-JA-9AK" secondAttribute="bottom" constant="8" id="vNc-pV-fso"/>
                                                 <constraint firstAttribute="trailing" secondItem="ucE-JA-9AK" secondAttribute="trailing" constant="16" id="xpU-sN-PH0"/>
                                                 <constraint firstItem="ucE-JA-9AK" firstAttribute="leading" secondItem="Oeo-Ku-ugo" secondAttribute="leading" constant="16" id="zT4-8b-v2U"/>
@@ -552,6 +561,7 @@
                                             <outlet property="authorImage" destination="JQg-rI-mRr" id="Whc-9D-RVu"/>
                                             <outlet property="authorUsername" destination="Khx-b3-UVe" id="0C9-mt-G91"/>
                                             <outlet property="messageText" destination="ucE-JA-9AK" id="oMX-f3-nrx"/>
+                                            <outlet property="timeStampLabel" destination="JtP-UB-Ajs" id="KyP-xt-UNQ"/>
                                             <outletCollection property="gestureRecognizers" destination="5qU-9I-FIs" appends="YES" id="Gie-08-tpw"/>
                                         </connections>
                                     </tableViewCell>
@@ -598,7 +608,7 @@
                 <customObject id="JZV-p2-eHd"/>
                 <swipeGestureRecognizer direction="right" id="5qU-9I-FIs"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="-88"/>
+            <point key="canvasLocation" x="1111.5234375" y="-88.28125"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="b1Q-Lb-hZk">
@@ -613,7 +623,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoQ-3y-hA1">
-                                <rect key="frame" x="189" y="0.0" width="835" height="192"/>
+                                <rect key="frame" x="189" y="-20" width="835" height="192"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-kx-4VU" customClass="RoundedImageView" customModule="FlowBook" customModuleProvider="target">
                                         <rect key="frame" x="361" y="23" width="112" height="112"/>
@@ -656,7 +666,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHC-W7-QWT">
-                                <rect key="frame" x="189" y="192" width="835" height="67"/>
+                                <rect key="frame" x="189" y="172" width="835" height="67"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bVl-eV-BvH">
                                         <rect key="frame" x="21" y="18.5" width="794" height="31.5"/>
@@ -743,7 +753,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMk-7Q-Gcw">
-                                <rect key="frame" x="0.0" y="0.0" width="189" height="768"/>
+                                <rect key="frame" x="0.0" y="-20" width="189" height="788"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="1JI-XO-gYl"/>
                                 </constraints>

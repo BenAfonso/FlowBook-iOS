@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         emailTextField.text = UserDefaults.standard.string(forKey: "lastEmail")
         passwordTextField.text = "1234567"
         self.emailTextField.addTarget(self, action: #selector(checkEmailFieldOnChange(_:)), for: .editingChanged)
