@@ -19,11 +19,20 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     func getUsername() -> String {
+        
+        // NEW METHOD TO PROPAGATE
+        if let currentUser = CurrentUser.get() {
+            return currentUser.getUsername()
+        } else {
+            return ""
+        }
+        
+        /*
         if let username = UserDefaults.standard.string(forKey: "currentUsername") {
             return username
         } else {
             return ""
-        }
+        }*/
     }
     
     func getProfileImage() -> UIImage? {
