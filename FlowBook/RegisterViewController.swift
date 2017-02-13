@@ -10,11 +10,11 @@ import UIKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var emailTextField: CustomInputMail!
+    @IBOutlet weak var firstNameTextField: CustomInputUser!
+    @IBOutlet weak var lastNameTextField: CustomInputUser!
+    @IBOutlet weak var passwordTextField: CustomInputPassword!
+    @IBOutlet weak var repeatPasswordTextField: CustomInputPassword!
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorIcon: UIImageView!
@@ -32,7 +32,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         super.viewDidLoad()
         self.picker.delegate = self
         self.profileImage.image = UIImage(named: "profileImage")
-        
+        self.emailTextField.styleInputMail()
+        self.firstNameTextField.styleInputUser()
+        self.lastNameTextField.styleInputUser()
+        self.passwordTextField.styleInputPassword()
+        self.repeatPasswordTextField.styleInputPassword()
         
         self.passwordTextField.addTarget(self, action: #selector(checkPasswordFieldOnChange(_:)), for: .editingChanged)
         self.repeatPasswordTextField.addTarget(self, action: #selector(checkRepeatPasswordFieldOnChange(_:)), for: .editingChanged)
