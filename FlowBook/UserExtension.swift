@@ -21,30 +21,17 @@ extension User {
                 withEmail email: String,
                 withPassword password: String) throws -> User {
         
-        do {
-            let context = try self.getContext()
-            let user = User(context: context)
+            let user = User(context: CoreDataManager.context)
             user.lastName = lastName
             user.firstName = firstName
             user.email = email
             
             // Encrypt password
             user.password = password.md5()
-            
-            do {
-                try context.save()
-                return user
-            }
-            catch let error as NSError {
+            if let error = CoreDataManager.save() {
                 throw error
             }
-            
-            
-        } catch let error as NSError { // Can't get context
-            throw error
-        }
-        
-        
+            return user
     }
     
     static func get(withEmail email: String) throws -> User {
@@ -99,6 +86,22 @@ extension User {
             return firstName.capitalized+lastName.capitalized
         } else {
             return ""
+        }
+    }
+    
+    
+    func changeImage(image: UIImage) {
+        self.image = UIImagePNGRepresentation(image) as NSData?
+        CoreDataManager.save()
+    }
+    
+    
+    func getImage() -> UIImage {
+        if let image = self.image {
+            // Rotate image
+            return UIImage(data: image as Data)!
+        } else {
+            return UIImage(named: "profileImage")!
         }
     }
     

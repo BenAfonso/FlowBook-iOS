@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -21,9 +21,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var repeatPasswordErrorLabel: UILabel!
     @IBOutlet weak var emailErrorLabel: UILabel!
     
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.picker.delegate = self
+        self.profileImage.image = UIImage(named: "profileImage")
         
         
         self.passwordTextField.addTarget(self, action: #selector(checkPasswordFieldOnChange(_:)), for: .editingChanged)
@@ -63,7 +68,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 return
         }
         
-        guard password.characters.count > 6 else {
+        guard password.characters.count >= 6 else {
             self.showError(withMessage: "Le mot de passe doit contenir au moins 6 caractère.")
             return
         }
@@ -88,6 +93,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                                                 withLastName: lastName,
                                                 withEmail: email,
                                                 withPassword: password)
+            
+            newUser.changeImage(image: self.profileImage.image!)
             self.clearForm()
             performSegue(withIdentifier: "registerSuccess", sender: self)
             print(newUser)
@@ -185,6 +192,34 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         self.emailErrorLabel.isHidden = true
         self.passwordErrorLabel.isHidden = true
         self.repeatPasswordErrorLabel.isHidden = true
+    }
+    
+    
+    // MARK: Image picker
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        self.profileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage //2
+        
+        
+        dismiss(animated:true, completion: nil) //5
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func changeImage(_ sender: Any) {
+        picker.allowsEditing = true
+        picker.sourceType = .camera
+        
+        // Prompt for camera or Library
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
+        present(picker, animated: true, completion: nil)
     }
     
     

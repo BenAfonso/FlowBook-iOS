@@ -49,6 +49,22 @@ class AuthenticationService {
         }
     }
     
+    static func getEmail() -> String {
+        if let email = UserDefaults.standard.string(forKey: "currentEmail") {
+            return email
+        } else {
+            return ""
+        }
+    }
+    
+    static func getUser() -> User? {
+        do {
+            return try User.get(withEmail: self.getEmail())
+        } catch {
+            return nil
+        }
+    }
+    
     static func getLastName() -> String {
         if let lastName = UserDefaults.standard.string(forKey: "currentLastName") {
             return lastName

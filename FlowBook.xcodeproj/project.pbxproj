@@ -14,8 +14,6 @@
 		604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */; };
 		607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */; };
 		607BED081E50B47C004EB98A /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BED071E50B47C004EB98A /* NSManagedObjectExtension.swift */; };
-		607BED091E510035004EB98A /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
-		607BED0A1E510035004EB98A /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66B1E49CFAD007D270F /* AppDelegate.swift */; };
 		6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66D1E49CFAD007D270F /* LoginViewController.swift */; };
 		6086D6711E49CFAD007D270F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6086D66F1E49CFAD007D270F /* Main.storyboard */; };
@@ -450,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -468,7 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
