@@ -166,7 +166,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.messages = try flow.getMessages()
             } else {
                 print("No general flow, creating one.")
-                self.flow = try Flow.create(withName: "General")
+                self.flow = Flow.create(withName: "General")
             }
             
             
