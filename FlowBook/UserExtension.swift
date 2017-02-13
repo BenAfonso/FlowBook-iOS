@@ -53,6 +53,20 @@ extension User {
         }
     }
     
+    static func deleteAll() throws {
+        let request: NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let users: [User] = try CoreDataManager.context.fetch(request)
+            for user in users {
+                CoreDataManager.context.delete(user)
+            }
+        } catch let error as NSError {
+            throw error
+        }
+    }
+    
+
+    
     static func exists(email: String) -> Bool {
         do {
             
@@ -122,5 +136,9 @@ extension User {
         return self.getPosts().count
     }
     
+    
+    func delete() throws {
+        CoreDataManager.context.delete(self)
+    }
     
 }
