@@ -27,5 +27,15 @@ class CustomButton: UIButton {
         self.layer.cornerRadius = 10
     }
     
+    func setActive() {
+        self.isEnabled = false
+        self.backgroundColor = UIColor(red: 121.0/255.0, green: 17.0/255.0, blue: 124.0/255.0, alpha: 0.5)
+    }
+    
+    func setInactive() {
+        self.isEnabled = true
+        self.backgroundColor = UIColor(red: 174.0/255.0, green: 255.0/255.0, blue: 145.0/255.0, alpha: 0)
+    }
+    
     
 }

@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
         nbMessagesLabel.text = String(self.getNbMessages())
         profileImage.image = getProfileImage()
         
-        let menuVC = self.childViewControllers[0] as? MenuViewC
+        let menuVC = self.childViewControllers[0] as? MenuViewController
         usernameLabel.text = menuVC?.getUsername()
     }
     
@@ -78,9 +78,10 @@ class ProfileViewController: UIViewController {
 
         self.setUIInfos()
         
-        let menuVC = self.childViewControllers[0] as? MenuViewC
+        let menuVC = self.childViewControllers[0] as? MenuViewController
         menuVC?.hideProfileImage()
         menuVC?.hideUsername()
+        menuVC?.setProfileButtonActive()
         
         // Do any additional setup after loading the view, typically from a nib.
     }

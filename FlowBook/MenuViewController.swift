@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  MenuViewC.swift
 //  FlowBook
 //
 //  Created by Benjamin Afonso on 10/02/2017.
@@ -9,54 +9,64 @@
 import Foundation
 import UIKit
 
-class MenuViewController: UITableViewController {
+class MenuViewController: UIViewController {
     
-    let items: [String] = ["dd"]
+
+    @IBOutlet weak var profileButton: CustomButton!
+    @IBOutlet weak var messagesButton: CustomButton!
     
+    @IBOutlet weak var profileImage: RoundedImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    func getUsername() -> String {
+        if let username = UserDefaults.standard.string(forKey: "currentUsername") {
+            return username
+        } else {
+            return ""
+        }
+    }
+    
+    func getProfileImage() -> UIImage? {
+        let image = UIImage(named: "profileImage")
+        return image
+    }
+    
+    func setProfileButtonActive() {
+        self.profileButton.setActive()
+        self.messagesButton.setInactive()
+    }
+    
+    func setMessagesButtonActive() {
+        self.messagesButton.setActive()
+        self.profileButton.setInactive()
+    }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        self.profileImage.image = self.getProfileImage()
+        self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
+        self.usernameLabel.text = self.getUsername()
         
+        //WTF? present(HomeViewController, animated: true, completion: (()->()))
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func hideProfileImage() {
+        self.profileImage.isHidden = true
+    }
+    
+    func hideUsername() {
+        self.usernameLabel.isHidden = true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return self.messages.count
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == 1 {
-            let item = tableView.dequeueReusableCell(withIdentifier: "menuItemCell", for: indexPath)
-            return item
-
-        } else {
-            
-            
-            let item = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! MenuTableViewCell
-            
-            item.setUsername(username: "BenjaminAfonso")
-            item.setImage(image: UIImage(named: "profileImage"))
-            return item
-
-        }
-
-        
-    }
-    
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.items.count
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let v: UIView = UIView()
-        v.backgroundColor = UIColor.black
-        return v
-    }
 }
+
+
+
+
