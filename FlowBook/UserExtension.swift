@@ -91,7 +91,7 @@ extension User {
     
     
     func changeImage(image: UIImage) {
-        self.image = UIImagePNGRepresentation(image) as NSData?
+        self.image = UIImageJPEGRepresentation(image, 1.0) as NSData?
         CoreDataManager.save()
     }
     

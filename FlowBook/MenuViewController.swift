@@ -44,7 +44,6 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profileImage.image = self.getProfileImage()
-        self.profileImage.rotate(angle: 90.0)
 
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
         self.usernameLabel.text = self.getUsername()
