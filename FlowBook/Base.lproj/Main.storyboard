@@ -105,6 +105,10 @@
                                 <color key="textColor" red="0.92549019607843142" green="0.16078431372549018" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconError" translatesAutoresizingMaskIntoConstraints="NO" id="j1g-tL-mdj">
+                                <rect key="frame" x="619" y="353" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RW-ZC-6Qe">
                                 <rect key="frame" x="409" y="283" width="370" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -143,6 +147,22 @@
                                     <action selector="changeImage:" destination="XbX-de-uOQ" eventType="touchUpInside" id="NOK-q5-2lc"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconError" translatesAutoresizingMaskIntoConstraints="NO" id="JRh-4L-bl9">
+                                <rect key="frame" x="619" y="303" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconError" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-sZ-0Mb">
+                                <rect key="frame" x="619" y="403" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconError" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-D1-49u">
+                                <rect key="frame" x="619" y="453" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconError" translatesAutoresizingMaskIntoConstraints="NO" id="BM5-1h-cR1">
+                                <rect key="frame" x="619" y="503" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.96580008255430172" green="1" blue="0.96213354646197369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -183,14 +203,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailErrorIcon" destination="JRh-4L-bl9" id="MsY-VS-tiP"/>
                         <outlet property="emailErrorLabel" destination="8RW-ZC-6Qe" id="cqM-Bd-qmn"/>
                         <outlet property="emailTextField" destination="KP5-tO-KTV" id="p8c-gZ-FSW"/>
                         <outlet property="errorMessageLabel" destination="Cqe-uh-zsX" id="Hfg-cH-z9J"/>
                         <outlet property="firstNameTextField" destination="ZBV-AY-Uli" id="2rA-Yt-Kx6"/>
+                        <outlet property="fnameErrorIcon" destination="j1g-tL-mdj" id="yrq-bS-zZK"/>
                         <outlet property="lastNameTextField" destination="vU1-D1-1up" id="qUb-hF-gXs"/>
+                        <outlet property="lnameErrorIcon" destination="HS3-sZ-0Mb" id="LaZ-0I-nHH"/>
+                        <outlet property="passwordErrorIcon" destination="4ya-D1-49u" id="T8c-j0-uA3"/>
                         <outlet property="passwordErrorLabel" destination="udw-yd-aZN" id="KXd-6m-ITy"/>
                         <outlet property="passwordTextField" destination="sjU-TV-NJt" id="wf1-8T-iNe"/>
                         <outlet property="profileImage" destination="wIM-1s-9EL" id="8Mk-8R-1rC"/>
+                        <outlet property="repeatPasswordErrorIcon" destination="BM5-1h-cR1" id="UBM-sO-CN9"/>
                         <outlet property="repeatPasswordErrorLabel" destination="scA-MY-mWZ" id="9Fg-eA-n9m"/>
                         <outlet property="repeatPasswordTextField" destination="TgW-wb-XHA" id="sAo-vy-41u"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="registerSuccess" id="ZY6-1r-th9"/>
@@ -882,7 +907,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wMZ-jU-TCo"/>
-        <segue reference="91d-RG-tkw"/>
+        <segue reference="Xkt-aq-qQR"/>
         <segue reference="jF0-O3-4Tc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>

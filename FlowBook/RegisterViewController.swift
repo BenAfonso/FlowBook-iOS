@@ -24,7 +24,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBOutlet weak var emailErrorIcon: UIImageView!
     @IBOutlet weak var fnameErrorIcon: UIImageView!
     @IBOutlet weak var lnameErrorIcon: UIImageView!
-    
     @IBOutlet weak var profileImage: UIImageView!
     
     let picker = UIImagePickerController()
