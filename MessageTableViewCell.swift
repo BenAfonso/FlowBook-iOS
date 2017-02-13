@@ -40,7 +40,13 @@ class MessageTableViewCell: UITableViewCell {
             let calendar = Calendar.current
             let hour = calendar.component(.hour, from: time as Date)
             let minutes = calendar.component(.minute, from: time as Date)
-            self.timeStampLabel.text = "\(hour):\(minutes)"
+            
+            // Converts 1 digit minute to 2 digits (e.g: 9:9 -> 9:09)
+            var minuteString = String(minutes)
+            if String(minuteString).characters.count < 2 {
+                minuteString = "0"+minuteString
+            }
+            self.timeStampLabel.text = "\(hour):\(minuteString)"
         }
         
     }
