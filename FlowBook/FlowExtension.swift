@@ -12,90 +12,50 @@ import CoreData
 extension Flow {
     
     
-    static func create(withName name: String) throws -> Flow {
+    static func create(withName name: String) -> Flow {
         
-        do {
-            let context = try self.getContext()
-            
-            let flow = Flow(context: context)
-            
-            
-            flow.name = name
-            
-            do {
-                try context.save()
-                return flow
-            }
-            catch let error as NSError {
-                throw error
-            }
-            
-        } catch let error as NSError { // Can't get context
-            throw error
-        }
+        let flow = Flow(context: CoreDataManager.context)
+        flow.name = name
+        CoreDataManager.save()
+        return flow
         
     }
+    
+
     
     static func deleteAllFlows() throws {
-        do {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                throw NSError()
-            }
-            
-            let context = appDelegate.persistentContainer.viewContext
-            
             let request: NSFetchRequest<Flow> = Flow.fetchRequest()
             do {
-                let flows: [Flow] = try context.fetch(request)
+                let flows: [Flow] = try CoreDataManager.context.fetch(request)
                 for flow in flows {
-                    context.delete(flow)
+                    CoreDataManager.context.delete(flow)
                 }
             } catch let error as NSError {
                 throw error
             }
-            
-            
-        } catch let error as NSError { // Can't get context
-            throw error
-        }
     }
+    
     
     static func get(withName name: String) throws -> Flow? {
-        
+        let request: NSFetchRequest<Flow> = Flow.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", name)
         do {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                throw NSError()
+            let flows: [Flow] = try CoreDataManager.context.fetch(request)
+            if (flows.count > 0) {
+                return flows[0]
+            } else {
+                return nil
             }
-            
-            let context = appDelegate.persistentContainer.viewContext
-            
-            let request: NSFetchRequest<Flow> = Flow.fetchRequest()
-            request.predicate = NSPredicate(format: "name == %@", name)
-            do {
-                let flows: [Flow] = try context.fetch(request)
-                if (flows.count > 0) {
-                    return flows[0]
-                } else {
-                    return nil
-                }
-            } catch let error as NSError {
-                throw error
-            }
-            
-            
-        } catch let error as NSError { // Can't get context
+        } catch let error as NSError {
             throw error
         }
-    
-        
-
     }
 
     
-    func clearAllMessages() throws {
+    func clearAllMessages() {
         
         guard let messages: [Message] = self.messages?.allObjects as! [Message]? else {
-            throw NSError()
+            return
         }
         
         for message in messages {
@@ -106,19 +66,16 @@ extension Flow {
     
     
     func getMessages() throws -> [Message] {
+        
+        let request: NSFetchRequest<Message> = Message.fetchRequest()
+        request.predicate = NSPredicate(format: "flow == %@", self)
         do {
-            let context = try getContext()
-            let request: NSFetchRequest<Message> = Message.fetchRequest()
-            request.predicate = NSPredicate(format: "flow == %@", self)
-            do {
-                let messages = try context.fetch(request)
-                return messages
-            } catch let error as NSError { // Can't fetch messages
-                throw error
-            }
-        } catch let error as NSError { // Can't get context
+            let messages = try CoreDataManager.context.fetch(request)
+            return messages
+        } catch let error as NSError { // Can't fetch messages
             throw error
         }
+        
     }
     
     

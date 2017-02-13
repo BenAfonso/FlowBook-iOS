@@ -166,7 +166,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.messages = try flow.getMessages()
             } else {
                 print("No general flow, creating one.")
-                self.flow = try Flow.create(withName: "General")
+                self.flow = Flow.create(withName: "General")
             }
             
             
@@ -203,20 +203,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         print("Swipped \(section)")
 
-        let alert = UIAlertController(title: "Confirmation", message: "Êtes vous sûr de vouloir supprimer ce message ?", preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "Oui",
-                                          style: .default)
-        {
-            action in
-            _ = self.messages[section].delete()
-            self.messages.remove(at: section)
-            self.messagesTableView.reloadData()
+        let swippedMessage = self.messages[section]
+        if let author = swippedMessage.author {
+            if author.email == AuthenticationService.getEmail() {
+                let alert = UIAlertController(title: "Confirmation", message: "Êtes vous sûr de vouloir supprimer ce message ?", preferredStyle: .alert)
+                let confirmAction = UIAlertAction(title: "Oui",
+                                                  style: .default)
+                {
+                    action in
+                    swippedMessage.delete()
+                    self.messages.remove(at: section)
+                    self.messagesTableView.reloadData()
+                }
+                
+                let cancelAction = UIAlertAction(title: "Non", style: .default)
+                alert.addAction(confirmAction)
+                alert.addAction(cancelAction)
+                present(alert, animated: true)
+            }
         }
         
-        let cancelAction = UIAlertAction(title: "Non", style: .default)
-        alert.addAction(confirmAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true)
+        
         
         
     }

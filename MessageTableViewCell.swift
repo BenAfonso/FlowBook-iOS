@@ -21,7 +21,6 @@ class MessageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(MessageTableViewCell.swiped(sender:)))
         addGestureRecognizer(swipeGesture)
-        self.authorImage.rotate(angle: 90.0)
 
     }
     

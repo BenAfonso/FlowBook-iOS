@@ -27,6 +27,8 @@ class AuthenticationService {
                     UserDefaults.standard.set(currentUser.lastName, forKey: "currentLastName")
                     UserDefaults.standard.set(currentUser.email, forKey: "currentEmail")
                     UserDefaults.standard.set(currentUser.image, forKey: "currentImage")
+                    
+                    CurrentUser.set(withUser: currentUser)
                     UserDefaults.standard.set(currentUser.email, forKey: "lastEmail")
                     return true
 
