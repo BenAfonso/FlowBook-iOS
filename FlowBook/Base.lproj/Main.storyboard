@@ -218,12 +218,75 @@
                         <outlet property="repeatPasswordErrorIcon" destination="BM5-1h-cR1" id="UBM-sO-CN9"/>
                         <outlet property="repeatPasswordErrorLabel" destination="scA-MY-mWZ" id="9Fg-eA-n9m"/>
                         <outlet property="repeatPasswordTextField" destination="TgW-wb-XHA" id="sAo-vy-41u"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="registerSuccess" id="ZY6-1r-th9"/>
+                        <segue destination="rTX-wl-lKB" kind="show" identifier="registerSuccess" id="Imp-Aa-3vB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtV-k6-fyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-712.5" y="-905.46875"/>
+            <point key="canvasLocation" x="-454" y="-1201"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7Ng-gI-WDL">
+            <objects>
+                <viewController id="rTX-wl-lKB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lsj-5H-mG2"/>
+                        <viewControllerLayoutGuide type="bottom" id="LSW-8W-r0A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q7p-Qq-tLK">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-bf-Urr">
+                                <rect key="frame" x="453" y="117" width="119" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="N3I-gs-4jR"/>
+                                    <constraint firstAttribute="height" constant="115" id="Yx8-ZA-xYI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlowBook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKa-XO-IdE">
+                                <rect key="frame" x="456" y="240" width="113.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre compte a bien été créé !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0O-CO-eaq">
+                                <rect key="frame" x="387" y="372" width="249" height="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.59030663967132568" blue="0.53443413972854614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8Q-6p-Bld" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
+                                <rect key="frame" x="441" y="496" width="143" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="6Cm-yh-NSO"/>
+                                    <constraint firstAttribute="height" constant="36" id="R9f-Ol-NZW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Connexion">
+                                    <color key="titleColor" red="0.79805192290000004" green="0.80821896010000005" blue="0.86026372350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="b8A-Tc-U0b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20758894085884094" green="0.2064862847328186" blue="0.27278512716293335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aKa-XO-IdE" firstAttribute="top" secondItem="IuM-bf-Urr" secondAttribute="bottom" constant="8" id="8fs-LH-eZK"/>
+                            <constraint firstItem="aKa-XO-IdE" firstAttribute="centerX" secondItem="q7p-Qq-tLK" secondAttribute="centerX" id="97F-Py-SZZ"/>
+                            <constraint firstItem="IuM-bf-Urr" firstAttribute="centerX" secondItem="q7p-Qq-tLK" secondAttribute="centerX" id="DfJ-zg-V1D"/>
+                            <constraint firstItem="k8Q-6p-Bld" firstAttribute="centerX" secondItem="q7p-Qq-tLK" secondAttribute="centerX" id="JUe-Fn-wRD"/>
+                            <constraint firstItem="y0O-CO-eaq" firstAttribute="centerY" secondItem="q7p-Qq-tLK" secondAttribute="centerY" id="Les-4F-XMZ"/>
+                            <constraint firstItem="y0O-CO-eaq" firstAttribute="top" secondItem="aKa-XO-IdE" secondAttribute="bottom" constant="97.5" id="Qdv-ix-iRe"/>
+                            <constraint firstItem="y0O-CO-eaq" firstAttribute="centerX" secondItem="q7p-Qq-tLK" secondAttribute="centerX" id="ZaE-Fg-YhN"/>
+                            <constraint firstItem="k8Q-6p-Bld" firstAttribute="top" secondItem="y0O-CO-eaq" secondAttribute="bottom" constant="99" id="s3k-9x-baU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvk-Wh-Vvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1346.484375" y="-660.15625"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="mBk-4J-Q3p">
