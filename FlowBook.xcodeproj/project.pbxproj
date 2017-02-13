@@ -32,6 +32,8 @@
 		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
+		92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A181E51D80700F74D86 /* CustomInputMail.swift */; };
+		92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowExtension.swift; sourceTree = "<group>"; };
 		60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCategoryExtension.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
+		92FE3A181E51D80700F74D86 /* CustomInputMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputMail.swift; sourceTree = "<group>"; };
+		92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 				6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */,
 				60ABEC621E4F339E004B6105 /* RoundedImageView.swift */,
 				92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */,
+				92FE3A181E51D80700F74D86 /* CustomInputMail.swift */,
+				92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -244,7 +250,7 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3EQET6CY44;
+						DevelopmentTeam = QW5R6973G4;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -301,6 +307,7 @@
 			files = (
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,
 				60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */,
+				92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */,
 				6086D6741E49CFAD007D270F /* FlowBook.xcdatamodeld in Sources */,
 				6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */,
 				6086D6991E4A81D9007D270F /* HomeViewController.swift in Sources */,
@@ -318,6 +325,7 @@
 				60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */,
 				6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */,
 				60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */,
+				92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
