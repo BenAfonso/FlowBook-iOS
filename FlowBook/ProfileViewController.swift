@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImage: RoundedImageView!
 
     let picker = UIImagePickerController()
+    let pageView = UIPageViewController()
 
     
     func setUIInfos() {
@@ -82,15 +83,41 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
-
+    
+    // TO REFACTOR
+    func pickImageSource() {
+        let alert = UIAlertController(title: "Importer depuis", message: "", preferredStyle: .alert)
+        
+        let library = UIAlertAction(title: "Galerie", style: .default)
+        {
+            action in
+            self.picker.sourceType = .photoLibrary
+            self.picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            self.present(self.picker, animated: true, completion: nil)
+        }
+        
+        let camera = UIAlertAction(title: "Appareil photo", style: .default)
+        {
+            action in
+            self.picker.sourceType = .camera
+            self.picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
+            self.present(self.picker, animated: true, completion: nil)
+        }
+        
+        let cancel = UIAlertAction(title: "Annuler", style: .cancel)
+        
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        present(alert, animated: true)
+    }
+    
     @IBAction func changeProfileImage(_ sender: Any) {
-        picker.allowsEditing = false
-        picker.sourceType = .photoLibrary
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-        present(picker, animated: true, completion: nil)
+        picker.allowsEditing = true
+        self.pickImageSource()
     }
 
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picker.delegate = self
