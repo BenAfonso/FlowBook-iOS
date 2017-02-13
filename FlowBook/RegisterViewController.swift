@@ -16,10 +16,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
-    
     @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet weak var passwordErrorIcon: UIImageView!
     @IBOutlet weak var repeatPasswordErrorLabel: UILabel!
+    @IBOutlet weak var repeatPasswordErrorIcon: UIImageView!
     @IBOutlet weak var emailErrorLabel: UILabel!
+    @IBOutlet weak var emailErrorIcon: UIImageView!
+    @IBOutlet weak var fnameErrorIcon: UIImageView!
+    @IBOutlet weak var lnameErrorIcon: UIImageView!
     
     
     override func viewDidLoad() {
@@ -109,31 +113,36 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     func checkPasswordFieldOnChange(_ textField: UITextField) {
         if textField == self.passwordTextField {
             if !self.checkPasswordValid(password: self.passwordTextField.text!) {
+                passwordErrorIcon.isHidden = false
                 passwordErrorLabel.isHidden = false
                 passwordErrorLabel.text = "Le mot de passe doit contenir au moins 6 caractères."
             } else {
                 passwordErrorLabel.isHidden = true
+                passwordErrorIcon.isHidden = true
             }
         }
     }
     
     func checkRepeatPasswordFieldOnChange(_ textField: UITextField) {
             if !self.checkPasswords(password1: self.passwordTextField.text!, password2: self.repeatPasswordTextField.text!) {
-                
+                repeatPasswordErrorIcon.isHidden = false
                 repeatPasswordErrorLabel.isHidden = false
                 repeatPasswordErrorLabel.text = "Les mots de passe ne sont pas identiques."
             } else {
                 repeatPasswordErrorLabel.isHidden = true
+                repeatPasswordErrorIcon.isHidden = true
             }
     }
     
     func checkEmailFieldOnChange(_ textField: UITextField) {
         if textField == self.emailTextField {
             if !self.checkEmailValid(email: self.emailTextField.text!) {
+                emailErrorIcon.isHidden = false
                 emailErrorLabel.isHidden = false
                 emailErrorLabel.text = "L'adresse email n'est pas valide."
             } else {
                 emailErrorLabel.isHidden = true
+                emailErrorIcon.isHidden = true
             }
         }
     }
@@ -160,6 +169,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     // MARK: User interactions 
     
     func showError(withMessage message: String) {
+        self.emailErrorIcon.isHidden = false
+        self.passwordErrorIcon.isHidden = false
+        self.repeatPasswordErrorIcon.isHidden = false
+        self.fnameErrorIcon.isHidden = false
+        self.lnameErrorIcon.isHidden = false
         self.errorMessageLabel.isHidden = false
         self.errorMessageLabel.text = message
     }
@@ -183,8 +197,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     func hideErrorLabels() {
         self.emailErrorLabel.isHidden = true
+        self.emailErrorIcon.isHidden = true
         self.passwordErrorLabel.isHidden = true
+        self.passwordErrorIcon.isHidden = true
         self.repeatPasswordErrorLabel.isHidden = true
+        self.repeatPasswordErrorIcon.isHidden = true
+        self.fnameErrorIcon.isHidden = true
+        self.lnameErrorIcon.isHidden = true
     }
     
     
