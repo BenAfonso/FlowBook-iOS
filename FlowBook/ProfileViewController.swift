@@ -43,7 +43,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func getNbMessages() -> Int {
-
         if let email = UserDefaults.standard.string(forKey: "currentEmail") {
             do {
                 let user = try User.get(withEmail: email)
@@ -83,12 +82,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
+
     @IBAction func changeProfileImage(_ sender: Any) {
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(picker, animated: true, completion: nil)
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
