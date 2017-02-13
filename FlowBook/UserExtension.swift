@@ -61,6 +61,7 @@ extension User {
                 CoreDataManager.context.delete(user)
                 print("Supprimé")
             }
+            CoreDataManager.save()
         } catch let error as NSError {
             throw error
         }
@@ -140,6 +141,7 @@ extension User {
     
     func delete() throws {
         CoreDataManager.context.delete(self)
+        CoreDataManager.save()
     }
     
 }

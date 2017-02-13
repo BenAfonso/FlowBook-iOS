@@ -30,6 +30,8 @@ extension Flow {
                 for flow in flows {
                     CoreDataManager.context.delete(flow)
                 }
+                CoreDataManager.save()
+
             } catch let error as NSError {
                 throw error
             }
@@ -61,6 +63,8 @@ extension Flow {
         for message in messages {
             _ = message.delete()
         }
+        CoreDataManager.save()
+
         
     }
     

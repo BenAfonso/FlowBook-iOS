@@ -38,6 +38,8 @@ extension Message {
     
     func delete() {
         CoreDataManager.context.delete(self)
+        CoreDataManager.save()
+
     }
     
     
