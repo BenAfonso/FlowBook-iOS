@@ -32,9 +32,6 @@ class RoundedImageView: UIImageView {
         self.clipsToBounds = true
     }
     
-    func setColor(color: UIColor) {
-        
-    }
     func addBorders(width: CGFloat, color: UIColor) {
         self.layer.borderColor = color.cgColor
         self.layer.borderWidth = width

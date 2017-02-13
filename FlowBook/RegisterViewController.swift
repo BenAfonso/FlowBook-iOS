@@ -76,7 +76,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
             return
         }
         
-        guard email.contains("@") else {
+        guard checkEmailValid(email: email) else {
             self.showError(withMessage: "Veuillez renseigner une adresse email valide.")
             return
         }
