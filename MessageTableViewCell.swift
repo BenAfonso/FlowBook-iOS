@@ -11,7 +11,7 @@ import UIKit
 class MessageTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var authorImage: UIImageView!
+    @IBOutlet weak var authorImage: RoundedImageView!
     @IBOutlet weak var authorUsername: UILabel!
     @IBOutlet weak var messageText: UILabel!
     
@@ -21,11 +21,18 @@ class MessageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(MessageTableViewCell.swiped(sender:)))
         addGestureRecognizer(swipeGesture)
+        self.authorImage.rotate(angle: 90.0)
+
     }
     
-    func setAuthor(image: UIImage?, authorUsername: String) {
-        self.authorImage.image = image
-        self.authorUsername.text = authorUsername
+    func setAuthor(author: User?) {
+        
+        if let author = author {
+            self.authorImage.image = author.getImage()
+            self.authorUsername.text = author.getUsername()
+        }
+            
+
     }
     
     func setContent(message: String) {

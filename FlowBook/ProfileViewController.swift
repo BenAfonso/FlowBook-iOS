@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
     
@@ -21,15 +21,18 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImage: RoundedImageView!
 
+    let picker = UIImagePickerController()
+
     
     func setUIInfos() {
         nbPostsLabel.text = String(self.getNbEvents())
         nbEventsLabel.text = String(self.getNbFiles())
         nbFilesLabel.text = String(self.getNbPosts())
         nbMessagesLabel.text = String(self.getNbMessages())
-        profileImage.image = getProfileImage()
         
         let menuVC = self.childViewControllers[0] as? MenuViewController
+        profileImage.image = menuVC?.getProfileImage()
+
         usernameLabel.text = menuVC?.getUsername()
     }
     
@@ -64,16 +67,34 @@ class ProfileViewController: UIViewController {
     }
     
 
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        AuthenticationService.getUser()?.changeImage(image: chosenImage)
+        self.profileImage.image = AuthenticationService.getUser()?.getImage()
+
+        dismiss(animated:true, completion: nil) //5
+    }
+
+        
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
-    func getProfileImage() -> UIImage? {
-        let image = UIImage(named: "profileImage")
-        return image
+    
+    @IBAction func changeProfileImage(_ sender: Any) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.picker.delegate = self
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
+        self.profileImage.rotate(angle: 90.0)
         
 
         self.setUIInfos()

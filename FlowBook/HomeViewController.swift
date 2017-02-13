@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, messageTableDelegate {
     
@@ -115,9 +116,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         message.delegate = self
-        message.setAuthor(image: UIImage(named: "profileImage"), authorUsername: (self.messages[indexPath.section].author?.getUsername())!)
         
-        
+        message.setAuthor(author: (self.messages[indexPath.section].author))
+
         message.messageText.text = self.messages[indexPath.section].content
 
         message.layer.cornerRadius=10 //set corner radius here

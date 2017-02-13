@@ -19,6 +19,11 @@ class RoundedImageView: UIImageView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.styleImageView()
+        
+    }
+    
+    func rotate(angle: CGFloat) {
+        self.transform = CGAffineTransform(rotationAngle: (angle * CGFloat(M_PI)) / 180.0)
     }
     
     func styleImageView() {
