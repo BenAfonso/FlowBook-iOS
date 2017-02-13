@@ -27,7 +27,7 @@ extension User {
             user.email = email
             
             // Encrypt password
-            user.password = password.md5()
+            user.password = password.sha1()
             if let error = CoreDataManager.save() {
                 throw error
             }
@@ -107,7 +107,7 @@ extension User {
     
     /// MARK: Instance methods
     func isRightPassword(password: String) -> Bool {
-        return password.md5() == self.password
+        return (password.md5() == self.password || password.sha1() == self.password)
     }
     
     func getPosts() -> NSSet {

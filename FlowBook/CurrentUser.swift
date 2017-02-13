@@ -20,5 +20,9 @@ class CurrentUser {
         return self.user
     }
     
+    static func destroy() {
+        self.user = nil
+    }
+    
     
 }

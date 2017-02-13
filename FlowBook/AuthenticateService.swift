@@ -81,7 +81,9 @@ class AuthenticationService {
         UserDefaults.standard.removeObject(forKey: "currentLastName")
         UserDefaults.standard.removeObject(forKey: "currentEmail")
         UserDefaults.standard.removeObject(forKey: "currentImage")
+        CurrentUser.destroy()
     }
+    
     
     static func checkCredentials(email: String, password: String) -> Bool {
         if User.exists(email: email) {
