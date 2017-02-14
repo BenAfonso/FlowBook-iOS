@@ -123,36 +123,37 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     func checkPasswordFieldOnChange(_ textField: UITextField) {
         if textField == self.passwordTextField {
             if !self.checkPasswordValid(password: self.passwordTextField.text!) {
-                passwordErrorIcon.isHidden = false
-                passwordErrorLabel.isHidden = false
-                passwordErrorLabel.text = "Le mot de passe doit contenir au moins 6 caractères."
+                self.passwordTextField.showErrorBorder()
+                self.passwordErrorLabel.isHidden = false
+                self.passwordErrorLabel.text = "Le mot de passe doit contenir au moins 6 caractères."
             } else {
-                passwordErrorLabel.isHidden = true
-                passwordErrorIcon.isHidden = true
+                self.passwordErrorLabel.isHidden = true
+                self.passwordTextField.showValidationBorder()
             }
         }
     }
     
     func checkRepeatPasswordFieldOnChange(_ textField: UITextField) {
             if !self.checkPasswords(password1: self.passwordTextField.text!, password2: self.repeatPasswordTextField.text!) {
-                repeatPasswordErrorIcon.isHidden = false
-                repeatPasswordErrorLabel.isHidden = false
-                repeatPasswordErrorLabel.text = "Les mots de passe ne sont pas identiques."
+                self.repeatPasswordTextField.showErrorBorder()
+                self.repeatPasswordErrorLabel.isHidden = false
+                self.repeatPasswordErrorLabel.text = "Les mots de passe ne sont pas identiques."
             } else {
-                repeatPasswordErrorLabel.isHidden = true
-                repeatPasswordErrorIcon.isHidden = true
+                self.repeatPasswordErrorLabel.isHidden = true
+                self.repeatPasswordErrorIcon.isHidden = true
+                self.repeatPasswordTextField.showValidationBorder()
             }
     }
     
     func checkEmailFieldOnChange(_ textField: UITextField) {
         if textField == self.emailTextField {
             if !self.checkEmailValid(email: self.emailTextField.text!) {
-                emailErrorIcon.isHidden = false
-                emailErrorLabel.isHidden = false
-                emailErrorLabel.text = "L'adresse email n'est pas valide."
+                self.emailTextField.showErrorBorder()
+                self.emailErrorLabel.isHidden = false
+                self.emailErrorLabel.text = "L'adresse email n'est pas valide."
             } else {
-                emailErrorLabel.isHidden = true
-                emailErrorIcon.isHidden = true
+                self.emailErrorLabel.isHidden = true
+                self.emailTextField.showValidationBorder()
             }
         }
     }

@@ -90,19 +90,9 @@ class LoginViewController: UIViewController {
     func checkEmailFieldOnChange(_ textField: UITextField) {
         if textField == self.emailTextField {
             if !self.checkEmailValid(email: self.emailTextField.text!) {
-                let bottomLine = CALayer()
-                bottomLine.frame = CGRect(x: 0, y: self.emailTextField.frame.size.height - 2.0, width: self.emailTextField.frame.size.width, height: self.emailTextField.frame.size.height)
-                bottomLine.borderColor = UIColor(red: 236.0/255.0, green: 41.0/255.0, blue: 120.0/255.0, alpha: 1.0).cgColor
-                bottomLine.borderWidth = 2.0
-                self.emailTextField.layer.addSublayer(bottomLine)
-                self.emailTextField.layer.masksToBounds = true
+               self.emailTextField.showErrorBorder()
             } else {
-                let bottomLine = CALayer()
-                bottomLine.frame = CGRect(x: 0, y: self.emailTextField.frame.size.height - 2.0, width: self.emailTextField.frame.size.width, height: self.emailTextField.frame.size.height)
-                bottomLine.borderColor = UIColor(red: 0.0/255.0, green: 150.0/255.0, blue: 136.0/255.0, alpha: 1.0).cgColor
-                bottomLine.borderWidth = 2.0
-                self.emailTextField.layer.addSublayer(bottomLine)
-                self.emailTextField.layer.masksToBounds = true
+                self.emailTextField.showValidationBorder()
             }
         }
     }
