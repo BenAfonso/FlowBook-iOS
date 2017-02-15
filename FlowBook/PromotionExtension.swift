@@ -22,6 +22,7 @@ extension Promotion {
         return promotion
     }
     
+    /*
     static func get(withName name: String) -> Promotion? {
         let request: NSFetchRequest<Promotion> = Promotion.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", name)
@@ -35,7 +36,7 @@ extension Promotion {
         } catch {
             return nil
         }
-    }
+    }*/
     
     func createFlow() {
         let flowName = "\(self.department?.name): Promotion \(self.name)"

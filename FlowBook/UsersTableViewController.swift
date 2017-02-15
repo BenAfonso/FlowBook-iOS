@@ -29,7 +29,6 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
             //AlertController.errorAlert(message: "Erreur lors de la récupération des utilisateurs", onView: self)
             
         }
-        
     }
     
     // MARK: TableView

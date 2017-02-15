@@ -8,14 +8,17 @@
 
 extension Student {
 
+    
     static func create(withFirstName firstName: String,
                        withLastName lastName: String,
                        withEmail email: String,
                        withPassword password: String,
                        forPromotion promotion: Promotion,
-                       forDepartment department: Department) throws -> Student {
+                       forDepartment department: Department) -> Student {
+        
         
         let student = Student(context: CoreDataManager.context)
+        student.lastName = lastName
         student.lastName = lastName
         student.firstName = firstName
         student.email = email
@@ -23,11 +26,9 @@ extension Student {
         student.promotion = promotion
         student.active = false
         
-        // Encrypt password
         student.password = password.sha256()
-        if let error = CoreDataManager.save() {
-            throw error
-        }
+        
+        CoreDataManager.save()
         return student
     }
 

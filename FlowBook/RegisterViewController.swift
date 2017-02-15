@@ -96,17 +96,26 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         
         // Save user into CoreData
         do {
-            let newUser: Student = try Student.create(withFirstName: firstName,
-                                                withLastName: lastName,
-                                                withEmail: email,
-                                                withPassword: password,
-                                                forPromotion: Promotion.get(withName: "2018")!,
-                                                forDepartment: Department.get(withName: "IG")!)
             
-            newUser.changeImage(image: self.profileImage.image!)
-            self.clearForm()
-            performSegue(withIdentifier: "registerSuccess", sender: self)
-            print(newUser)
+            if let department = Department.get(withName: "IG") {
+                
+                guard try department.getPromotions().count > 0 else {
+                    return
+                }
+                
+                let newUser: Student = try Student.create(withFirstName: firstName,
+                                                          withLastName: lastName,
+                                                          withEmail: email,
+                                                          withPassword: password,
+                                                          forPromotion: department.getPromotions()[0],
+                                                          forDepartment: department)
+                
+                newUser.changeImage(image: self.profileImage.image!)
+                self.clearForm()
+                performSegue(withIdentifier: "registerSuccess", sender: self)
+                print(newUser)
+            }
+            
         } catch let error as NSError {
             //UIAlert HERE
             

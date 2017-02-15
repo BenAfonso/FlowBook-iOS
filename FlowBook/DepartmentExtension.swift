@@ -34,6 +34,17 @@ extension Department {
         }
     }
     
+    func getPromotions() throws -> [Promotion] {
+        let request: NSFetchRequest<Promotion> = Promotion.fetchRequest()
+        request.predicate = NSPredicate(format: "department == %@", self)
+        do {
+            let promotions = try CoreDataManager.context.fetch(request)
+            return promotions
+        } catch let error as NSError { // Can't fetch messages
+            throw error
+        }
+    }
+    
     func createFlow() {
         let _ = Flow.create(withName: self.name!, forDepartment: self, forPromotion: nil, forStudents: true, forTeachers: true)
     }
