@@ -99,7 +99,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
             let newUser: Student = try Student.create(withFirstName: firstName,
                                                 withLastName: lastName,
                                                 withEmail: email,
-                                                withPassword: password) as! Student
+                                                withPassword: password,
+                                                forPromotion: Promotion.get(withName: "2018")!,
+                                                forDepartment: Department.get(withName: "IG")!)
             
             newUser.changeImage(image: self.profileImage.image!)
             self.clearForm()
