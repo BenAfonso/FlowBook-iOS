@@ -99,8 +99,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let menuVC = self.childViewControllers[0] as? MenuViewController
-        menuVC?.setMessagesButtonActive()
+        //let menuVC = self.childViewControllers[0] as? MenuViewController
+        //menuVC?.setMessagesButtonActive()
         
 
         

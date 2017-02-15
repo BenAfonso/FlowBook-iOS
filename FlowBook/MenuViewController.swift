@@ -18,6 +18,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
+    var menuButtonsDelegate: MenuButtonsDelegate?
+    
     func getUsername() -> String {
         
         // NEW METHOD TO PROPAGATE
@@ -50,6 +52,7 @@ class MenuViewController: UIViewController {
         self.profileButton.setInactive()
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profileImage.image = self.getProfileImage()
@@ -57,6 +60,8 @@ class MenuViewController: UIViewController {
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
         self.usernameLabel.text = self.getUsername()
         
+        
+        self.addChildViewController(RootViewController())
         //WTF? present(HomeViewController, animated: true, completion: (()->()))
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -75,6 +80,26 @@ class MenuViewController: UIViewController {
     }
     
     
+    @IBAction func profileButtonAction(_ sender: Any) {
+        menuButtonsDelegate?.goToProfile()
+    }
+    
+    @IBAction func messagesButtonAction(_ sender: Any) {
+        menuButtonsDelegate?.goToMessages()
+    }
+    
+    @IBAction func usersButtonAction(_ sender: Any) {
+        menuButtonsDelegate?.goToUsers()
+    }
+
+    
+    
+}
+
+protocol MenuButtonsDelegate {
+    func goToProfile()
+    func goToUsers()
+    func goToMessages()
 }
 
 

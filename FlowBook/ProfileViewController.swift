@@ -31,10 +31,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         nbFilesLabel.text = String(self.getNbPosts())
         nbMessagesLabel.text = String(self.getNbMessages())
         
-        let menuVC = self.childViewControllers[0] as? MenuViewController
-        profileImage.image = menuVC?.getProfileImage()
-
-        usernameLabel.text = menuVC?.getUsername()
+        //let menuVC = self.childViewControllers[0] as? MenuViewController
+        //profileImage.image = menuVC?.getProfileImage()
+        //usernameLabel.text = menuVC?.getUsername()
     }
     
     
@@ -126,10 +125,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
         self.setUIInfos()
         
-        let menuVC = self.childViewControllers[0] as? MenuViewController
-        menuVC?.hideProfileImage()
-        menuVC?.hideUsername()
-        menuVC?.setProfileButtonActive()
+        //let menuVC = self.childViewControllers[0] as? MenuViewController
+        //menuVC?.hideProfileImage()
+        //menuVC?.hideUsername()
+        //menuVC?.setProfileButtonActive()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
