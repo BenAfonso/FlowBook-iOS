@@ -35,6 +35,7 @@
 		60A5E52C1E54ED1800684035 /* PromotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E52B1E54ED1800684035 /* PromotionExtension.swift */; };
 		60A5E52F1E54FEC700684035 /* FlowPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E52E1E54FEC700684035 /* FlowPickerViewController.swift */; };
 		60A5E5311E54FEE700684035 /* FlowPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5301E54FEE700684035 /* FlowPickerTableViewCell.swift */; };
+		60A5E5331E55047700684035 /* StudentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5321E55047700684035 /* StudentExtension.swift */; };
 		60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABEC621E4F339E004B6105 /* RoundedImageView.swift */; };
 		60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D31E4EA536002E9B6D /* UserExtension.swift */; };
 		60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D51E4EA581002E9B6D /* MessageExtension.swift */; };
@@ -109,6 +110,7 @@
 		60A5E52B1E54ED1800684035 /* PromotionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionExtension.swift; sourceTree = "<group>"; };
 		60A5E52E1E54FEC700684035 /* FlowPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowPickerViewController.swift; sourceTree = "<group>"; };
 		60A5E5301E54FEE700684035 /* FlowPickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowPickerTableViewCell.swift; sourceTree = "<group>"; };
+		60A5E5321E55047700684035 /* StudentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentExtension.swift; sourceTree = "<group>"; };
 		60ABEC621E4F339E004B6105 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		60C8A2D31E4EA536002E9B6D /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		60C8A2D51E4EA581002E9B6D /* MessageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageExtension.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				609AAFA81E52237C00B51AF1 /* CurrentUser.swift */,
 				60A5E5291E54ED1000684035 /* DepartmentExtension.swift */,
 				60A5E52B1E54ED1800684035 /* PromotionExtension.swift */,
+				60A5E5321E55047700684035 /* StudentExtension.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */,
 				60A5E5201E54429300684035 /* UsersTableViewController.swift in Sources */,
 				92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */,
+				60A5E5331E55047700684035 /* StudentExtension.swift in Sources */,
 				6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */,
 				604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */,
 				60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */,

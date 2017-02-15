@@ -96,10 +96,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         
         // Save user into CoreData
         do {
-            let newUser: User = try User.create(withFirstName: firstName,
+            let newUser: Student = try Student.create(withFirstName: firstName,
                                                 withLastName: lastName,
                                                 withEmail: email,
-                                                withPassword: password)
+                                                withPassword: password) as! Student
             
             newUser.changeImage(image: self.profileImage.image!)
             self.clearForm()
