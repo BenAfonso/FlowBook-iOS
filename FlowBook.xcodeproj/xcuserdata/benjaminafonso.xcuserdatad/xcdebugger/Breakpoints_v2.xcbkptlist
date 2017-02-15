@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlowBook/HomeViewController.swift"
-            timestampString = "508671913.726493"
+            timestampString = "508843713.223102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "textFieldDidBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -200,11 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MessageTableViewCell.swift"
-            timestampString = "508707695.871187"
+            timestampString = "508845800.376698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "awakeFromNib()"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,14 +231,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlowBook/HomeViewController.swift"
+            filePath = "FlowBook/MessagesTableView.swift"
             timestampString = "508712128.810978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "261"
+            endingLineNumber = "261">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -247,12 +245,76 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlowBook/MessagesTableView.swift"
-            timestampString = "508712128.810978"
+            filePath = "MessageTableViewCell.swift"
+            timestampString = "508845675.732091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "MessageTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBook.MessageTableViewCell.timeStampLabel.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "FlowBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjaminafonso/Desktop/Xcode/FlowBook/MessageTableViewCell.swift"
+                  timestampString = "508845676.308213"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBook.MessageTableViewCell.timeStampLabel.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "FlowBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjaminafonso/Desktop/Xcode/FlowBook/MessageTableViewCell.swift"
+                  timestampString = "508845676.314737"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBook.MessageTableViewCell.init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; FlowBook.MessageTableViewCell"
+                  moduleName = "FlowBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjaminafonso/Desktop/Xcode/FlowBook/MessageTableViewCell.swift"
+                  timestampString = "508845676.317066"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlowBook.MessageTableViewCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;FlowBook.MessageTableViewCell&gt;"
+                  moduleName = "FlowBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benjaminafonso/Desktop/Xcode/FlowBook/MessageTableViewCell.swift"
+                  timestampString = "508845676.318904"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
