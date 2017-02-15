@@ -8,6 +8,7 @@
 
 import CoreData
 
+/*
 extension UserCategory {
     
     static func create(withName name: String, withDefaultFlow hasDefaultFlow: Bool) throws -> UserCategory {
@@ -39,8 +40,5 @@ extension UserCategory {
         }
         return Flow.create(withName: name)
     }
-    
-    
-    
-
 }
+ */

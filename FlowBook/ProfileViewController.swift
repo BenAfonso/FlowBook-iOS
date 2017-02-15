@@ -32,8 +32,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         nbMessagesLabel.text = String(self.getNbMessages())
         
         //let menuVC = self.childViewControllers[0] as? MenuViewController
-        //profileImage.image = menuVC?.getProfileImage()
-        //usernameLabel.text = menuVC?.getUsername()
+        if let currentUser = CurrentUser.get() {
+            profileImage.image = currentUser.getImage()
+            usernameLabel.text = currentUser.getUsername()
+        }
+        
     }
     
     

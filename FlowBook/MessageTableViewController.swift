@@ -29,9 +29,6 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
                 self.flow = flow
                 self.messages = try flow.getMessages()
                 
-            } else {
-                print("No general flow, creating one.")
-                self.flow = Flow.create(withName: "General")
             }
             
             

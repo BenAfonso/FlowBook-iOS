@@ -25,6 +25,7 @@ extension User {
             user.lastName = lastName
             user.firstName = firstName
             user.email = email
+            user.active = false
             
             // Encrypt password
             user.password = password.sha256()

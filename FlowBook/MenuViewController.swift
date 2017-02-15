@@ -28,13 +28,6 @@ class MenuViewController: UIViewController {
         } else {
             return ""
         }
-        
-        /*
-        if let username = UserDefaults.standard.string(forKey: "currentUsername") {
-            return username
-        } else {
-            return ""
-        }*/
     }
     
     func getProfileImage() -> UIImage? {
@@ -72,6 +65,14 @@ class MenuViewController: UIViewController {
     
     func hideUsername() {
         self.usernameLabel.isHidden = true
+    }
+    
+    func showProfileImage() {
+        self.profileImage.isHidden = false
+    }
+    
+    func showUsername() {
+        self.usernameLabel.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {

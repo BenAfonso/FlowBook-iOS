@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="z0i-c1-E1m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -713,9 +713,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="192"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-kx-4VU" customClass="RoundedImageView" customModule="FlowBook" customModuleProvider="target">
-                                        <rect key="frame" x="455.5" y="23" width="112" height="112"/>
+                                        <rect key="frame" x="455.5" y="31" width="112" height="104"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="112" id="M0e-N4-ume"/>
+                                            <constraint firstAttribute="height" constant="104" id="Se0-Su-A6a"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izw-8K-R8m">
@@ -728,7 +729,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7F3-4u-SJp">
-                                        <rect key="frame" x="536.5" y="18" width="39" height="39"/>
+                                        <rect key="frame" x="536.5" y="26" width="39" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="iJ6-rc-wqa"/>
                                             <constraint firstAttribute="width" constant="39" id="rwT-mF-XvX"/>
@@ -744,10 +745,9 @@
                                 <constraints>
                                     <constraint firstItem="wPi-kx-4VU" firstAttribute="top" secondItem="7F3-4u-SJp" secondAttribute="bottom" constant="-34" id="0Kw-y8-Vh6"/>
                                     <constraint firstAttribute="height" constant="192" id="NA4-hC-81j"/>
-                                    <constraint firstItem="Izw-8K-R8m" firstAttribute="bottom" secondItem="XoQ-3y-hA1" secondAttribute="bottomMargin" constant="-20" id="XGI-Ep-wjb"/>
                                     <constraint firstItem="Izw-8K-R8m" firstAttribute="centerX" secondItem="XoQ-3y-hA1" secondAttribute="centerX" id="afK-tH-4c6"/>
                                     <constraint firstItem="Izw-8K-R8m" firstAttribute="top" secondItem="wPi-kx-4VU" secondAttribute="bottom" constant="8" symbolic="YES" id="qIY-D5-Izp"/>
-                                    <constraint firstItem="wPi-kx-4VU" firstAttribute="top" secondItem="XoQ-3y-hA1" secondAttribute="top" constant="23" id="x2j-IR-fzU"/>
+                                    <constraint firstItem="wPi-kx-4VU" firstAttribute="top" secondItem="XoQ-3y-hA1" secondAttribute="top" constant="31" id="z6v-h9-jCX"/>
                                     <constraint firstItem="7F3-4u-SJp" firstAttribute="leading" secondItem="wPi-kx-4VU" secondAttribute="trailing" constant="-31" id="zGW-us-eJj"/>
                                     <constraint firstItem="wPi-kx-4VU" firstAttribute="centerX" secondItem="Izw-8K-R8m" secondAttribute="centerX" id="zQs-eM-0zZ"/>
                                 </constraints>
@@ -865,7 +865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpH-MN-Ts5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="-2828"/>
+            <point key="canvasLocation" x="1089" y="-3488"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="v7e-ej-t3F">
@@ -1020,7 +1020,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uU-BB-Cgs" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="225" width="143" height="48"/>
+                                <rect key="frame" x="23" y="245" width="143" height="48"/>
                                 <state key="normal" title="Messages">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1029,7 +1029,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdi-Aw-oaW" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="293" width="143" height="48"/>
+                                <rect key="frame" x="23" y="313" width="143" height="48"/>
                                 <state key="normal" title="Utilisateurs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1038,13 +1038,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-1k-j2b" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="361" width="143" height="48"/>
+                                <rect key="frame" x="23" y="381" width="143" height="48"/>
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-RZ-gMB">
-                                <rect key="frame" x="14" y="96" width="161" height="21"/>
+                                <rect key="frame" x="14" y="116" width="161" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8yV-mZ-CRh"/>
                                 </constraints>
@@ -1053,14 +1053,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi5-Lo-UqL" customClass="RoundedImageView" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="54" y="8" width="80" height="80"/>
+                                <rect key="frame" x="54" y="28" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="LRj-na-4QB"/>
                                     <constraint firstAttribute="width" constant="80" id="TZl-OS-Mrp"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-SV-Pu6" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="157" width="143" height="48"/>
+                                <rect key="frame" x="23" y="177" width="143" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="J9d-4g-NT2"/>
                                     <constraint firstAttribute="width" constant="143" id="PDK-5U-1u8"/>
@@ -1130,6 +1130,10 @@
         <scene sceneID="yZj-wN-5GG">
             <objects>
                 <viewController storyboardIdentifier="master" id="Sid-LN-r6h" customClass="MasterViewController" customModule="FlowBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PIg-py-bsb"/>
+                        <viewControllerLayoutGuide type="bottom" id="cTv-5t-Q23"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SwA-A0-o9g">
                         <rect key="frame" x="0.0" y="0.0" width="835" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

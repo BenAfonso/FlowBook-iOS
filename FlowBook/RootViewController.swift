@@ -18,9 +18,6 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
     weak var menuViewController: MenuViewController?
     
     override func viewDidLoad() {
-        
-        
-
         self.menuViewController = self.storyboard?.instantiateViewController(withIdentifier: "menuView") as! MenuViewController?
     
         self.menuViewController!.view.translatesAutoresizingMaskIntoConstraints = false
@@ -69,44 +66,20 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
                                     newViewController.didMove(toParentViewController: self)
         })
     }
-    
-    // MARK: METHOD 1
-    
-    private func add(asChildViewController viewController: UIViewController) {
-        
-        addChildViewController(viewController)
-        
-    
-    
-        childView.addSubview(viewController.view)
-        
-        viewController.view.frame = view.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth]
-        
-        viewController.didMove(toParentViewController: self)
-    }
-    
-    private func remove(asChildViewController viewController: UIViewController) {
-        // Notify Child View Controller
-        viewController.willMove(toParentViewController: nil)
-        
-        // Remove Child View From Superview
-        viewController.view.removeFromSuperview()
-        
-        // Notify Child View Controller
-        viewController.removeFromParentViewController()
-    }
-    
-
-    
-
-
 
     func goToView(withIdentifier identifier: String) {
+        
         let newViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier)
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
         self.currentViewController = newViewController
+        if (identifier == "profileView") {
+            self.menuViewController?.hideProfileImage()
+            self.menuViewController?.hideUsername()
+        } else {
+            self.menuViewController?.showProfileImage()
+            self.menuViewController?.showUsername()
+        }
     }
     
     

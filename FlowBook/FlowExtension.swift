@@ -12,13 +12,36 @@ import CoreData
 extension Flow {
     
     
-    static func create(withName name: String) -> Flow {
+    static func create(withName name: String,
+                       forDepartment department: Department,
+                       forPromotion promotion: Promotion?,
+                       forStudents studentFlow: Bool,
+                       forTeachers teacherFlow: Bool
+        ) -> Flow? {
         
-        let flow = Flow(context: CoreDataManager.context)
-        flow.name = name
-        CoreDataManager.save()
-        return flow
-        
+        if (studentFlow && teacherFlow) {
+            let flow = StudentFlow(context: CoreDataManager.context)
+            flow.name = name
+            flow.department = department
+            CoreDataManager.save()
+            return flow
+        } else if (studentFlow && !teacherFlow) {
+            let flow = StudentFlow(context: CoreDataManager.context)
+            flow.name = name
+            flow.department = department
+            flow.promotion = promotion
+            CoreDataManager.save()
+            return flow
+        } else if (!studentFlow && teacherFlow) {
+            let flow = TeacherFlow(context: CoreDataManager.context)
+            flow.name = name
+            flow.department = department
+            CoreDataManager.save()
+            return flow
+        }
+        else {
+            return nil
+        }
     }
     
 
