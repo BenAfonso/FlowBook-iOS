@@ -23,6 +23,12 @@
 		6086D6991E4A81D9007D270F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D6981E4A81D9007D270F /* HomeViewController.swift */; };
 		6086D69F1E4B9164007D270F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */; };
 		609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AAFA81E52237C00B51AF1 /* CurrentUser.swift */; };
+		60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5151E5434F000684035 /* MessageTableViewController.swift */; };
+		60A5E5181E54394400684035 /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5171E54394400684035 /* MessageTableView.swift */; };
+		60A5E51D1E54422500684035 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E51C1E54422500684035 /* UserTableViewCell.swift */; };
+		60A5E5201E54429300684035 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E51F1E54429300684035 /* UsersTableViewController.swift */; };
+		60A5E5221E54508200684035 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5211E54508200684035 /* AlertController.swift */; };
+		60A5E5241E54535200684035 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5231E54535200684035 /* UserListViewController.swift */; };
 		60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABEC621E4F339E004B6105 /* RoundedImageView.swift */; };
 		60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D31E4EA536002E9B6D /* UserExtension.swift */; };
 		60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D51E4EA581002E9B6D /* MessageExtension.swift */; };
@@ -85,6 +91,12 @@
 		6086D6981E4A81D9007D270F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTableViewCell.swift; path = ../MessageTableViewCell.swift; sourceTree = "<group>"; };
 		609AAFA81E52237C00B51AF1 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		60A5E5151E5434F000684035 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		60A5E5171E54394400684035 /* MessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
+		60A5E51C1E54422500684035 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		60A5E51F1E54429300684035 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		60A5E5211E54508200684035 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		60A5E5231E54535200684035 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		60ABEC621E4F339E004B6105 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		60C8A2D31E4EA536002E9B6D /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		60C8A2D51E4EA581002E9B6D /* MessageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageExtension.swift; sourceTree = "<group>"; };
@@ -161,11 +173,47 @@
 			path = FlowBookTests;
 			sourceTree = "<group>";
 		};
+		60A5E5191E543F8300684035 /* MessagesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				6086D6981E4A81D9007D270F /* HomeViewController.swift */,
+				60A5E5151E5434F000684035 /* MessageTableViewController.swift */,
+			);
+			name = MessagesTableView;
+			sourceTree = "<group>";
+		};
+		60A5E51A1E5441B200684035 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				60A5E5171E54394400684035 /* MessageTableView.swift */,
+				6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		60A5E51B1E5441F800684035 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				60A5E51C1E54422500684035 /* UserTableViewCell.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
+		60A5E51E1E54427C00684035 /* UsersTableView */ = {
+			isa = PBXGroup;
+			children = (
+				60A5E51F1E54429300684035 /* UsersTableViewController.swift */,
+				60A5E5231E54535200684035 /* UserListViewController.swift */,
+			);
+			name = UsersTableView;
+			sourceTree = "<group>";
+		};
 		60C8A2D01E4EA4E3002E9B6D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				60A5E51B1E5441F800684035 /* Users */,
+				60A5E51A1E5441B200684035 /* Messages */,
 				6086D6921E4A71C2007D270F /* LaunchScreen.storyboard */,
-				6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */,
 				60ABEC621E4F339E004B6105 /* RoundedImageView.swift */,
 				602C945E1E4DC8CC00A02196 /* CustomButton.swift */,
 				92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */,
@@ -173,6 +221,7 @@
 				92FE3A181E51D80700F74D86 /* CustomInputMail.swift */,
 				92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */,
 				9291615E1E52777900D60CD5 /* CustomInputUser.swift */,
+				60A5E5211E54508200684035 /* AlertController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -180,8 +229,9 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				60A5E51E1E54427C00684035 /* UsersTableView */,
+				60A5E5191E543F8300684035 /* MessagesTableView */,
 				6086D66D1E49CFAD007D270F /* LoginViewController.swift */,
-				6086D6981E4A81D9007D270F /* HomeViewController.swift */,
 				6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */,
 				602C94601E4DD0CF00A02196 /* ProfileViewController.swift */,
 				604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */,
@@ -259,7 +309,7 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QW5R6973G4;
+						DevelopmentTeam = 3EQET6CY44;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -315,9 +365,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,
+				60A5E51D1E54422500684035 /* UserTableViewCell.swift in Sources */,
 				60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */,
 				609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */,
 				92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */,
+				60A5E5241E54535200684035 /* UserListViewController.swift in Sources */,
 				6086D6741E49CFAD007D270F /* FlowBook.xcdatamodeld in Sources */,
 				9291615D1E52755F00D60CD5 /* CustomInput.swift in Sources */,
 				6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */,
@@ -325,12 +377,16 @@
 				60C8A2DC1E4EA5B9002E9B6D /* UserCategoryExtension.swift in Sources */,
 				602C945F1E4DC8CC00A02196 /* CustomButton.swift in Sources */,
 				9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */,
+				60A5E5221E54508200684035 /* AlertController.swift in Sources */,
 				604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */,
+				60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */,
+				60A5E5181E54394400684035 /* MessageTableView.swift in Sources */,
 				607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */,
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
 				607BED081E50B47C004EB98A /* CoreDataManager.swift in Sources */,
 				6086D69F1E4B9164007D270F /* MessageTableViewCell.swift in Sources */,
 				602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */,
+				60A5E5201E54429300684035 /* UsersTableViewController.swift in Sources */,
 				92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */,
 				6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */,
 				604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */,
@@ -468,7 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -476,7 +532,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -486,7 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -494,7 +550,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

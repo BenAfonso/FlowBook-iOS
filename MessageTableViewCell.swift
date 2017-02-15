@@ -15,6 +15,7 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var authorUsername: UILabel!
     @IBOutlet weak var messageText: UILabel!
     
+
     @IBOutlet weak var timeStampLabel: UILabel!
     
     var delegate: messageTableDelegate?
@@ -23,7 +24,6 @@ class MessageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(MessageTableViewCell.swiped(sender:)))
         addGestureRecognizer(swipeGesture)
-
     }
     
     func setAuthor(author: User?) {
