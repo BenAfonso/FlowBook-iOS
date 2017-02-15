@@ -106,7 +106,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         message.messageText.text = self.messages[indexPath.section].content
 
         message.layer.cornerRadius=10 //set corner radius here
-        message.accessoryType = .detailButton
+        
         return message
 
     }
@@ -126,11 +126,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         return v
     }
     
-    // MARK: - TableView Delegate protocol
-    
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        <#code#>
-    }
     
     
     
