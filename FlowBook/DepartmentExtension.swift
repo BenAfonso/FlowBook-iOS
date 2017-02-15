@@ -38,6 +38,7 @@ extension Department {
         let _ = Flow.create(withName: self.name!, forDepartment: self, forPromotion: nil, forStudents: true, forTeachers: true)
     }
     
+    
     func createPromotion(withName promotionName: String) -> Promotion {
         let promotion = Promotion.create(forDepartment: self, withName: promotionName)
         return promotion

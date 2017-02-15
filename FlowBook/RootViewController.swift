@@ -55,7 +55,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         self.addChildViewController(newViewController)
         self.addSubview(subView: newViewController.view, toView:self.childView!)
         newViewController.view.alpha = 0
-        newViewController.view.layoutIfNeeded()
+        //newViewController.view.layoutIfNeeded()
         UIView.animate(withDuration: 0.5, animations: {
             newViewController.view.alpha = 1
             oldViewController.view.alpha = 0

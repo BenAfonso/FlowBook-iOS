@@ -24,11 +24,12 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
             
             // TEMPORARY
             
-            if let flow = try Flow.get(withName: "General") {
-                print("Fetching general flow")
+            if let flow = try Flow.get(forDepartment: (CurrentUser.get()?.department)!) {
+                print("Fetching \(flow.name) flow")
                 self.flow = flow
                 self.messages = try flow.getMessages()
-                
+            } else {
+                fatalError("No department on your account ...")
             }
             
             

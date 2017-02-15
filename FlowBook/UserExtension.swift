@@ -98,6 +98,11 @@ extension User {
     }
     
     
+    func setDepartment(department: Department) {
+        self.department = department
+    }
+    
+    
     func getUsername() -> String {
         if let firstName = self.firstName, let lastName = self.lastName {
             return firstName.capitalized+lastName.capitalized
@@ -140,8 +145,13 @@ extension User {
     }
     
     
-    func delete() throws {
+    func delete() {
         CoreDataManager.context.delete(self)
+        CoreDataManager.save()
+    }
+    
+    func activate() {
+        self.active = true
         CoreDataManager.save()
     }
     

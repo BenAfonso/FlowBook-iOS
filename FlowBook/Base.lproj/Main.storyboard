@@ -283,8 +283,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre compte a bien été créé !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0O-CO-eaq">
-                                <rect key="frame" x="387" y="372" width="249" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre compte a bien été créé et sera bientôt validé !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0O-CO-eaq">
+                                <rect key="frame" x="299.5" y="372" width="425" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.59030663967132568" blue="0.53443413972854614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvk-Wh-Vvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346.484375" y="-660.15625"/>
+            <point key="canvasLocation" x="-2416" y="-257"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="mBk-4J-Q3p">
@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tP2-np-U4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-835" y="352"/>
+            <point key="canvasLocation" x="-1563" y="1024"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -739,6 +739,13 @@
                                             <action selector="changeProfileImage:" destination="Osh-fj-9OV" eventType="touchUpInside" id="JwN-VW-7n6"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Section" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6S9-78-h4B">
+                                        <rect key="frame" x="31" y="163" width="63" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -855,6 +862,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="departmentName" destination="6S9-78-h4B" id="rye-cR-Xdy"/>
                         <outlet property="nbEventsLabel" destination="tQX-7f-1Ut" id="pW8-nt-6FV"/>
                         <outlet property="nbFilesLabel" destination="dtn-ao-bEM" id="i4M-XZ-yKH"/>
                         <outlet property="nbMessagesLabel" destination="Ciu-mu-lp4" id="Hnu-nn-pqu"/>
@@ -865,7 +873,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpH-MN-Ts5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="-3488"/>
+            <point key="canvasLocation" x="1088.671875" y="-3488.28125"/>
+        </scene>
+        <!--Flow Picker View Controller-->
+        <scene sceneID="7XP-Fq-uPj">
+            <objects>
+                <viewController storyboardIdentifier="flowPicker" id="abz-5B-7Bl" customClass="FlowPickerViewController" customModule="FlowBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FAv-cY-EYR"/>
+                        <viewControllerLayoutGuide type="bottom" id="lFV-O8-UPH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zvI-2O-FDa">
+                        <rect key="frame" x="0.0" y="0.0" width="189" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="av6-I3-jz8">
+                                <rect key="frame" x="0.0" y="0.0" width="189" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flowPickerCell" id="LbA-gR-NkB" customClass="FlowPickerTableViewCell" customModule="FlowBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="189" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LbA-gR-NkB" id="kh6-Ie-8is">
+                                            <rect key="frame" x="0.0" y="0.0" width="189" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flowname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIA-Fs-PWz">
+                                                    <rect key="frame" x="8" y="11" width="78" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="flowNameLabel" destination="lIA-Fs-PWz" id="AAY-ch-ZkE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="abz-5B-7Bl" id="4BR-QY-pmp"/>
+                                    <outlet property="delegate" destination="abz-5B-7Bl" id="T2t-8y-TFt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="av6-I3-jz8" secondAttribute="trailing" id="IRJ-B1-4Ih"/>
+                            <constraint firstItem="av6-I3-jz8" firstAttribute="leading" secondItem="zvI-2O-FDa" secondAttribute="leading" id="ISa-r6-4Pn"/>
+                            <constraint firstItem="lFV-O8-UPH" firstAttribute="top" secondItem="av6-I3-jz8" secondAttribute="bottom" id="YPy-a2-3uM"/>
+                            <constraint firstItem="av6-I3-jz8" firstAttribute="top" secondItem="zvI-2O-FDa" secondAttribute="top" id="gSN-IV-FSD"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="189" height="300"/>
+                    <connections>
+                        <outlet property="flowPickerTableView" destination="av6-I3-jz8" id="tEa-6m-26i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d49-Ch-Ods" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="-942"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="v7e-ej-t3F">
@@ -1005,7 +1074,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1089" y="-1987"/>
+            <point key="canvasLocation" x="1326" y="-2748"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="TlW-a1-v9B">
@@ -1144,7 +1213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Psg-Nb-GGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123" y="-3487"/>
+            <point key="canvasLocation" x="-402" y="-3841"/>
         </scene>
     </scenes>
     <resources>
@@ -1154,7 +1223,7 @@
         <image name="profileImage" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jDS-Ve-bYI"/>
+        <segue reference="b8A-Tc-U0b"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -75,6 +75,21 @@ extension Flow {
             throw error
         }
     }
+    
+    static func get(forDepartment department: Department) throws -> Flow? {
+        let request: NSFetchRequest<Flow> = Flow.fetchRequest()
+        request.predicate = NSPredicate(format: "department == %@ && promotion == nil", department)
+        do {
+            let flows: [Flow] = try CoreDataManager.context.fetch(request)
+            if (flows.count > 0) {
+                return flows[0]
+            } else {
+                return nil
+            }
+        } catch let error as NSError {
+            throw error
+        }
+    }
 
     
     func clearAllMessages() {

@@ -89,7 +89,7 @@ class AuthenticationService {
         if User.exists(email: email) {
             do {
                 let user: User = try User.get(withEmail: email)
-                return user.isRightPassword(password: password)
+                return user.isRightPassword(password: password) && user.active
             } catch {
                 return false
             }
