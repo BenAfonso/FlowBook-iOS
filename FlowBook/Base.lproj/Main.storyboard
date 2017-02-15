@@ -993,7 +993,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQa-Lz-yEE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQa-Lz-yEE">
                                 <rect key="frame" x="20" y="128" width="984" height="632"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1004,11 +1004,11 @@
                                         <rect key="frame" x="0.0" y="28" width="984" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U8Z-Zw-pVb" id="S8K-eI-PNM">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fu4-0R-sRO">
-                                                    <rect key="frame" x="0.0" y="12" width="984" height="20.5"/>
+                                                    <rect key="frame" x="20" y="12" width="984" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFONSO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-8J-sEa">
                                                             <rect key="frame" x="0.0" y="0.0" width="208.5" height="20.5"/>
@@ -1036,14 +1036,24 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-ra-gYr">
+                                                    <rect key="frame" x="956" y="12.5" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="3Mn-qV-qfM"/>
+                                                        <constraint firstAttribute="height" constant="20" id="U7C-s8-jev"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fu4-0R-sRO" firstAttribute="centerY" secondItem="S8K-eI-PNM" secondAttribute="centerY" id="21H-Bb-HCk"/>
-                                                <constraint firstItem="fu4-0R-sRO" firstAttribute="leading" secondItem="S8K-eI-PNM" secondAttribute="leading" id="43M-pV-MRC"/>
+                                                <constraint firstAttribute="trailing" secondItem="ic1-ra-gYr" secondAttribute="trailing" constant="8" id="2BI-qo-Jbv"/>
+                                                <constraint firstItem="fu4-0R-sRO" firstAttribute="leading" secondItem="S8K-eI-PNM" secondAttribute="leading" constant="20" id="43M-pV-MRC"/>
+                                                <constraint firstItem="ic1-ra-gYr" firstAttribute="centerY" secondItem="S8K-eI-PNM" secondAttribute="centerY" id="KIY-Lu-Jm5"/>
                                                 <constraint firstItem="fu4-0R-sRO" firstAttribute="width" secondItem="S8K-eI-PNM" secondAttribute="width" id="bUB-Ge-XBF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activeStatus" destination="ic1-ra-gYr" id="v3M-I2-wvm"/>
                                             <outlet property="emailLabel" destination="mHi-dl-Qr7" id="ero-5a-v5b"/>
                                             <outlet property="firstNameLabel" destination="Ks5-9z-Vhh" id="HdR-Ub-r3d"/>
                                             <outlet property="lastNameLabel" destination="Z4h-8J-sEa" id="Qew-4n-pft"/>
