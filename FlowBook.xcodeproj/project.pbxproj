@@ -14,6 +14,7 @@
 		604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */; };
 		606A6D721E552A8500A0B3B0 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */; };
 		606A6D741E55EC4700A0B3B0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */; };
+		606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */; };
 		607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */; };
 		607BED081E50B47C004EB98A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BED071E50B47C004EB98A /* CoreDataManager.swift */; };
 		6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66B1E49CFAD007D270F /* AppDelegate.swift */; };
@@ -32,7 +33,6 @@
 		60A5E5221E54508200684035 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5211E54508200684035 /* AlertController.swift */; };
 		60A5E5241E54535200684035 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5231E54535200684035 /* UserListViewController.swift */; };
 		60A5E5261E54A1C700684035 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5251E54A1C700684035 /* RootViewController.swift */; };
-		60A5E5281E54AE1000684035 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5271E54AE1000684035 /* MasterViewController.swift */; };
 		60A5E52A1E54ED1000684035 /* DepartmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5291E54ED1000684035 /* DepartmentExtension.swift */; };
 		60A5E52C1E54ED1800684035 /* PromotionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E52B1E54ED1800684035 /* PromotionExtension.swift */; };
 		60A5E52F1E54FEC700684035 /* FlowPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E52E1E54FEC700684035 /* FlowPickerViewController.swift */; };
@@ -86,6 +86,7 @@
 		604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateService.swift; sourceTree = "<group>"; };
 		607BED041E509D8A004EB98A /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		607BED071E50B47C004EB98A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		60A5E5211E54508200684035 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		60A5E5231E54535200684035 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		60A5E5251E54A1C700684035 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		60A5E5271E54AE1000684035 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		60A5E5291E54ED1000684035 /* DepartmentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentExtension.swift; sourceTree = "<group>"; };
 		60A5E52B1E54ED1800684035 /* PromotionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionExtension.swift; sourceTree = "<group>"; };
 		60A5E52E1E54FEC700684035 /* FlowPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowPickerViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +183,62 @@
 				606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */,
 			);
 			name = NewUser;
+			sourceTree = "<group>";
+		};
+		606A6D751E55F0E600A0B3B0 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				6086D66D1E49CFAD007D270F /* LoginViewController.swift */,
+			);
+			name = LoginView;
+			sourceTree = "<group>";
+		};
+		606A6D761E55F0EF00A0B3B0 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */,
+			);
+			name = MenuView;
+			sourceTree = "<group>";
+		};
+		606A6D771E55F0F600A0B3B0 /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				60A5E5251E54A1C700684035 /* RootViewController.swift */,
+			);
+			name = RootView;
+			sourceTree = "<group>";
+		};
+		606A6D781E55F10300A0B3B0 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				602C94601E4DD0CF00A02196 /* ProfileViewController.swift */,
+			);
+			name = ProfileView;
+			sourceTree = "<group>";
+		};
+		606A6D791E55F10B00A0B3B0 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */,
+			);
+			name = RegisterView;
+			sourceTree = "<group>";
+		};
+		606A6D7A1E55F11100A0B3B0 /* ResetPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */,
+			);
+			name = ResetPasswordView;
+			sourceTree = "<group>";
+		};
+		606A6D7B1E55F16700A0B3B0 /* MasterView */ = {
+			isa = PBXGroup;
+			children = (
+				606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */,
+			);
+			name = MasterView;
 			sourceTree = "<group>";
 		};
 		6086D65F1E49CFAD007D270F = {
@@ -291,17 +347,17 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				606A6D7B1E55F16700A0B3B0 /* MasterView */,
+				606A6D771E55F0F600A0B3B0 /* RootView */,
+				606A6D761E55F0EF00A0B3B0 /* MenuView */,
+				606A6D751E55F0E600A0B3B0 /* LoginView */,
 				606A6D701E552A6900A0B3B0 /* NewUser */,
 				606A6D6E1E550D0D00A0B3B0 /* Flows */,
 				60A5E51E1E54427C00684035 /* UsersTableView */,
 				60A5E5191E543F8300684035 /* MessagesTableView */,
-				6086D66D1E49CFAD007D270F /* LoginViewController.swift */,
-				6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */,
-				602C94601E4DD0CF00A02196 /* ProfileViewController.swift */,
-				604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */,
-				604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */,
-				60A5E5251E54A1C700684035 /* RootViewController.swift */,
-				60A5E5271E54AE1000684035 /* MasterViewController.swift */,
+				606A6D781E55F10300A0B3B0 /* ProfileView */,
+				606A6D791E55F10B00A0B3B0 /* RegisterView */,
+				606A6D7A1E55F11100A0B3B0 /* ResetPasswordView */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -432,7 +488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				606A6D721E552A8500A0B3B0 /* NewUserViewController.swift in Sources */,
-				60A5E5281E54AE1000684035 /* MasterViewController.swift in Sources */,
 				60A5E52F1E54FEC700684035 /* FlowPickerViewController.swift in Sources */,
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,
 				60A5E51D1E54422500684035 /* UserTableViewCell.swift in Sources */,
@@ -470,6 +525,7 @@
 				6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */,
 				60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */,
 				92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */,
+				606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
