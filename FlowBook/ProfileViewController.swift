@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var nbFilesLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var departmentName: UILabel!
+    @IBOutlet weak var roleRibbon: UIImageView!
     
     @IBOutlet weak var profileImage: RoundedImageView!
 
@@ -37,6 +38,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             profileImage.image = currentUser.getImage()
             usernameLabel.text = currentUser.getUsername()
             departmentName.text = currentUser.department?.name
+            
+            if currentUser.isStudent() {
+                roleRibbon.image = UIImage(named: "Etudiant")
+            } else if currentUser.isTeacher() {
+                roleRibbon.image = UIImage(named: "Enseignant")
+            }
         }
         
     }

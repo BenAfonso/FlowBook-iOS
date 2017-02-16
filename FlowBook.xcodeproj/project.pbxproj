@@ -12,6 +12,7 @@
 		6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */; };
 		604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */; };
 		604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */; };
+		606A6D721E552A8500A0B3B0 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */; };
 		607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */; };
 		607BED081E50B47C004EB98A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BED071E50B47C004EB98A /* CoreDataManager.swift */; };
 		6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D66B1E49CFAD007D270F /* AppDelegate.swift */; };
@@ -82,6 +83,7 @@
 		6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateService.swift; sourceTree = "<group>"; };
 		607BED041E509D8A004EB98A /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		607BED071E50B47C004EB98A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 				60A5E51A1E5441B200684035 /* Messages */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		606A6D701E552A6900A0B3B0 /* NewUser */ = {
+			isa = PBXGroup;
+			children = (
+				606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */,
+			);
+			name = NewUser;
 			sourceTree = "<group>";
 		};
 		6086D65F1E49CFAD007D270F = {
@@ -278,6 +288,7 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				606A6D701E552A6900A0B3B0 /* NewUser */,
 				606A6D6E1E550D0D00A0B3B0 /* Flows */,
 				60A5E51E1E54427C00684035 /* UsersTableView */,
 				60A5E5191E543F8300684035 /* MessagesTableView */,
@@ -417,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				606A6D721E552A8500A0B3B0 /* NewUserViewController.swift in Sources */,
 				60A5E5281E54AE1000684035 /* MasterViewController.swift in Sources */,
 				60A5E52F1E54FEC700684035 /* FlowPickerViewController.swift in Sources */,
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,

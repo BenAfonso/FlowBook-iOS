@@ -20,7 +20,7 @@ extension Flow {
         ) -> Flow? {
         
         if (studentFlow && teacherFlow) {
-            let flow = StudentFlow(context: CoreDataManager.context)
+            let flow = Flow(context: CoreDataManager.context)
             flow.name = name
             flow.department = department
             CoreDataManager.save()

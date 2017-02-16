@@ -35,6 +35,26 @@ extension User {
             return user
     }
     
+    static func createTeacher(withFirstName firstName: String,
+                              withLastName lastName: String,
+                              withEmail email: String,
+                              withPassword password: String,
+                              withDepartment department: Department) throws -> Teacher {
+        
+        let teacher = Teacher(context: CoreDataManager.context)
+        teacher.lastName = lastName
+        teacher.firstName = firstName
+        teacher.email = email
+        teacher.active = true
+        teacher.department = department
+        // Encrypt password
+        teacher.password = password.sha256()
+        if let error = CoreDataManager.save() {
+            throw error
+        }
+        return teacher
+    }
+    
     static func get(withEmail email: String) throws -> User {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             throw NSError()
@@ -84,14 +104,22 @@ extension User {
     
     
     static func getAll() throws -> [User] {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            throw NSError()
-        }
-        let context = appDelegate.persistentContainer.viewContext
+        
         let request: NSFetchRequest<User> = User.fetchRequest()
         do {
-            let users: [User] = try context.fetch(request)
+            let users: [User] = try CoreDataManager.context.fetch(request)
             return users
+        } catch let error as NSError {
+            throw error
+        }
+    }
+    
+    static func getAllStudents() throws -> [Student] {
+        
+        let request: NSFetchRequest<Student> = Student.fetchRequest()
+        do {
+            let students: [Student] = try CoreDataManager.context.fetch(request)
+            return students
         } catch let error as NSError {
             throw error
         }
@@ -153,6 +181,20 @@ extension User {
     func activate() {
         self.active = true
         CoreDataManager.save()
+    }
+    
+    func isStudent() -> Bool {
+        if let _ = self as? Student {
+            return true
+        }
+        return false
+    }
+    
+    func isTeacher() -> Bool {
+        if let _ = self as? Teacher {
+            return true
+        }
+        return false
     }
     
 }

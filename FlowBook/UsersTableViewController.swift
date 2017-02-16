@@ -13,13 +13,19 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     
     
     var users: [User] = []
-
+    var teachers: [Teacher] = []
+    var students: [Student] = []
+    var displayedEntity: [User] = []
+    
     @IBOutlet weak var usersTableView: UITableView!
     
     override init() {
         super.init()
         
         self.loadUsers()
+        self.loadTeachers()
+        self.loadStudents()
+        self.displayedEntity = users
     }
     
     func loadUsers() {
@@ -31,19 +37,54 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    func loadTeachers() {
+        for user in self.users {
+            if let currUser = user as? Teacher {
+                self.teachers.append(currUser)
+            }
+        }
+    }
+    
+    func loadStudents() {
+        for user in self.users {
+            if let currUser = user as? Student {
+                self.students.append(currUser)
+            }
+        }
+    }
+    
     // MARK: TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return displayedEntity.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = self.usersTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
         
-        user.setUser(user: users[indexPath.row])
+        user.setUser(user: displayedEntity[indexPath.row])
         
         return user
     }
+    
+    @IBAction func displayStudents(_ sender: Any) {
+        self.displayStudents()
+    }
+    
+    @IBAction func displayTeachers(_ sender: Any) {
+        self.displayTeachers()
+    }
+    
+    func displayTeachers() {
+        self.displayedEntity = self.teachers
+        self.usersTableView.reloadData()
+    }
+    
+    func displayStudents() {
+        self.displayedEntity = self.students
+        self.usersTableView.reloadData()
+    }
+    
     
     
     

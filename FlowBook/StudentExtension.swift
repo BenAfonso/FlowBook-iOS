@@ -6,6 +6,8 @@
 //  Copyright © 2017 Benjamin Afonso. All rights reserved.
 //
 
+import CoreData
+
 extension Student {
 
     
@@ -31,5 +33,7 @@ extension Student {
         CoreDataManager.save()
         return student
     }
+    
+
 
 }
