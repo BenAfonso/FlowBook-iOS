@@ -64,6 +64,17 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         return self.messages[indexPath.row].author == CurrentUser.get()
     }
     
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle==UITableViewCellEditingStyle.delete) {
+            self.messagesTableView.beginUpdates()
+            self.messages[indexPath.row].delete()
+            self.messagesTableView.endUpdates()
+            self.messages.remove(at: indexPath.row)
+            self.messagesTableView.reloadData()
+        }
+    }
+    
 
     
     
