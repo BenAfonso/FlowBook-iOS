@@ -22,7 +22,7 @@ extension Promotion {
         return promotion
     }
     
-    /*
+    
     static func get(withName name: String) -> Promotion? {
         let request: NSFetchRequest<Promotion> = Promotion.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", name)
@@ -36,7 +36,7 @@ extension Promotion {
         } catch {
             return nil
         }
-    }*/
+    }
     
     func createFlow() {
         let flowName = "\(self.department?.name): Promotion \(self.name)"
@@ -46,6 +46,14 @@ extension Promotion {
     func addStudent(student: Student) {
         self.addToStudents(student)
         CoreDataManager.save()
+    }
+    
+    func getStudents() -> [Student] {
+        var res: [Student] = []
+        for student in self.students! {
+            res.append(student as! Student)
+        }
+        return res
     }
     
 

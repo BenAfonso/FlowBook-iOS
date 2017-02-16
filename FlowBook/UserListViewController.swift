@@ -11,6 +11,7 @@ import UIKit
 class UserListViewController: UIViewController {
 
     
+    @IBOutlet var tableViewController: UsersTableViewController!
 
     
     override func viewDidLoad() {

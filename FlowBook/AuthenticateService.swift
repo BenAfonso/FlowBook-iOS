@@ -99,5 +99,22 @@ class AuthenticationService {
     }
     
     
+    // Data validation
+    
+    static func checkEmailValid(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
+        let emailTest  = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: email)
+    }
+    
+    static func checkPasswordValid(password: String) -> Bool {
+        return password.characters.count >= 6
+    }
+    
+    static func checkPasswords(password1: String, password2: String) -> Bool {
+        return password1 == password2
+    }
+    
+    
     
 }

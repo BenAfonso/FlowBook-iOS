@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, messageTableDelegate {
+class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     
     var messages: [Message] = []
@@ -46,7 +46,6 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
-        message.delegate = self
         
         message.setAuthor(author: (self.messages[indexPath.row].author))
         message.setTimeStamp(time: self.messages[indexPath.row].timestamp)
@@ -57,6 +56,12 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
 
         return message
         
+    }
+    
+    
+    // A message (row) can be edited only if the currentUser is the author
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return self.messages[indexPath.row].author == CurrentUser.get()
     }
     
 
@@ -96,37 +101,7 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     
     
     
-    // TO REMOVE !!!!! JUST FOR TESTING PURPOSES
-    func swippedCell(cell: MessageTableViewCell) {
-        let cellIndex = self.messagesTableView.indexPath(for: cell)
-        
-        guard let section = cellIndex?.section else {
-            return
-        }
-        print("Swipped \(section)")
-        
-        let swippedMessage = self.messages[section]
-        if let author = swippedMessage.author {
-            if author.email == AuthenticationService.getEmail() {
-                let alert = UIAlertController(title: "Confirmation", message: "Êtes vous sûr de vouloir supprimer ce message ?", preferredStyle: .alert)
-                let confirmAction = UIAlertAction(title: "Oui",
-                                                  style: .default)
-                {
-                    action in
-                    swippedMessage.delete()
-                    CoreDataManager.save()
-                    self.messages.remove(at: section)
-                    self.messagesTableView.reloadData()
-                }
-                
-                let cancelAction = UIAlertAction(title: "Non", style: .default)
-                alert.addAction(confirmAction)
-                alert.addAction(cancelAction)
-                //present(alert, animated: true)
-                
-            }
-        }
-    }
+
 
     
 

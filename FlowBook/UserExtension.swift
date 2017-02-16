@@ -113,6 +113,7 @@ extension User {
             throw error
         }
     }
+
     
     static func getAllStudents() throws -> [Student] {
         

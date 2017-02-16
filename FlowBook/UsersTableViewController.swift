@@ -16,6 +16,7 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     var teachers: [Teacher] = []
     var students: [Student] = []
     var displayedEntity: [User] = []
+    var inactiveUsers: [User] = []
     
     @IBOutlet weak var usersTableView: UITableView!
     
@@ -23,8 +24,7 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         super.init()
         
         self.loadUsers()
-        self.loadTeachers()
-        self.loadStudents()
+        self.filterUsers()
         self.displayedEntity = users
     }
     
@@ -37,21 +37,23 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    func loadTeachers() {
+    func filterUsers() {
         for user in self.users {
             if let currUser = user as? Teacher {
                 self.teachers.append(currUser)
             }
-        }
-    }
-    
-    func loadStudents() {
-        for user in self.users {
+            
             if let currUser = user as? Student {
                 self.students.append(currUser)
             }
+            
+            if !user.active {
+                self.inactiveUsers.append(user)
+            }
         }
     }
+    
+  
     
     // MARK: TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +69,29 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         return user
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle==UITableViewCellEditingStyle.delete) {
+            self.usersTableView.beginUpdates()
+            
+            self.displayedEntity[indexPath.row].delete()
+            
+            self.usersTableView.endUpdates()
+            self.displayedEntity.remove(at: indexPath.row)
+            self.usersTableView.reloadData()
+        }
+    }
+    
+    func delete(userAtIndex index: Int) -> Bool {
+        CoreDataManager.context.delete(displayedEntity[index])
+        CoreDataManager.save()
+        return true
+    }
+    
     @IBAction func displayStudents(_ sender: Any) {
         self.displayStudents()
     }
@@ -74,9 +99,17 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     @IBAction func displayTeachers(_ sender: Any) {
         self.displayTeachers()
     }
+    @IBAction func displayInactives(_ sender: Any) {
+        self.displayInactives()
+    }
     
     func displayTeachers() {
         self.displayedEntity = self.teachers
+        self.usersTableView.reloadData()
+    }
+    
+    func displayInactives() {
+        self.displayedEntity = self.inactiveUsers
         self.usersTableView.reloadData()
     }
     

@@ -75,17 +75,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
                 return
         }
         
-        guard password.characters.count >= 6 else {
+        guard AuthenticationService.checkPasswordValid(password: password) else {
             self.showError(withMessage: "Le mot de passe doit contenir au moins 6 caractère.")
             return
         }
         
-        guard checkEmailValid(email: email) else {
+        guard AuthenticationService.checkEmailValid(email: email) else {
             self.showError(withMessage: "Veuillez renseigner une adresse email valide.")
             return
         }
         
-        guard password == repeatPassword else {
+        guard AuthenticationService.checkPasswords(password1: password,password2: repeatPassword) else {
             
             self.showError(withMessage: "Les deux mots de passes ne sont pas identiques.")
             // UIAlert HERE
@@ -133,7 +133,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     
     func checkPasswordFieldOnChange(_ textField: UITextField) {
         if textField == self.passwordTextField {
-            if !self.checkPasswordValid(password: self.passwordTextField.text!) {
+            if !AuthenticationService.checkPasswordValid(password: self.passwordTextField.text!) {
                 self.passwordTextField.showErrorBorder()
                 self.passwordErrorLabel.isHidden = false
                 self.passwordErrorLabel.text = "Le mot de passe doit contenir au moins 6 caractères."
@@ -145,7 +145,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
     
     func checkRepeatPasswordFieldOnChange(_ textField: UITextField) {
-            if !self.checkPasswords(password1: self.passwordTextField.text!, password2: self.repeatPasswordTextField.text!) {
+            if !AuthenticationService.checkPasswords(password1: self.passwordTextField.text!, password2: self.repeatPasswordTextField.text!) {
                 self.repeatPasswordTextField.showErrorBorder()
                 self.repeatPasswordErrorLabel.isHidden = false
                 self.repeatPasswordErrorLabel.text = "Les mots de passe ne sont pas identiques."
@@ -158,7 +158,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     
     func checkEmailFieldOnChange(_ textField: UITextField) {
         if textField == self.emailTextField {
-            if !self.checkEmailValid(email: self.emailTextField.text!) {
+            if !AuthenticationService.checkEmailValid(email: self.emailTextField.text!) {
                 self.emailTextField.showErrorBorder()
                 self.emailErrorLabel.isHidden = false
                 self.emailErrorLabel.text = "L'adresse email n'est pas valide."
@@ -170,21 +170,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
     
 
-    // MARK: Check vlaues validity
-    
-    func checkEmailValid(email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}"
-        let emailTest  = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: email)
-    }
-    
-    func checkPasswordValid(password: String) -> Bool {
-        return password.characters.count >= 6
-    }
-    
-    func checkPasswords(password1: String, password2: String) -> Bool {
-        return password1 == password2
-    }
     
     
     

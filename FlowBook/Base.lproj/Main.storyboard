@@ -905,7 +905,7 @@
                                         <rect key="frame" x="0.0" y="28" width="189" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LbA-gR-NkB" id="kh6-Ie-8is">
-                                            <rect key="frame" x="0.0" y="0.0" width="189" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="189" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flowname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIA-Fs-PWz">
@@ -1085,15 +1085,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJM-c6-v4z">
-                                <rect key="frame" x="193" y="59" width="63" height="30"/>
+                                <rect key="frame" x="166" y="59" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Teachers"/>
                                 <connections>
                                     <action selector="displayTeachers:" destination="23v-46-uAD" eventType="touchUpInside" id="We0-bN-xMu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIr-br-x2Z">
+                                <rect key="frame" x="285" y="59" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Inactives"/>
+                                <connections>
+                                    <action selector="displayInactives:" destination="23v-46-uAD" eventType="touchUpInside" id="Z0Y-Mg-il2"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-rJ-lYs">
-                                <rect key="frame" x="415" y="59" width="38" height="30"/>
+                                <rect key="frame" x="399" y="59" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Créer"/>
                                 <connections>
@@ -1112,6 +1120,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="TableViewController" destination="23v-46-uAD" id="l1S-02-mh9"/>
+                        <outlet property="tableViewController" destination="23v-46-uAD" id="vtm-Yl-LXu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtP-fH-2QR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="23v-46-uAD" customClass="UsersTableViewController" customModule="FlowBook" customModuleProvider="target">
@@ -1120,7 +1132,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1326" y="-2748"/>
+            <point key="canvasLocation" x="1325.9765625" y="-2748.4375"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="TlW-a1-v9B">
@@ -1270,11 +1282,11 @@
                         <viewControllerLayoutGuide type="bottom" id="IWC-R6-kDI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bJl-ew-5vk">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="404"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Mz4-nX-rrQ">
-                                <rect key="frame" x="392" y="182" width="240" height="404"/>
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="404"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wl3-lM-X3f" customClass="CustomInputMail" customModule="FlowBook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="22"/>
@@ -1368,7 +1380,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="1024" height="768"/>
+                    <size key="freeformSize" width="240" height="404"/>
                     <connections>
                         <outlet property="emailTextField" destination="wl3-lM-X3f" id="Oit-AF-p1c"/>
                         <outlet property="firstNameTextField" destination="Kid-qG-PJW" id="3AO-lq-0PL"/>
@@ -1381,7 +1393,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6d-uz-304" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="DEh-Nz-reD" customClass="UsersTableViewController" customModule="FlowBook" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="-1841"/>
+            <point key="canvasLocation" x="1326" y="-1787"/>
         </scene>
     </scenes>
     <resources>
