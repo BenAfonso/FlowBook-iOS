@@ -8,48 +8,29 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    var users: [User] = []
-    var teachers: [Teacher] = []
-    var students: [Student] = []
-    var displayedEntity: [User] = []
-    var inactiveUsers: [User] = []
+class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var usersTableView: UITableView!
+    
+    
+    fileprivate lazy var usersFetched : NSFetchedResultsController<User> = {
+        let request : NSFetchRequest<User> = User.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(User.lastName), ascending: true)]
+        let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController.delegate = self
+        return fetchResultController
+    }()
+    
     
     override init() {
         super.init()
         
-        self.loadUsers()
-        self.filterUsers()
-        self.displayedEntity = users
-    }
-    
-    func loadUsers() {
         do {
-            self.users = try User.getAll()
+            try self.usersFetched.performFetch()
         } catch {
-            //AlertController.errorAlert(message: "Erreur lors de la récupération des utilisateurs", onView: self)
             
-        }
-    }
-    
-    func filterUsers() {
-        for user in self.users {
-            if let currUser = user as? Teacher {
-                self.teachers.append(currUser)
-            }
-            
-            if let currUser = user as? Student {
-                self.students.append(currUser)
-            }
-            
-            if !user.active {
-                self.inactiveUsers.append(user)
-            }
         }
     }
     
@@ -57,16 +38,22 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     
     // MARK: TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedEntity.count
+        guard let section = self.usersFetched.sections?[section] else {
+            fatalError("Unexpected section number")
+        }
+        
+        return section.numberOfObjects
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let user = self.usersTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
+        let userCell = self.usersTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
         
-        user.setUser(user: displayedEntity[indexPath.row])
+        let user = self.usersFetched.object(at: indexPath)
         
-        return user
+        userCell.setUser(user: user)
+        
+        return userCell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -82,77 +69,54 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
         activate.backgroundColor = UIColor(red: 0.0/255.0, green: 145.0/255.0, blue: 132.0/255.0, alpha: 1)
         deactivate.backgroundColor = UIColor.orange
-        if self.displayedEntity[indexPath.row].active {
+        if self.usersFetched.object(at: indexPath).active {
             return [delete, deactivate]
         }
         return [delete, activate]
     }
     
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.usersTableView?.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.usersTableView?.endUpdates()
+        CoreDataManager.save()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any, at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .delete:
+            if let indexPath = indexPath {
+                self.usersTableView?.deleteRows(at: [indexPath], with: .automatic)
+            }
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                self.usersTableView?.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    // MARK: Handlers
+    
     func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
-        self.usersTableView.beginUpdates()
-        
-        self.displayedEntity[indexPath.row].delete()
-        
-        self.usersTableView.endUpdates()
-        self.displayedEntity.remove(at: indexPath.row)
-        self.usersTableView.reloadData()
+        self.usersFetched.object(at: indexPath).delete()        
     }
     
     func activateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
-        self.displayedEntity[indexPath.row].activate()
-        self.usersTableView.reloadData()
+        self.usersFetched.object(at: indexPath).activate()
     }
     
     func deactivateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
-        self.displayedEntity[indexPath.row].active = false
-        CoreDataManager.save()
-        self.usersTableView.reloadData()
+        self.usersFetched.object(at: indexPath).active = false
     }
     
-    /*
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle==UITableViewCellEditingStyle.delete) {
-            self.usersTableView.beginUpdates()
-            
-            self.displayedEntity[indexPath.row].delete()
-            
-            self.usersTableView.endUpdates()
-            self.displayedEntity.remove(at: indexPath.row)
-            self.usersTableView.reloadData()
-        }
-    }*/
-    
-    func delete(userAtIndex index: Int) -> Bool {
-        CoreDataManager.context.delete(displayedEntity[index])
-        CoreDataManager.save()
-        return true
-    }
-    
-    @IBAction func displayStudents(_ sender: Any) {
-        self.displayStudents()
-    }
-    
-    @IBAction func displayTeachers(_ sender: Any) {
-        self.displayTeachers()
-    }
-    @IBAction func displayInactives(_ sender: Any) {
-        self.displayInactives()
-    }
-    
-    func displayTeachers() {
-        self.displayedEntity = self.teachers
-        self.usersTableView.reloadData()
-    }
-    
-    func displayInactives() {
-        self.displayedEntity = self.inactiveUsers
-        self.usersTableView.reloadData()
-    }
-    
-    func displayStudents() {
-        self.displayedEntity = self.students
-        self.usersTableView.reloadData()
-    }
     
     
     

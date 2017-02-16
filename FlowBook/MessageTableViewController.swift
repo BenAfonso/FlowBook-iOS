@@ -8,13 +8,22 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource {
+class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     
     var messages: [Message] = []
     var flow: Flow? = nil
 
+    fileprivate lazy var messagesFetched : NSFetchedResultsController<Message> = {
+        let request : NSFetchRequest<Message> = Message.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Message.timestamp), ascending: true)]
+        let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController.delegate = self
+        return fetchResultController
+    }()
+    
     @IBOutlet weak var messagesTableView: UITableView!
     
     override init() {
@@ -27,7 +36,11 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
             if let flow = try Flow.get(forDepartment: (CurrentUser.get()?.department)!) {
                 print("Fetching \(flow.name) flow")
                 self.flow = flow
-                self.messages = try flow.getMessages()
+                //self.messages = try flow.getMessages()
+                
+                do {
+                    try self.messagesFetched.performFetch()
+                }
             } else {
                 fatalError("No department on your account ...")
             }
@@ -40,41 +53,49 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     
     // MARK: TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.messages.count
+        guard let section = self.messagesFetched.sections?[section] else {
+            fatalError("Unexpected section number")
+        }
+        
+        return section.numberOfObjects
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
+        let messageCell = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
         
-        message.setAuthor(author: (self.messages[indexPath.row].author))
-        message.setTimeStamp(time: self.messages[indexPath.row].timestamp)
-        message.messageText.text = self.messages[indexPath.row].content
         
-        message.layer.cornerRadius=10 //set corner radius here
+        let message = self.messagesFetched.object(at: indexPath)
+    
+        // Presenter
+        messageCell.setAuthor(author: (message.author))
+        messageCell.setTimeStamp(time: message.timestamp)
+        messageCell.messageText.text = message.content
+        
+        if message.edited {
+            messageCell.setEdited(time: message.lastedittimestamp)
+        }
+        
+        messageCell.layer.cornerRadius=10 //set corner radius here
 
 
-        return message
+        return messageCell
         
     }
     
     
     // A message (row) can be edited only if the currentUser is the author
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return self.messages[indexPath.row].author == CurrentUser.get()
+        
+        return self.messagesFetched.object(at: indexPath).author == CurrentUser.get()
     }
     
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle==UITableViewCellEditingStyle.delete) {
-            self.messagesTableView.beginUpdates()
-            self.messages[indexPath.row].delete()
-            self.messagesTableView.endUpdates()
-            self.messages.remove(at: indexPath.row)
-            self.messagesTableView.reloadData()
-        }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .default, title: "Delete", handler: self.deleteHandlerAction)
+        delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
+        return [delete]
     }
-    
 
     
     
@@ -88,6 +109,41 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         return v
     }
     
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.messagesTableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.messagesTableView.endUpdates()
+        CoreDataManager.save()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any, at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .delete:
+            if let indexPath = indexPath {
+                self.messagesTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                self.messagesTableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        
+        default:
+            break
+        }
+    }
+    
+    
+    // MARK: Handlers
+    func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        let message = self.messagesFetched.object(at: indexPath)
+        CoreDataManager.context.delete(message)
+    }
+    
     func addMessage(message: String) throws {
         
         // Check if there is a flow
@@ -98,10 +154,8 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         
         do {
             
-            let messageObject = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: flow, withContent: message, withFiles: nil)
-            messages.append(messageObject)
-            self.messagesTableView.reloadData()
-
+            let _ = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: flow, withContent: message, withFiles: nil)
+            CoreDataManager.save()
         } catch let error as NSError {
             throw error
             //errorAlert(message: "Erreur lors de la création du message")

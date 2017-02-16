@@ -32,6 +32,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         self.repeatPasswordTextField.addTarget(self, action: #selector(checkRepeatPasswordFieldOnChange(_:)), for: .editingChanged)
         self.emailTextField.addTarget(self, action: #selector(checkEmailFieldOnChange(_:)), for: .editingChanged)
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,19 +56,24 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
                 return
         }
         
-        guard CurrentUser.get()?.department != nil else {
+        guard AuthenticationService.checkEmailValid(email: emailTextField.text!),
+            AuthenticationService.checkPasswordValid(password: passwordTextField.text!),
+            AuthenticationService.checkPasswords(password1: passwordTextField.text!, password2: repeatPasswordTextField.text!) else {
+                return
+        }
+        
+
+        
+        guard CurrentUser.get()!.department != nil else {
             return
         }
         
         do {
-            let user = try User.createTeacher(withFirstName: firstNameTextField.text!, withLastName: lastNameTextField.text!, withEmail: emailTextField.text!, withPassword: passwordTextField.text!,withDepartment: (CurrentUser.get()?.department)!)
-            // REFRESH AFTER ???? HOW TO
+            let _ = try User.createTeacher(withFirstName: firstNameTextField.text!, withLastName: lastNameTextField.text!, withEmail: emailTextField.text!, withPassword: passwordTextField.text!,withDepartment: (CurrentUser.get()?.department)!)
+
             self.clearForm()
-            let userTableVC = (self.view.parentViewController as? UserListViewController)?.tableViewController
             
-            userTableVC?.displayedEntity.append(user)
-            userTableVC?.usersTableView.reloadData()
-            self.dismiss(animated: true)
+            self.dismiss(animated: true, completion: nil)
             
             
         } catch {
