@@ -48,14 +48,14 @@ extension Promotion {
         CoreDataManager.save()
     }
     
-    func getStudents() -> [Student] {
+    /*func getStudents() -> [Student] {
         var res: [Student] = []
         for student in self.students! {
             res.append(student as! Student)
         }
         return res
     }
-    
+    */
 
     
     

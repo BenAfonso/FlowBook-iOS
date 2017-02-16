@@ -753,14 +753,22 @@
                                             <constraint firstAttribute="width" constant="54" id="cOJ-iV-7ZA"/>
                                         </constraints>
                                     </imageView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promotion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkb-Td-S46">
+                                        <rect key="frame" x="922" y="160.5" width="81" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="wPi-kx-4VU" firstAttribute="top" secondItem="7F3-4u-SJp" secondAttribute="bottom" constant="-34" id="0Kw-y8-Vh6"/>
                                     <constraint firstItem="VIu-Hj-Pus" firstAttribute="top" secondItem="XoQ-3y-hA1" secondAttribute="top" constant="117" id="Jfn-gg-aMv"/>
+                                    <constraint firstAttribute="trailing" secondItem="qkb-Td-S46" secondAttribute="trailing" constant="21" id="LHU-7s-7uE"/>
                                     <constraint firstAttribute="height" constant="192" id="NA4-hC-81j"/>
                                     <constraint firstItem="Izw-8K-R8m" firstAttribute="centerX" secondItem="XoQ-3y-hA1" secondAttribute="centerX" id="afK-tH-4c6"/>
+                                    <constraint firstAttribute="bottom" secondItem="qkb-Td-S46" secondAttribute="bottom" constant="8" id="hCj-7A-VxX"/>
                                     <constraint firstItem="Izw-8K-R8m" firstAttribute="top" secondItem="wPi-kx-4VU" secondAttribute="bottom" constant="15" id="qIY-D5-Izp"/>
                                     <constraint firstItem="wPi-kx-4VU" firstAttribute="top" secondItem="XoQ-3y-hA1" secondAttribute="top" constant="31" id="z6v-h9-jCX"/>
                                     <constraint firstItem="7F3-4u-SJp" firstAttribute="leading" secondItem="wPi-kx-4VU" secondAttribute="trailing" constant="-31" id="zGW-us-eJj"/>
@@ -877,6 +885,7 @@
                         <outlet property="nbMessagesLabel" destination="Ciu-mu-lp4" id="Hnu-nn-pqu"/>
                         <outlet property="nbPostsLabel" destination="B3L-aI-S5C" id="V0o-Yh-TkF"/>
                         <outlet property="profileImage" destination="wPi-kx-4VU" id="dPj-Sk-GNU"/>
+                        <outlet property="promotionLabel" destination="qkb-Td-S46" id="s8z-8X-UUG"/>
                         <outlet property="roleRibbon" destination="VIu-Hj-Pus" id="Ve3-1t-7Wv"/>
                         <outlet property="usernameLabel" destination="Izw-8K-R8m" id="pUT-xx-vJk"/>
                     </connections>

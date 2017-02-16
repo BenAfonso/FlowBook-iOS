@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
 
     
+    @IBOutlet weak var promotionLabel: UILabel!
     @IBOutlet weak var nbMessagesLabel: UILabel!
     @IBOutlet weak var nbEventsLabel: UILabel!
     @IBOutlet weak var nbPostsLabel: UILabel!
@@ -40,7 +41,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             departmentName.text = currentUser.department?.name
             
             if currentUser.isStudent() {
+                
                 roleRibbon.image = UIImage(named: "Etudiant")
+                promotionLabel.isHidden = false
+                
+                
+                promotionLabel.text = (CurrentUser.get() as! Student).promotion?.name
+                
             } else if currentUser.isTeacher() {
                 roleRibbon.image = UIImage(named: "Enseignant")
             }

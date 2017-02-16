@@ -74,6 +74,42 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     }
     
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .default, title: "Delete", handler: self.deleteHandlerAction)
+        let activate = UITableViewRowAction(style: .default, title: "Activate", handler: self.activateHandlerAction)
+        let deactivate = UITableViewRowAction(style: .default, title: "Deactivate", handler: self.deactivateHandlerAction)
+        
+        delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
+        activate.backgroundColor = UIColor(red: 0.0/255.0, green: 145.0/255.0, blue: 132.0/255.0, alpha: 1)
+        deactivate.backgroundColor = UIColor.orange
+        if self.displayedEntity[indexPath.row].active {
+            return [delete, deactivate]
+        }
+        return [delete, activate]
+    }
+    
+    func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        self.usersTableView.beginUpdates()
+        
+        self.displayedEntity[indexPath.row].delete()
+        
+        self.usersTableView.endUpdates()
+        self.displayedEntity.remove(at: indexPath.row)
+        self.usersTableView.reloadData()
+    }
+    
+    func activateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        self.displayedEntity[indexPath.row].activate()
+        self.usersTableView.reloadData()
+    }
+    
+    func deactivateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        self.displayedEntity[indexPath.row].active = false
+        CoreDataManager.save()
+        self.usersTableView.reloadData()
+    }
+    
+    /*
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle==UITableViewCellEditingStyle.delete) {
             self.usersTableView.beginUpdates()
@@ -84,7 +120,7 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
             self.displayedEntity.remove(at: indexPath.row)
             self.usersTableView.reloadData()
         }
-    }
+    }*/
     
     func delete(userAtIndex index: Int) -> Bool {
         CoreDataManager.context.delete(displayedEntity[index])
