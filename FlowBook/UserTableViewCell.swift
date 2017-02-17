@@ -17,11 +17,21 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var activeStatus: UIImageView!
     
+    var user: User?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
 
+    @IBAction func goToProfile(_ sender: Any) {
+        
+        // to Change
+        if let rootController = self.parentViewController?.parent as? RootViewController {
+            rootController.visitProfile(ofUser: self.user!)
+        }
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -29,7 +39,7 @@ class UserTableViewCell: UITableViewCell {
     }
     
     func setUser(user: User) {
-        
+        self.user = user
         self.lastNameLabel.text = user.lastName
         self.firstNameLabel.text = user.firstName
         self.emailLabel.text = user.email

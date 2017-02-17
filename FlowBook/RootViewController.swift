@@ -70,19 +70,30 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         })
     }
 
-    func goToView(withIdentifier identifier: String) {
+    func goToView(withIdentifier identifier: String, forUser user: User? = nil) {
         
         let newViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier)
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
         self.currentViewController = newViewController
         if (identifier == "profileView") {
-            self.menuViewController?.hideProfileImage()
-            self.menuViewController?.hideUsername()
+            
+            if let user = user {
+                (self.currentViewController as? ProfileViewController)?.setUser(user: user)
+                
+                if user == CurrentUser.get() {
+                    self.menuViewController?.hideProfileImage()
+                    self.menuViewController?.hideUsername()
+                } else {
+                    self.menuViewController?.showProfileImage()
+                    self.menuViewController?.showUsername()
+                }
+                
+            }
+            
         } else {
             self.menuViewController?.showProfileImage()
             self.menuViewController?.showUsername()
-
         }
         
         if (identifier == "messagesTableView") {
@@ -108,7 +119,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
     
     
     func goToProfile() {
-        self.goToView(withIdentifier: "profileView")
+        self.goToView(withIdentifier: "profileView", forUser: CurrentUser.get())
     }
     
     func goToMessages() {
@@ -121,6 +132,10 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
     
     func goToPromotions() {
         self.goToView(withIdentifier: "promotionsTableView")
+    }
+    
+    func visitProfile(ofUser user: User) {
+        self.goToView(withIdentifier: "profileView", forUser: user)
     }
     
     func selectFlow(flow: Flow) {

@@ -10,9 +10,10 @@ import UIKit
 
 class NewPromotionViewController: UIViewController {
 
-    @IBOutlet weak var promotionNameTextField: CustomInputMail!
+    @IBOutlet weak var promotionNameTextField: CustomInput!
     override func viewDidLoad() {
         super.viewDidLoad()
+        promotionNameTextField.styleInput()
 
         // Do any additional setup after loading the view.
     }

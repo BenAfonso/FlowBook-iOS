@@ -15,8 +15,6 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastNameTextField: CustomInputUser!
     @IBOutlet weak var passwordTextField: CustomInputPassword!
     @IBOutlet weak var repeatPasswordTextField: CustomInputPassword!
-    @IBOutlet weak var toggleTeacher: UISwitch!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
