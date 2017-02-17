@@ -37,12 +37,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         } catch {}
         
-
+        
         if Department.get(withName: "IG") == nil {
             let department = Department.create(withName: "IG")
-            let promotion = department.createPromotion(withName: "2018")
-            department.createFlow()
-            promotion.createFlow()
+            let _ = department.createPromotion(withName: "2018")
+        }
+
+        
+        if Department.get(withName: "MEA") == nil {
+            let department = Department.create(withName: "MEA")
+            let _ = department.createPromotion(withName: "2018")
+        }
+        
+        if Department.get(withName: "MAT") == nil {
+            let department = Department.create(withName: "MAT")
+            let _ = department.createPromotion(withName: "2018")
+        }
+
+        if Department.get(withName: "GBA") == nil {
+            let department = Department.create(withName: "GBA")
+            let _ = department.createPromotion(withName: "2018")
         }
         
     }

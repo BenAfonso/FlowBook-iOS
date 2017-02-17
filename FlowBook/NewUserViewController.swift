@@ -71,6 +71,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         do {
             let _ = try User.createTeacher(withFirstName: firstNameTextField.text!, withLastName: lastNameTextField.text!, withEmail: emailTextField.text!, withPassword: passwordTextField.text!,withDepartment: (CurrentUser.get()?.department)!)
 
+
             self.clearForm()
             
             self.dismiss(animated: true, completion: nil)

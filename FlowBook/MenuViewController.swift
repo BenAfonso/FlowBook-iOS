@@ -102,6 +102,9 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         menuButtonsDelegate?.goToUsers()
     }
     
+    @IBAction func promotionsButtonAction(_ sender: Any) {
+        menuButtonsDelegate?.goToPromotions()
+    }
     
     func selectedFlow(flow: Flow) {
         menuButtonsDelegate?.selectedFlow(flow: flow)
@@ -116,6 +119,7 @@ protocol MenuButtonsDelegate {
     func goToProfile()
     func goToUsers()
     func goToMessages()
+    func goToPromotions()
     func selectedFlow(flow: Flow)
 }
 

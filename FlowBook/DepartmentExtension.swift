@@ -14,7 +14,8 @@ extension Department {
     static func create(withName name: String) -> Department {
         let department = Department(context: CoreDataManager.context)
         department.name = name
-        department.createFlow()
+        department.createFlow(forTeachers: true, forStudents: true)
+        department.createFlow(forTeachers: true, forStudents: false)
         CoreDataManager.save()
         return department
     }
@@ -45,8 +46,18 @@ extension Department {
         }
     }
     
-    func createFlow() {
-        let _ = Flow.create(withName: self.name!, forDepartment: self, forPromotion: nil, forStudents: true, forTeachers: true)
+    
+    func deletePromotions() {
+        do {
+            let promotions = try self.getPromotions()
+            for promotion in promotions {
+                promotion.delete()
+            }
+        } catch {return}
+    }
+    
+    func createFlow(forTeachers teachers: Bool, forStudents students: Bool) {
+        let _ = Flow.create(withName: self.name!, forDepartment: self, forPromotion: nil, forStudents: students, forTeachers: teachers)
     }
     
     

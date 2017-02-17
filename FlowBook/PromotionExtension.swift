@@ -52,8 +52,8 @@ extension Promotion {
 
     
     func createFlow() {
-        let flowName = "\(self.department!.name!): Promotion \(self.name!)"
-        let _ = Flow.create(withName: flowName, forDepartment: self.department!, forPromotion: self, forStudents: true, forTeachers: false)
+        let flowName = self.name
+        let _ = Flow.create(withName: flowName!, forDepartment: self.department!, forPromotion: self, forStudents: true, forTeachers: false)
     }
     
     func addStudent(student: Student) {

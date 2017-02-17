@@ -1161,9 +1161,8 @@
                                     <action selector="displayAll:" destination="23v-46-uAD" eventType="touchUpInside" id="3qS-AV-W5S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-rJ-lYs">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-rJ-lYs">
                                 <rect key="frame" x="503" y="59" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Créer"/>
                                 <connections>
                                     <segue destination="42S-Xf-kJO" kind="popoverPresentation" popoverAnchorView="fkU-rJ-lYs" id="YeO-iY-0PB">
@@ -1175,6 +1174,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qJM-c6-v4z" firstAttribute="top" secondItem="tpq-PF-o1b" secondAttribute="top" id="2Fs-t6-sfO"/>
+                            <constraint firstItem="UQa-Lz-yEE" firstAttribute="top" secondItem="fkU-rJ-lYs" secondAttribute="bottom" constant="39" id="5Dk-wH-8ng"/>
                             <constraint firstItem="box-O5-lsF" firstAttribute="top" secondItem="tpq-PF-o1b" secondAttribute="top" id="A7m-ZR-ERx"/>
                             <constraint firstItem="tpq-PF-o1b" firstAttribute="leading" secondItem="VXu-Be-61t" secondAttribute="leadingMargin" constant="19" id="J8h-BN-8aW"/>
                             <constraint firstItem="box-O5-lsF" firstAttribute="leading" secondItem="tpq-PF-o1b" secondAttribute="trailing" constant="20" id="PEK-Ko-euo"/>
@@ -1204,7 +1204,84 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1325.9765625" y="-2748.4375"/>
+            <point key="canvasLocation" x="1222" y="-2734"/>
+        </scene>
+        <!--Promotions View Controller-->
+        <scene sceneID="1mR-lJ-T9i">
+            <objects>
+                <viewController storyboardIdentifier="promotionsTableView" id="ioM-uh-3v0" customClass="PromotionsViewController" customModule="FlowBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LLQ-kw-iNx"/>
+                        <viewControllerLayoutGuide type="bottom" id="kMV-th-aZj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dfs-sH-p8w">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vDm-Yo-yDa">
+                                <rect key="frame" x="20" y="128" width="984" height="632"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="632" id="eI4-Ij-iEA"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="promotionCell" rowHeight="45" id="LZ3-qb-Yf6" customClass="PromotionsTableViewCell" customModule="FlowBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="984" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LZ3-qb-Yf6" id="08g-jB-hZP">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom de la promotion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qV7-ls-Up3">
+                                                    <rect key="frame" x="27" y="12" width="161" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NbEtudiants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkT-qt-aTJ">
+                                                    <rect key="frame" x="242" y="12" width="94" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qV7-ls-Up3" firstAttribute="centerY" secondItem="08g-jB-hZP" secondAttribute="centerY" id="3y8-S3-IYI"/>
+                                                <constraint firstItem="qV7-ls-Up3" firstAttribute="baseline" secondItem="LkT-qt-aTJ" secondAttribute="baseline" id="gQK-zF-Rdc"/>
+                                                <constraint firstItem="qV7-ls-Up3" firstAttribute="leading" secondItem="08g-jB-hZP" secondAttribute="leadingMargin" constant="19" id="hz2-3H-jQ0"/>
+                                                <constraint firstItem="LkT-qt-aTJ" firstAttribute="leading" secondItem="qV7-ls-Up3" secondAttribute="trailing" constant="54" id="vy0-iR-D6e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nbStudentsLabel" destination="LkT-qt-aTJ" id="tgA-Jw-EEa"/>
+                                            <outlet property="promotionNameLabel" destination="qV7-ls-Up3" id="gx5-q2-MH3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wte-a9-5zV" id="vEt-hH-sC3"/>
+                                    <outlet property="delegate" destination="wte-a9-5zV" id="7hQ-XF-whC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kMV-th-aZj" firstAttribute="top" secondItem="vDm-Yo-yDa" secondAttribute="bottom" constant="8" id="4LV-43-Cc2"/>
+                            <constraint firstAttribute="trailing" secondItem="vDm-Yo-yDa" secondAttribute="trailing" constant="20" id="Qno-BV-1oK"/>
+                            <constraint firstItem="vDm-Yo-yDa" firstAttribute="leading" secondItem="Dfs-sH-p8w" secondAttribute="leadingMargin" id="vir-67-MiK"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z26-EY-GNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="wte-a9-5zV" customClass="PromotionsTableViewController" customModule="FlowBook" customModuleProvider="target">
+                    <connections>
+                        <outlet property="promotionsTableVIew" destination="vDm-Yo-yDa" id="e1i-5k-f2d"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2300" y="-2529"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="TlW-a1-v9B">
@@ -1241,6 +1318,9 @@
                                 <state key="normal" title="Menu">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="promotionsButtonAction:" destination="M7E-Ed-rkq" eventType="touchUpInside" id="OoU-5d-WDs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-RZ-gMB">
                                 <rect key="frame" x="14" y="116" width="161" height="21"/>
@@ -1484,7 +1564,7 @@
         <image name="profileImage" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jDS-Ve-bYI"/>
+        <segue reference="wMZ-jU-TCo"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

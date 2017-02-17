@@ -112,6 +112,10 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         self.goToView(withIdentifier: "usersTableView")
     }
     
+    func goToPromotions() {
+        self.goToView(withIdentifier: "promotionsTableView")
+    }
+    
     func selectedFlow(flow: Flow) {
         if let homeViewController = self.currentViewController as? HomeViewController {
             homeViewController.selectFlow(flow: flow)
