@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBOutlet weak var profileImage: UIImageView!
     
     let picker = UIImagePickerController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picker.delegate = self
@@ -42,7 +42,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         self.repeatPasswordTextField.addTarget(self, action: #selector(checkRepeatPasswordFieldOnChange(_:)), for: .editingChanged)
         self.emailTextField.addTarget(self, action: #selector(checkEmailFieldOnChange(_:)), for: .editingChanged)
         
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
