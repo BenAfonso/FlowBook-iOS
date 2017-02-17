@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         } catch {}
         
+
         if Department.get(withName: "IG") == nil {
             let department = Department.create(withName: "IG")
             let promotion = department.createPromotion(withName: "2018")

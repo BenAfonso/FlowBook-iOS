@@ -8,12 +8,11 @@
 
 import UIKit
 
-class FlowPickerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FlowPickerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FlowPickerTableViewCellDelegate {
 
     @IBOutlet weak var flowPickerTableView: UITableView!
     var flows: [Flow] = []
-    
-    
+    var delegate: FlowPickerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +25,17 @@ class FlowPickerViewController: UIViewController, UITableViewDelegate, UITableVi
     func loadFlows() {
         self.flows = []
         do {
-            if let flow = try Flow.get(forDepartment: (CurrentUser.get()?.department)!) {
-                self.flows.append(flow)
+            
+            if let currentUser = CurrentUser.get() {
+                self.flows = try currentUser.getFlows()
             }
+            
         } catch {
             print("Erreur lors du chargement des flux")
         }
-        
-
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,13 +49,23 @@ class FlowPickerViewController: UIViewController, UITableViewDelegate, UITableVi
         let flow = self.flowPickerTableView.dequeueReusableCell(withIdentifier: "flowPickerCell", for: indexPath) as! FlowPickerTableViewCell
         
         flow.setFlow(flow: flows[indexPath.row])
-        
+        flow.delegate = self
         return flow
     }
     
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    
+    func selected(cell: FlowPickerTableViewCell) {
+        if let cellIndex = self.flowPickerTableView.indexPath(for: cell) {
+            let selectedFlow = self.flows[cellIndex.row]
+            delegate?.selectedFlow(flow: selectedFlow)
+            //print(selectedFlow)
+        }
+        
     }
     /*
     // MARK: - Navigation
@@ -65,5 +76,9 @@ class FlowPickerViewController: UIViewController, UITableViewDelegate, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
+    
+}
 
+protocol FlowPickerDelegate {
+    func selectedFlow(flow: Flow)
 }

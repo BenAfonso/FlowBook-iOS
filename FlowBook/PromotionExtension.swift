@@ -22,6 +22,17 @@ extension Promotion {
         return promotion
     }
     
+    static func deleteAll() {
+        let request: NSFetchRequest<Promotion> = Promotion.fetchRequest()
+        do {
+            let promotions: [Promotion] = try CoreDataManager.context.fetch(request)
+            for promotion in promotions {
+                CoreDataManager.context.delete(promotion)
+                CoreDataManager.save()
+            }
+        } catch {
+        }
+    }
     
     static func get(withName name: String) -> Promotion? {
         let request: NSFetchRequest<Promotion> = Promotion.fetchRequest()
@@ -38,8 +49,10 @@ extension Promotion {
         }
     }
     
+
+    
     func createFlow() {
-        let flowName = "\(self.department?.name): Promotion \(self.name)"
+        let flowName = "\(self.department!.name!): Promotion \(self.name!)"
         let _ = Flow.create(withName: flowName, forDepartment: self.department!, forPromotion: self, forStudents: true, forTeachers: false)
     }
     

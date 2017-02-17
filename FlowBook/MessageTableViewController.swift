@@ -14,14 +14,22 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     
     
     var messages: [Message] = []
-    var flow: Flow? = nil
+    var flow: Flow?
 
+    
     fileprivate lazy var messagesFetched : NSFetchedResultsController<Message> = {
         let request : NSFetchRequest<Message> = Message.fetchRequest()
+
+        if let flow = self.flow {
+            let predicate : NSPredicate = NSPredicate(format: "flow == %@", flow)
+            request.predicate = predicate
+        }
+        
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Message.timestamp), ascending: true)]
         let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
         fetchResultController.delegate = self
         return fetchResultController
+        
     }()
     
     @IBOutlet weak var messagesTableView: UITableView!
@@ -29,27 +37,32 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     override init() {
         super.init()
         
-        do {
-            
-            // TEMPORARY
-            
-            if let flow = try Flow.get(forDepartment: (CurrentUser.get()?.department)!) {
-                print("Fetching \(flow.name) flow")
-                self.flow = flow
-                //self.messages = try flow.getMessages()
+        
+
+        if let flows = Flow.get(forDepartment: (CurrentUser.get()?.department)!) {
+            print("Fetching \(flows[0].name) flow")
+            self.flow = flows[0]
+
+            do {
+                try self.messagesFetched.performFetch()
+            } catch {
                 
-                do {
-                    try self.messagesFetched.performFetch()
-                }
-            } else {
-                fatalError("No department on your account ...")
             }
-            
-            
-        } catch let error as NSError {
-            print(error)
+        } else {
+            fatalError("No department on your account ...")
         }
+        
     }
+    
+    
+    func selectFlow(flow: Flow) {
+        self.flow = flow
+        let predicate = NSPredicate(format: "flow == %@", flow)
+        self.messagesFetched.fetchRequest.predicate = predicate
+        do {try self.messagesFetched.performFetch()}catch{}
+        self.messagesTableView.reloadData()
+    }
+    
     
     // MARK: TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

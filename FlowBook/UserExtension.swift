@@ -127,6 +127,33 @@ extension User {
         }
     }
     
+    func getFlows() throws -> [Flow] {
+        var userFlows: [Flow] = []
+        
+        
+        guard CurrentUser.get()?.department != nil else {
+            throw NSError()
+        }
+        
+            let flows = Flow.get(forDepartment: (CurrentUser.get()?.department)!)
+            
+            if let flows = flows, let currentUser = CurrentUser.get() {
+                for flow in flows {
+                    if let flow = flow as? StudentFlow {
+                        if currentUser.isStudent() {
+                            userFlows.append(flow)
+                        }
+                    } else if let flow = flow as? TeacherFlow {
+                        if currentUser.isTeacher() {
+                            userFlows.append(flow)
+                        }
+                    } else {
+                        userFlows.append(flow)
+                    }
+                }
+            }
+        return userFlows
+    }
     
     func setDepartment(department: Department) {
         self.department = department

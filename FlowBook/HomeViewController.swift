@@ -24,6 +24,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func selectFlow(flow: Flow) {
+        messagesTableView.selectFlow(flow: flow)
+    }
+    
+    
     
     /// Send a message
     func sendMessage() {

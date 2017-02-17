@@ -16,7 +16,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
     
     weak var currentViewController: UIViewController?
     weak var menuViewController: MenuViewController?
-    
+
     override func viewDidLoad() {
         self.menuViewController = self.storyboard?.instantiateViewController(withIdentifier: "menuView") as! MenuViewController?
     
@@ -32,6 +32,9 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController(self.currentViewController!)
         self.addSubview(subView: self.currentViewController!.view, toView: self.childView)
+        
+        
+        
         super.viewDidLoad()
     }
     
@@ -109,6 +112,12 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         self.goToView(withIdentifier: "usersTableView")
     }
     
+    func selectedFlow(flow: Flow) {
+        if let homeViewController = self.currentViewController as? HomeViewController {
+            homeViewController.selectFlow(flow: flow)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -119,7 +128,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 
 
     

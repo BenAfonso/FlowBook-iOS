@@ -12,19 +12,26 @@ class FlowPickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var flowNameLabel: UILabel!
     
+    var delegate: FlowPickerTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
     func setFlow(flow: Flow) {
-        self.flowNameLabel.text = flow.name
+        self.flowNameLabel.text = flow.name!
+        print(flow.name!)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        delegate?.selected(cell: self)
+        
     }
+}
 
+protocol FlowPickerTableViewCellDelegate {
+    func selected(cell: FlowPickerTableViewCell)
 }

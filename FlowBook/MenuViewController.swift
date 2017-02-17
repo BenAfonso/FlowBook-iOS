@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, FlowPickerDelegate {
     
 
     @IBOutlet weak var profileButton: CustomButton!
@@ -18,8 +18,11 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
-    var menuButtonsDelegate: MenuButtonsDelegate?
+    @IBOutlet weak var flowPickerView: UIView!
     
+    var menuButtonsDelegate: MenuButtonsDelegate?
+    weak var flowPicker: FlowPickerViewController?
+
     func getUsername() -> String {
         
         // NEW METHOD TO PROPAGATE
@@ -48,6 +51,12 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
+        (self.childViewControllers[0] as! FlowPickerViewController).delegate = self
+        
+        
         self.profileImage.image = self.getProfileImage()
 
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
@@ -92,6 +101,12 @@ class MenuViewController: UIViewController {
     @IBAction func usersButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToUsers()
     }
+    
+    
+    func selectedFlow(flow: Flow) {
+        menuButtonsDelegate?.selectedFlow(flow: flow)
+    }
+    
 
     
     
@@ -101,6 +116,7 @@ protocol MenuButtonsDelegate {
     func goToProfile()
     func goToUsers()
     func goToMessages()
+    func selectedFlow(flow: Flow)
 }
 
 
