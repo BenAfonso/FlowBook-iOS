@@ -16,7 +16,9 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
     
     fileprivate lazy var promotionsFetched : NSFetchedResultsController<Promotion> = {
         let request : NSFetchRequest<Promotion> = Promotion.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Promotion.name), ascending: true)]
+        let predicate: NSPredicate = NSPredicate(format: "department == %@", CurrentUser.get()!.department!)
+        request.predicate = predicate
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Promotion.department.name), ascending: true)]
         let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
         fetchResultController.delegate = self
         return fetchResultController
@@ -56,5 +58,39 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
         
         return promotionCell
     }
+    
+    // MARK: NSFetchResultsController
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.promotionsTableVIew?.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.promotionsTableVIew?.endUpdates()
+        CoreDataManager.save()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any, at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .delete:
+            if let indexPath = indexPath {
+                self.promotionsTableVIew?.deleteRows(at: [indexPath], with: .automatic)
+            }
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                self.promotionsTableVIew?.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                self.promotionsTableVIew?.reloadRows(at: [indexPath], with: .automatic)
+            }
+        default:
+            break
+        }
+    }
+    
 
 }
