@@ -24,9 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initCoreData() {
         
-        do { try User.get(withEmail: "benjamin.afonso@etu.umontpellier.fr").activate() } catch {}
         
-        CoreDataManager.save()
+        do { let users = try User.getAll()
+            for user in users {
+                if user.isTeacher() {
+                    user.type = "teacher"
+                } else {
+                    user.type = "student"
+                }
+            }
+            CoreDataManager.save()
+        
+        } catch {}
+        
         if Department.get(withName: "IG") == nil {
             let department = Department.create(withName: "IG")
             let promotion = department.createPromotion(withName: "2018")

@@ -13,6 +13,12 @@ import CoreData
 class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var usersTableView: UITableView!
+
+    
+    @IBOutlet weak var allButton: CustomButton!
+    @IBOutlet weak var studentButton: CustomButton!
+    @IBOutlet weak var teacherButton: CustomButton!
+    @IBOutlet weak var inactiveButton: CustomButton!
     
     
     fileprivate lazy var usersFetched : NSFetchedResultsController<User> = {
@@ -27,8 +33,11 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     override init() {
         super.init()
         
+
+        
         do {
             try self.usersFetched.performFetch()
+            
         } catch {
             
         }
@@ -95,9 +104,12 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
             }
         case .insert:
             if let newIndexPath = newIndexPath {
-                self.usersTableView?.insertRows(at: [newIndexPath], with: .automatic)
+                self.usersTableView?.insertRows(at: [newIndexPath], with: .fade)
             }
-            
+        case .update:
+            if let indexPath = indexPath {
+                self.usersTableView?.reloadRows(at: [indexPath], with: .automatic)
+            }
         default:
             break
         }
@@ -117,7 +129,32 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         self.usersFetched.object(at: indexPath).active = false
     }
     
+    @IBAction func displayStudents(_ sender: Any) {
+        let predicate = NSPredicate(format: "type == %@", "student")
+        self.usersFetched.fetchRequest.predicate = predicate
+        do {try self.usersFetched.performFetch()}catch{}
+        self.usersTableView.reloadData()
+    }
     
+    @IBAction func displayTeachers(_ sender: Any) {
+        let predicate = NSPredicate(format: "type == %@", "teacher")
+        self.usersFetched.fetchRequest.predicate = predicate
+        do {try self.usersFetched.performFetch()}catch{}
+        self.usersTableView.reloadData()
+    }
+    
+    @IBAction func displayInactives(_ sender: Any) {
+        let predicate = NSPredicate(format: "active == false")
+        self.usersFetched.fetchRequest.predicate = predicate
+        do {try self.usersFetched.performFetch()}catch{}
+        self.usersTableView.reloadData()
+    }
+    
+    @IBAction func displayAll(_ sender: Any) {
+        self.usersFetched.fetchRequest.predicate = nil
+        do {try self.usersFetched.performFetch()}catch{}
+        self.usersTableView.reloadData()
+    }
     
     
     

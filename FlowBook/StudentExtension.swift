@@ -27,6 +27,7 @@ extension Student {
         student.department = department
         student.promotion = promotion
         student.active = false
+        student.type = "student"
         
         student.password = password.sha256()
         

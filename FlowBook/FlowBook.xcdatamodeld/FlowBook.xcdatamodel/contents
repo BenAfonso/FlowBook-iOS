@@ -74,6 +74,7 @@
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="users" inverseEntity="Department" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="author" inverseEntity="Message" syncable="YES"/>
         <relationship name="rights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Right" inverseName="user" inverseEntity="Right" syncable="YES"/>
@@ -96,6 +97,6 @@
         <element name="Teacher" positionX="-254" positionY="9" width="128" height="45"/>
         <element name="TeacherFlow" positionX="34" positionY="153" width="128" height="45"/>
         <element name="TypeRight" positionX="-405" positionY="-603" width="128" height="58"/>
-        <element name="User" positionX="-315" positionY="-342" width="128" height="178"/>
+        <element name="User" positionX="-315" positionY="-342" width="128" height="195"/>
     </elements>
 </model>
