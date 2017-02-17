@@ -62,7 +62,7 @@ class FlowPickerViewController: UIViewController, UITableViewDelegate, UITableVi
     func selected(cell: FlowPickerTableViewCell) {
         if let cellIndex = self.flowPickerTableView.indexPath(for: cell) {
             let selectedFlow = self.flows[cellIndex.row]
-            delegate?.selectedFlow(flow: selectedFlow)
+            delegate?.selectFlow(flow: selectedFlow)
             //print(selectedFlow)
         }
         
@@ -80,5 +80,5 @@ class FlowPickerViewController: UIViewController, UITableViewDelegate, UITableVi
 }
 
 protocol FlowPickerDelegate {
-    func selectedFlow(flow: Flow)
+    func selectFlow(flow: Flow)
 }

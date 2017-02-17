@@ -14,6 +14,8 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
 
     @IBOutlet weak var profileButton: CustomButton!
     @IBOutlet weak var messagesButton: CustomButton!
+    @IBOutlet weak var usersButton: CustomButton!
+    @IBOutlet weak var promotionsButton: CustomButton!
     
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -39,12 +41,30 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     }
     
     func setProfileButtonActive() {
-        self.profileButton.setActive()
+        self.promotionsButton.setInactive()
         self.messagesButton.setInactive()
+        self.usersButton.setInactive()
+        self.profileButton.setActive()
     }
     
     func setMessagesButtonActive() {
+        self.promotionsButton.setInactive()
         self.messagesButton.setActive()
+        self.usersButton.setInactive()
+        self.profileButton.setInactive()
+    }
+    
+    func setPromotionsButtonActive() {
+        self.promotionsButton.setActive()
+        self.messagesButton.setInactive()
+        self.usersButton.setInactive()
+        self.profileButton.setInactive()
+    }
+    
+    func setUsersButtonActive() {
+        self.promotionsButton.setInactive()
+        self.messagesButton.setInactive()
+        self.usersButton.setActive()
         self.profileButton.setInactive()
     }
     
@@ -90,24 +110,36 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     }
     
     
+    func hideFlowPicker() {
+        self.flowPickerView.isHidden = true
+    }
+    
+    func showFlowPicker() {
+        self.flowPickerView.isHidden = false
+    }
+
     @IBAction func profileButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToProfile()
+        self.setProfileButtonActive()
     }
     
     @IBAction func messagesButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToMessages()
+        self.setMessagesButtonActive()
     }
     
     @IBAction func usersButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToUsers()
+        self.setUsersButtonActive()
     }
     
     @IBAction func promotionsButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToPromotions()
+        self.setPromotionsButtonActive()
     }
     
-    func selectedFlow(flow: Flow) {
-        menuButtonsDelegate?.selectedFlow(flow: flow)
+    func selectFlow(flow: Flow) {
+        menuButtonsDelegate?.selectFlow(flow: flow)
     }
     
 
@@ -120,7 +152,7 @@ protocol MenuButtonsDelegate {
     func goToUsers()
     func goToMessages()
     func goToPromotions()
-    func selectedFlow(flow: Flow)
+    func selectFlow(flow: Flow)
 }
 
 

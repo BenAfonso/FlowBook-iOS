@@ -140,7 +140,8 @@ extension User {
             if let flows = flows, let currentUser = CurrentUser.get() {
                 for flow in flows {
                     if let flow = flow as? StudentFlow {
-                        if currentUser.isStudent() {
+                        if (currentUser.isStudent() && flow.promotion == (currentUser as! Student).promotion) {
+                     
                             userFlows.append(flow)
                         }
                     } else if let flow = flow as? TeacherFlow {

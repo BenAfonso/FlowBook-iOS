@@ -82,6 +82,13 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         } else {
             self.menuViewController?.showProfileImage()
             self.menuViewController?.showUsername()
+
+        }
+        
+        if (identifier == "messagesTableView") {
+            self.menuViewController?.showFlowPicker()
+        } else {
+            self.menuViewController?.hideFlowPicker()
         }
     }
     
@@ -116,7 +123,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         self.goToView(withIdentifier: "promotionsTableView")
     }
     
-    func selectedFlow(flow: Flow) {
+    func selectFlow(flow: Flow) {
         if let homeViewController = self.currentViewController as? HomeViewController {
             homeViewController.selectFlow(flow: flow)
         }

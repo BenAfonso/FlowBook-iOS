@@ -116,8 +116,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-    
-
 
     
     override func didReceiveMemoryWarning() {

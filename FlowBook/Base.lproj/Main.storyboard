@@ -1161,7 +1161,7 @@
                                     <action selector="displayAll:" destination="23v-46-uAD" eventType="touchUpInside" id="3qS-AV-W5S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-rJ-lYs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkU-rJ-lYs">
                                 <rect key="frame" x="503" y="59" width="38" height="30"/>
                                 <state key="normal" title="Créer"/>
                                 <connections>
@@ -1173,6 +1173,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fkU-rJ-lYs" firstAttribute="leading" secondItem="wIr-br-x2Z" secondAttribute="trailing" constant="73" id="08K-Zb-lSg"/>
                             <constraint firstItem="qJM-c6-v4z" firstAttribute="top" secondItem="tpq-PF-o1b" secondAttribute="top" id="2Fs-t6-sfO"/>
                             <constraint firstItem="UQa-Lz-yEE" firstAttribute="top" secondItem="fkU-rJ-lYs" secondAttribute="bottom" constant="39" id="5Dk-wH-8ng"/>
                             <constraint firstItem="box-O5-lsF" firstAttribute="top" secondItem="tpq-PF-o1b" secondAttribute="top" id="A7m-ZR-ERx"/>
@@ -1416,7 +1417,9 @@
                         <outlet property="messagesButton" destination="0uU-BB-Cgs" id="VHf-Pm-X9P"/>
                         <outlet property="profileButton" destination="yk3-SV-Pu6" id="3ux-lp-CuF"/>
                         <outlet property="profileImage" destination="yi5-Lo-UqL" id="fqR-Pr-0YL"/>
+                        <outlet property="promotionsButton" destination="TCa-1k-j2b" id="z6o-Kd-mYu"/>
                         <outlet property="usernameLabel" destination="s5g-RZ-gMB" id="Ijt-6h-6oI"/>
+                        <outlet property="usersButton" destination="Xdi-Aw-oaW" id="2Tx-ie-li7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3X-sr-HT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1643,7 +1646,7 @@
         <image name="profileImage" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wMZ-jU-TCo"/>
+        <segue reference="jDS-Ve-bYI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>
