@@ -17,8 +17,9 @@ extension Promotion {
         
         promotion.department = department
         promotion.name = name
-        promotion.createFlow()
         CoreDataManager.save()
+        promotion.createFlow()
+        
         return promotion
     }
     

@@ -35,7 +35,13 @@ class UserTableViewCell: UITableViewCell {
         self.emailLabel.text = user.email
         
         // TO CHANGE
-        self.sectionLabel.text = "IG4"
+        
+        
+        if let user = user as? Student {
+            self.sectionLabel.text = "\((user.department?.name)!) \((user.promotion?.name)!)"
+        } else {
+            self.sectionLabel.text = user.department?.name
+        }
         
         if user.active {
             self.activeStatus.image = UIImage(named: "active")

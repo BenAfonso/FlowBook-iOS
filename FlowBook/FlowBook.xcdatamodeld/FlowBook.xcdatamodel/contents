@@ -3,7 +3,7 @@
     <entity name="Department" representedClassName="Department" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="flows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Flow" inverseName="department" inverseEntity="Flow" syncable="YES"/>
-        <relationship name="promotions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Promotion" inverseName="department" inverseEntity="Promotion" syncable="YES"/>
+        <relationship name="promotions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Promotion" inverseName="department" inverseEntity="Promotion" syncable="YES"/>
         <relationship name="rights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Right" inverseName="department" inverseEntity="Right" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" inverseName="department" inverseEntity="User" syncable="YES"/>
         <uniquenessConstraints>
@@ -42,13 +42,8 @@
     <entity name="Promotion" representedClassName="Promotion" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="promotions" inverseEntity="Department" syncable="YES"/>
-        <relationship name="flow" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Flow" inverseName="promotion" inverseEntity="Flow" syncable="YES"/>
-        <relationship name="students" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Student" inverseName="promotion" inverseEntity="Student" syncable="YES"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="name"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
+        <relationship name="flow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flow" inverseName="promotion" inverseEntity="Flow" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="promotion" inverseEntity="Student" syncable="YES"/>
     </entity>
     <entity name="Right" representedClassName="Right" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
@@ -85,12 +80,12 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Department" positionX="-605" positionY="-283" width="128" height="120"/>
+        <element name="Department" positionX="-605" positionY="-283" width="128" height="118"/>
         <element name="File" positionX="349" positionY="-225" width="128" height="120"/>
         <element name="FileType" positionX="484" positionY="18" width="128" height="73"/>
         <element name="Flow" positionX="-83" positionY="2" width="128" height="118"/>
         <element name="Message" positionX="-20" positionY="-288" width="128" height="150"/>
-        <element name="Promotion" positionX="-540" positionY="41" width="128" height="105"/>
+        <element name="Promotion" positionX="-540" positionY="41" width="128" height="103"/>
         <element name="Right" positionX="-74" positionY="-541" width="128" height="133"/>
         <element name="Student" positionX="-387" positionY="-117" width="128" height="58"/>
         <element name="StudentFlow" positionX="-155" positionY="153" width="128" height="45"/>
