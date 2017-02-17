@@ -35,6 +35,17 @@ extension Department {
         }
     }
     
+    static func getAll() throws -> [Department] {
+        let request: NSFetchRequest<Department> = Department.fetchRequest()
+        do {
+            let departments: [Department] = try CoreDataManager.context.fetch(request)
+            return departments
+
+        } catch {
+            throw NSError()
+        }
+    }
+    
     func getPromotions() throws -> [Promotion] {
         let request: NSFetchRequest<Promotion> = Promotion.fetchRequest()
         request.predicate = NSPredicate(format: "department == %@", self)

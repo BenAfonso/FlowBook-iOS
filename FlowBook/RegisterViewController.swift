@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PickerDelegate {
     
     @IBOutlet weak var emailTextField: CustomInputMail!
     @IBOutlet weak var firstNameTextField: CustomInputUser!
@@ -25,9 +25,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBOutlet weak var fnameErrorIcon: UIImageView!
     @IBOutlet weak var lnameErrorIcon: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var departmentButton: UIButton!
+    @IBOutlet weak var promotionButton: UIButton!
+    @IBOutlet weak var departmentLabel: UILabel!
+    @IBOutlet weak var promotionLabel: UILabel!
     
     let picker = UIImagePickerController()
-
+    var selectedDepartment: Department?
+    var selectedPromotion: Promotion?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picker.delegate = self
@@ -93,36 +99,36 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
             return
         }
         
-        
-        // Save user into CoreData
-        do {
+        guard self.selectedDepartment != nil else {
             
-            if let department = Department.get(withName: "IG") {
-                
-                guard try department.getPromotions().count > 0 else {
-                    return
-                }
-                
-                let newUser: Student = try Student.create(withFirstName: firstName,
-                                                          withLastName: lastName,
-                                                          withEmail: email,
-                                                          withPassword: password,
-                                                          forPromotion: department.getPromotions()[0],
-                                                          forDepartment: department)
-                
-                newUser.changeImage(image: self.profileImage.image!)
-                self.clearForm()
-                performSegue(withIdentifier: "registerSuccess", sender: self)
-                print(newUser)
-            }
-            
-        } catch let error as NSError {
-            //UIAlert HERE
-            
-            self.showError(withMessage: "Erreur lors de l'enregistrement du compte.")
-            print(error)
+            self.showError(withMessage: "Veuillez selectionner un département.")
+            // UIAlert HERE
             return
         }
+        
+        guard self.selectedPromotion != nil else {
+            
+            self.showError(withMessage: "Veuillez selectionner une promotion.")
+            // UIAlert HERE
+            return
+        }
+        
+        
+        // Save user into CoreData
+ 
+            
+
+        let newUser: Student = Student.create(withFirstName: firstName,
+                                                  withLastName: lastName,
+                                                  withEmail: email,
+                                                  withPassword: password,
+                                                  forPromotion: self.selectedPromotion!,
+                                                  forDepartment: self.selectedDepartment!)
+        
+        newUser.changeImage(image: self.profileImage.image!)
+        self.clearForm()
+        performSegue(withIdentifier: "registerSuccess", sender: self)
+
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -265,6 +271,40 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         self.pickImageSource()
     }
     
+    @IBAction func departmentAction(_ sender: Any) {
+        Picker.pickerController.setDataSource(source: DepartmentPickerDataSource())
+        Picker.display(withTitle: "Choix du département", sourceVC: self)
+        Picker.pickerController.delegate = self
+    }
+
+    @IBAction func promotionAction(_ sender: Any) {
+        
+        if let department = self.selectedDepartment {
+            Picker.pickerController.setDataSource(source: PromotionPickerDataSource(department: department))
+            Picker.display(withTitle: "Choix de la promotion", sourceVC: self)
+            Picker.pickerController.delegate = self
+        } else {
+            self.showError(withMessage: "Veuillez selectionner un département.")
+        }
+        
+        
+    }
+    
+
+    func select(value: Any) {
+        if let department = value as? Department {
+            self.departmentLabel.isHidden = false
+            self.departmentLabel.text = department.name
+            self.selectedDepartment = department
+        }
+        
+        if let promotion = value as? Promotion {
+            self.promotionLabel.isHidden = false
+            self.promotionLabel.text = promotion.name
+            self.selectedPromotion = promotion
+        }
+        
+    }
     
 }
 
