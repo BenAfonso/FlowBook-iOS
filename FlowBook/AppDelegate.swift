@@ -14,10 +14,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.initCoreData()
         return true
+    }
+    
+    func initCoreData() {
+        
+        
+        do { let users = try User.getAll()
+            for user in users {
+                if user.isTeacher() {
+                    user.type = "teacher"
+                } else {
+                    user.type = "student"
+                }
+            }
+            CoreDataManager.save()
+        
+        } catch {}
+        
+        
+        if Department.get(withName: "IG") == nil {
+            let department = Department.create(withName: "IG")
+            let _ = department.createPromotion(withName: "2018")
+        }
+
+
+
+        if Department.get(withName: "MEA") == nil {
+            let department = Department.create(withName: "MEA")
+            let _ = department.createPromotion(withName: "2018")
+        }
+
+        if Department.get(withName: "MAT") == nil {
+            let department = Department.create(withName: "MAT")
+            let _ = department.createPromotion(withName: "2018")
+
+        }
+        if Department.get(withName: "GBA") == nil {
+            let department = Department.create(withName: "GBA")
+            let _ = department.createPromotion(withName: "2018")
+
+        }
+        
+
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

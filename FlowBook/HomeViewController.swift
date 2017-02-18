@@ -24,6 +24,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func selectFlow(flow: Flow) {
+        messagesTableView.selectFlow(flow: flow)
+    }
+    
+    
     
     /// Send a message
     func sendMessage() {
@@ -134,8 +139,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let menuVC = self.childViewControllers[0] as? MenuViewController
-        menuVC?.setMessagesButtonActive()
+        //let menuVC = self.childViewControllers[0] as? MenuViewController
+        //menuVC?.setMessagesButtonActive()
         
 
         
@@ -146,8 +151,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-    
-
 
     
     override func didReceiveMemoryWarning() {

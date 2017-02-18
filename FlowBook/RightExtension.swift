@@ -25,6 +25,10 @@ extension Right {
             return right
     }
     
+    func getFlow() -> Flow? {
+        return self.flow
+    }
+    
     
     
 }

@@ -23,6 +23,7 @@ extension Message {
         message.timestamp = NSDate()
         message.flow = flow
         message.content = content
+        message.edited = false
         
         /*if let files: [File] = files {
          message.files = files
@@ -40,6 +41,12 @@ extension Message {
         CoreDataManager.context.delete(self)
         CoreDataManager.save()
 
+    }
+    
+    func edit(content: String) {
+        self.content = content
+        self.edited = true
+        self.lastedittimestamp = NSDate()
     }
     
     

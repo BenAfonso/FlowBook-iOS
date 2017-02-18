@@ -13,17 +13,27 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
 
     
+    @IBOutlet weak var promotionLabel: UILabel!
     @IBOutlet weak var nbMessagesLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var nbEventsLabel: UILabel!
     @IBOutlet weak var nbPostsLabel: UILabel!
     @IBOutlet weak var nbFilesLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var departmentName: UILabel!
+    @IBOutlet weak var roleRibbon: UIImageView!
     
     @IBOutlet weak var profileImage: RoundedImageView!
 
     let picker = UIImagePickerController()
     let pageView = UIPageViewController()
-
+    var user: User?
+    
+    func setUser(user: User) {
+        self.user = user
+        self.setUIInfos()
+    }
+    
     
     func setUIInfos() {
         nbPostsLabel.text = String(self.getNbEvents())
@@ -31,10 +41,32 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         nbFilesLabel.text = String(self.getNbPosts())
         nbMessagesLabel.text = String(self.getNbMessages())
         
-        let menuVC = self.childViewControllers[0] as? MenuViewController
-        profileImage.image = menuVC?.getProfileImage()
-
-        usernameLabel.text = menuVC?.getUsername()
+        //let menuVC = self.childViewControllers[0] as? MenuViewController
+        if let currentUser = self.user {
+            profileImage.image = currentUser.getImage()
+            usernameLabel.text = currentUser.getUsername()
+            departmentName.text = currentUser.department?.name
+            
+            if currentUser.isStudent() {
+                
+                roleRibbon.image = UIImage(named: "Etudiant")
+                promotionLabel.isHidden = false
+                
+                
+                promotionLabel.text = (currentUser as! Student).promotion?.name
+                
+            } else if currentUser.isTeacher() {
+                roleRibbon.image = UIImage(named: "Enseignant")
+            }
+            
+            
+            if currentUser == CurrentUser.get() {
+                
+            } else {
+                editButton.isHidden = true
+            }
+        }
+        
     }
     
     
@@ -44,17 +76,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func getNbMessages() -> Int {
-        if let email = UserDefaults.standard.string(forKey: "currentEmail") {
-            do {
-                let user = try User.get(withEmail: email)
-                return user.getNbPosts()
-            } catch let error as NSError {
-                print(error)
-                return 0
-            }
-        } else {
-            return 0
+        
+        if let currentUser = self.user {
+            return currentUser.getNbPosts()
         }
+        return 0
         
     }
     
@@ -123,15 +149,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.picker.delegate = self
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
         
-
-        self.setUIInfos()
-        
-        let menuVC = self.childViewControllers[0] as? MenuViewController
-        menuVC?.hideProfileImage()
-        menuVC?.hideUsername()
-        menuVC?.setProfileButtonActive()
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     

@@ -25,6 +25,7 @@ extension User {
             user.lastName = lastName
             user.firstName = firstName
             user.email = email
+            user.active = false
             
             // Encrypt password
             user.password = password.sha256()
@@ -32,6 +33,27 @@ extension User {
                 throw error
             }
             return user
+    }
+    
+    static func createTeacher(withFirstName firstName: String,
+                              withLastName lastName: String,
+                              withEmail email: String,
+                              withPassword password: String,
+                              withDepartment department: Department) throws -> Teacher {
+        
+        let teacher = Teacher(context: CoreDataManager.context)
+        teacher.lastName = lastName
+        teacher.firstName = firstName
+        teacher.email = email
+        teacher.active = true
+        teacher.department = department
+        teacher.type = "teacher"
+        // Encrypt password
+        teacher.password = password.sha256()
+        if let error = CoreDataManager.save() {
+            throw error
+        }
+        return teacher
     }
     
     static func get(withEmail email: String) throws -> User {
@@ -83,17 +105,59 @@ extension User {
     
     
     static func getAll() throws -> [User] {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            throw NSError()
-        }
-        let context = appDelegate.persistentContainer.viewContext
+        
         let request: NSFetchRequest<User> = User.fetchRequest()
         do {
-            let users: [User] = try context.fetch(request)
+            let users: [User] = try CoreDataManager.context.fetch(request)
             return users
         } catch let error as NSError {
             throw error
         }
+    }
+
+    
+    static func getAllStudents() throws -> [Student] {
+        
+        let request: NSFetchRequest<Student> = Student.fetchRequest()
+        do {
+            let students: [Student] = try CoreDataManager.context.fetch(request)
+            return students
+        } catch let error as NSError {
+            throw error
+        }
+    }
+    
+    func getFlows() throws -> [Flow] {
+        var userFlows: [Flow] = []
+        
+        
+        guard CurrentUser.get()?.department != nil else {
+            throw NSError()
+        }
+        
+            let flows = Flow.get(forDepartment: (CurrentUser.get()?.department)!)
+            
+            if let flows = flows, let currentUser = CurrentUser.get() {
+                for flow in flows {
+                    if let flow = flow as? StudentFlow {
+                        if (currentUser.isStudent() && flow.promotion == (currentUser as! Student).promotion) {
+                     
+                            userFlows.append(flow)
+                        }
+                    } else if let flow = flow as? TeacherFlow {
+                        if currentUser.isTeacher() {
+                            userFlows.append(flow)
+                        }
+                    } else {
+                        userFlows.append(flow)
+                    }
+                }
+            }
+        return userFlows
+    }
+    
+    func setDepartment(department: Department) {
+        self.department = department
     }
     
     
@@ -139,9 +203,28 @@ extension User {
     }
     
     
-    func delete() throws {
+    func delete() {
         CoreDataManager.context.delete(self)
         CoreDataManager.save()
+    }
+    
+    func activate() {
+        self.active = true
+        CoreDataManager.save()
+    }
+    
+    func isStudent() -> Bool {
+        if let _ = self as? Student {
+            return true
+        }
+        return false
+    }
+    
+    func isTeacher() -> Bool {
+        if let _ = self as? Teacher {
+            return true
+        }
+        return false
     }
     
 }
