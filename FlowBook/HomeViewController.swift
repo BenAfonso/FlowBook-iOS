@@ -5,20 +5,19 @@
 //  Created by Benjamin Afonso on 07/02/2017.
 //  Copyright © 2017 Benjamin Afonso. All rights reserved.
 //
-
 import UIKit
 import CoreData
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
-
+    
     @IBOutlet var messagesTableView: MessageTableViewController!
     
     @IBOutlet weak var NewMessageView: UIView!
     @IBOutlet weak var messageTextField: UITextField!
     
-
+    
     @IBAction func sendAction(_ sender: Any) {
         _ = self.textFieldShouldReturn(self.messageTextField)
     }
@@ -33,7 +32,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     /// Send a message
     func sendMessage() {
         
-
+        
         
         // Check if the message isn't empty
         guard let message = self.messageTextField.text, message != "" else {
@@ -44,18 +43,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         do {
             try self.messagesTableView.addMessage(message: message)
             self.messageTextField.text = nil
-
+            
         } catch {
             AlertController.errorAlert(message: "Erreur lors de la création du message", onView: self)
-
+            
             print("Erreur")
         }
         
         
-
+        
     }
     
-
+    
     // MARK: TextField
     
     /// Triggered when return key is pressed while editing
@@ -69,12 +68,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-
+    
     /// Triggered when the keyboard is editing
     func textFieldDidBeginEditing(_ textField: UITextField) {
         animateViewMoving(up: true, moveValue: 392)
         self.scrollToBottom()
-
+        
     }
     
     /// Triggered when the keyboard is dismissed
@@ -96,41 +95,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         UIView.commitAnimations()
     }
     
-    // MARK: TableView
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
-        message.delegate = self
-        
-        message.setAuthor(author: (self.messages[indexPath.section].author))
-        message.setTimeStamp(time: self.messages[indexPath.section].timestamp)
-        message.messageText.text = self.messages[indexPath.section].content
-
-        message.layer.cornerRadius=10 //set corner radius here
-        
-        return message
-
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10.0
-    }
- 
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return self.messages.count
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let v: UIView = UIView()
-        v.backgroundColor = UIColor.clear
-        return v
-    }
-    
     
     
     
@@ -142,16 +106,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         //let menuVC = self.childViewControllers[0] as? MenuViewController
         //menuVC?.setMessagesButtonActive()
         
-
+        
         
         self.messageTextField.delegate = self
         
-
+        
         
         
         
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -168,4 +132,3 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
 }
-
