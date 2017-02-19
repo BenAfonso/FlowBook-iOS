@@ -15,6 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="286"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuY-p7-9k6">
+                    <rect key="frame" x="167" y="123" width="40" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6MK-Nw-5xd"/>
+                        <constraint firstAttribute="width" constant="40" id="bEY-S0-0Z0"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGN-29-wD9">
                     <rect key="frame" x="154" y="133" width="67" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -25,11 +33,14 @@
             <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="eGN-29-wD9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1hl-9I-tp7"/>
+                <constraint firstItem="yuY-p7-9k6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lsw-g4-ho6"/>
+                <constraint firstItem="yuY-p7-9k6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cmC-jC-if2"/>
                 <constraint firstItem="eGN-29-wD9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kyN-79-fhZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dateLabel" destination="eGN-29-wD9" id="dNO-c2-TEW"/>
+                <outlet property="selectedView" destination="yuY-p7-9k6" id="7dj-Dy-haP"/>
             </connections>
             <point key="canvasLocation" x="-2.5" y="-49"/>
         </view>
