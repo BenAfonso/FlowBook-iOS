@@ -29,8 +29,10 @@ class ProfilePresenter: NSObject {
                 if let user = user as? Student {
                     self.profileViewData.promotion = user.promotion?.name
                     self.profileViewData.ribbon = UIImage(named: "Etudiant")
+                    self.profileViewData.student = true
                 } else if user is Teacher {
                     self.profileViewData.ribbon = UIImage(named: "Enseignant")
+                    self.profileViewData.student = false
                 }
                 
                 self.profileViewData.selfProfile = (user == CurrentUser.get())
@@ -60,6 +62,7 @@ struct ProfileViewData {
     var profileImage: UIImage?
     var ribbon: UIImage?
     var selfProfile: Bool?
+    var student: Bool?
 }
 
 protocol ProfileViewProtocol {
