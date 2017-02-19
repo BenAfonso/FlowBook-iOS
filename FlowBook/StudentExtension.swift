@@ -26,7 +26,11 @@ extension Student {
         student.email = email
         student.department = department
         student.promotion = promotion
+        
         student.active = false
+        if (department.users?.count == 0) {
+            student.active = true
+        }
         student.type = "student"
         
         student.password = password.sha256()
