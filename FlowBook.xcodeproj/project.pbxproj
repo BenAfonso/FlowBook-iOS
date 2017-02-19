@@ -17,6 +17,8 @@
 		6044C5461E577C8500CB0C34 /* PickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6044C5441E577C8500CB0C34 /* PickerTableViewCell.xib */; };
 		6044C5481E577FDE00CB0C34 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C5471E577FDE00CB0C34 /* Picker.swift */; };
 		6044C54A1E5791AF00CB0C34 /* PromotionPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C5491E5791AF00CB0C34 /* PromotionPickerDataSource.swift */; };
+		6044C5511E58BCF300CB0C34 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C54F1E58BCF300CB0C34 /* NewMessageViewController.swift */; };
+		6044C5521E58BCF300CB0C34 /* NewMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6044C5501E58BCF300CB0C34 /* NewMessageViewController.xib */; };
 		6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */; };
 		604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */; };
 		604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */; };
@@ -56,6 +58,14 @@
 		60D854A01E571D1F00A9BB73 /* PromotionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8549F1E571D1F00A9BB73 /* PromotionsTableViewController.swift */; };
 		60D854A21E571D3100A9BB73 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D854A11E571D3100A9BB73 /* PromotionsViewController.swift */; };
 		60D854A51E57336100A9BB73 /* NewPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D854A41E57336100A9BB73 /* NewPromotionViewController.swift */; };
+		60F8085F1E5999FB00101695 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8085E1E5999FB00101695 /* ProfilePresenter.swift */; };
+		60F808611E59B70000101695 /* UsersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F808601E59B70000101695 /* UsersData.swift */; };
+		60F808671E59C7B100101695 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F808661E59C7B100101695 /* JTAppleCalendar.framework */; };
+		60F808691E59C7BD00101695 /* JTAppleCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60F808661E59C7B100101695 /* JTAppleCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		60F8086C1E59C86000101695 /* CalendarCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F8086B1E59C86000101695 /* CalendarCellView.xib */; };
+		60F8086E1E59C8B400101695 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8086D1E59C8B400101695 /* CalendarCellView.swift */; };
+		60F808701E59C93000101695 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8086F1E59C93000101695 /* CalendarViewController.swift */; };
+		60F808721E59CBC500101695 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F808711E59CBC500101695 /* CalendarView.swift */; };
 		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
@@ -84,6 +94,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */,
+				60F808691E59C7BD00101695 /* JTAppleCalendar.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +112,8 @@
 		6044C5441E577C8500CB0C34 /* PickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTableViewCell.xib; sourceTree = "<group>"; };
 		6044C5471E577FDE00CB0C34 /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		6044C5491E5791AF00CB0C34 /* PromotionPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionPickerDataSource.swift; sourceTree = "<group>"; };
+		6044C54F1E58BCF300CB0C34 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		6044C5501E58BCF300CB0C34 /* NewMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMessageViewController.xib; sourceTree = "<group>"; };
 		6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +158,13 @@
 		60D8549F1E571D1F00A9BB73 /* PromotionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsTableViewController.swift; sourceTree = "<group>"; };
 		60D854A11E571D3100A9BB73 /* PromotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		60D854A41E57336100A9BB73 /* NewPromotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPromotionViewController.swift; sourceTree = "<group>"; };
+		60F8085E1E5999FB00101695 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		60F808601E59B70000101695 /* UsersData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersData.swift; sourceTree = "<group>"; };
+		60F808661E59C7B100101695 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JTAppleCalendar.framework; sourceTree = "<group>"; };
+		60F8086B1E59C86000101695 /* CalendarCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCellView.xib; sourceTree = "<group>"; };
+		60F8086D1E59C8B400101695 /* CalendarCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
+		60F8086F1E59C93000101695 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		60F808711E59CBC500101695 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
 		9291615C1E52755F00D60CD5 /* CustomInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
 		9291615E1E52777900D60CD5 /* CustomInputUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputUser.swift; sourceTree = "<group>"; };
@@ -159,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */,
+				60F808671E59C7B100101695 /* JTAppleCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,16 +196,21 @@
 		6044C5341E5749AF00CB0C34 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				6044C5371E576AE400CB0C34 /* PickerViewController.swift */,
-				6044C5381E576AE400CB0C34 /* PickerViewController.xib */,
-				6044C53B1E5771B400CB0C34 /* PickerTableView.swift */,
-				6044C53D1E57721900CB0C34 /* DepartmentPickerDataSource.swift */,
-				6044C5431E577C8500CB0C34 /* PickerTableViewCell.swift */,
-				6044C5441E577C8500CB0C34 /* PickerTableViewCell.xib */,
+				60F808641E59C4CA00101695 /* ViewController */,
+				60F808631E59C4B600101695 /* UI */,
+				60F808621E59C4A800101695 /* Datasources */,
 				6044C5471E577FDE00CB0C34 /* Picker.swift */,
-				6044C5491E5791AF00CB0C34 /* PromotionPickerDataSource.swift */,
 			);
 			name = Picker;
+			sourceTree = "<group>";
+		};
+		6044C54E1E58BCD400CB0C34 /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				6044C54F1E58BCF300CB0C34 /* NewMessageViewController.swift */,
+				6044C5501E58BCF300CB0C34 /* NewMessageViewController.xib */,
+			);
+			name = NewMessage;
 			sourceTree = "<group>";
 		};
 		606A6D6D1E550CF600A0B3B0 /* Services */ = {
@@ -209,7 +235,7 @@
 		606A6D6F1E550D2B00A0B3B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6044C5341E5749AF00CB0C34 /* Picker */,
+				6044C54E1E58BCD400CB0C34 /* NewMessage */,
 				60D8549B1E571C9900A9BB73 /* Promotions */,
 				60A5E52D1E54FEB100684035 /* Flows */,
 				60A5E51B1E5441F800684035 /* Users */,
@@ -254,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				602C94601E4DD0CF00A02196 /* ProfileViewController.swift */,
+				60F8085E1E5999FB00101695 /* ProfilePresenter.swift */,
 			);
 			name = ProfileView;
 			sourceTree = "<group>";
@@ -285,6 +312,7 @@
 		6086D65F1E49CFAD007D270F = {
 			isa = PBXGroup;
 			children = (
+				60F808661E59C7B100101695 /* JTAppleCalendar.framework */,
 				607BED041E509D8A004EB98A /* CryptoSwift.framework */,
 				6086D66A1E49CFAD007D270F /* FlowBook */,
 				6086D6821E49CFAD007D270F /* FlowBookTests */,
@@ -304,6 +332,7 @@
 		6086D66A1E49CFAD007D270F /* FlowBook */ = {
 			isa = PBXGroup;
 			children = (
+				60F808651E59C5DE00101695 /* Components */,
 				606A6D6F1E550D2B00A0B3B0 /* Views */,
 				606A6D6D1E550CF600A0B3B0 /* Services */,
 				60C8A2D21E4EA528002E9B6D /* Models */,
@@ -417,6 +446,7 @@
 				60A5E5291E54ED1000684035 /* DepartmentExtension.swift */,
 				60A5E52B1E54ED1800684035 /* PromotionExtension.swift */,
 				60A5E5321E55047700684035 /* StudentExtension.swift */,
+				60F808601E59B70000101695 /* UsersData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -444,6 +474,54 @@
 				60D854A41E57336100A9BB73 /* NewPromotionViewController.swift */,
 			);
 			name = NewPromotion;
+			sourceTree = "<group>";
+		};
+		60F808621E59C4A800101695 /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				6044C53D1E57721900CB0C34 /* DepartmentPickerDataSource.swift */,
+				6044C5491E5791AF00CB0C34 /* PromotionPickerDataSource.swift */,
+			);
+			name = Datasources;
+			sourceTree = "<group>";
+		};
+		60F808631E59C4B600101695 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6044C53B1E5771B400CB0C34 /* PickerTableView.swift */,
+				6044C5431E577C8500CB0C34 /* PickerTableViewCell.swift */,
+				6044C5381E576AE400CB0C34 /* PickerViewController.xib */,
+				6044C5441E577C8500CB0C34 /* PickerTableViewCell.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		60F808641E59C4CA00101695 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6044C5371E576AE400CB0C34 /* PickerViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		60F808651E59C5DE00101695 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				60F8086A1E59C84A00101695 /* Calendar */,
+				6044C5341E5749AF00CB0C34 /* Picker */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		60F8086A1E59C84A00101695 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				60F8086B1E59C86000101695 /* CalendarCellView.xib */,
+				60F8086D1E59C8B400101695 /* CalendarCellView.swift */,
+				60F8086F1E59C93000101695 /* CalendarViewController.swift */,
+				60F808711E59CBC500101695 /* CalendarView.swift */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,7 +616,9 @@
 				6044C5461E577C8500CB0C34 /* PickerTableViewCell.xib in Resources */,
 				92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */,
 				6086D6931E4A71C2007D270F /* LaunchScreen.storyboard in Resources */,
+				6044C5521E58BCF300CB0C34 /* NewMessageViewController.xib in Resources */,
 				6044C53A1E576AE400CB0C34 /* PickerViewController.xib in Resources */,
+				60F8086C1E59C86000101695 /* CalendarCellView.xib in Resources */,
 				6086D6761E49CFAD007D270F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,11 +654,14 @@
 				60D854A51E57336100A9BB73 /* NewPromotionViewController.swift in Sources */,
 				6086D6991E4A81D9007D270F /* HomeViewController.swift in Sources */,
 				60D8549D1E571CB800A9BB73 /* PromotionsTableViewCell.swift in Sources */,
+				6044C5511E58BCF300CB0C34 /* NewMessageViewController.swift in Sources */,
+				60F8086E1E59C8B400101695 /* CalendarCellView.swift in Sources */,
 				60C8A2DC1E4EA5B9002E9B6D /* UserCategoryExtension.swift in Sources */,
 				602C945F1E4DC8CC00A02196 /* CustomButton.swift in Sources */,
 				6044C5391E576AE400CB0C34 /* PickerViewController.swift in Sources */,
 				60A5E52C1E54ED1800684035 /* PromotionExtension.swift in Sources */,
 				9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */,
+				60F808701E59C93000101695 /* CalendarViewController.swift in Sources */,
 				60A5E5221E54508200684035 /* AlertController.swift in Sources */,
 				604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */,
 				60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */,
@@ -600,10 +683,13 @@
 				6086D66E1E49CFAD007D270F /* LoginViewController.swift in Sources */,
 				604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */,
 				60D854A21E571D3100A9BB73 /* PromotionsViewController.swift in Sources */,
+				60F8085F1E5999FB00101695 /* ProfilePresenter.swift in Sources */,
 				60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */,
 				6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */,
 				60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */,
+				60F808721E59CBC500101695 /* CalendarView.swift in Sources */,
 				92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */,
+				60F808611E59B70000101695 /* UsersData.swift in Sources */,
 				6044C54A1E5791AF00CB0C34 /* PromotionPickerDataSource.swift in Sources */,
 				606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */,
 			);

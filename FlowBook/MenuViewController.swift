@@ -138,6 +138,9 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         self.setPromotionsButtonActive()
     }
     
+    @IBAction func calendarButtonAction(_ sender: Any) {
+        menuButtonsDelegate?.goToCalendar()
+    }
     func selectFlow(flow: Flow) {
         menuButtonsDelegate?.selectFlow(flow: flow)
     }
@@ -152,6 +155,7 @@ protocol MenuButtonsDelegate {
     func goToUsers()
     func goToMessages()
     func goToPromotions()
+    func goToCalendar()
     func selectFlow(flow: Flow)
 }
 

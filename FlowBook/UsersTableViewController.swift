@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UserDataDelegate {
     
     @IBOutlet weak var usersTableView: UITableView!
 
@@ -20,35 +20,20 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var teacherButton: CustomButton!
     @IBOutlet weak var inactiveButton: CustomButton!
     
-    
-    fileprivate lazy var usersFetched : NSFetchedResultsController<User> = {
-        let request : NSFetchRequest<User> = User.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(User.lastName), ascending: true)]
-        let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
-        fetchResultController.delegate = self
-        return fetchResultController
-    }()
-    
+    @IBOutlet weak var usersData: UsersData? = UsersData()
+
     
     override init() {
         super.init()
-        
-
-        
-        do {
-            try self.usersFetched.performFetch()
-            
-        } catch {
-            
-        }
     }
-    
   
     
     // MARK: TableView
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let section = self.usersFetched.sections?[section] else {
-            fatalError("Unexpected section number")
+        guard let section = self.usersData?.usersFetched.sections?[section] else {
+           // fatalError("Unexpected section number")
+            return 0
         }
         
         return section.numberOfObjects
@@ -58,9 +43,9 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userCell = self.usersTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
         
-        let user = self.usersFetched.object(at: indexPath)
+        let user = self.usersData?.get(userAtIndex: indexPath)
         
-        userCell.setUser(user: user)
+        userCell.setUser(user: user!)
         
         return userCell
     }
@@ -78,23 +63,25 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
         activate.backgroundColor = UIColor(red: 0.0/255.0, green: 145.0/255.0, blue: 132.0/255.0, alpha: 1)
         deactivate.backgroundColor = UIColor.orange
-        if self.usersFetched.object(at: indexPath).active {
+        if (self.usersData?.get(userAtIndex: indexPath).active)! {
             return [delete, deactivate]
         }
         return [delete, activate]
     }
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    
+    // MARK: UserDataDelegate
+    
+    func controllerWillChangeContent() {
         self.usersTableView?.beginUpdates()
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    func controllerDidChangeContent() {
         self.usersTableView?.endUpdates()
         CoreDataManager.save()
     }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
-                    didChange anObject: Any, at indexPath: IndexPath?,
+
+    func controller(didChange anObject: Any, at indexPath: IndexPath?,
                     for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch type {
@@ -118,41 +105,36 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     // MARK: Handlers
     
     func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
-        self.usersFetched.object(at: indexPath).delete()        
+        self.usersData?.get(userAtIndex: indexPath).delete()
     }
     
     func activateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
-        self.usersFetched.object(at: indexPath).activate()
+        self.usersData?.get(userAtIndex: indexPath).activate()
     }
     
     func deactivateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
-        self.usersFetched.object(at: indexPath).active = false
+        self.usersData?.get(userAtIndex: indexPath).active = false
     }
     
+    
+    // MARK: Actions
     @IBAction func displayStudents(_ sender: Any) {
-        let predicate = NSPredicate(format: "type == %@", "student")
-        self.usersFetched.fetchRequest.predicate = predicate
-        do {try self.usersFetched.performFetch()}catch{}
+        self.usersData?.filter(filter: .students)
         self.usersTableView.reloadData()
     }
     
     @IBAction func displayTeachers(_ sender: Any) {
-        let predicate = NSPredicate(format: "type == %@", "teacher")
-        self.usersFetched.fetchRequest.predicate = predicate
-        do {try self.usersFetched.performFetch()}catch{}
+        self.usersData?.filter(filter: .teachers)
         self.usersTableView.reloadData()
     }
     
     @IBAction func displayInactives(_ sender: Any) {
-        let predicate = NSPredicate(format: "active == false")
-        self.usersFetched.fetchRequest.predicate = predicate
-        do {try self.usersFetched.performFetch()}catch{}
+        self.usersData?.filter(filter: .inactives)
         self.usersTableView.reloadData()
     }
     
     @IBAction func displayAll(_ sender: Any) {
-        self.usersFetched.fetchRequest.predicate = nil
-        do {try self.usersFetched.performFetch()}catch{}
+        self.usersData?.filter(filter: .all)
         self.usersTableView.reloadData()
     }
     
