@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let _ = department.createPromotion(withName: "2018")
 
         }
-        
+       
 
         
     }
