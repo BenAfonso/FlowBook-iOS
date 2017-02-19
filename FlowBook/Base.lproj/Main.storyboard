@@ -956,12 +956,14 @@
                         <outlet property="nbMessagesLabel" destination="Ciu-mu-lp4" id="Hnu-nn-pqu"/>
                         <outlet property="nbPostsLabel" destination="B3L-aI-S5C" id="V0o-Yh-TkF"/>
                         <outlet property="profileImage" destination="wPi-kx-4VU" id="dPj-Sk-GNU"/>
+                        <outlet property="profilePresenter" destination="wce-yz-zIv" id="jp0-4K-zwS"/>
                         <outlet property="promotionLabel" destination="qkb-Td-S46" id="s8z-8X-UUG"/>
                         <outlet property="roleRibbon" destination="VIu-Hj-Pus" id="Ve3-1t-7Wv"/>
                         <outlet property="usernameLabel" destination="Izw-8K-R8m" id="pUT-xx-vJk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IpH-MN-Ts5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="wce-yz-zIv" customClass="ProfilePresenter" customModule="FlowBook" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="861.9140625" y="-1839.0625"/>
         </scene>
@@ -1645,7 +1647,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6d-uz-304" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="DEh-Nz-reD" customClass="UsersTableViewController" customModule="FlowBook" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1384.5703125" y="-327.34375"/>
+            <point key="canvasLocation" x="1326" y="-184"/>
         </scene>
         <!--New Promotion View Controller-->
         <scene sceneID="noe-SI-eYO">

@@ -26,79 +26,32 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImage: RoundedImageView!
 
     let picker = UIImagePickerController()
-    let pageView = UIPageViewController()
     var user: User?
+    
+    @IBOutlet var profilePresenter: ProfilePresenter!
+   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.picker.delegate = self
+    }
+    
     
     func setUser(user: User) {
         self.user = user
-        self.setUIInfos()
+        self.profilePresenter.user = user
+        self.setUI()
     }
     
     
-    func setUIInfos() {
-        nbPostsLabel.text = String(self.getNbEvents())
-        nbEventsLabel.text = String(self.getNbFiles())
-        nbFilesLabel.text = String(self.getNbPosts())
-        nbMessagesLabel.text = String(self.getNbMessages())
-        
-        //let menuVC = self.childViewControllers[0] as? MenuViewController
-        if let currentUser = self.user {
-            profileImage.image = currentUser.getImage()
-            usernameLabel.text = currentUser.getUsername()
-            departmentName.text = currentUser.department?.name
-            
-            if currentUser.isStudent() {
-                
-                roleRibbon.image = UIImage(named: "Etudiant")
-                promotionLabel.isHidden = false
-                
-                
-                promotionLabel.text = (currentUser as! Student).promotion?.name
-                
-            } else if currentUser.isTeacher() {
-                roleRibbon.image = UIImage(named: "Enseignant")
-            }
-            
-            
-            if currentUser == CurrentUser.get() {
-                
-            } else {
-                editButton.isHidden = true
-            }
-        }
-        
-    }
     
+    // MARK: Image picker
     
-    // ACCESS TO FUTURE MODELS
-    func getNbEvents() -> Int {
-        return 102
-    }
-    
-    func getNbMessages() -> Int {
-        
-        if let currentUser = self.user {
-            return currentUser.getNbPosts()
-        }
-        return 0
-        
-    }
-    
-    func getNbPosts() -> Int {
-        return 32
-    }
-    
-    func getNbFiles() -> Int {
-        return 86
-    }
-    
-
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any])
     {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         AuthenticationService.getUser()?.changeImage(image: chosenImage)
-        self.profileImage.image = AuthenticationService.getUser()?.getImage()
 
         dismiss(animated:true, completion: nil) //5
     }
@@ -138,18 +91,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         present(alert, animated: true)
     }
     
+    // MARK: Actions
     @IBAction func changeProfileImage(_ sender: Any) {
         picker.allowsEditing = true
         self.pickImageSource()
     }
 
  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.picker.delegate = self
-        self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
-        
-    }
     
     
     
@@ -160,4 +108,28 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
+}
+
+
+extension ProfileViewController: ProfileViewProtocol {
+    func setUI() {
+        self.nbEventsLabel.text = "0"
+        self.nbFilesLabel.text = "0"
+        self.nbPostsLabel.text = "0"
+        self.usernameLabel.text = self.profilePresenter.getData().username
+        self.profileImage.image = self.profilePresenter.getData().profileImage
+        self.departmentName.text = self.profilePresenter.getData().department
+        self.nbMessagesLabel.text = self.profilePresenter.getData().nbPosts
+        self.promotionLabel.text = self.profilePresenter.getData().promotion
+        self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
+        self.roleRibbon.image = self.profilePresenter.getData().ribbon
+        
+        self.editButton.isHidden = !(self.profilePresenter.getData().selfProfile!)
+
+    
+    }
+    
+    func refreshImage() {
+        self.profileImage.image = AuthenticationService.getUser()?.getImage()
+    }
 }
