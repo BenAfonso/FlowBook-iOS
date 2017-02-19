@@ -1243,12 +1243,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtP-fH-2QR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="DOf-mt-x6o" customClass="UsersData" customModule="FlowBook" customModuleProvider="target"/>
                 <customObject id="23v-46-uAD" customClass="UsersTableViewController" customModule="FlowBook" customModuleProvider="target">
                     <connections>
                         <outlet property="allButton" destination="tpq-PF-o1b" id="toa-ZZ-C37"/>
                         <outlet property="inactiveButton" destination="wIr-br-x2Z" id="tPA-VJ-ugV"/>
                         <outlet property="studentButton" destination="box-O5-lsF" id="WnK-6n-TZZ"/>
                         <outlet property="teacherButton" destination="qJM-c6-v4z" id="TC5-eq-1DR"/>
+                        <outlet property="usersData" destination="DOf-mt-x6o" id="BQt-Iq-sCv"/>
                         <outlet property="usersTableView" destination="UQa-Lz-yEE" id="4OF-5b-UJP"/>
                     </connections>
                 </customObject>

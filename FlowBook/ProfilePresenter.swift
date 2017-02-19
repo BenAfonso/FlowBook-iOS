@@ -53,7 +53,6 @@ class ProfilePresenter: NSObject {
 }
 
 struct ProfileViewData {
-    
     var username: String?
     var nbPosts: String?
     var department: String?

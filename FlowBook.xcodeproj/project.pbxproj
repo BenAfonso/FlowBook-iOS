@@ -59,6 +59,7 @@
 		60D854A21E571D3100A9BB73 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D854A11E571D3100A9BB73 /* PromotionsViewController.swift */; };
 		60D854A51E57336100A9BB73 /* NewPromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D854A41E57336100A9BB73 /* NewPromotionViewController.swift */; };
 		60F8085F1E5999FB00101695 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8085E1E5999FB00101695 /* ProfilePresenter.swift */; };
+		60F808611E59B70000101695 /* UsersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F808601E59B70000101695 /* UsersData.swift */; };
 		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
@@ -151,6 +152,7 @@
 		60D854A11E571D3100A9BB73 /* PromotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		60D854A41E57336100A9BB73 /* NewPromotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPromotionViewController.swift; sourceTree = "<group>"; };
 		60F8085E1E5999FB00101695 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		60F808601E59B70000101695 /* UsersData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersData.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
 		9291615C1E52755F00D60CD5 /* CustomInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
 		9291615E1E52777900D60CD5 /* CustomInputUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputUser.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				60A5E5291E54ED1000684035 /* DepartmentExtension.swift */,
 				60A5E52B1E54ED1800684035 /* PromotionExtension.swift */,
 				60A5E5321E55047700684035 /* StudentExtension.swift */,
+				60F808601E59B70000101695 /* UsersData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */,
 				60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */,
 				92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */,
+				60F808611E59B70000101695 /* UsersData.swift in Sources */,
 				6044C54A1E5791AF00CB0C34 /* PromotionPickerDataSource.swift in Sources */,
 				606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */,
 			);
