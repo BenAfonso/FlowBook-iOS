@@ -775,7 +775,7 @@
                 </customObject>
                 <swipeGestureRecognizer direction="right" id="5qU-9I-FIs"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="-803"/>
+            <point key="canvasLocation" x="1302" y="-803"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="b1Q-Lb-hZk">

@@ -62,11 +62,22 @@ class UsersData: NSObject, NSFetchedResultsControllerDelegate {
         delegate?.controllerDidChangeContent()
     }
     
+    
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange anObject: Any, at indexPath: IndexPath?,
                     for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
-        delegate?.controller(didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
+        switch type {
+        case .delete:
+            delegate?.onDelete(indexPath: indexPath)
+        case .insert:
+            delegate?.onInsert(newIndexPath: newIndexPath)
+        case .update:
+            delegate?.onUpdate(indexPath: indexPath)
+        default:
+            break
+        }
+        
     }
     
     
@@ -83,8 +94,10 @@ enum UserFilter {
 protocol UserDataDelegate {
     func controllerWillChangeContent()
     func controllerDidChangeContent()
-    func controller(
-                    didChange anObject: Any, at indexPath: IndexPath?,
-                    for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
+    func onDelete(indexPath: IndexPath?)
+    func onInsert(newIndexPath: IndexPath?)
+    func onUpdate(indexPath: IndexPath?)
+    
     
 }
+
