@@ -125,6 +125,8 @@ extension ProfileViewController: ProfileViewProtocol {
         self.roleRibbon.image = self.profilePresenter.getData().ribbon
         
         self.editButton.isHidden = !(self.profilePresenter.getData().selfProfile!)
+        self.promotionLabel.isHidden = !(self.profilePresenter.getData().student!)
+
 
     
     }

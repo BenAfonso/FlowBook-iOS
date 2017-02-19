@@ -79,41 +79,48 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     func controllerDidChangeContent() {
         self.usersTableView?.endUpdates()
         CoreDataManager.save()
+        
     }
 
-    func controller(didChange anObject: Any, at indexPath: IndexPath?,
-                    for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        switch type {
-        case .delete:
-            if let indexPath = indexPath {
-                self.usersTableView?.deleteRows(at: [indexPath], with: .automatic)
-            }
-        case .insert:
-            if let newIndexPath = newIndexPath {
-                self.usersTableView?.insertRows(at: [newIndexPath], with: .fade)
-            }
-        case .update:
-            if let indexPath = indexPath {
-                self.usersTableView?.reloadRows(at: [indexPath], with: .automatic)
-            }
-        default:
-            break
+    
+    func onDelete(indexPath: IndexPath?) {
+        if let indexPath = indexPath {
+            self.usersTableView?.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
+    func onInsert(newIndexPath: IndexPath?) {
+        if let newIndexPath = newIndexPath {
+            self.usersTableView?.insertRows(at: [newIndexPath], with: .fade)
+        }
+    }
+    
+    func onUpdate(indexPath: IndexPath?) {
+        if let indexPath = indexPath {
+            self.usersTableView?.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+
     
     // MARK: Handlers
     
     func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
         self.usersData?.get(userAtIndex: indexPath).delete()
+        self.usersTableView.reloadData()
+
     }
     
     func activateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
         self.usersData?.get(userAtIndex: indexPath).activate()
+        self.usersTableView.reloadData()
+
     }
     
     func deactivateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
         self.usersData?.get(userAtIndex: indexPath).active = false
+        self.usersTableView.reloadData()
+
     }
     
     
