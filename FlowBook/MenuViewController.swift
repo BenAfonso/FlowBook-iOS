@@ -16,6 +16,7 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     @IBOutlet weak var messagesButton: CustomButton!
     @IBOutlet weak var usersButton: CustomButton!
     @IBOutlet weak var promotionsButton: CustomButton!
+    @IBOutlet weak var calendarButton: CustomButton!
     
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -45,6 +46,7 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         self.messagesButton.setInactive()
         self.usersButton.setInactive()
         self.profileButton.setActive()
+        self.calendarButton.setInactive()
     }
     
     func setMessagesButtonActive() {
@@ -52,6 +54,7 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         self.messagesButton.setActive()
         self.usersButton.setInactive()
         self.profileButton.setInactive()
+        self.calendarButton.setInactive()
     }
     
     func setPromotionsButtonActive() {
@@ -59,6 +62,7 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         self.messagesButton.setInactive()
         self.usersButton.setInactive()
         self.profileButton.setInactive()
+        self.calendarButton.setInactive()
     }
     
     func setUsersButtonActive() {
@@ -66,6 +70,15 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         self.messagesButton.setInactive()
         self.usersButton.setActive()
         self.profileButton.setInactive()
+        self.calendarButton.setInactive()
+    }
+    
+    func setCalendarButtonActive() {
+        self.promotionsButton.setInactive()
+        self.messagesButton.setInactive()
+        self.usersButton.setInactive()
+        self.profileButton.setInactive()
+        self.calendarButton.setActive()
     }
     
 
@@ -140,7 +153,9 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     
     @IBAction func calendarButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToCalendar()
+        self.setCalendarButtonActive()
     }
+    
     func selectFlow(flow: Flow) {
         menuButtonsDelegate?.selectFlow(flow: flow)
     }
