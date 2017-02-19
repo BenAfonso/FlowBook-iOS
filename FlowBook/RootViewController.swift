@@ -134,6 +134,10 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         self.goToView(withIdentifier: "promotionsTableView")
     }
     
+    func goToCalendar() {
+        self.goToView(withIdentifier: "calendarView")
+    }
+    
     func visitProfile(ofUser user: User) {
         self.goToView(withIdentifier: "profileView", forUser: user)
     }
