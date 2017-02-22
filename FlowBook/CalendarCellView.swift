@@ -15,6 +15,4 @@ class CalendarCellView: JTAppleDayCellView {
     @IBOutlet weak var haveEventsView: UIView!
     
     
-    
-    
 }

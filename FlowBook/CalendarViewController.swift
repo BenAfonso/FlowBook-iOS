@@ -12,11 +12,15 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController {
 
 
+    @IBOutlet weak var yearLabelHeader: UILabel!
+    @IBOutlet weak var monthLabelHeader: UILabel!
+    
     @IBOutlet weak var calendarView: CalendarView!
     
     let white = UIColor.white
     let gray = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 0.3)
     let green = UIColor(red: 0.0/255.0, green: 150.0/255.0, blue: 136.0/255.0, alpha: 1.0)
+    let monthLabelTab = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"]
 
     
     override func viewDidLoad() {
@@ -30,6 +34,15 @@ class CalendarViewController: UIViewController {
         let doubleTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapCollectionView(gesture:)))
         doubleTapGesture.numberOfTapsRequired = 2  // add double tap
         calendarView.addGestureRecognizer(doubleTapGesture)
+        
+        //Current date header
+        let calendarCurrent = NSCalendar.current
+        let yearCurrent = calendarCurrent.component(.year, from: Date())
+        let monthCurrent = calendarCurrent.component(.month, from:Date())
+        monthLabelHeader.text = monthLabelTab[monthCurrent-1]
+        yearLabelHeader.text = String(describing: yearCurrent)
+        
+        
     }
 
 
@@ -45,9 +58,17 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+        let currentDate = Date()
         
-        let startDate = Date() // You can use date generated from a formatter
-        let endDate = Date()                                // You can also use dates created from this function
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        
+        let calendarCurrent = NSCalendar.current
+        let yearEnd = calendarCurrent.component(.year, from: currentDate)+1
+        
+        let startDate = currentDate // You can use date generated from a formatter
+        let endDate = formatter.date(from: "\(yearEnd) 01 31")! // You can also use dates created from this function
+        
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
@@ -71,13 +92,29 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         
         // Setup Cell text
         myCustomCell.dateLabel.text = cellState.text
-        
-        
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellSelection(view: cell, cellState: cellState)
     }
     
-    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        let calendar = NSCalendar.current
+        
+        var year: Int?
+        var month: Int?
+        var day: Int?
+        for date in visibleDates.monthDates{
+            year = calendar.component(.year, from: date)
+            month = calendar.component(.month, from: date)
+            day = calendar.component(.day, from: date)
+            if (day == 1) {
+                break
+            }
+        }
+        
+        monthLabelHeader.text = monthLabelTab[month!-1]
+        yearLabelHeader.text = String(describing: year!)
+        
+    }
     
     // Function to handle the text color of the calendar
     func handleCellTextColor(view: JTAppleDayCellView?, cellState: CellState) {
@@ -173,6 +210,8 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
     }
+    
+    
     
     
 }
