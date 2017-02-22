@@ -25,6 +25,11 @@ class CalendarViewController: UIViewController {
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarCellView")
         calendarView.cellInset = CGPoint(x: 0, y: 0)
+        
+        //Déclaration du double tap sur date
+        let doubleTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapCollectionView(gesture:)))
+        doubleTapGesture.numberOfTapsRequired = 2  // add double tap
+        calendarView.addGestureRecognizer(doubleTapGesture)
     }
 
 
@@ -34,7 +39,7 @@ class CalendarViewController: UIViewController {
     }
     
     
-
+    
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
@@ -53,6 +58,12 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         return parameters
     }
     
+    //Fonction a utilisé pour ajouter directement une date 
+    func didDoubleTapCollectionView(gesture: UITapGestureRecognizer) {
+        let point = gesture.location(in: gesture.view!)
+        let cellState = calendarView.cellStatus(at: point)
+        print(cellState!.date)
+    }
 
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
@@ -103,15 +114,55 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         guard let myCustomCell = view as? CalendarCellView  else {
             return
         }
+        
         if cellState.isSelected {
             myCustomCell.selectedView.layer.cornerRadius =  20
             myCustomCell.selectedView.isHidden = false
         } else {
             myCustomCell.selectedView.isHidden = true
+            if haveEvents(cellState: cellState){
+                myCustomCell.haveEventsView.layer.cornerRadius =  20
+                myCustomCell.haveEventsView.isHidden=false
+            }
+            else{
+                myCustomCell.haveEventsView.isHidden=true
+            }
+            
         }
+        
+    }
+    
+    //Fonction pour savoir si il y a un évènement sur la cellule
+    func haveEvents(cellState: CellState)->BooleanLiteralType{
+        var result = false
+        let dateEvents = getAllEventsToCell()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        
+        let cellStateString = formatter.string(from: cellState.date)
+        
+        
+        for dateEvent in dateEvents{
+            let dateEventString = formatter.string(from: dateEvent)
+            if cellState.dateBelongsTo == .thisMonth && dateEventString == cellStateString{
+                result = true
+            }
+        } 
+        return result
     }
     
 
+    //Fonction pour récupérer les dates avec évènements 
+    func getAllEventsToCell()->[Date]{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        let date1 = formatter.date(from: "2017 02 9")!
+        let date2 = formatter.date(from: "2017 02 14")!
+        let date3 = formatter.date(from: "2017 02 24")!
+        let dateEvents = [date1,date2,date3]
+        return dateEvents
+    }
+    
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
