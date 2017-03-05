@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		602C945F1E4DC8CC00A02196 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C945E1E4DC8CC00A02196 /* CustomButton.swift */; };
 		602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C94601E4DD0CF00A02196 /* ProfileViewController.swift */; };
+		60354D8F1E6CBA5400A524F7 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */; };
+		60354D911E6CC10800A524F7 /* ResetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60354D901E6CC10800A524F7 /* ResetPassword.xib */; };
 		6044C5391E576AE400CB0C34 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C5371E576AE400CB0C34 /* PickerViewController.swift */; };
 		6044C53A1E576AE400CB0C34 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6044C5381E576AE400CB0C34 /* PickerViewController.xib */; };
 		6044C53C1E5771B400CB0C34 /* PickerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C53B1E5771B400CB0C34 /* PickerTableView.swift */; };
@@ -104,6 +106,8 @@
 /* Begin PBXFileReference section */
 		602C945E1E4DC8CC00A02196 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		602C94601E4DD0CF00A02196 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		60354D901E6CC10800A524F7 /* ResetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPassword.xib; sourceTree = "<group>"; };
 		6044C5371E576AE400CB0C34 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		6044C5381E576AE400CB0C34 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
 		6044C53B1E5771B400CB0C34 /* PickerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableView.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */,
+				60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */,
 			);
 			name = MenuView;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */,
+				60354D901E6CC10800A524F7 /* ResetPassword.xib */,
 			);
 			name = ResetPasswordView;
 			sourceTree = "<group>";
@@ -578,7 +584,7 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QW5R6973G4;
+						DevelopmentTeam = 3EQET6CY44;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -613,6 +619,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60354D911E6CC10800A524F7 /* ResetPassword.xib in Resources */,
 				6044C5461E577C8500CB0C34 /* PickerTableViewCell.xib in Resources */,
 				92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */,
 				6086D6931E4A71C2007D270F /* LaunchScreen.storyboard in Resources */,
@@ -687,6 +694,7 @@
 				60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */,
 				6086D66C1E49CFAD007D270F /* AppDelegate.swift in Sources */,
 				60C8A2D61E4EA581002E9B6D /* MessageExtension.swift in Sources */,
+				60354D8F1E6CBA5400A524F7 /* MenuPresenter.swift in Sources */,
 				60F808721E59CBC500101695 /* CalendarView.swift in Sources */,
 				92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */,
 				60F808611E59B70000101695 /* UsersData.swift in Sources */,
@@ -822,7 +830,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -830,7 +838,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -840,7 +848,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -848,7 +856,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
