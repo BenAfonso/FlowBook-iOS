@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initCoreData() {
         
-        
         do { let users = try User.getAll()
             for user in users {
+   
                 if user.isTeacher() {
                     user.type = "teacher"
                 } else {
