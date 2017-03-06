@@ -1078,6 +1078,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4f-gr-mzv">
+                                <rect key="frame" x="934" y="34" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="JDd-Sj-kPg"/>
+                                    <constraint firstAttribute="height" constant="50" id="bbh-Fh-izV"/>
+                                </constraints>
+                                <state key="normal" image="addEvent"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1089,9 +1097,11 @@
                             <constraint firstItem="Qee-lz-djd" firstAttribute="leading" secondItem="xBQ-Gx-fJz" secondAttribute="leadingMargin" constant="25" id="TvV-23-ZMk"/>
                             <constraint firstItem="unD-CX-ugo" firstAttribute="top" secondItem="Qee-lz-djd" secondAttribute="bottom" constant="2" id="Wgd-4Q-s62"/>
                             <constraint firstItem="unD-CX-ugo" firstAttribute="leading" secondItem="xBQ-Gx-fJz" secondAttribute="leading" id="ewA-RW-vzN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z4f-gr-mzv" secondAttribute="trailing" constant="20" id="fS7-PP-pmf"/>
                             <constraint firstItem="Qee-lz-djd" firstAttribute="top" secondItem="Id0-pK-XA8" secondAttribute="bottom" constant="18" id="gco-WF-z9o"/>
                             <constraint firstItem="nBa-9z-b81" firstAttribute="top" secondItem="unD-CX-ugo" secondAttribute="bottom" id="oku-zk-9bY"/>
                             <constraint firstItem="3mj-dt-0Zv" firstAttribute="top" secondItem="xBQ-Gx-fJz" secondAttribute="topMargin" constant="20" id="yLZ-BS-33K"/>
+                            <constraint firstItem="Z4f-gr-mzv" firstAttribute="top" secondItem="VGs-wy-dVr" secondAttribute="bottom" constant="14" id="zkx-3w-5Fw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1881,6 +1891,7 @@
         <image name="Edit icon" width="105" height="105"/>
         <image name="Etudiant" width="312" height="69"/>
         <image name="Logo" width="73" height="78"/>
+        <image name="addEvent" width="24" height="24"/>
         <image name="iconError" width="25" height="22"/>
         <image name="profileImage" width="180" height="180"/>
     </resources>

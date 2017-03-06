@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 extension Event {
-    static func create(dateStart ds: Date , dateEnd de: Date, titleEvent title: String, containsEvent contains: String, colorEvent color: String, forPromotion promo: Promotion, theAuthor author: User) -> Event? {
+    static func create(dateStart ds: Date , dateEnd de: Date, titleEvent title: String, descriptionEvent contains: String, colorEvent color: String, forPromotion promo: Promotion, theAuthor author: User) -> Event? {
         let event = Event(context: CoreDataManager.context)
         if ds.compare(de) == ComparisonResult.orderedAscending{
             event.dateStart = ds as NSDate?

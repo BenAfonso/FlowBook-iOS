@@ -425,6 +425,7 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				92C9AB9B1E6E1953001AC477 /* NewEvent */,
 				60D854A31E57335000A9BB73 /* NewPromotion */,
 				60D8549E1E571D0300A9BB73 /* PromotionsView */,
 				606A6D7B1E55F16700A0B3B0 /* MasterView */,
@@ -531,6 +532,13 @@
 				60F808711E59CBC500101695 /* CalendarView.swift */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		92C9AB9B1E6E1953001AC477 /* NewEvent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NewEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
