@@ -21,7 +21,8 @@ class CalendarViewController: UIViewController {
     let gray = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 0.3)
     let green = UIColor(red: 0.0/255.0, green: 150.0/255.0, blue: 136.0/255.0, alpha: 1.0)
     let monthLabelTab = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"]
-
+    let calendarCurrent = NSCalendar.current
+    let currentDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,6 @@ class CalendarViewController: UIViewController {
         calendarView.addGestureRecognizer(doubleTapGesture)
         
         //Current date header
-        let calendarCurrent = NSCalendar.current
         let yearCurrent = calendarCurrent.component(.year, from: Date())
         let monthCurrent = calendarCurrent.component(.month, from:Date())
         monthLabelHeader.text = monthLabelTab[monthCurrent-1]
@@ -58,20 +58,23 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        let currentDate = Date()
+        
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
+
+        // TODO régler problème current DATE
+        //let yearStart = (calendarCurrent.component(.year, from: currentDate))-1
+        let yearEnd = (calendarCurrent.component(.year, from: currentDate))+2
         
-        let calendarCurrent = NSCalendar.current
-        let yearEnd = calendarCurrent.component(.year, from: currentDate)+1
-        
-        let startDate = currentDate // You can use date generated from a formatter
+        //let startDate = formatter.date(from: "\(yearStart) 01 2")! // You can use date generated from a formatter
+       
         let endDate = formatter.date(from: "\(yearEnd) 01 31")! // You can also use dates created from this function
-        
-        let parameters = ConfigurationParameters(startDate: startDate,
-                                                 endDate: endDate,
-                                                 numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
+       
+        let parameters = ConfigurationParameters(
+            startDate: currentDate,
+            endDate: endDate,
+            numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
             calendar: Calendar.current,
             generateInDates: .forAllMonths,
             generateOutDates: .tillEndOfGrid,
