@@ -23,62 +23,28 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     
     @IBOutlet weak var flowPickerView: UIView!
     
+    @IBOutlet var menuPresenter: MenuPresenter!
+    
+    
+    
     var menuButtonsDelegate: MenuButtonsDelegate?
     weak var flowPicker: FlowPickerViewController?
+    
 
-    func getUsername() -> String {
-        
-        // NEW METHOD TO PROPAGATE
-        if let currentUser = CurrentUser.get() {
-            return currentUser.getUsername()
-        } else {
-            return ""
-        }
-    }
     
-    func getProfileImage() -> UIImage? {
-        let image = AuthenticationService.getUser()?.getImage()
-        return image
-    }
+    // TO REFACTOR
     
-    func setProfileButtonActive() {
+    func setButtonsInactive() {
         self.promotionsButton.setInactive()
-        self.messagesButton.setInactive()
-        self.usersButton.setInactive()
-        self.profileButton.setActive()
-        self.calendarButton.setInactive()
-    }
-    
-    func setMessagesButtonActive() {
-        self.promotionsButton.setInactive()
-        self.messagesButton.setActive()
-        self.usersButton.setInactive()
-        self.profileButton.setInactive()
-        self.calendarButton.setInactive()
-    }
-    
-    func setPromotionsButtonActive() {
-        self.promotionsButton.setActive()
         self.messagesButton.setInactive()
         self.usersButton.setInactive()
         self.profileButton.setInactive()
         self.calendarButton.setInactive()
     }
     
-    func setUsersButtonActive() {
-        self.promotionsButton.setInactive()
-        self.messagesButton.setInactive()
-        self.usersButton.setActive()
-        self.profileButton.setInactive()
-        self.calendarButton.setInactive()
-    }
-    
-    func setCalendarButtonActive() {
-        self.promotionsButton.setInactive()
-        self.messagesButton.setInactive()
-        self.usersButton.setInactive()
-        self.profileButton.setInactive()
-        self.calendarButton.setActive()
+    func setActive(button: CustomButton) {
+        self.setButtonsInactive()
+        button.setActive()
     }
     
 
@@ -89,11 +55,9 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         
         (self.childViewControllers[0] as! FlowPickerViewController).delegate = self
         
+        self.menuPresenter.user = CurrentUser.get()
         
-        self.profileImage.image = self.getProfileImage()
-
-        self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
-        self.usernameLabel.text = self.getUsername()
+        self.setUI()
         
         
         self.addChildViewController(RootViewController())
@@ -133,35 +97,53 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
 
     @IBAction func profileButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToProfile()
-        self.setProfileButtonActive()
+        self.setActive(button: self.profileButton)
     }
     
     @IBAction func messagesButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToMessages()
-        self.setMessagesButtonActive()
+        self.setActive(button: self.messagesButton)
     }
     
     @IBAction func usersButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToUsers()
-        self.setUsersButtonActive()
+        self.setActive(button: self.usersButton)
     }
     
     @IBAction func promotionsButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToPromotions()
-        self.setPromotionsButtonActive()
+        self.setActive(button: self.promotionsButton)
     }
     
     @IBAction func calendarButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToCalendar()
-        self.setCalendarButtonActive()
+        self.setActive(button: self.calendarButton)
     }
     
     func selectFlow(flow: Flow) {
         menuButtonsDelegate?.selectFlow(flow: flow)
     }
-    
+}
 
+
+// MARK: Presenter extension
+extension MenuViewController: MenuViewProtocol {
     
+    func setUI() {
+        let data = self.menuPresenter.getData()
+        self.usernameLabel.text = data.username
+        
+        self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
+        self.profileImage.image = data.profileImage
+        
+        
+        // To improve
+        /*
+        self.usersButton.isHidden = !data.isAdmin
+        self.promotionsButton.isHidden = !data.isAdmin
+         */
+        
+    }
     
 }
 
