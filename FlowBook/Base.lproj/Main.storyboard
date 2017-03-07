@@ -1584,19 +1584,6 @@
                                     <action selector="profileButtonAction:" destination="M7E-Ed-rkq" eventType="touchUpInside" id="10k-rT-P1A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-Wl-ZlV" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="724" width="143" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="2z4-ku-4ZJ"/>
-                                    <constraint firstAttribute="height" constant="36" id="viw-Tb-wu0"/>
-                                </constraints>
-                                <state key="normal" title="Déconnexion">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="jDS-Ve-bYI"/>
-                                </connections>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74J-DW-WQW">
                                 <rect key="frame" x="0.0" y="523" width="189" height="193"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
@@ -1613,6 +1600,19 @@
                                     <action selector="calendarButtonAction:" destination="M7E-Ed-rkq" eventType="touchUpInside" id="rz0-uI-t12"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-Wl-ZlV">
+                                <rect key="frame" x="0.0" y="718" width="189" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1XT-Jl-nMX"/>
+                                </constraints>
+                                <state key="normal" title="Déconnexion">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="jDS-Ve-bYI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1621,13 +1621,14 @@
                             <constraint firstItem="Xdi-Aw-oaW" firstAttribute="width" secondItem="0uU-BB-Cgs" secondAttribute="width" id="7Ia-Er-sdd"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="8Al-RK-TjH"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="top" secondItem="yi5-Lo-UqL" secondAttribute="bottom" constant="8" symbolic="YES" id="B3b-Ay-YC3"/>
+                            <constraint firstItem="SGt-Wl-ZlV" firstAttribute="leading" secondItem="fCL-mB-6Ok" secondAttribute="leading" id="DFO-0L-GUi"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="top" secondItem="yk3-SV-Pu6" secondAttribute="bottom" constant="20" id="Ebt-sW-vi6"/>
+                            <constraint firstAttribute="trailing" secondItem="SGt-Wl-ZlV" secondAttribute="trailing" id="GSm-5v-kbD"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="centerX" secondItem="yk3-SV-Pu6" secondAttribute="centerX" id="Gh7-ki-yeR"/>
+                            <constraint firstItem="mcu-xh-aAR" firstAttribute="top" secondItem="SGt-Wl-ZlV" secondAttribute="bottom" id="Ixy-Zp-voc"/>
                             <constraint firstItem="TCa-1k-j2b" firstAttribute="height" secondItem="Xdi-Aw-oaW" secondAttribute="height" id="JpB-dD-Mz3"/>
-                            <constraint firstItem="SGt-Wl-ZlV" firstAttribute="width" secondItem="TCa-1k-j2b" secondAttribute="width" id="Kv2-rC-RwP"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="height" secondItem="yk3-SV-Pu6" secondAttribute="height" id="OYd-nh-0zw"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="width" secondItem="yk3-SV-Pu6" secondAttribute="width" id="TEP-ur-aKK"/>
-                            <constraint firstItem="mcu-xh-aAR" firstAttribute="top" secondItem="SGt-Wl-ZlV" secondAttribute="bottom" constant="8" id="YEL-Ea-Bda"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="YNX-NH-pJ4"/>
                             <constraint firstItem="Xdi-Aw-oaW" firstAttribute="height" secondItem="0uU-BB-Cgs" secondAttribute="height" id="b1W-i6-TzQ"/>
                             <constraint firstItem="TCa-1k-j2b" firstAttribute="width" secondItem="Xdi-Aw-oaW" secondAttribute="width" id="eB3-ny-xL6"/>
@@ -1636,7 +1637,6 @@
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="leading" secondItem="fCL-mB-6Ok" secondAttribute="leadingMargin" constant="-2" id="juI-c5-du7"/>
                             <constraint firstItem="Xdi-Aw-oaW" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="kZ2-9j-6bL"/>
                             <constraint firstItem="Xdi-Aw-oaW" firstAttribute="top" secondItem="0uU-BB-Cgs" secondAttribute="bottom" constant="20" id="mNA-nL-jqY"/>
-                            <constraint firstItem="SGt-Wl-ZlV" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="mw7-BH-6Q7"/>
                             <constraint firstItem="3Ij-Oo-1QR" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="myK-gN-nij"/>
                             <constraint firstItem="yi5-Lo-UqL" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="pCA-jG-NVU"/>
                             <constraint firstItem="yi5-Lo-UqL" firstAttribute="top" secondItem="W0Z-KO-vMs" secondAttribute="bottom" constant="8" id="t50-UQ-p7D"/>
@@ -1662,7 +1662,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3X-sr-HT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="CZZ-tR-Sga" customClass="MenuPresenter" customModule="FlowBook" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-957.5" y="-2232"/>
+            <point key="canvasLocation" x="-957.71484374999989" y="-2232.03125"/>
         </scene>
         <!--Master View Controller-->
         <scene sceneID="yZj-wN-5GG">
