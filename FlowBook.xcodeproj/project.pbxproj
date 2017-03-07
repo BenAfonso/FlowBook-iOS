@@ -71,6 +71,7 @@
 		60F8086E1E59C8B400101695 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8086D1E59C8B400101695 /* CalendarCellView.swift */; };
 		60F808701E59C93000101695 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8086F1E59C93000101695 /* CalendarViewController.swift */; };
 		60F808721E59CBC500101695 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F808711E59CBC500101695 /* CalendarView.swift */; };
+		922A2E5C1E6F5F070073BAD4 /* CustomInputCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */; };
 		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
@@ -177,6 +178,7 @@
 		60F8086D1E59C8B400101695 /* CalendarCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		60F8086F1E59C93000101695 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		60F808711E59CBC500101695 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputCalendar.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
 		9291615C1E52755F00D60CD5 /* CustomInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
 		9291615E1E52777900D60CD5 /* CustomInputUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputUser.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */,
 				9291615E1E52777900D60CD5 /* CustomInputUser.swift */,
 				60A5E5211E54508200684035 /* AlertController.swift */,
+				922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -622,7 +625,7 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3EQET6CY44;
+						DevelopmentTeam = QW5R6973G4;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -708,6 +711,7 @@
 				6044C5391E576AE400CB0C34 /* PickerViewController.swift in Sources */,
 				60A5E52C1E54ED1800684035 /* PromotionExtension.swift in Sources */,
 				9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */,
+				922A2E5C1E6F5F070073BAD4 /* CustomInputCalendar.swift in Sources */,
 				60F808701E59C93000101695 /* CalendarViewController.swift in Sources */,
 				60354D971E6EDD8000A524F7 /* ResetPasswordViewController.swift in Sources */,
 				60A5E5221E54508200684035 /* AlertController.swift in Sources */,
@@ -872,7 +876,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -880,7 +884,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -890,7 +894,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -898,7 +902,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

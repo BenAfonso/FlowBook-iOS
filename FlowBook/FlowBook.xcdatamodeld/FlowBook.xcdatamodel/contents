@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Department" representedClassName="Department" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="departement" inverseEntity="Event" syncable="YES"/>
         <relationship name="flows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Flow" inverseName="department" inverseEntity="Flow" syncable="YES"/>
         <relationship name="promotions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Promotion" inverseName="department" inverseEntity="Promotion" syncable="YES"/>
         <relationship name="rights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Right" inverseName="department" inverseEntity="Right" syncable="YES"/>
@@ -19,7 +20,7 @@
         <attribute name="dateStart" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="events" inverseEntity="User" syncable="YES"/>
-        <relationship name="promotion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Promotion" inverseName="events" inverseEntity="Promotion" syncable="YES"/>
+        <relationship name="departement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="events" inverseEntity="Department" syncable="YES"/>
     </entity>
     <entity name="File" representedClassName="File" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -51,7 +52,6 @@
     <entity name="Promotion" representedClassName="Promotion" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="promotions" inverseEntity="Department" syncable="YES"/>
-        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="promotion" inverseEntity="Event" syncable="YES"/>
         <relationship name="flow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flow" inverseName="promotion" inverseEntity="Flow" syncable="YES"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="promotion" inverseEntity="Student" syncable="YES"/>
     </entity>
@@ -91,19 +91,19 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Department" positionX="-605" positionY="-283" width="128" height="118"/>
+        <element name="Department" positionX="-605" positionY="-283" width="128" height="135"/>
+        <element name="Event" positionX="-459" positionY="-432" width="128" height="150"/>
         <element name="File" positionX="349" positionY="-225" width="128" height="120"/>
         <element name="FileType" positionX="484" positionY="18" width="128" height="73"/>
         <element name="Flow" positionX="-83" positionY="2" width="128" height="118"/>
         <element name="Message" positionX="-20" positionY="-288" width="128" height="150"/>
-        <element name="Promotion" positionX="-540" positionY="41" width="128" height="118"/>
+        <element name="Promotion" positionX="-540" positionY="41" width="128" height="105"/>
         <element name="Right" positionX="-74" positionY="-541" width="128" height="133"/>
         <element name="Student" positionX="-387" positionY="-117" width="128" height="58"/>
         <element name="StudentFlow" positionX="-155" positionY="153" width="128" height="45"/>
         <element name="Teacher" positionX="-254" positionY="9" width="128" height="45"/>
         <element name="TeacherFlow" positionX="34" positionY="153" width="128" height="45"/>
         <element name="TypeRight" positionX="-405" positionY="-603" width="128" height="58"/>
-        <element name="User" positionX="-315" positionY="-342" width="128" height="208"/>
-        <element name="Event" positionX="-459" positionY="-432" width="128" height="28"/>
+        <element name="User" positionX="-315" positionY="-342" width="128" height="210"/>
     </elements>
 </model>
