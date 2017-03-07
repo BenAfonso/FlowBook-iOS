@@ -19,7 +19,7 @@
         <attribute name="dateEnd" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="dateStart" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="events" inverseEntity="User" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="events" inverseEntity="Teacher" syncable="YES"/>
         <relationship name="departement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="events" inverseEntity="Department" syncable="YES"/>
     </entity>
     <entity name="File" representedClassName="File" syncable="YES" codeGenerationType="class">
@@ -67,7 +67,9 @@
         <relationship name="promotion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Promotion" inverseName="students" inverseEntity="Promotion" syncable="YES"/>
     </entity>
     <entity name="StudentFlow" representedClassName="StudentFlow" parentEntity="Flow" syncable="YES" codeGenerationType="class"/>
-    <entity name="Teacher" representedClassName="Teacher" parentEntity="User" syncable="YES" codeGenerationType="class"/>
+    <entity name="Teacher" representedClassName="Teacher" parentEntity="User" syncable="YES" codeGenerationType="class">
+        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="author" inverseEntity="Event" syncable="YES"/>
+    </entity>
     <entity name="TeacherFlow" representedClassName="TeacherFlow" parentEntity="Flow" syncable="YES" codeGenerationType="class"/>
     <entity name="TypeRight" representedClassName="TypeRight" syncable="YES" codeGenerationType="class">
         <relationship name="rights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Right" inverseName="type" inverseEntity="Right" syncable="YES"/>
@@ -81,7 +83,6 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="users" inverseEntity="Department" syncable="YES"/>
-        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="author" inverseEntity="Event" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="author" inverseEntity="Message" syncable="YES"/>
         <relationship name="rights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Right" inverseName="user" inverseEntity="Right" syncable="YES"/>
         <uniquenessConstraints>
@@ -101,9 +102,9 @@
         <element name="Right" positionX="-74" positionY="-541" width="128" height="133"/>
         <element name="Student" positionX="-387" positionY="-117" width="128" height="58"/>
         <element name="StudentFlow" positionX="-155" positionY="153" width="128" height="45"/>
-        <element name="Teacher" positionX="-254" positionY="9" width="128" height="45"/>
+        <element name="Teacher" positionX="-254" positionY="9" width="128" height="60"/>
         <element name="TeacherFlow" positionX="34" positionY="153" width="128" height="45"/>
         <element name="TypeRight" positionX="-405" positionY="-603" width="128" height="58"/>
-        <element name="User" positionX="-315" positionY="-342" width="128" height="208"/>
+        <element name="User" positionX="-315" positionY="-342" width="128" height="195"/>
     </elements>
 </model>

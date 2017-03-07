@@ -12,9 +12,8 @@ import UIKit
 class NewEventViewController: UIViewController  {
     
     
-    
-    @IBOutlet weak var titleNewEvent: CustomInput!
-    @IBOutlet weak var descriptionNewEvent: CustomInput!
+    @IBOutlet weak var titleNewEvent: CustomInputCalendar!
+    @IBOutlet weak var descriptionNewEvent: CustomInputCalendar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +48,7 @@ class NewEventViewController: UIViewController  {
     
     
     @IBAction func cancelAction(_ sender: Any) {
-       
-        
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
