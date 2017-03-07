@@ -39,9 +39,14 @@ class NewEventViewController: UIViewController  {
                 return
         }
         
-        let _ = Event.createTest(titleEvent: titleNewEvent.text!, descriptionEvent: descriptionNewEvent.text!)
-        
-        
+    
+        do{
+            let userAuthor = try User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!)
+            let _ = Event.createTest(titleEvent: titleNewEvent.text!, descriptionEvent: descriptionNewEvent.text!, theAuthor: userAuthor, forDepartement: userAuthor.department!)
+        }catch {
+            
+        }
+    
         self.dismiss(animated: true, completion: nil)
 
     }
