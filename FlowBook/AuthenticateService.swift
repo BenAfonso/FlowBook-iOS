@@ -76,6 +76,7 @@ class AuthenticationService {
         }
     }
     
+    
     static func logoff() {
         UserDefaults.standard.removeObject(forKey: "currentFirstName")
         UserDefaults.standard.removeObject(forKey: "currentLastName")

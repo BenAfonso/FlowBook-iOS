@@ -101,17 +101,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
  
     
     @IBAction func changePasswordAction(_ sender: Any) {
-        let resetPasswordController: ResetPasswordViewController = ResetPasswordViewController(nibName: "ResetPassword", bundle: nil)
-        
-        self.present(resetPasswordController, animated: true)
-        
-        let popoverPresentationController = resetPasswordController.popoverPresentationController
-        
-        popoverPresentationController?.sourceView = self.view
-        popoverPresentationController?.permittedArrowDirections=UIPopoverArrowDirection(rawValue: 0)
-        let midX = resetPasswordController.view.frame.size.width / 2
-        let midY = resetPasswordController.view.frame.size.width / 2
-        popoverPresentationController?.sourceRect = CGRect(x: midX-150, y: midY - 350, width: 324, height: 350)
+
         //self.present(resetPasswordController, animated: true, completion: nil)
         
     }
