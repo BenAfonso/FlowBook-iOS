@@ -19,7 +19,7 @@ extension Event {
             event.title = title
             event.contains = contains
             event.color = color
-            event.promotion = promo
+            //event.promotion = promo
             event.author = author
             CoreDataManager.save()
             return event
