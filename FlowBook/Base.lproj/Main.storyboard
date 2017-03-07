@@ -1085,6 +1085,11 @@
                                     <constraint firstAttribute="height" constant="50" id="bbh-Fh-izV"/>
                                 </constraints>
                                 <state key="normal" image="addEvent"/>
+                                <connections>
+                                    <segue destination="meM-i3-Nx3" kind="popoverPresentation" popoverAnchorView="Z4f-gr-mzv" id="lQn-1q-Bg2">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1112,7 +1117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exi-o6-djy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154.6875" y="-843.75"/>
+            <point key="canvasLocation" x="2027" y="-2266"/>
         </scene>
         <!--Flow Picker View Controller-->
         <scene sceneID="7XP-Fq-uPj">
@@ -1604,7 +1609,7 @@
                                 <rect key="frame" x="0.0" y="718" width="189" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1XT-Jl-nMX"/>
+                                    <constraint firstAttribute="height" constant="50" id="znH-wW-btm"/>
                                 </constraints>
                                 <state key="normal" title="Déconnexion">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1883,7 +1888,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSQ-Dh-bYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1385" y="519"/>
+            <point key="canvasLocation" x="1740" y="490"/>
+        </scene>
+        <!--New Event View Controller-->
+        <scene sceneID="ekD-VK-Szd">
+            <objects>
+                <viewController id="meM-i3-Nx3" customClass="NewEventViewController" customModule="FlowBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NRj-3Y-frc"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Is-1G-YIh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gEr-TW-TqY">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="xbx-uS-TRf">
+                                <rect key="frame" x="30" y="114" width="240" height="22"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date" placeholder="Nom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nEn-0V-5dR" customClass="CustomInput" customModule="FlowBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="22"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="WVx-JU-Azz"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="vJu-qk-Sqm"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xbx-uS-TRf" firstAttribute="centerX" secondItem="gEr-TW-TqY" secondAttribute="centerX" id="WXs-h9-XUt"/>
+                            <constraint firstItem="xbx-uS-TRf" firstAttribute="centerY" secondItem="gEr-TW-TqY" secondAttribute="centerY" id="ca1-oW-Rxn"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="250"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="250"/>
+                    <connections>
+                        <outlet property="promotionNameTextField" destination="nEn-0V-5dR" id="gS7-yp-0Se"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0g-HF-nsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2979" y="-2310"/>
         </scene>
     </scenes>
     <resources>
