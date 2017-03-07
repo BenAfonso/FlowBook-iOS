@@ -13,7 +13,6 @@
 		60354D911E6CC10800A524F7 /* ResetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60354D901E6CC10800A524F7 /* ResetPassword.xib */; };
 		60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */; };
 		60354D971E6EDD8000A524F7 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D961E6EDD8000A524F7 /* ResetPasswordViewController.swift */; };
-		60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */; };
 		6044C5391E576AE400CB0C34 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C5371E576AE400CB0C34 /* PickerViewController.swift */; };
 		6044C53A1E576AE400CB0C34 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6044C5381E576AE400CB0C34 /* PickerViewController.xib */; };
 		6044C53C1E5771B400CB0C34 /* PickerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C53B1E5771B400CB0C34 /* PickerTableView.swift */; };
@@ -116,7 +115,6 @@
 		60354D901E6CC10800A524F7 /* ResetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPassword.xib; sourceTree = "<group>"; };
 		60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
 		60354D961E6EDD8000A524F7 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
 		6044C5371E576AE400CB0C34 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		6044C5381E576AE400CB0C34 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
 		6044C53B1E5771B400CB0C34 /* PickerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableView.swift; sourceTree = "<group>"; };
@@ -625,7 +623,7 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QW5R6973G4;
+						DevelopmentTeam = 3EQET6CY44;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -876,7 +874,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -884,7 +882,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -894,7 +892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QW5R6973G4;
+				DEVELOPMENT_TEAM = 3EQET6CY44;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -902,7 +900,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
