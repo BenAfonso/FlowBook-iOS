@@ -27,10 +27,26 @@ class NewEventViewController: UIViewController {
     
     
     @IBAction func createAction(_ sender: Any) {
+        guard titleNewEvent.text != nil,
+            titleNewEvent.text != "" else {
+                return
+        }
+        
+        guard descriptionNewEvent.text != nil,
+            descriptionNewEvent.text != "" else {
+                return
+        }
+        
+        let _ = Event.createTest(titleEvent: titleNewEvent.text!, descriptionEvent: descriptionNewEvent.text!)
+        
+        
+        self.dismiss(animated: true, completion: nil)
+
     }
     
     
     @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
