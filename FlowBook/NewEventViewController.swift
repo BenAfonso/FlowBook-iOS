@@ -9,7 +9,10 @@
 
 import UIKit
 
-class NewEventViewController: UIViewController {
+class NewEventViewController: UIViewController  {
+    
+    
+    
     @IBOutlet weak var titleNewEvent: CustomInput!
     @IBOutlet weak var descriptionNewEvent: CustomInput!
     
@@ -46,7 +49,9 @@ class NewEventViewController: UIViewController {
     
     
     @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+       
+        
+        
     }
     
     
