@@ -1251,8 +1251,6 @@
             </objects>
             <point key="canvasLocation" x="2027" y="-2266"/>
         </scene>
-<<<<<<< HEAD
-=======
         <!--Admin Panel View Controller-->
         <scene sceneID="ca1-u1-mcu">
             <objects>
@@ -1327,14 +1325,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzU-GK-oeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="2864" y="-942"/>
-        </scene>
->>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
-=======
             <point key="canvasLocation" x="2239.453125" y="-1120.3125"/>
         </scene>
->>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
         <!--Flow Picker View Controller-->
         <scene sceneID="7XP-Fq-uPj">
             <objects>
@@ -2153,7 +2145,6 @@
         <image name="profileImage" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
         <segue reference="RFj-8l-fgc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
