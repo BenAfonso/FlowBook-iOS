@@ -190,6 +190,12 @@ extension User {
         return (password.md5() == self.password || password.sha256() == self.password)
     }
     
+    
+    func changePassword(toPassword password: String) {
+        self.password = password.sha256()
+        CoreDataManager.save()
+    }
+    
     func getPosts() -> NSSet {
         if let posts = self.posts {
             return posts

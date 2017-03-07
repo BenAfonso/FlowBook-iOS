@@ -527,7 +527,7 @@
                                     <color key="titleColor" red="0.46632540225982666" green="0.47412091493606567" blue="0.49900174140930176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hbc-on-QgN" kind="show" id="FrZ-Su-G1M"/>
+                                    <segue destination="Hbc-on-QgN" kind="show" id="lNp-1k-PQf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bA-c1-48x">
@@ -957,6 +957,9 @@
                                 </state>
                                 <connections>
                                     <action selector="changePasswordAction:" destination="Osh-fj-9OV" eventType="touchUpInside" id="R66-dn-Z8r"/>
+                                    <segue destination="AeD-XM-K3A" kind="popoverPresentation" popoverAnchorView="fdq-uy-9ch" id="lOA-M7-li8">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -993,6 +996,135 @@
                 <customObject id="wce-yz-zIv" customClass="ProfilePresenter" customModule="FlowBook" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="861.9140625" y="-1839.0625"/>
+        </scene>
+        <!--Reset Password View Controller-->
+        <scene sceneID="pih-0d-8ft">
+            <objects>
+                <viewController id="AeD-XM-K3A" customClass="ResetPasswordViewController" customModule="FlowBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uF7-S6-nBi"/>
+                        <viewControllerLayoutGuide type="bottom" id="xFa-fG-ywR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wg8-hT-boc">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acU-xr-pCE">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ix8-Y3-Wz7">
+                                        <rect key="frame" x="20" y="74" width="260" height="122"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ancien mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFQ-6J-8Ru" customClass="CustomInputPassword" customModule="FlowBook" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="24"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.46632540230000002" green="0.47412091490000002" blue="0.49900174139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nouveau mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feg-ZB-BdE" customClass="CustomInputPassword" customModule="FlowBook" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="49" width="260" height="24"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.46632540230000002" green="0.47412091490000002" blue="0.49900174139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Encore une fois" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7Z-Su-RyP" customClass="CustomInputPassword" customModule="FlowBook" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="98" width="260" height="24"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                        <color key="value" red="0.46632540230000002" green="0.47412091490000002" blue="0.49900174139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkl-wp-Aj7">
+                                        <rect key="frame" x="172" y="209" width="120" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74B-qM-zB8">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <state key="normal" title="Annuler">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelAction:" destination="AeD-XM-K3A" eventType="touchUpInside" id="9Ym-eZ-v1K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2v-CX-4vw">
+                                                <rect key="frame" x="72" y="0.0" width="48" height="33"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <state key="normal" title="Valider">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="changePasswordAction:" destination="AeD-XM-K3A" eventType="touchUpInside" id="7uj-Dp-1NZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ErrorLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze3-tK-k8q">
+                                        <rect key="frame" x="8" y="51.5" width="67" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" red="0.99894291160000004" green="0.081690303980000004" blue="0.63750857110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Changement de mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-oA-Rzw">
+                                        <rect key="frame" x="8" y="22.5" width="207.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cHL-oA-Rzw" firstAttribute="leading" secondItem="acU-xr-pCE" secondAttribute="leading" constant="8" id="A6c-ht-4BV"/>
+                                    <constraint firstItem="Ze3-tK-k8q" firstAttribute="top" secondItem="cHL-oA-Rzw" secondAttribute="bottom" constant="8" id="CEu-Ga-bZe"/>
+                                    <constraint firstItem="ix8-Y3-Wz7" firstAttribute="leading" secondItem="acU-xr-pCE" secondAttribute="leading" constant="20" id="Cn6-ie-b1Z"/>
+                                    <constraint firstItem="kkl-wp-Aj7" firstAttribute="top" secondItem="ix8-Y3-Wz7" secondAttribute="bottom" constant="13" id="FDp-uZ-gQC"/>
+                                    <constraint firstItem="Ze3-tK-k8q" firstAttribute="leading" secondItem="acU-xr-pCE" secondAttribute="leading" constant="8" id="FYd-Dm-zSf"/>
+                                    <constraint firstAttribute="trailing" secondItem="ix8-Y3-Wz7" secondAttribute="trailing" constant="20" id="Guv-vp-HMK"/>
+                                    <constraint firstAttribute="bottom" secondItem="kkl-wp-Aj7" secondAttribute="bottom" constant="8" id="JtS-Sc-c5K"/>
+                                    <constraint firstAttribute="trailing" secondItem="kkl-wp-Aj7" secondAttribute="trailing" constant="8" id="dWM-df-nON"/>
+                                    <constraint firstItem="ix8-Y3-Wz7" firstAttribute="top" secondItem="Ze3-tK-k8q" secondAttribute="bottom" constant="3" id="nCJ-SX-7Ux"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="acU-xr-pCE" firstAttribute="leading" secondItem="Wg8-hT-boc" secondAttribute="leading" id="2nG-U1-H0v"/>
+                            <constraint firstAttribute="trailing" secondItem="acU-xr-pCE" secondAttribute="trailing" id="VN2-Kx-9qx"/>
+                            <constraint firstItem="acU-xr-pCE" firstAttribute="top" secondItem="Wg8-hT-boc" secondAttribute="top" id="dwe-Ax-Fv7"/>
+                            <constraint firstItem="xFa-fG-ywR" firstAttribute="top" secondItem="acU-xr-pCE" secondAttribute="bottom" id="fbO-Om-Xoa"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="250"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="250"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="74B-qM-zB8" id="kRL-PM-y2X"/>
+                        <outlet property="errorLabel" destination="Ze3-tK-k8q" id="V8X-8B-tVg"/>
+                        <outlet property="newPasswordField" destination="feg-ZB-BdE" id="XJ5-Rw-BD3"/>
+                        <outlet property="oldPasswordField" destination="LFQ-6J-8Ru" id="rJH-t2-3DB"/>
+                        <outlet property="repeatPasswordField" destination="u7Z-Su-RyP" id="kY4-Fw-fap"/>
+                        <outlet property="validateButton" destination="m2v-CX-4vw" id="soh-nb-oxd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ec-xw-QTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1325.9765625" y="-1839.0625"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="Nfu-Zv-Ihl">
@@ -1954,7 +2086,7 @@
         <image name="profileImage" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jDS-Ve-bYI"/>
+        <segue reference="RFj-8l-fgc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>
