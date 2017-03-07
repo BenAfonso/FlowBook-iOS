@@ -997,10 +997,10 @@
             </objects>
             <point key="canvasLocation" x="861.9140625" y="-1839.0625"/>
         </scene>
-        <!--Reset Password View Controller-->
+        <!--Change Password View Controller-->
         <scene sceneID="pih-0d-8ft">
             <objects>
-                <viewController id="AeD-XM-K3A" customClass="ResetPasswordViewController" customModule="FlowBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AeD-XM-K3A" customClass="ChangePasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uF7-S6-nBi"/>
                         <viewControllerLayoutGuide type="bottom" id="xFa-fG-ywR"/>
@@ -1251,6 +1251,85 @@
             </objects>
             <point key="canvasLocation" x="2027" y="-2266"/>
         </scene>
+<<<<<<< HEAD
+=======
+        <!--Admin Panel View Controller-->
+        <scene sceneID="ca1-u1-mcu">
+            <objects>
+                <viewController storyboardIdentifier="adminPanelView" id="PVL-nR-Ef1" customClass="AdminPanelViewController" customModule="FlowBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M0U-Mh-MFX"/>
+                        <viewControllerLayoutGuide type="bottom" id="V4N-ha-lQo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jHR-XK-Qja">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXj-gN-PfY">
+                                <rect key="frame" x="0.0" y="72" width="1024" height="696"/>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKI-38-R4p">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="812-8j-z2c">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjm-3U-dJa">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="624-5v-RN8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Utilisateurs"/>
+                                                <connections>
+                                                    <action selector="goToUsers:" destination="PVL-nR-Ef1" eventType="touchUpInside" id="Ghk-am-rJW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz7-Jo-xDf">
+                                                <rect key="frame" x="150" y="0.0" width="150" height="75"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <state key="normal" title="Promotions"/>
+                                                <connections>
+                                                    <action selector="goToPromotions:" destination="PVL-nR-Ef1" eventType="touchUpInside" id="rDu-aK-IvB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="dz7-Jo-xDf" firstAttribute="width" secondItem="rjm-3U-dJa" secondAttribute="width" id="lIZ-yM-P7q"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20758894089999999" green="0.20648628469999999" blue="0.27278512719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="M0O-pz-6gD"/>
+                                    <constraint firstItem="812-8j-z2c" firstAttribute="leading" secondItem="QKI-38-R4p" secondAttribute="leading" id="cXf-7d-tfC"/>
+                                    <constraint firstItem="812-8j-z2c" firstAttribute="top" secondItem="QKI-38-R4p" secondAttribute="top" id="sv3-Ii-cD4"/>
+                                    <constraint firstItem="812-8j-z2c" firstAttribute="height" secondItem="QKI-38-R4p" secondAttribute="height" id="vNT-dc-Ngj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jXj-gN-PfY" secondAttribute="trailing" id="TY9-dY-zb7"/>
+                            <constraint firstItem="QKI-38-R4p" firstAttribute="leading" secondItem="jHR-XK-Qja" secondAttribute="leading" id="WNj-Tj-e4c"/>
+                            <constraint firstItem="jXj-gN-PfY" firstAttribute="leading" secondItem="jHR-XK-Qja" secondAttribute="leading" id="Yco-RB-Aud"/>
+                            <constraint firstItem="V4N-ha-lQo" firstAttribute="top" secondItem="jXj-gN-PfY" secondAttribute="bottom" id="eul-PZ-gjP"/>
+                            <constraint firstAttribute="trailing" secondItem="QKI-38-R4p" secondAttribute="trailing" id="paW-Y9-7uo"/>
+                            <constraint firstItem="QKI-38-R4p" firstAttribute="top" secondItem="jHR-XK-Qja" secondAttribute="top" id="rcH-dn-rgq"/>
+                            <constraint firstItem="jXj-gN-PfY" firstAttribute="top" secondItem="M0U-Mh-MFX" secondAttribute="bottom" constant="52" id="yxy-IE-1DK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="childView" destination="jXj-gN-PfY" id="wMs-VC-hwx"/>
+                        <outlet property="promotionsButton" destination="dz7-Jo-xDf" id="i3E-Xz-GU9"/>
+                        <outlet property="usersButton" destination="rjm-3U-dJa" id="CMZ-D2-fcG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzU-GK-oeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864" y="-942"/>
+        </scene>
+>>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
         <!--Flow Picker View Controller-->
         <scene sceneID="7XP-Fq-uPj">
             <objects>

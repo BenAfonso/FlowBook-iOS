@@ -11,6 +11,11 @@
 		602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C94601E4DD0CF00A02196 /* ProfileViewController.swift */; };
 		60354D8F1E6CBA5400A524F7 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */; };
 		60354D911E6CC10800A524F7 /* ResetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60354D901E6CC10800A524F7 /* ResetPassword.xib */; };
+<<<<<<< HEAD
+=======
+		60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */; };
+		60354D971E6EDD8000A524F7 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D961E6EDD8000A524F7 /* ResetPasswordViewController.swift */; };
+>>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
 		6044C5391E576AE400CB0C34 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C5371E576AE400CB0C34 /* PickerViewController.swift */; };
 		6044C53A1E576AE400CB0C34 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6044C5381E576AE400CB0C34 /* PickerViewController.xib */; };
 		6044C53C1E5771B400CB0C34 /* PickerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C53B1E5771B400CB0C34 /* PickerTableView.swift */; };
@@ -23,7 +28,7 @@
 		6044C5521E58BCF300CB0C34 /* NewMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6044C5501E58BCF300CB0C34 /* NewMessageViewController.xib */; };
 		6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */; };
 		604F444B1E4F881A00ACFBC3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */; };
-		604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */; };
+		604F444D1E4F8AEC00ACFBC3 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F444C1E4F8AEC00ACFBC3 /* ChangePasswordViewController.swift */; };
 		606A6D721E552A8500A0B3B0 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */; };
 		606A6D741E55EC4700A0B3B0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */; };
 		606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */; };
@@ -110,6 +115,11 @@
 		602C94601E4DD0CF00A02196 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		60354D901E6CC10800A524F7 /* ResetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPassword.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
+		60354D961E6EDD8000A524F7 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+>>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
 		6044C5371E576AE400CB0C34 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		6044C5381E576AE400CB0C34 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
 		6044C53B1E5771B400CB0C34 /* PickerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableView.swift; sourceTree = "<group>"; };
@@ -122,7 +132,7 @@
 		6044C5501E58BCF300CB0C34 /* NewMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMessageViewController.xib; sourceTree = "<group>"; };
 		6045C3FA1E4DFB2B00970DCF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		604F444A1E4F881A00ACFBC3 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		604F444C1E4F8AEC00ACFBC3 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +211,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
+=======
+		60354D921E6EB31700A524F7 /* AdminPanel */ = {
+			isa = PBXGroup;
+			children = (
+				60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */,
+			);
+			name = AdminPanel;
+			sourceTree = "<group>";
+		};
+		60354D951E6EDD6C00A524F7 /* ResetPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				60354D961E6EDD8000A524F7 /* ResetPasswordViewController.swift */,
+			);
+			name = ResetPasswordViewController;
+			sourceTree = "<group>";
+		};
+>>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
 		6044C5341E5749AF00CB0C34 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,13 +331,13 @@
 			name = RegisterView;
 			sourceTree = "<group>";
 		};
-		606A6D7A1E55F11100A0B3B0 /* ResetPasswordView */ = {
+		606A6D7A1E55F11100A0B3B0 /* ChangePasswordViewController */ = {
 			isa = PBXGroup;
 			children = (
-				604F444C1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift */,
+				604F444C1E4F8AEC00ACFBC3 /* ChangePasswordViewController.swift */,
 				60354D901E6CC10800A524F7 /* ResetPassword.xib */,
 			);
-			name = ResetPasswordView;
+			name = ChangePasswordViewController;
 			sourceTree = "<group>";
 		};
 		606A6D7B1E55F16700A0B3B0 /* MasterView */ = {
@@ -427,6 +456,11 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				60354D951E6EDD6C00A524F7 /* ResetPasswordViewController */,
+				60354D921E6EB31700A524F7 /* AdminPanel */,
+>>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
 				92C9AB9B1E6E1953001AC477 /* NewEvent */,
 				60D854A31E57335000A9BB73 /* NewPromotion */,
 				60D8549E1E571D0300A9BB73 /* PromotionsView */,
@@ -440,7 +474,7 @@
 				60A5E5191E543F8300684035 /* MessagesTableView */,
 				606A6D781E55F10300A0B3B0 /* ProfileView */,
 				606A6D791E55F10B00A0B3B0 /* RegisterView */,
-				606A6D7A1E55F11100A0B3B0 /* ResetPasswordView */,
+				606A6D7A1E55F11100A0B3B0 /* ChangePasswordViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -684,8 +718,9 @@
 				60A5E52C1E54ED1800684035 /* PromotionExtension.swift in Sources */,
 				9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */,
 				60F808701E59C93000101695 /* CalendarViewController.swift in Sources */,
+				60354D971E6EDD8000A524F7 /* ResetPasswordViewController.swift in Sources */,
 				60A5E5221E54508200684035 /* AlertController.swift in Sources */,
-				604F444D1E4F8AEC00ACFBC3 /* ResetPasswordViewController.swift in Sources */,
+				604F444D1E4F8AEC00ACFBC3 /* ChangePasswordViewController.swift in Sources */,
 				60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */,
 				60A5E5181E54394400684035 /* MessageTableView.swift in Sources */,
 				92D2E8F11E6E99EC005B2CFB /* NewEventViewController.swift in Sources */,
