@@ -1327,9 +1327,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzU-GK-oeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="2864" y="-942"/>
         </scene>
 >>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
+=======
+            <point key="canvasLocation" x="2239.453125" y="-1120.3125"/>
+        </scene>
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
         <!--Flow Picker View Controller-->
         <scene sceneID="7XP-Fq-uPj">
             <objects>
@@ -1753,24 +1758,6 @@
                                     <action selector="messagesButtonAction:" destination="M7E-Ed-rkq" eventType="touchUpInside" id="BXT-LP-vWN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdi-Aw-oaW" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="313" width="143" height="48"/>
-                                <state key="normal" title="Utilisateurs">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="usersButtonAction:" destination="M7E-Ed-rkq" eventType="touchUpInside" id="CGR-Jm-rWN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-1k-j2b" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="381" width="143" height="48"/>
-                                <state key="normal" title="Promotions">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="promotionsButtonAction:" destination="M7E-Ed-rkq" eventType="touchUpInside" id="OoU-5d-WDs"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-RZ-gMB">
                                 <rect key="frame" x="14" y="116" width="161" height="21"/>
                                 <constraints>
@@ -1808,7 +1795,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ij-Oo-1QR" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="449" width="143" height="48"/>
+                                <rect key="frame" x="23" y="301" width="143" height="48"/>
                                 <state key="normal" title="Calendrier">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1829,34 +1816,36 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="jDS-Ve-bYI"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5M-VT-BXw" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
+                                <rect key="frame" x="23" y="456" width="143" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Panel Admin">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="adminPanelAction:" destination="M7E-Ed-rkq" eventType="touchUpInside" id="OdR-Qd-GFa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Ij-Oo-1QR" firstAttribute="height" secondItem="yk3-SV-Pu6" secondAttribute="height" id="0Dh-wH-7qb"/>
-                            <constraint firstItem="Xdi-Aw-oaW" firstAttribute="width" secondItem="0uU-BB-Cgs" secondAttribute="width" id="7Ia-Er-sdd"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="8Al-RK-TjH"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="top" secondItem="yi5-Lo-UqL" secondAttribute="bottom" constant="8" symbolic="YES" id="B3b-Ay-YC3"/>
+                            <constraint firstItem="3Ij-Oo-1QR" firstAttribute="top" secondItem="0uU-BB-Cgs" secondAttribute="bottom" constant="8" id="D7d-Wp-E4N"/>
                             <constraint firstItem="SGt-Wl-ZlV" firstAttribute="leading" secondItem="fCL-mB-6Ok" secondAttribute="leading" id="DFO-0L-GUi"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="top" secondItem="yk3-SV-Pu6" secondAttribute="bottom" constant="20" id="Ebt-sW-vi6"/>
                             <constraint firstAttribute="trailing" secondItem="SGt-Wl-ZlV" secondAttribute="trailing" id="GSm-5v-kbD"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="centerX" secondItem="yk3-SV-Pu6" secondAttribute="centerX" id="Gh7-ki-yeR"/>
                             <constraint firstItem="mcu-xh-aAR" firstAttribute="top" secondItem="SGt-Wl-ZlV" secondAttribute="bottom" id="Ixy-Zp-voc"/>
-                            <constraint firstItem="TCa-1k-j2b" firstAttribute="height" secondItem="Xdi-Aw-oaW" secondAttribute="height" id="JpB-dD-Mz3"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="height" secondItem="yk3-SV-Pu6" secondAttribute="height" id="OYd-nh-0zw"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="width" secondItem="yk3-SV-Pu6" secondAttribute="width" id="TEP-ur-aKK"/>
                             <constraint firstItem="0uU-BB-Cgs" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="YNX-NH-pJ4"/>
-                            <constraint firstItem="Xdi-Aw-oaW" firstAttribute="height" secondItem="0uU-BB-Cgs" secondAttribute="height" id="b1W-i6-TzQ"/>
-                            <constraint firstItem="TCa-1k-j2b" firstAttribute="width" secondItem="Xdi-Aw-oaW" secondAttribute="width" id="eB3-ny-xL6"/>
-                            <constraint firstItem="3Ij-Oo-1QR" firstAttribute="top" secondItem="TCa-1k-j2b" secondAttribute="bottom" constant="20" id="fcG-xm-ase"/>
-                            <constraint firstItem="TCa-1k-j2b" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="hZc-qr-8Ia"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="leading" secondItem="fCL-mB-6Ok" secondAttribute="leadingMargin" constant="-2" id="juI-c5-du7"/>
-                            <constraint firstItem="Xdi-Aw-oaW" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="kZ2-9j-6bL"/>
-                            <constraint firstItem="Xdi-Aw-oaW" firstAttribute="top" secondItem="0uU-BB-Cgs" secondAttribute="bottom" constant="20" id="mNA-nL-jqY"/>
                             <constraint firstItem="3Ij-Oo-1QR" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="myK-gN-nij"/>
                             <constraint firstItem="yi5-Lo-UqL" firstAttribute="centerX" secondItem="fCL-mB-6Ok" secondAttribute="centerX" id="pCA-jG-NVU"/>
                             <constraint firstItem="yi5-Lo-UqL" firstAttribute="top" secondItem="W0Z-KO-vMs" secondAttribute="bottom" constant="8" id="t50-UQ-p7D"/>
-                            <constraint firstItem="TCa-1k-j2b" firstAttribute="top" secondItem="Xdi-Aw-oaW" secondAttribute="bottom" constant="20" id="tLr-yv-Awm"/>
                             <constraint firstItem="yk3-SV-Pu6" firstAttribute="top" secondItem="s5g-RZ-gMB" secondAttribute="bottom" constant="40" id="wIv-Qq-e6w"/>
                             <constraint firstItem="3Ij-Oo-1QR" firstAttribute="width" secondItem="yk3-SV-Pu6" secondAttribute="width" id="wql-AW-6b9"/>
                         </constraints>
@@ -1864,15 +1853,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="189" height="768"/>
                     <connections>
+                        <outlet property="adminPanel" destination="b5M-VT-BXw" id="XpS-D8-iZM"/>
                         <outlet property="calendarButton" destination="3Ij-Oo-1QR" id="ZKz-lZ-58c"/>
                         <outlet property="flowPickerView" destination="74J-DW-WQW" id="til-mS-waJ"/>
                         <outlet property="menuPresenter" destination="CZZ-tR-Sga" id="FtJ-WB-QXS"/>
                         <outlet property="messagesButton" destination="0uU-BB-Cgs" id="VHf-Pm-X9P"/>
                         <outlet property="profileButton" destination="yk3-SV-Pu6" id="3ux-lp-CuF"/>
                         <outlet property="profileImage" destination="yi5-Lo-UqL" id="fqR-Pr-0YL"/>
-                        <outlet property="promotionsButton" destination="TCa-1k-j2b" id="z6o-Kd-mYu"/>
                         <outlet property="usernameLabel" destination="s5g-RZ-gMB" id="Ijt-6h-6oI"/>
-                        <outlet property="usersButton" destination="Xdi-Aw-oaW" id="2Tx-ie-li7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3X-sr-HT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2165,7 +2153,8 @@
         <image name="profileImage" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="RFj-8l-fgc"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.19215686274509802" green="0.1803921568627451" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController, MenuButtonsDelegate {
+class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavigationDelegate {
 
     @IBOutlet weak var childView: UIView!
     
@@ -74,6 +74,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
         
         let newViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier)
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        
         self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
         self.currentViewController = newViewController
         if (identifier == "profileView") {
@@ -91,6 +92,8 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
                 
             }
             
+        } else if (identifier == "adminPanelView") {
+            (self.currentViewController as? AdminPanelViewController)?.delegate = self
         } else {
             self.menuViewController?.showProfileImage()
             self.menuViewController?.showUsername()
@@ -137,6 +140,11 @@ class RootViewController: UIViewController, MenuButtonsDelegate {
     func goToCalendar() {
         self.goToView(withIdentifier: "calendarView")
     }
+    
+    func goToAdminPanel() {
+        self.goToView(withIdentifier: "adminPanelView")
+    }
+    
     
     func visitProfile(ofUser user: User) {
         self.goToView(withIdentifier: "profileView", forUser: user)

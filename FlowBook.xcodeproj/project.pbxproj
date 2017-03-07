@@ -12,10 +12,14 @@
 		60354D8F1E6CBA5400A524F7 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */; };
 		60354D911E6CC10800A524F7 /* ResetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60354D901E6CC10800A524F7 /* ResetPassword.xib */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */; };
 		60354D971E6EDD8000A524F7 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D961E6EDD8000A524F7 /* ResetPasswordViewController.swift */; };
 >>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
+=======
+		60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */; };
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
 		6044C5391E576AE400CB0C34 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C5371E576AE400CB0C34 /* PickerViewController.swift */; };
 		6044C53A1E576AE400CB0C34 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6044C5381E576AE400CB0C34 /* PickerViewController.xib */; };
 		6044C53C1E5771B400CB0C34 /* PickerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6044C53B1E5771B400CB0C34 /* PickerTableView.swift */; };
@@ -116,10 +120,14 @@
 		60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		60354D901E6CC10800A524F7 /* ResetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPassword.xib; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
 		60354D961E6EDD8000A524F7 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 >>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
+=======
+		60354D931E6EB32500A524F7 /* AdminPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
 		6044C5371E576AE400CB0C34 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		6044C5381E576AE400CB0C34 /* PickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
 		6044C53B1E5771B400CB0C34 /* PickerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableView.swift; sourceTree = "<group>"; };
@@ -212,7 +220,10 @@
 
 /* Begin PBXGroup section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
 		60354D921E6EB31700A524F7 /* AdminPanel */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +232,7 @@
 			name = AdminPanel;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		60354D951E6EDD6C00A524F7 /* ResetPasswordViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,8 @@
 			sourceTree = "<group>";
 		};
 >>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
+=======
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
 		6044C5341E5749AF00CB0C34 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,10 +471,14 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				60354D951E6EDD6C00A524F7 /* ResetPasswordViewController */,
 				60354D921E6EB31700A524F7 /* AdminPanel */,
 >>>>>>> 733a717... feat<AdminPanelMenu>: add clean admin panel menu
+=======
+				60354D921E6EB31700A524F7 /* AdminPanel */,
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
 				92C9AB9B1E6E1953001AC477 /* NewEvent */,
 				60D854A31E57335000A9BB73 /* NewPromotion */,
 				60D8549E1E571D0300A9BB73 /* PromotionsView */,
@@ -697,6 +715,7 @@
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,
 				60A5E51D1E54422500684035 /* UserTableViewCell.swift in Sources */,
 				60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */,
+				60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */,
 				609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */,
 				92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */,
 				60D854A01E571D1F00A9BB73 /* PromotionsTableViewController.swift in Sources */,

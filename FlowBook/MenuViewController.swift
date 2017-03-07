@@ -14,10 +14,10 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
 
     @IBOutlet weak var profileButton: CustomButton!
     @IBOutlet weak var messagesButton: CustomButton!
-    @IBOutlet weak var usersButton: CustomButton!
-    @IBOutlet weak var promotionsButton: CustomButton!
+
     @IBOutlet weak var calendarButton: CustomButton!
     
+    @IBOutlet weak var adminPanel: CustomButton!
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -35,11 +35,12 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     // TO REFACTOR
     
     func setButtonsInactive() {
-        self.promotionsButton.setInactive()
+        //self.promotionsButton.setInactive()
         self.messagesButton.setInactive()
-        self.usersButton.setInactive()
+        //self.usersButton.setInactive()
         self.profileButton.setInactive()
         self.calendarButton.setInactive()
+        self.adminPanel.setInactive()
     }
     
     func setActive(button: CustomButton) {
@@ -105,6 +106,7 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         self.setActive(button: self.messagesButton)
     }
     
+    /*
     @IBAction func usersButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToUsers()
         self.setActive(button: self.usersButton)
@@ -113,6 +115,10 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     @IBAction func promotionsButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToPromotions()
         self.setActive(button: self.promotionsButton)
+    }*/
+    @IBAction func adminPanelAction(_ sender: Any) {
+        menuButtonsDelegate?.goToAdminPanel()
+        self.setActive(button: self.adminPanel)
     }
     
     @IBAction func calendarButtonAction(_ sender: Any) {
@@ -131,6 +137,8 @@ extension MenuViewController: MenuViewProtocol {
     
     func setUI() {
         let data = self.menuPresenter.getData()
+        
+        self.adminPanel.isHidden = !(data.isStudent) // To change to admin later
         self.usernameLabel.text = data.username
         
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
@@ -153,6 +161,7 @@ protocol MenuButtonsDelegate {
     func goToMessages()
     func goToPromotions()
     func goToCalendar()
+    func goToAdminPanel()
     func selectFlow(flow: Flow)
 }
 

@@ -74,12 +74,16 @@ class AdminPanelViewController: UIViewController {
     
     @IBAction func goToUsers(_ sender: Any) {
         self.goToView(withIdentifier: "usersTableView")
+<<<<<<< HEAD
         self.setActive(button: usersButton)
 
+=======
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
     }
     
     @IBAction func goToPromotions(_ sender: Any) {
         self.goToView(withIdentifier: "promotionsTableView")
+<<<<<<< HEAD
         self.setActive(button: promotionsButton)
     }
     
@@ -101,6 +105,10 @@ class AdminPanelViewController: UIViewController {
         bottomLine.removeFromSuperlayer()
     }
 
+=======
+    }
+    
+>>>>>>> f54fbfd... feat<AdminPanelMenu>: adding a menu to Admin panel
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
