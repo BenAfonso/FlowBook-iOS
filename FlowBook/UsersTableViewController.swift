@@ -20,11 +20,15 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var teacherButton: CustomButton!
     @IBOutlet weak var inactiveButton: CustomButton!
     
-    @IBOutlet weak var usersData: UsersData? = UsersData()
+    @IBOutlet weak var usersData: UsersData!
+    
+    
 
     
     override init() {
         super.init()
+        
+        
     }
   
     

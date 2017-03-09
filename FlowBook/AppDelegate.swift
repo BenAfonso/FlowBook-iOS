@@ -50,17 +50,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let department = Department.create(withName: "MEA")
             let _ = department.createPromotion(withName: "2018")
         }
+        
 
         if Department.get(withName: "MAT") == nil {
             let department = Department.create(withName: "MAT")
             let _ = department.createPromotion(withName: "2018")
-
         }
+        
+        
         if Department.get(withName: "GBA") == nil {
             let department = Department.create(withName: "GBA")
             let _ = department.createPromotion(withName: "2018")
-
         }
+        
+
+        
  
         
 
