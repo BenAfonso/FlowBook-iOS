@@ -41,12 +41,15 @@ extension Message {
 
     func addImage(image: UIImage) {
         let image = UIImageJPEGRepresentation(image, 1.0) as NSData?
-        (self.images as? NSMutableSet).add(image)
-        CoreDataManager.save()
+        if image != nil {
+            (self.images as? NSMutableSet)?.add(image!)
+            CoreDataManager.save()
+        }
+        
     }
     
     func addFile(file: File) {
-        (self.files as? NSMutableSet).add(file)
+        (self.files as? NSMutableSet)?.add(file)
         CoreDataManager.save()
     }
     
