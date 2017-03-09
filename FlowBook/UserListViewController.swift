@@ -16,7 +16,8 @@ class UserListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableViewController.usersData.filterWithDepartment(department: (CurrentUser.get()?.department)!)
+        tableViewController.usersData.department = CurrentUser.get()?.department
         // Do any additional setup after loading the view.
     }
 

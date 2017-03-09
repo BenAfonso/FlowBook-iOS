@@ -28,7 +28,7 @@ extension Student {
         student.promotion = promotion
         
         student.active = false
-        if (department.users?.count == 0) {
+        if (department.users?.count == 1) {
             student.active = true
         }
         student.type = "student"

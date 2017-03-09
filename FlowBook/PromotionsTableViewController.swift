@@ -51,6 +51,7 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let promotionCell = self.promotionsTableVIew.dequeueReusableCell(withIdentifier: "promotionCell", for: indexPath) as! PromotionsTableViewCell
+        promotionCell.delegate = self
         
         let promotion = self.promotionsFetched.object(at: indexPath)
         
@@ -93,4 +94,11 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
     }
     
 
+}
+
+
+extension PromotionsTableViewController: PromotionCellDelegate {
+    func goToPromotion(promotion: Promotion) {
+        print("Go to promotion: "+promotion.name!)
+    }
 }

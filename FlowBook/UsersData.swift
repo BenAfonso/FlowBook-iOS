@@ -12,6 +12,7 @@ import CoreData
 class UsersData: NSObject, NSFetchedResultsControllerDelegate {
     
     var delegate: UserDataDelegate?
+    var department: Department?
     
     lazy var usersFetched : NSFetchedResultsController<User> = {
         
@@ -21,6 +22,7 @@ class UsersData: NSObject, NSFetchedResultsControllerDelegate {
             fetchResultController.delegate = self
         
             do { try fetchResultController.performFetch() } catch { }
+        
             return fetchResultController
         }()
     
@@ -34,20 +36,48 @@ class UsersData: NSObject, NSFetchedResultsControllerDelegate {
         return self.usersFetched.object(at: index)
     }
     
+    func filterWithDepartment(department: Department) {
+        //print(department.name!+"AZZ")
+        
+        let predicate = NSPredicate(format: "department == %@", department)
+        self.usersFetched.fetchRequest.predicate = predicate
+        do {try self.usersFetched.performFetch()}catch{}
+    }
+    
     func filter(filter: UserFilter) {
         
         var predicate: NSPredicate? = nil
         switch filter {
         case .actives:
-            predicate = NSPredicate(format: "active == true")
+            if let department = self.department {
+                predicate = NSPredicate(format: "active == true && department == %@", department)
+            } else {
+                predicate = NSPredicate(format: "active == true")
+            }
         case.inactives:
-            predicate = NSPredicate(format: "active == false")
+            if let department = self.department {
+                predicate = NSPredicate(format: "active == false && department == %@", department)
+            } else {
+                predicate = NSPredicate(format: "active == false")
+            }
         case .teachers:
-            predicate = NSPredicate(format: "type == %@", "teacher")
+            if let department = self.department {
+                predicate = NSPredicate(format: "type == %@ && department == %@", "teacher", department)
+            } else {
+                predicate = NSPredicate(format: "type == %@", "teacher")
+            }
         case .students:
-            predicate = NSPredicate(format: "type == %@", "student")
+            if let department = self.department {
+                predicate = NSPredicate(format: "type == %@ && department == %@", "student", department)
+            } else {
+                predicate = NSPredicate(format: "type == %@", "student")
+            }
         case .all:
-            predicate = nil
+            if let department = self.department {
+                predicate = NSPredicate(format: "department == %@", department)
+            } else {
+                predicate = nil
+            }
         }
         
         self.usersFetched.fetchRequest.predicate = predicate
