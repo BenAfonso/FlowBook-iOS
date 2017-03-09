@@ -31,7 +31,6 @@ class NewEventViewController: UIViewController  {
         self.titleNewEvent.styleInput()
         self.descriptionNewEvent.styleInput()
         self.setButtonActive(button: self.pinkColorButton)
-        print(pinkColorButton.backgroundColor!.cgColor.components![0])
         
     }
     
@@ -54,9 +53,14 @@ class NewEventViewController: UIViewController  {
        
     
         do{
+            let redInt = Int32(Float(colorButtonSelected!.backgroundColor!.cgColor.components![0])*255)
+            let greenInt = Int32(Float(colorButtonSelected!.backgroundColor!.cgColor.components![1])*255)
+            let blueInt = Int32(Float(colorButtonSelected!.backgroundColor!.cgColor.components![2])*255)
+            let alphaFloat = Float(colorButtonSelected!.backgroundColor!.cgColor.components![3])
             
             let userAuthor = try User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!)
-            let colorInsert = ColorRGB.create(redColor: Float(colorButtonSelected!.backgroundColor!.cgColor.components![0]), greenColor: Float(colorButtonSelected!.backgroundColor!.cgColor.components![1]), blueColor: Float(colorButtonSelected!.backgroundColor!.cgColor.components![2]), alphaOpacity: Float(colorButtonSelected!.backgroundColor!.cgColor.components![3]))
+            
+            let colorInsert = ColorRGB.create(redColor: redInt, greenColor: greenInt, blueColor: blueInt, alphaOpacity: alphaFloat)
             let _ = Event.create(dateStart: startDatePicker.date, dateEnd: endDatePicker.date, titleEvent: titleNewEvent.text!, descriptionEvent: descriptionNewEvent.text!, forDepartement: userAuthor.department!, theAuthor: userAuthor, colorEvent: colorInsert)
         }catch {
             

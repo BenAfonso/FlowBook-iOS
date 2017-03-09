@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 extension ColorRGB {
-    static func create(redColor red: Float, greenColor green: Float, blueColor blue: Float,alphaOpacity alpha: Float) -> ColorRGB
+    static func create(redColor red: Int32, greenColor green: Int32, blueColor blue: Int32,alphaOpacity alpha: Float) -> ColorRGB
     {
         let color = ColorRGB(context: CoreDataManager.context)
         color.red = red

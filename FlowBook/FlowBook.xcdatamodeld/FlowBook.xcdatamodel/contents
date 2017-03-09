@@ -2,9 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ColorRGB" representedClassName="ColorRGB" syncable="YES" codeGenerationType="class">
         <attribute name="alpha" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="blue" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="green" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="red" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="blue" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="green" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="red" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="color" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="Department" representedClassName="Department" syncable="YES" codeGenerationType="class">
@@ -106,6 +106,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
+        <element name="ColorRGB" positionX="-396" positionY="-450" width="128" height="120"/>
         <element name="Department" positionX="-605" positionY="-283" width="128" height="148"/>
         <element name="Event" positionX="-459" positionY="-432" width="128" height="148"/>
         <element name="File" positionX="349" positionY="-225" width="128" height="118"/>
@@ -121,6 +122,5 @@
         <element name="TeacherFlow" positionX="34" positionY="153" width="128" height="45"/>
         <element name="TypeRight" positionX="-405" positionY="-603" width="128" height="58"/>
         <element name="User" positionX="-315" positionY="-342" width="128" height="210"/>
-        <element name="ColorRGB" positionX="-396" positionY="-450" width="128" height="118"/>
     </elements>
 </model>
