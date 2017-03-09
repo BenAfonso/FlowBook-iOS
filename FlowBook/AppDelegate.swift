@@ -62,7 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         }
  
-        
+        do{
+            try User.get(withEmail: "bastien@mail.fr").activate()
+        }catch{
+            
+        }
 
         
     }

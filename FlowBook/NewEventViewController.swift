@@ -15,6 +15,9 @@ class NewEventViewController: UIViewController  {
     @IBOutlet weak var titleNewEvent: CustomInputCalendar!
     @IBOutlet weak var descriptionNewEvent: CustomInputCalendar!
     
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleNewEvent.styleInput()
@@ -37,6 +40,13 @@ class NewEventViewController: UIViewController  {
         guard descriptionNewEvent.text != nil,
             descriptionNewEvent.text != "" else {
                 return
+        }
+        guard startDatePicker.date != nil else{
+            return
+        }
+        
+        guard endDatePicker.date != nil else{
+            return
         }
         
     
