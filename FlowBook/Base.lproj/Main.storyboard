@@ -843,6 +843,19 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-uy-9ch">
+                                        <rect key="frame" x="814" y="162" width="189" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Changer mon mot de passe">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changePasswordAction:" destination="Osh-fj-9OV" eventType="touchUpInside" id="R66-dn-Z8r"/>
+                                            <segue destination="AeD-XM-K3A" kind="popoverPresentation" popoverAnchorView="fdq-uy-9ch" id="lOA-M7-li8">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.20392156862745098" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -949,19 +962,6 @@
                                     <constraint firstAttribute="height" constant="67" id="qRB-b3-8EW"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-uy-9ch">
-                                <rect key="frame" x="376" y="358" width="189" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Changer mon mot de passe">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="changePasswordAction:" destination="Osh-fj-9OV" eventType="touchUpInside" id="R66-dn-Z8r"/>
-                                    <segue destination="AeD-XM-K3A" kind="popoverPresentation" popoverAnchorView="fdq-uy-9ch" id="lOA-M7-li8">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1742,7 +1742,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uU-BB-Cgs" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="245" width="143" height="48"/>
+                                <rect key="frame" x="23" y="233" width="143" height="48"/>
                                 <state key="normal" title="Messages">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1787,7 +1787,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ij-Oo-1QR" customClass="CustomButton" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="23" y="301" width="143" height="48"/>
+                                <rect key="frame" x="23" y="289" width="143" height="48"/>
                                 <state key="normal" title="Calendrier">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1828,7 +1828,7 @@
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="top" secondItem="yi5-Lo-UqL" secondAttribute="bottom" constant="8" symbolic="YES" id="B3b-Ay-YC3"/>
                             <constraint firstItem="3Ij-Oo-1QR" firstAttribute="top" secondItem="0uU-BB-Cgs" secondAttribute="bottom" constant="8" id="D7d-Wp-E4N"/>
                             <constraint firstItem="SGt-Wl-ZlV" firstAttribute="leading" secondItem="fCL-mB-6Ok" secondAttribute="leading" id="DFO-0L-GUi"/>
-                            <constraint firstItem="0uU-BB-Cgs" firstAttribute="top" secondItem="yk3-SV-Pu6" secondAttribute="bottom" constant="20" id="Ebt-sW-vi6"/>
+                            <constraint firstItem="0uU-BB-Cgs" firstAttribute="top" secondItem="yk3-SV-Pu6" secondAttribute="bottom" constant="8" id="Ebt-sW-vi6"/>
                             <constraint firstAttribute="trailing" secondItem="SGt-Wl-ZlV" secondAttribute="trailing" id="GSm-5v-kbD"/>
                             <constraint firstItem="s5g-RZ-gMB" firstAttribute="centerX" secondItem="yk3-SV-Pu6" secondAttribute="centerX" id="Gh7-ki-yeR"/>
                             <constraint firstItem="mcu-xh-aAR" firstAttribute="top" secondItem="SGt-Wl-ZlV" secondAttribute="bottom" id="Ixy-Zp-voc"/>

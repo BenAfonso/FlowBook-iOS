@@ -47,6 +47,7 @@ extension User {
         teacher.email = email
         teacher.active = true
         teacher.department = department
+        teacher.addDepartment(department: department)
         teacher.type = "teacher"
         // Encrypt password
         teacher.password = password.sha256()
