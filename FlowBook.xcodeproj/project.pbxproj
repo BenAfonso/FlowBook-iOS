@@ -80,6 +80,7 @@
 		9291615D1E52755F00D60CD5 /* CustomInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291615C1E52755F00D60CD5 /* CustomInput.swift */; };
 		9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291615E1E52777900D60CD5 /* CustomInputUser.swift */; };
 		92C427521E7175590057F97A /* CustomButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C427511E7175590057F97A /* CustomButtonColor.swift */; };
+		92C427541E71FC490057F97A /* ColorRGBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C427531E71FC490057F97A /* ColorRGBExtension.swift */; };
 		92C9AB9A1E6E112E001AC477 /* EventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9AB991E6E112E001AC477 /* EventExtension.swift */; };
 		92D2E8F11E6E99EC005B2CFB /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */; };
 		92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E1F1D41E5253A8006C26A5 /* Main.storyboard */; };
@@ -188,6 +189,7 @@
 		9291615C1E52755F00D60CD5 /* CustomInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
 		9291615E1E52777900D60CD5 /* CustomInputUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputUser.swift; sourceTree = "<group>"; };
 		92C427511E7175590057F97A /* CustomButtonColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonColor.swift; sourceTree = "<group>"; };
+		92C427531E71FC490057F97A /* ColorRGBExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorRGBExtension.swift; sourceTree = "<group>"; };
 		92C9AB991E6E112E001AC477 /* EventExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventExtension.swift; sourceTree = "<group>"; };
 		92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		92E1F1D51E5253A8006C26A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				60F808601E59B70000101695 /* UsersData.swift */,
 				92C9AB991E6E112E001AC477 /* EventExtension.swift */,
 				60721FF61E7151A4006C0E3A /* TeacherExtension.swift */,
+				92C427531E71FC490057F97A /* ColorRGBExtension.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				60A5E5221E54508200684035 /* AlertController.swift in Sources */,
 				604F444D1E4F8AEC00ACFBC3 /* ChangePasswordViewController.swift in Sources */,
 				60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */,
+				92C427541E71FC490057F97A /* ColorRGBExtension.swift in Sources */,
 				60A5E5181E54394400684035 /* MessageTableView.swift in Sources */,
 				92D2E8F11E6E99EC005B2CFB /* NewEventViewController.swift in Sources */,
 				607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */,

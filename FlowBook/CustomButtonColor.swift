@@ -28,7 +28,7 @@ class CustomButtonColor: UIButton {
     func setActive() {
         self.isEnabled = false
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.borderColor = UIColor(red: 66.0/255.0, green: 165.0/255.0, blue: 245.0/255.0, alpha: 1.0).cgColor
     }
     
     func setInactive() {
