@@ -18,11 +18,16 @@ class NewEventViewController: UIViewController  {
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     
+    @IBOutlet weak var purpleColorButton: CustomButtonColor!
+    @IBOutlet weak var greenColorButton: CustomButtonColor!
+    @IBOutlet weak var pinkColorButton: CustomButtonColor!
+    @IBOutlet weak var orangeColorButton: CustomButtonColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleNewEvent.styleInput()
         descriptionNewEvent.styleInput()
-        // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,18 +46,12 @@ class NewEventViewController: UIViewController  {
             descriptionNewEvent.text != "" else {
                 return
         }
-        guard startDatePicker.date != nil else{
-            return
-        }
-        
-        guard endDatePicker.date != nil else{
-            return
-        }
+       
         
     
         do{
             let userAuthor = try User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!)
-            let _ = Event.createTest(titleEvent: titleNewEvent.text!, descriptionEvent: descriptionNewEvent.text!, theAuthor: userAuthor, forDepartement: userAuthor.department!)
+            let _ = Event.create(dateStart: startDatePicker.date, dateEnd: endDatePicker.date,titleEvent: titleNewEvent.text!, descriptionEvent: descriptionNewEvent.text!, colorEvent: "blue", forDepartement: userAuthor.department!, theAuthor: userAuthor)
         }catch {
             
         }
@@ -65,6 +64,36 @@ class NewEventViewController: UIViewController  {
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func setButtonsInactive(){
+        self.purpleColorButton.setInactive()
+        self.greenColorButton.setInactive()
+        self.pinkColorButton.setInactive()
+        self.orangeColorButton.setInactive()
+    }
+    
+    func setButtonActive(button: CustomButtonColor){
+        self.setButtonsInactive()
+        button.setActive()
+    }
+    
+    @IBAction func purpleColorSelectAction(_ sender: Any) {
+        self.setButtonActive(button: self.purpleColorButton)
+    }
+    
+    @IBAction func greenColorSelectAction(_ sender: Any) {
+        self.setButtonActive(button: self.greenColorButton)
+    }
+    
+    @IBAction func pinkColorSelectAction(_ sender: Any) {
+        self.setButtonActive(button: self.pinkColorButton)
+    }
+    
+    @IBAction func orangeColorSelectAction(_ sender: Any) {
+        self.setButtonActive(button: self.orangeColorButton)
+
+    }
+    
     
     
 }

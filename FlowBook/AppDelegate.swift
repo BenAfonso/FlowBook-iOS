@@ -62,15 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let department = Department.create(withName: "GBA")
             let _ = department.createPromotion(withName: "2018")
         }
-        
-
-        
- 
-        do{
-            try User.get(withEmail: "bastien@mail.fr").activate()
-        }catch{
-            
-        }
 
         
     }
