@@ -13,7 +13,8 @@ extension Message {
     static func create(withAuthor author: User,
                        onFlow flow: Flow,
                        withContent content: String,
-                       withFiles files: [File]?) -> Message {
+                       withFiles files: [File]? = nil,
+                       withImages images: [UIImage]? = nil) -> Message {
         
         
 
@@ -25,15 +26,31 @@ extension Message {
         message.content = content
         message.edited = false
         
-        /*if let files: [File] = files {
-         message.files = files
-         }*/
+        if let files = files {
+            message.files = NSSet(array: files)
+        }
         
+        if let images = images {
+            message.images = NSSet(array: images)
+        }
 
         CoreDataManager.save()
         return message
+    }
+    
 
+    func addImage(image: UIImage) {
+        let image = UIImageJPEGRepresentation(image, 1.0) as NSData?
+        if image != nil {
+            (self.images as? NSMutableSet)?.add(image!)
+            CoreDataManager.save()
+        }
         
+    }
+    
+    func addFile(file: File) {
+        (self.files as? NSMutableSet)?.add(file)
+        CoreDataManager.save()
     }
     
     
