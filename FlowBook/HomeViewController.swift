@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var NewMessageView: UIView!
     @IBOutlet weak var messageTextField: UITextField!
+    var flow: Flow?
     
     
     @IBAction func sendAction(_ sender: Any) {
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     func selectFlow(flow: Flow) {
         messagesTableView.selectFlow(flow: flow)
+        self.flow = flow
     }
     
     
@@ -71,14 +73,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     /// Triggered when the keyboard is editing
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        animateViewMoving(up: true, moveValue: 392)
+        //animateViewMoving(up: true, moveValue: 392)
+        NewMessage.display(withTitle: "", sourceVC: self)
+        NewMessage.newMessage.delegate = self
+        NewMessage.newMessage.setFlow(flow: self.flow!)
+        textField.endEditing(true)
         self.scrollToBottom()
         
     }
     
     /// Triggered when the keyboard is dismissed
     func textFieldDidEndEditing(_ textField: UITextField) {
-        animateViewMoving(up: false, moveValue: 392)
+        //animateViewMoving(up: false, moveValue: 392)
         self.scrollToBottom()
     }
     
@@ -105,14 +111,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
         //let menuVC = self.childViewControllers[0] as? MenuViewController
         //menuVC?.setMessagesButtonActive()
-        
-        
-        
+        self.flow = self.messagesTableView.flow
         self.messageTextField.delegate = self
-        
-        
-        
-        
         
     }
     
@@ -131,4 +131,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
     
+}
+
+extension HomeViewController: NewMessageDelegate {
+    func sendMessage(message: Message) {
+    }
 }
