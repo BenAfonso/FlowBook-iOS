@@ -74,8 +74,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     /// Triggered when the keyboard is editing
     func textFieldDidBeginEditing(_ textField: UITextField) {
         //animateViewMoving(up: true, moveValue: 392)
-        NewMessage.display(withTitle: "", sourceVC: self)
+        NewMessage.display(withTitle: "", sourceVC: (self.parent as? RootViewController)!)
         NewMessage.newMessage.delegate = self
+        (self.parent as? RootViewController)?.showBlur()
         NewMessage.newMessage.setFlow(flow: self.flow!)
         textField.endEditing(true)
         self.scrollToBottom()
@@ -135,5 +136,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
 extension HomeViewController: NewMessageDelegate {
     func sendMessage(message: Message) {
+    }
+    
+    func newMessagesDismissed() {
+        (self.parent as? RootViewController)?.hideBlur()
     }
 }

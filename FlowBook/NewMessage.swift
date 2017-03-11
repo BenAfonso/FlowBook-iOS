@@ -20,16 +20,21 @@ class NewMessage {
         sourceVC.present(newMessage, animated: true, completion: remove)
         
         let popoverPresentationController = newMessage.popoverPresentationController
+        popoverPresentationController?.delegate = newMessage
         
         popoverPresentationController?.sourceView = sourceVC.view
         popoverPresentationController?.permittedArrowDirections=UIPopoverArrowDirection(rawValue: 0)
-        let midX = sourceVC.view.frame.size.width / 2
-        let midY = sourceVC.view.frame.size.width / 2
-        popoverPresentationController?.sourceRect = CGRect(x: midX-150, y: midY-180, width: 795, height: 314)
+
+        
+        popoverPresentationController?.sourceRect = CGRect(x: sourceVC.view.bounds.midX, y: sourceVC.view.bounds.midY,width: 0,height: 0)
+
+        //popoverPresentationController?.sourceRect = CGRect(x: midX-150, y: midY-180, width: 795, height: 314)
     }
     
     static func remove() {
         newMessage = NewMessageViewController(nibName: "NewMessageView", bundle: nil)
-        //newMessage.dismiss(animated: true, completion: {})
+        print("HEELOO")
+        newMessage.delegate?.newMessagesDismissed()
+        newMessage.dismiss(animated: true, completion: nil)
     }
 }

@@ -14,6 +14,8 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
     
     @IBOutlet weak var menuView: UIView!
     
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    
     weak var currentViewController: UIViewController?
     weak var menuViewController: MenuViewController?
 
@@ -154,6 +156,14 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
         if let homeViewController = self.currentViewController as? HomeViewController {
             homeViewController.selectFlow(flow: flow)
         }
+    }
+    
+    func showBlur() {
+        self.blurView.isHidden = false
+    }
+    
+    func hideBlur() {
+        self.blurView.isHidden = true
     }
     
 

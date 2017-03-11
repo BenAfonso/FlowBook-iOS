@@ -34,7 +34,7 @@ class NewMessageViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: Any) {
         self.message = nil
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: delegate?.newMessagesDismissed)
     }
     
     @IBAction func sendAction(_ sender: Any) {
@@ -45,12 +45,14 @@ class NewMessageViewController: UIViewController {
         self.message?.content = self.messageTextView.text
         message = Message.create(withAuthor: CurrentUser.get()!, onFlow: self.flow!, withContent: text)
         delegate?.sendMessage(message: self.message!)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: delegate?.newMessagesDismissed)
     }
     
     @IBAction func addFileAction(_ sender: Any) {
         
     }
+    
+
 
     @IBAction func addImageAction(_ sender: Any) {
     }
@@ -66,6 +68,17 @@ class NewMessageViewController: UIViewController {
 
 }
 
+extension NewMessageViewController: UIPopoverPresentationControllerDelegate {
+    
+    
+    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        delegate?.newMessagesDismissed()
+    }
+    
+    
+}
+
 protocol NewMessageDelegate {
     func sendMessage(message: Message)
+    func newMessagesDismissed()
 }
