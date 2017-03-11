@@ -33,7 +33,6 @@ class NewMessage {
     
     static func remove() {
         newMessage = NewMessageViewController(nibName: "NewMessageView", bundle: nil)
-        print("HEELOO")
         newMessage.delegate?.newMessagesDismissed()
         newMessage.dismiss(animated: true, completion: nil)
     }
