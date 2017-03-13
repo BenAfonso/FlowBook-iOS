@@ -44,6 +44,8 @@
 		6086D6931E4A71C2007D270F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6086D6921E4A71C2007D270F /* LaunchScreen.storyboard */; };
 		6086D6991E4A81D9007D270F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D6981E4A81D9007D270F /* HomeViewController.swift */; };
 		6086D69F1E4B9164007D270F /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */; };
+		6096E2411E773EA200D515BD /* NewFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E23F1E773EA200D515BD /* NewFileViewController.swift */; };
+		6096E2421E773EA200D515BD /* NewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6096E2401E773EA200D515BD /* NewFileViewController.xib */; };
 		609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AAFA81E52237C00B51AF1 /* CurrentUser.swift */; };
 		60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5151E5434F000684035 /* MessageTableViewController.swift */; };
 		60A5E5181E54394400684035 /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5171E54394400684035 /* MessageTableView.swift */; };
@@ -158,6 +160,8 @@
 		6086D6921E4A71C2007D270F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6086D6981E4A81D9007D270F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6086D69E1E4B9164007D270F /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageTableViewCell.swift; path = ../MessageTableViewCell.swift; sourceTree = "<group>"; };
+		6096E23F1E773EA200D515BD /* NewFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFileViewController.swift; sourceTree = "<group>"; };
+		6096E2401E773EA200D515BD /* NewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFileViewController.xib; sourceTree = "<group>"; };
 		609AAFA81E52237C00B51AF1 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		60A5E5151E5434F000684035 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		60A5E5171E54394400684035 /* MessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
@@ -412,6 +416,15 @@
 			path = FlowBookTests;
 			sourceTree = "<group>";
 		};
+		6096E23E1E773E6700D515BD /* NewFile */ = {
+			isa = PBXGroup;
+			children = (
+				6096E23F1E773EA200D515BD /* NewFileViewController.swift */,
+				6096E2401E773EA200D515BD /* NewFileViewController.xib */,
+			);
+			name = NewFile;
+			sourceTree = "<group>";
+		};
 		60A5E5191E543F8300684035 /* MessagesTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +585,7 @@
 		60F808651E59C5DE00101695 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6096E23E1E773E6700D515BD /* NewFile */,
 				60721FF81E7176B2006C0E3A /* NewMessage */,
 				60F8086A1E59C84A00101695 /* Calendar */,
 				6044C5341E5749AF00CB0C34 /* Picker */,
@@ -692,6 +706,7 @@
 				92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */,
 				6086D6931E4A71C2007D270F /* LaunchScreen.storyboard in Resources */,
 				6044C53A1E576AE400CB0C34 /* PickerViewController.xib in Resources */,
+				6096E2421E773EA200D515BD /* NewFileViewController.xib in Resources */,
 				60721FFA1E7176BE006C0E3A /* NewMessageView.xib in Resources */,
 				60F8086C1E59C86000101695 /* CalendarCellView.xib in Resources */,
 				6086D6761E49CFAD007D270F /* Assets.xcassets in Resources */,
@@ -732,6 +747,7 @@
 				6044C5451E577C8500CB0C34 /* PickerTableViewCell.swift in Sources */,
 				9291615D1E52755F00D60CD5 /* CustomInput.swift in Sources */,
 				6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */,
+				6096E2411E773EA200D515BD /* NewFileViewController.swift in Sources */,
 				60D854A51E57336100A9BB73 /* NewPromotionViewController.swift in Sources */,
 				6086D6991E4A81D9007D270F /* HomeViewController.swift in Sources */,
 				60721FF71E7151A4006C0E3A /* TeacherExtension.swift in Sources */,
