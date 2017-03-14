@@ -29,4 +29,52 @@ extension Event {
         
     }
     
+    static func getAll() -> [Event] {
+        let request: NSFetchRequest<Event> = Event.fetchRequest()
+        do {
+            let events: [Event] = try CoreDataManager.context.fetch(request)
+            return events
+        } catch {
+            return []
+        }
+        
+        
+    }
+    
+    static func get(withDate date: Date) -> [Event]? {
+        let request: NSFetchRequest<Event> = Event.fetchRequest()
+        request.predicate = NSPredicate(format: "dateStart == %@", date as NSDate)
+        do {
+            let events: [Event] = try CoreDataManager.context.fetch(request)
+            if (events.count > 0) {
+                print("test>O")
+                return events
+            } else {
+                print("test==O")
+                return nil
+            }
+        } catch {
+            return nil
+        }
+    }
+    
+    
+    static func get(sinceThisDate date: Date) -> [Event]? {
+        let request: NSFetchRequest<Event> = Event.fetchRequest()
+        //request.predicate = NSPredicate(format: "dateStart >= %@", date as NSDate)
+        do {
+            let events: [Event] = try CoreDataManager.context.fetch(request)
+            if (events.count > 0) {
+                print("test>O")
+                return events
+            } else {
+                print("test==O")
+                return nil
+            }
+        } catch {
+            return nil
+        }
+    }
+    
+    
 }

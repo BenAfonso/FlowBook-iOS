@@ -6,12 +6,12 @@
 //  Copyright © 2017 Benjamin Afonso. All rights reserved.
 //
 
+import CoreData
 import UIKit
 import JTAppleCalendar
 
 class CalendarViewController: UIViewController {
-
-
+    
     @IBOutlet weak var yearLabelHeader: UILabel!
     @IBOutlet weak var monthLabelHeader: UILabel!
     
@@ -24,12 +24,15 @@ class CalendarViewController: UIViewController {
     let calendarCurrent = NSCalendar.current
     let currentDate = Date()
     
+    var allEvents : [Event] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarCellView")
         calendarView.cellInset = CGPoint(x: 0, y: 0)
+        
         
         //Déclaration du double tap sur date
         let doubleTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapCollectionView(gesture:)))
@@ -41,6 +44,8 @@ class CalendarViewController: UIViewController {
         let monthCurrent = calendarCurrent.component(.month, from:Date())
         monthLabelHeader.text = monthLabelTab[monthCurrent-1]
         yearLabelHeader.text = String(describing: yearCurrent)
+        
+        allEvents = Event.getAll()
         
         
     }
@@ -175,32 +180,25 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     //Fonction pour savoir si il y a un évènement sur la cellule
     func haveEvents(cellState: CellState)->BooleanLiteralType{
         var result = false
-        let dateEvents = getAllEventsToCell()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
         let cellStateString = formatter.string(from: cellState.date)
         
         
-        for dateEvent in dateEvents{
-            let dateEventString = formatter.string(from: dateEvent)
-            if cellState.dateBelongsTo == .thisMonth && dateEventString == cellStateString{
-                result = true
+        for event in allEvents{
+            let delta = event.dateStart?.timeIntervalSinceNow
+            
+            if let delta = delta {
+                let date = Date(timeIntervalSinceNow: delta)
+                let dateEventString = formatter.string(from: date)
+                if cellState.dateBelongsTo == .thisMonth && dateEventString == cellStateString{
+                    result = true
+                }
             }
+            
         } 
         return result
-    }
-    
-
-    //Fonction pour récupérer les dates avec évènements 
-    func getAllEventsToCell()->[Date]{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        let date1 = formatter.date(from: "2017 02 9")!
-        let date2 = formatter.date(from: "2017 02 14")!
-        let date3 = formatter.date(from: "2017 02 24")!
-        let dateEvents = [date1,date2,date3]
-        return dateEvents
     }
     
     
@@ -212,6 +210,12 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+    }
+    
+    
+    @IBAction func unwindFromNewEvent(segue : UIStoryboardSegue){
+        allEvents = Event.getAll()
+        self.calendarView.reloadData()
     }
     
     
