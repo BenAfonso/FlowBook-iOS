@@ -10,10 +10,15 @@ import UIKit
 
 class AdminPanelViewController: UIViewController {
 
+    // Buttons
     @IBOutlet weak var usersButton: UIButton!
     @IBOutlet weak var promotionsButton: UIButton!
+    @IBOutlet weak var documentsButton: UIButton!
     
+    // Child view
     @IBOutlet weak var childView: UIView!
+    
+    
     var delegate: AdminPanelNavigationDelegate?
     
     weak var currentViewController: UIViewController?
@@ -80,6 +85,10 @@ class AdminPanelViewController: UIViewController {
     @IBAction func goToPromotions(_ sender: Any) {
         self.goToView(withIdentifier: "promotionsTableView")
         self.setActive(button: promotionsButton)
+    }
+    
+    @IBAction func goToDocuments(_ sender: Any) {
+        self.setActive(button: documentsButton)
     }
     
     //var activeButton: UIButton
