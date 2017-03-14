@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewMessageViewController: UIViewController {
+class NewMessageViewController: UIViewController, NewFileDelegate {
 
     @IBOutlet weak var messageTextView: UITextView!
     
@@ -65,22 +65,35 @@ class NewMessageViewController: UIViewController {
         for image in self.images {
             message?.addImage(image: image)
         }
+        
+        for file in self.files {
+            message?.addFile(file: file)
+        }
+        
         delegate?.sendMessage(message: self.message!)
         self.dismiss(animated: true, completion: delegate?.newMessagesDismissed)
     }
     
     @IBAction func addFileAction(_ sender: Any) {
         // To implement
+        NewFile.display(sourceVC: self)
+        NewFile.newFileController.delegate = self
+    }
+    
+    
+    // Delegate method
+    func newFileEntered(file: File) {
+        self.addFile(file: file)
     }
     
     func addImage(image: UIImage) {
         self.images.append(image)
-        print(self.images.count)
         self.filesCollectionView.reloadData()
     }
     
     func addFile(file: File) {
         self.files.append(file)
+        self.filesCollectionView.reloadData()
     }
 
     @IBAction func addImageAction(_ sender: Any) {
@@ -132,10 +145,7 @@ extension NewMessageViewController: UIImagePickerControllerDelegate, UINavigatio
             action in
             self.picker.sourceType = .photoLibrary
             self.picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            self.present(self.picker, animated: true)
-            {
-                print("WOOW AMAZING")
-            }
+            self.present(self.picker, animated: true, completion: nil)
         }
         
         
@@ -179,7 +189,7 @@ extension NewMessageViewController:  UICollectionViewDataSource, UICollectionVie
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.images.count
+        return self.images.count+self.files.count
     }
     
     // make a cell for each cell index path
@@ -190,7 +200,11 @@ extension NewMessageViewController:  UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! FilesCollectionViewCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.image.image = self.images[indexPath.item]
+        if (indexPath.item >= self.images.count) {
+            cell.image.image = UIImage(named: "file-icon")
+        } else {
+            cell.image.image = self.images[indexPath.item]
+        }
         
         
         return cell
@@ -200,7 +214,8 @@ extension NewMessageViewController:  UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        self.images.remove(at: indexPath.item)
+        
+        //self.images.remove(at: indexPath.item)
         print("You removed #\(indexPath.item)!")
     }
 }
