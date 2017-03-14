@@ -73,6 +73,12 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         return section.numberOfObjects
     }
     
+    func scrollToBottom() {
+        if (self.messagesTableView.contentSize.height > self.messagesTableView.frame.size.height)
+        {
+            self.messagesTableView.setContentOffset(CGPoint(x: 0,y: self.messagesTableView.contentSize.height - self.messagesTableView.frame.size.height) , animated: true)
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let messageCell = self.messagesTableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageTableViewCell
@@ -90,7 +96,7 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         }
         
         messageCell.layer.cornerRadius=10 //set corner radius here
-
+        self.scrollToBottom()
 
         return messageCell
         
@@ -102,6 +108,8 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         
         return self.messagesFetched.object(at: indexPath).author == CurrentUser.get()
     }
+    
+    
     
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -169,6 +177,8 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
             
             let _ = try Message.create(withAuthor: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!), onFlow: flow, withContent: message, withFiles: nil)
             CoreDataManager.save()
+            
+            
         } catch let error as NSError {
             throw error
             //errorAlert(message: "Erreur lors de la création du message")

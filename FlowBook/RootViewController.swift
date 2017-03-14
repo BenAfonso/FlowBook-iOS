@@ -139,6 +139,10 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
         self.goToView(withIdentifier: "promotionsTableView")
     }
     
+    func goToDocuments() {
+        self.goToView(withIdentifier: "documentsView")
+    }
+    
     func goToCalendar() {
         self.goToView(withIdentifier: "calendarView")
     }

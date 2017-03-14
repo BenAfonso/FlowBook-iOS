@@ -14,7 +14,7 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
 
     @IBOutlet weak var profileButton: CustomButton!
     @IBOutlet weak var messagesButton: CustomButton!
-
+    @IBOutlet weak var documentsButton: CustomButton!
     @IBOutlet weak var calendarButton: CustomButton!
     
     @IBOutlet weak var adminPanel: CustomButton!
@@ -35,10 +35,9 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     // TO REFACTOR
     
     func setButtonsInactive() {
-        //self.promotionsButton.setInactive()
         self.messagesButton.setInactive()
-        //self.usersButton.setInactive()
         self.profileButton.setInactive()
+            self.documentsButton.setInactive()
         self.calendarButton.setInactive()
         self.adminPanel.setInactive()
     }
@@ -106,6 +105,10 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         self.setActive(button: self.messagesButton)
     }
     
+    @IBAction func documentsButtonAction(_ sender: Any) {
+        menuButtonsDelegate?.goToDocuments()
+        self.setActive(button: self.documentsButton)
+    }
     /*
     @IBAction func usersButtonAction(_ sender: Any) {
         menuButtonsDelegate?.goToUsers()
@@ -162,6 +165,7 @@ protocol MenuButtonsDelegate {
     func goToPromotions()
     func goToCalendar()
     func goToAdminPanel()
+    func goToDocuments()
     func selectFlow(flow: Flow)
 }
 
