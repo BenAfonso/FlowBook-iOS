@@ -114,6 +114,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         //menuVC?.setMessagesButtonActive()
         self.flow = self.messagesTableView.flow
         self.messageTextField.delegate = self
+        self.scrollToBottom()
+        print(self.messagesTableView.messages)
         
     }
     

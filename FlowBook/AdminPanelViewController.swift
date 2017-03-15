@@ -88,8 +88,10 @@ class AdminPanelViewController: UIViewController {
     }
     
     @IBAction func goToDocuments(_ sender: Any) {
+        self.goToView(withIdentifier: "adminDocumentsView")
         self.setActive(button: documentsButton)
     }
+
     
     //var activeButton: UIButton
     var bottomLine: CALayer = CALayer()
@@ -97,9 +99,9 @@ class AdminPanelViewController: UIViewController {
     func setActive(button: UIButton) {
 
         self.setInactive()
-        bottomLine.frame = CGRect(x: 0, y: button.frame.size.height - 2.0, width: button.frame.size.width, height: button.frame.size.height)
+        bottomLine.frame = CGRect(x: 0, y: button.frame.size.height - 4.0, width: button.frame.size.width, height: button.frame.size.height)
         bottomLine.borderColor = UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0).cgColor
-        bottomLine.borderWidth = 9.0
+        bottomLine.borderWidth = 4.0
         button.layer.addSublayer(bottomLine)
         button.layer.masksToBounds = true
                 
