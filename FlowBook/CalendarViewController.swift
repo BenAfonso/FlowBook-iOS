@@ -15,6 +15,9 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var yearLabelHeader: UILabel!
     @IBOutlet weak var monthLabelHeader: UILabel!
     
+    @IBOutlet weak var eventsTableView: UITableView!
+    @IBOutlet weak var closeEventsTableButton: UIButton!
+    
     @IBOutlet weak var calendarView: CalendarView!
     
     let white = UIColor.white
@@ -56,6 +59,9 @@ class CalendarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func closeEventsTableAction(_ sender: Any) {
+        self.hideTableEvents()
+    }
     
     
 }
@@ -163,8 +169,10 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         if cellState.isSelected {
             myCustomCell.selectedView.layer.cornerRadius =  20
             myCustomCell.selectedView.isHidden = false
+            
         } else {
             myCustomCell.selectedView.isHidden = true
+            
             if haveEvents(cellState: cellState){
                 myCustomCell.haveEventsView.layer.cornerRadius =  20
                 myCustomCell.haveEventsView.isHidden=false
@@ -205,11 +213,13 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        self.showTableEvents()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        self.hideTableEvents()
     }
     
     
@@ -218,6 +228,15 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         self.calendarView.reloadData()
     }
     
+    func showTableEvents(){
+        self.eventsTableView.isHidden = false
+        self.closeEventsTableButton.isHidden = false
+    }
+    
+    func hideTableEvents(){
+        self.eventsTableView.isHidden = true
+        self.closeEventsTableButton.isHidden = true
+    }
     
     
     
