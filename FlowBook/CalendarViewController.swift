@@ -233,6 +233,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         self.closeEventsTableButton.isHidden = false
     }
     
+    
     func hideTableEvents(){
         self.eventsTableView.isHidden = true
         self.closeEventsTableButton.isHidden = true
