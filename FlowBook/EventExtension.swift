@@ -29,4 +29,20 @@ extension Event {
         
     }
     
+    static func getAll(withDepartement dep: Department) -> [Event] {
+        let request: NSFetchRequest<Event> = Event.fetchRequest()
+        request.predicate = NSPredicate(format: "departement == %@", dep)
+        do {
+            let events: [Event] = try CoreDataManager.context.fetch(request)
+            return events
+        } catch {
+            return []
+        }
+        
+        
+    }
+    
+   
+    
+    
 }

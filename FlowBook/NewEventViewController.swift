@@ -11,6 +11,7 @@ import UIKit
 
 class NewEventViewController: UIViewController  {
     
+
     
     @IBOutlet weak var titleNewEvent: CustomInputCalendar!
     @IBOutlet weak var descriptionNewEvent: CustomInputCalendar!
@@ -25,6 +26,7 @@ class NewEventViewController: UIViewController  {
     
     var colorButtonSelected : CustomButtonColor?
 
+    var delegate: NewEventDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +67,8 @@ class NewEventViewController: UIViewController  {
         }catch {
             
         }
-    
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "unwindSegueToCalendar", sender: self)
+        
 
     }
     
@@ -107,5 +109,9 @@ class NewEventViewController: UIViewController  {
     
     
     
+}
+
+protocol NewEventDelegate {
+    func reload()
 }
 

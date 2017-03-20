@@ -6,14 +6,17 @@
 //  Copyright © 2017 Benjamin Afonso. All rights reserved.
 //
 
+import CoreData
 import UIKit
 import JTAppleCalendar
 
 class CalendarViewController: UIViewController {
-
-
+    
     @IBOutlet weak var yearLabelHeader: UILabel!
     @IBOutlet weak var monthLabelHeader: UILabel!
+    
+    @IBOutlet weak var eventsTableView: UITableView!
+    @IBOutlet weak var closeEventsTableButton: UIButton!
     
     @IBOutlet weak var calendarView: CalendarView!
     
@@ -24,12 +27,15 @@ class CalendarViewController: UIViewController {
     let calendarCurrent = NSCalendar.current
     let currentDate = Date()
     
+    var allEvents : [Event] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarCellView")
         calendarView.cellInset = CGPoint(x: 0, y: 0)
+        
         
         //Déclaration du double tap sur date
         let doubleTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapCollectionView(gesture:)))
@@ -42,6 +48,13 @@ class CalendarViewController: UIViewController {
         monthLabelHeader.text = monthLabelTab[monthCurrent-1]
         yearLabelHeader.text = String(describing: yearCurrent)
         
+        do{
+            allEvents = try Event.getAll(withDepartement: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!).department!)
+        }
+        catch{
+            
+        }
+        
         
     }
 
@@ -51,6 +64,9 @@ class CalendarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func closeEventsTableAction(_ sender: Any) {
+        self.hideTableEvents()
+    }
     
     
 }
@@ -158,8 +174,10 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         if cellState.isSelected {
             myCustomCell.selectedView.layer.cornerRadius =  20
             myCustomCell.selectedView.isHidden = false
+            
         } else {
             myCustomCell.selectedView.isHidden = true
+            
             if haveEvents(cellState: cellState){
                 myCustomCell.haveEventsView.layer.cornerRadius =  20
                 myCustomCell.haveEventsView.isHidden=false
@@ -175,45 +193,61 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     //Fonction pour savoir si il y a un évènement sur la cellule
     func haveEvents(cellState: CellState)->BooleanLiteralType{
         var result = false
-        let dateEvents = getAllEventsToCell()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
         let cellStateString = formatter.string(from: cellState.date)
         
         
-        for dateEvent in dateEvents{
-            let dateEventString = formatter.string(from: dateEvent)
-            if cellState.dateBelongsTo == .thisMonth && dateEventString == cellStateString{
-                result = true
+        for event in allEvents{
+            let delta = event.dateStart?.timeIntervalSinceNow
+            
+            if let delta = delta {
+                let date = Date(timeIntervalSinceNow: delta)
+                let dateEventString = formatter.string(from: date)
+                if cellState.dateBelongsTo == .thisMonth && dateEventString == cellStateString{
+                    result = true
+                }
             }
+            
         } 
         return result
-    }
-    
-
-    //Fonction pour récupérer les dates avec évènements 
-    func getAllEventsToCell()->[Date]{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy MM dd"
-        let date1 = formatter.date(from: "2017 02 9")!
-        let date2 = formatter.date(from: "2017 02 14")!
-        let date3 = formatter.date(from: "2017 02 24")!
-        let dateEvents = [date1,date2,date3]
-        return dateEvents
     }
     
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        self.showTableEvents()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        self.hideTableEvents()
     }
     
+    
+    @IBAction func unwindFromNewEvent(segue : UIStoryboardSegue){
+        do{
+            allEvents = try Event.getAll(withDepartement: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!).department!)
+        }
+        catch{
+            
+        }
+        self.calendarView.reloadData()
+    }
+    
+    func showTableEvents(){
+        self.eventsTableView.isHidden = false
+        self.closeEventsTableButton.isHidden = false
+    }
+    
+    
+    func hideTableEvents(){
+        self.eventsTableView.isHidden = true
+        self.closeEventsTableButton.isHidden = true
+    }
     
     
     
