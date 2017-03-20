@@ -90,6 +90,7 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         messageCell.setAuthor(author: (message.author))
         messageCell.setTimeStamp(time: message.timestamp)
         messageCell.messageText.text = message.content
+        messageCell.files = message.files
         
         if message.edited {
             messageCell.setEdited(time: message.lastedittimestamp)

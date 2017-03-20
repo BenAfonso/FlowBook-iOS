@@ -15,11 +15,13 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var authorUsername: UILabel!
     @IBOutlet weak var messageText: UILabel!
     
+    @IBOutlet weak var filesCollectionView: UICollectionView!
 
     @IBOutlet weak var timeStampLabel: UILabel!
     
     var delegate: messageTableDelegate?
-
+    var message: Message?
+    var files: NSSet?
     @IBOutlet weak var editedView: UIStackView!
     @IBOutlet weak var editTime: UILabel!
     @IBOutlet weak var editDate: UILabel!
@@ -34,6 +36,10 @@ class MessageTableViewCell: UITableViewCell {
             self.authorImage.image = author.getImage()
             self.authorUsername.text = author.getUsername()
         }
+    }
+    
+    func setFiles(files: NSSet) {
+        self.files = files
     }
     
     func setTimeStamp(time: NSDate?) {
@@ -97,6 +103,8 @@ class MessageTableViewCell: UITableViewCell {
     
     
 }
+
+
 
 
 protocol messageTableDelegate {

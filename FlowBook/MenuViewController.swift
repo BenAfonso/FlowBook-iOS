@@ -13,7 +13,8 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
     
 
     @IBOutlet weak var profileButton: CustomButton!
-    @IBOutlet weak var messagesButton: CustomButton!
+    @IBOutlet weak var
+    messagesButton: CustomButton!
     @IBOutlet weak var documentsButton: CustomButton!
     @IBOutlet weak var calendarButton: CustomButton!
     
