@@ -48,7 +48,12 @@ class CalendarViewController: UIViewController {
         monthLabelHeader.text = monthLabelTab[monthCurrent-1]
         yearLabelHeader.text = String(describing: yearCurrent)
         
-        allEvents = Event.getAll()
+        do{
+            allEvents = try Event.getAll(withDepartement: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!).department!)
+        }
+        catch{
+            
+        }
         
         
     }
@@ -224,7 +229,12 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     
     
     @IBAction func unwindFromNewEvent(segue : UIStoryboardSegue){
-        allEvents = Event.getAll()
+        do{
+            allEvents = try Event.getAll(withDepartement: User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!).department!)
+        }
+        catch{
+            
+        }
         self.calendarView.reloadData()
     }
     
