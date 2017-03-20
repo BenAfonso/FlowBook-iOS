@@ -25,6 +25,7 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
     }()
     
     
+    
 
     override init() {
         super.init()
@@ -93,7 +94,6 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
         }
     }
     
-
 }
 
 
