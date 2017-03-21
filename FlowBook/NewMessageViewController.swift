@@ -19,7 +19,7 @@ class NewMessageViewController: UIViewController, NewFileDelegate {
     @IBOutlet weak var filesCollectionView: UICollectionView!
     
     let picker = UIImagePickerController()
-    var images: [UIImage] = []
+    var images: [Image] = []
     var files: [File] = []
     let nib = UINib(nibName: "FilesCollectionViewCell", bundle: nil)
     
@@ -63,12 +63,17 @@ class NewMessageViewController: UIViewController, NewFileDelegate {
         
         // Add images
         for image in self.images {
-            message?.addImage(image: image)
+            //message?.addImage(image: image)
+            message?.addToImages(image)
+        
         }
         
         for file in self.files {
-            message?.addFile(file: file)
+            //message?.addFile(file: file)
+            message?.addToFiles(file)
         }
+        
+        CoreDataManager.save()
         
         delegate?.sendMessage(message: self.message!)
         self.dismiss(animated: true, completion: delegate?.newMessagesDismissed)
@@ -87,7 +92,9 @@ class NewMessageViewController: UIViewController, NewFileDelegate {
     }
     
     func addImage(image: UIImage) {
-        self.images.append(image)
+        let imageObj = Image(context: CoreDataManager.context)
+        imageObj.image = UIImageJPEGRepresentation(image, 1.0) as NSData?
+        self.images.append(imageObj)
         self.filesCollectionView.reloadData()
     }
     
@@ -203,7 +210,7 @@ extension NewMessageViewController:  UICollectionViewDataSource, UICollectionVie
         if (indexPath.item >= self.images.count) {
             cell.image.image = UIImage(named: "file-icon")
         } else {
-            cell.image.image = self.images[indexPath.item]
+            cell.image.image = UIImage(data: self.images[indexPath.item].image as! Data)
         }
         
         

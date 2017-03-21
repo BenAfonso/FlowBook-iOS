@@ -11,5 +11,14 @@ import UIKit
 class FileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var fileImage: UIImageView!
+    @IBOutlet weak var targetButton: UIButton!
+    
+    func setImage(image: Image) {
+        self.fileImage.image = UIImage(data: image.image as! Data)
+    }
+    
+    func setFile(file: File) {
+        self.fileImage.image = UIImage(named: "file-icon")
+    }
     
 }

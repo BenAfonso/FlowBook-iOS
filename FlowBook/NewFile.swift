@@ -6,7 +6,6 @@
 //  Copyright © 2017 Benjamin Afonso. All rights reserved.
 //
 
-import UIKit
 
 import UIKit
 

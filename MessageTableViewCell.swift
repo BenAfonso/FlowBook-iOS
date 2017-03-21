@@ -22,6 +22,7 @@ class MessageTableViewCell: UITableViewCell {
     var delegate: messageTableDelegate?
     var message: Message?
     var files: NSSet?
+    var images: NSSet?
     @IBOutlet weak var editedView: UIStackView!
     @IBOutlet weak var editTime: UILabel!
     @IBOutlet weak var editDate: UILabel!
@@ -29,6 +30,8 @@ class MessageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(MessageTableViewCell.swiped(sender:)))
         addGestureRecognizer(swipeGesture)
+        self.filesCollectionView.delegate = self
+        self.filesCollectionView.dataSource = self
     }
     
     func setAuthor(author: User?) {
@@ -40,6 +43,12 @@ class MessageTableViewCell: UITableViewCell {
     
     func setFiles(files: NSSet) {
         self.files = files
+        self.filesCollectionView.reloadData()
+    }
+    
+    func setImages(images: NSSet) {
+        self.images = images
+        self.filesCollectionView.reloadData()
     }
     
     func setTimeStamp(time: NSDate?) {
@@ -52,6 +61,7 @@ class MessageTableViewCell: UITableViewCell {
             self.timeStampLabel.text = "\(date[2]):\(date[3])"
         }
     }
+    
     
     func setEdited(time: NSDate?) {
         self.editedView.isHidden = false
@@ -99,9 +109,57 @@ class MessageTableViewCell: UITableViewCell {
         return [dayString, monthString, hourString, minuteString]
     }
     
+}
+
+extension MessageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let fileCell = self.filesCollectionView.dequeueReusableCell(withReuseIdentifier: "fileCell", for: indexPath) as! FileCollectionViewCell
+        
+        
+
+        if (indexPath.item >= (self.files?.count)!) {
+            let image = (self.images?.allObjects as! [Image])[indexPath.item-(self.files?.count)!]
+            //fileCell.fileImage.image = UIImage(data: image.image as! Data)
+            fileCell.setImage(image: image)
+            fileCell.targetButton.tag = indexPath.item
+            fileCell.targetButton.addTarget(self, action: #selector(previewImage(sender:)), for: .touchUpInside)
+        } else {
+            let file = (self.files?.allObjects as! [File])[indexPath.item]
+            fileCell.setFile(file: file)
+            fileCell.targetButton.tag = indexPath.item
+            fileCell.targetButton.addTarget(self, action: #selector(openLink(sender:)), for: .touchUpInside)
+            //fileCell.fileImage.image = UIImage(named: "file-icon")
+        }
+        
+        
+        return fileCell
+        
+    }
     
+    @IBAction func previewImage(sender: UIButton) {
+        let image = self.images?.allObjects[sender.tag-(self.files?.count)!] as? Image
+        let uiImage = UIImage(data: image?.image as! Data)
+        
+        if let uiImage = uiImage {
+            delegate?.previewImage(image: uiImage)
+        }
+    }
     
+    @IBAction func openLink(sender: UIButton) {
+        let file = self.files?.allObjects[sender.tag] as? File
+        let url = NSURL(string: (file?.link)!)
+        UIApplication.shared.open(url as! URL, options: [:], completionHandler: nil)
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (self.files?.count)!+(self.images?.count)!
+    }
 }
 
 
@@ -110,6 +168,6 @@ class MessageTableViewCell: UITableViewCell {
 protocol messageTableDelegate {
     
     func swippedCell(cell: MessageTableViewCell)
-    
+    func previewImage(image: UIImage)
     
 }

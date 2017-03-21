@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 import CoreData
 
-class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, messageTableDelegate {
     
     
     var messages: [Message] = []
     var flow: Flow?
-
+    var delegate: MessageTableDelegate?
     
     fileprivate lazy var messagesFetched : NSFetchedResultsController<Message> = {
         let request : NSFetchRequest<Message> = Message.fetchRequest()
@@ -90,14 +90,15 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         messageCell.setAuthor(author: (message.author))
         messageCell.setTimeStamp(time: message.timestamp)
         messageCell.messageText.text = message.content
-        messageCell.files = message.files
-        
+        messageCell.setFiles(files: message.files!)
+        messageCell.setImages(images: message.images!)
+        messageCell.delegate = self
         if message.edited {
             messageCell.setEdited(time: message.lastedittimestamp)
         }
         
         messageCell.layer.cornerRadius=10 //set corner radius here
-        self.scrollToBottom()
+        //self.scrollToBottom()
 
         return messageCell
         
@@ -187,12 +188,16 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     }
     
     
+    func swippedCell(cell: MessageTableViewCell) {
+        
+    }
     
-    
-    
+    func previewImage(image: UIImage) {
+        delegate?.previewImage(image: image)
+    }
 
+}
 
-    
-
-
+protocol MessageTableDelegate {
+    func previewImage(image: UIImage)
 }

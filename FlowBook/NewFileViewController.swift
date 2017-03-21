@@ -30,9 +30,11 @@ class NewFileViewController: UIViewController {
     static func checkUrlValid(url: String) -> Bool {
         //let urlRegExp = "http?://([-\\w\\.]+)+(:\\d+)?(/([\\w/_\\.]*(\\?\\S+)?)?)?"
         //let urlRegExp = "/^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$/"
-        //let urlTest  = NSPredicate(format:"SELF MATCHES %@", urlRegExp)
-        //return urlTest.evaluate(with: url)
-        return true
+        let urlRegExp = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
+        let urlTest  = NSPredicate(format:"SELF MATCHES %@", urlRegExp)
+        
+        return urlTest.evaluate(with: url)
+        //return true
     }
 
     override func didReceiveMemoryWarning() {

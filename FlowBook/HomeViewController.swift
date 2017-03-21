@@ -112,6 +112,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
         //let menuVC = self.childViewControllers[0] as? MenuViewController
         //menuVC?.setMessagesButtonActive()
+        self.messagesTableView.delegate = self
         self.flow = self.messagesTableView.flow
         self.messageTextField.delegate = self
         self.scrollToBottom()
@@ -134,6 +135,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    
+    
+}
+
+extension HomeViewController: MessageTableDelegate, ImagePreviewerDelegate {
+    func previewImage(image: UIImage) {
+        (self.parent as? RootViewController)?.showBlur()
+        ImagePreviewer.display(withImage: image, sourceVC: self)
+        ImagePreviewer.imagePreviewerController.delegate = self
+    }
+    
+    func previewDismissed() {
+        (self.parent as? RootViewController)?.hideBlur()
+    }
 }
 
 extension HomeViewController: NewMessageDelegate {
