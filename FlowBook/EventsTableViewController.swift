@@ -21,7 +21,6 @@ class EventsTableViewController: NSObject, UITableViewDelegate, UITableViewDataS
         let request : NSFetchRequest<Event> = Event.fetchRequest()
         
         var predicate: NSPredicate? = nil
-        print(self.selectedDate)
         if let selectedDate = self.selectedDate {
             predicate = NSPredicate(format: "dateStart > %@", selectedDate as NSDate)
         }
@@ -114,7 +113,7 @@ class EventsTableViewController: NSObject, UITableViewDelegate, UITableViewDataS
             
             let dateTo = calendar.date(from: components)! // eg. 2016-10-11 00:00:00
             
-            let predicate = NSPredicate(format: "(%@ <= dateStart) AND (dateStart < %@)", argumentArray: [dateFrom, dateTo])
+            let predicate = NSPredicate(format: "(%@ <= dateStart) AND (dateStart < %@) AND (departement == %@)", argumentArray: [dateFrom, dateTo,CurrentUser.get()!.department!])
             self.eventsFetched.fetchRequest.predicate = predicate
             do {try self.eventsFetched.performFetch()}catch{}
             self.eventsTableView.reloadData()
