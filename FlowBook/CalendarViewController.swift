@@ -37,11 +37,6 @@ class CalendarViewController: UIViewController {
         calendarView.cellInset = CGPoint(x: 0, y: 0)
         
         
-        //Déclaration du double tap sur date
-        let doubleTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didDoubleTapCollectionView(gesture:)))
-        doubleTapGesture.numberOfTapsRequired = 2  // add double tap
-        calendarView.addGestureRecognizer(doubleTapGesture)
-        
         //Current date header
         let yearCurrent = calendarCurrent.component(.year, from: Date())
         let monthCurrent = calendarCurrent.component(.month, from:Date())
@@ -97,13 +92,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             firstDayOfWeek: .monday)
         return parameters
     }
-    
-    //Fonction a utilisé pour ajouter directement une date 
-    func didDoubleTapCollectionView(gesture: UITapGestureRecognizer) {
-        let point = gesture.location(in: gesture.view!)
-        let cellState = calendarView.cellStatus(at: point)
-        print(cellState!.date)
-    }
+   
 
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {

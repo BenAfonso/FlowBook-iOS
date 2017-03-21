@@ -88,6 +88,7 @@
 		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
+		9281CDA71E81263F0077A03C /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281CDA61E81263F0077A03C /* EventsTableViewCell.swift */; };
 		9291615D1E52755F00D60CD5 /* CustomInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291615C1E52755F00D60CD5 /* CustomInput.swift */; };
 		9291615F1E52777900D60CD5 /* CustomInputUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291615E1E52777900D60CD5 /* CustomInputUser.swift */; };
 		92C427521E7175590057F97A /* CustomButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C427511E7175590057F97A /* CustomButtonColor.swift */; };
@@ -95,6 +96,7 @@
 		92C9AB9A1E6E112E001AC477 /* EventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9AB991E6E112E001AC477 /* EventExtension.swift */; };
 		92D2E8F11E6E99EC005B2CFB /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */; };
 		92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E1F1D41E5253A8006C26A5 /* Main.storyboard */; };
+		92ECCF5E1E8122FD0055A840 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ECCF5D1E8122FD0055A840 /* EventsTableViewController.swift */; };
 		92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A181E51D80700F74D86 /* CustomInputMail.swift */; };
 		92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */; };
 /* End PBXBuildFile section */
@@ -208,6 +210,7 @@
 		60F808711E59CBC500101695 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputCalendar.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
+		9281CDA61E81263F0077A03C /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		9291615C1E52755F00D60CD5 /* CustomInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
 		9291615E1E52777900D60CD5 /* CustomInputUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputUser.swift; sourceTree = "<group>"; };
 		92C427511E7175590057F97A /* CustomButtonColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonColor.swift; sourceTree = "<group>"; };
@@ -215,6 +218,7 @@
 		92C9AB991E6E112E001AC477 /* EventExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventExtension.swift; sourceTree = "<group>"; };
 		92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		92E1F1D51E5253A8006C26A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92ECCF5D1E8122FD0055A840 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		92FE3A181E51D80700F74D86 /* CustomInputMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputMail.swift; sourceTree = "<group>"; };
 		92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -297,6 +301,7 @@
 		606A6D6F1E550D2B00A0B3B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9281CDA51E8126260077A03C /* Events */,
 				60D8549B1E571C9900A9BB73 /* Promotions */,
 				60A5E52D1E54FEB100684035 /* Flows */,
 				60A5E51B1E5441F800684035 /* Users */,
@@ -521,6 +526,7 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				92ECCF5C1E8122DE0055A840 /* EventsTableView */,
 				6096E2481E78086000D515BD /* DocumentsView */,
 				6096E2451E7806E400D515BD /* AdminDocumentsView */,
 				60354D951E6EDD6C00A524F7 /* ResetPasswordViewController */,
@@ -649,12 +655,28 @@
 			name = Calendar;
 			sourceTree = "<group>";
 		};
+		9281CDA51E8126260077A03C /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				9281CDA61E81263F0077A03C /* EventsTableViewCell.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		92C9AB9B1E6E1953001AC477 /* NewEvent */ = {
 			isa = PBXGroup;
 			children = (
 				92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */,
 			);
 			name = NewEvent;
+			sourceTree = "<group>";
+		};
+		92ECCF5C1E8122DE0055A840 /* EventsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				92ECCF5D1E8122FD0055A840 /* EventsTableViewController.swift */,
+			);
+			name = EventsTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -779,6 +801,7 @@
 				60E6829D1E806A1700F0DF6A /* FileCollectionViewCell.swift in Sources */,
 				60A5E52F1E54FEC700684035 /* FlowPickerViewController.swift in Sources */,
 				6054B8E51E74516700583F4B /* FilesCollectionViewCell.swift in Sources */,
+				9281CDA71E81263F0077A03C /* EventsTableViewCell.swift in Sources */,
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,
 				6096E2441E77E48100D515BD /* NewFile.swift in Sources */,
 				60A5E51D1E54422500684035 /* UserTableViewCell.swift in Sources */,
@@ -821,6 +844,7 @@
 				607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */,
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
 				607BED081E50B47C004EB98A /* CoreDataManager.swift in Sources */,
+				92ECCF5E1E8122FD0055A840 /* EventsTableViewController.swift in Sources */,
 				6096E24A1E78086F00D515BD /* DocumentsViewViewController.swift in Sources */,
 				60A5E52A1E54ED1000684035 /* DepartmentExtension.swift in Sources */,
 				60A5E5261E54A1C700684035 /* RootViewController.swift in Sources */,
