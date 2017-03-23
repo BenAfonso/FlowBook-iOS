@@ -14,12 +14,17 @@ class EventsTableViewController: NSObject, UITableViewDelegate, UITableViewDataS
     
     
     @IBOutlet weak var eventsTableView: UITableView!
-    
+    var selectedDate : Date?
     
     
     fileprivate lazy var eventsFetched : NSFetchedResultsController<Event> = {
         let request : NSFetchRequest<Event> = Event.fetchRequest()
-        let predicate: NSPredicate = NSPredicate(format: "departement == %@", CurrentUser.get()!.department!)
+        
+        var predicate: NSPredicate? = nil
+        if let selectedDate = self.selectedDate {
+            predicate = NSPredicate(format: "dateStart > %@", selectedDate as NSDate)
+        }
+        //let predicate: NSPredicate = NSPredicate(format: "departement == %@", CurrentUser.get()!.department!)
         request.predicate = predicate
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Event.title), ascending: true)]
 
@@ -93,6 +98,27 @@ class EventsTableViewController: NSObject, UITableViewDelegate, UITableViewDataS
         default:
             break
         }
+    }
+    
+    func setDate(date: Date){
+        self.selectedDate = date
+        do {
+            var calendar = Calendar.current
+            calendar.timeZone = NSTimeZone.local
+            
+            // Get today's beginning & end
+            let dateFrom = calendar.startOfDay(for: date) // eg. 2016-10-10 00:00:00
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute],from: dateFrom)
+            components.day! += 1
+            
+            let dateTo = calendar.date(from: components)! // eg. 2016-10-11 00:00:00
+            
+            let predicate = NSPredicate(format: "(%@ <= dateStart) AND (dateStart < %@) AND (departement == %@)", argumentArray: [dateFrom, dateTo,CurrentUser.get()!.department!])
+            self.eventsFetched.fetchRequest.predicate = predicate
+            do {try self.eventsFetched.performFetch()}catch{}
+            self.eventsTableView.reloadData()
+        } catch {}
+
     }
     
 }

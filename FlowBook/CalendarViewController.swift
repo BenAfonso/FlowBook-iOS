@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var closeEventsTableButton: UIButton!
     
+    @IBOutlet var eventsTableVC: EventsTableViewController!
     @IBOutlet weak var calendarView: CalendarView!
     
     let white = UIColor.white
@@ -207,7 +208,10 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
+        print(cellState.date)
+        self.eventsTableVC.setDate(date: cellState.date)
         self.showTableEvents()
+        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
