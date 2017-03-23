@@ -15,6 +15,10 @@ class NewDocumentViewController: UIViewController , UIImagePickerControllerDeleg
     @IBOutlet weak var urlDocField: CustomInputCalendar!
     @IBOutlet weak var descriptionDocField: CustomInputCalendar!
     
+    @IBOutlet weak var urlErrorIcon: UIImageView!
+    @IBOutlet weak var descriptionErrorIcon: UIImageView!
+    
+    
     let picker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -35,8 +39,27 @@ class NewDocumentViewController: UIViewController , UIImagePickerControllerDeleg
     
 
     @IBAction func createDocAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-
+        
+        guard urlDocField.text != nil, descriptionDocField.text != "",descriptionDocField.text != nil, descriptionDocField.text != "" else{
+            self.showErrorUrl()
+            self.showErrorDescription()
+            return
+        }
+        
+        if(self.checkUrlValid(url: urlDocField.text!)){
+            do{
+                let userAuthor = try User.get(withEmail: UserDefaults.standard.string(forKey: "currentEmail")!)
+                let _ = Document.create(miniatureDocument: self.miniatureDocImage.image!, urlDocument: urlDocField.text!, descriptionDocument: descriptionDocField.text!, forDepartement: userAuthor.department!)
+                self.hideError()
+                self.dismiss(animated: true, completion: nil)
+            }catch{
+                
+            }
+        }else{
+            showErrorUrl()
+            return
+        }
+        
     }
     
     
@@ -95,6 +118,26 @@ class NewDocumentViewController: UIViewController , UIImagePickerControllerDeleg
         self.pickImageSource()
     }
     
+
+    func checkUrlValid(url: String) -> Bool {
+        let urlRegExp = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
+        let urlTest  = NSPredicate(format:"SELF MATCHES %@", urlRegExp)
+        
+        return urlTest.evaluate(with: url)
+    }
+    
+    func showErrorUrl(){
+        self.urlErrorIcon.isHidden = false
+    }
+    
+    func showErrorDescription(){
+        self.descriptionErrorIcon.isHidden = false
+    }
+    
+    func hideError(){
+        self.descriptionErrorIcon.isHidden = true
+        self.urlErrorIcon.isHidden = true
+    }
 }
 
 
