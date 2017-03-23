@@ -1,0 +1,6 @@
+framework module Pods_FlowBook {
+  umbrella header "Pods-FlowBook-umbrella.h"
+
+  export *
+  module * { export * }
+}

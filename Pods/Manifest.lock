@@ -1,0 +1,18 @@
+PODS:
+  - CryptoSwift (0.6.8)
+  - JTAppleCalendar (6.1.5)
+  - SwipeCellKit (1.5.0)
+
+DEPENDENCIES:
+  - CryptoSwift
+  - JTAppleCalendar (~> 6.1)
+  - SwipeCellKit
+
+SPEC CHECKSUMS:
+  CryptoSwift: f21ea03ed3a94e79d241648ce26652cd4810508a
+  JTAppleCalendar: 7fe18d6b7c26b8095f714ff089d4c0cbd9d6a632
+  SwipeCellKit: 781ce8874279e77335a2300564c30aea55ead914
+
+PODFILE CHECKSUM: ea58ae937bef26ffe3540556dc3be3c2a5f0312a
+
+COCOAPODS: 1.2.0
