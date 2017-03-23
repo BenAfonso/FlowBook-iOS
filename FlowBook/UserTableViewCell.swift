@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class UserTableViewCell: UITableViewCell {
+import SwipeCellKit
+class UserTableViewCell: SwipeTableViewCell {
 
     
     @IBOutlet weak var lastNameLabel: UILabel!
@@ -32,6 +32,7 @@ class UserTableViewCell: UITableViewCell {
             rootController.visitProfile(ofUser: self.user!)
         }
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

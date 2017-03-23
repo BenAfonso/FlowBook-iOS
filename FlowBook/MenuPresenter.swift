@@ -27,6 +27,7 @@ class MenuPresenter: NSObject {
                 } else if user is Teacher {
                     self.menuViewData.isTeacher = true
                 }
+                self.menuViewData.isAdmin = user.isAdmin
                 
             }
         }

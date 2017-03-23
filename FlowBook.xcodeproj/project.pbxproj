@@ -28,6 +28,8 @@
 		6054B8E11E733F6100583F4B /* NewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6054B8E01E733F6100583F4B /* NewMessage.swift */; };
 		6054B8E51E74516700583F4B /* FilesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6054B8E31E74516700583F4B /* FilesCollectionViewCell.swift */; };
 		6054B8E61E74516700583F4B /* FilesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6054B8E41E74516700583F4B /* FilesCollectionViewCell.xib */; };
+		6062E4BE1E84264E002A4FA3 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */; };
+		6062E4BF1E84264E002A4FA3 /* SwipeCellKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		606A6D721E552A8500A0B3B0 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */; };
 		606A6D741E55EC4700A0B3B0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */; };
 		606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */; };
@@ -119,6 +121,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				6062E4BF1E84264E002A4FA3 /* SwipeCellKit.framework in Embed Frameworks */,
 				9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */,
 				60F808691E59C7BD00101695 /* JTAppleCalendar.framework in Embed Frameworks */,
 			);
@@ -149,6 +152,7 @@
 		6054B8E01E733F6100583F4B /* NewMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessage.swift; sourceTree = "<group>"; };
 		6054B8E31E74516700583F4B /* FilesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesCollectionViewCell.swift; sourceTree = "<group>"; };
 		6054B8E41E74516700583F4B /* FilesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilesCollectionViewCell.xib; sourceTree = "<group>"; };
+		6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwipeCellKit.framework; sourceTree = "<group>"; };
 		606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6062E4BE1E84264E002A4FA3 /* SwipeCellKit.framework in Frameworks */,
 				9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */,
 				60F808671E59C7B100101695 /* JTAppleCalendar.framework in Frameworks */,
 			);
@@ -394,6 +399,7 @@
 		6086D65F1E49CFAD007D270F = {
 			isa = PBXGroup;
 			children = (
+				6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */,
 				60F808661E59C7B100101695 /* JTAppleCalendar.framework */,
 				607BED041E509D8A004EB98A /* CryptoSwift.framework */,
 				6086D66A1E49CFAD007D270F /* FlowBook */,

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import SwipeCellKit
 
 class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UserDataDelegate {
     
@@ -46,7 +47,7 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userCell = self.usersTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
-        
+        userCell.delegate = self
         let user = self.usersData?.get(userAtIndex: indexPath)
         
         userCell.setUser(user: user!)
@@ -58,20 +59,6 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
         return true
     }
     
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .default, title: "Delete", handler: self.deleteHandlerAction)
-        let activate = UITableViewRowAction(style: .default, title: "Activate", handler: self.activateHandlerAction)
-        let deactivate = UITableViewRowAction(style: .default, title: "Deactivate", handler: self.deactivateHandlerAction)
-        
-        delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
-        activate.backgroundColor = UIColor(red: 0.0/255.0, green: 145.0/255.0, blue: 132.0/255.0, alpha: 1)
-        deactivate.backgroundColor = UIColor.orange
-        if (self.usersData?.get(userAtIndex: indexPath).active)! {
-            return [delete, deactivate]
-        }
-        return [delete, activate]
-    }
     
     
     // MARK: UserDataDelegate
@@ -109,22 +96,31 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     
     // MARK: Handlers
     
-    func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+    func deleteHandlerAction(action: SwipeAction, indexPath: IndexPath) -> Void {
         self.usersData?.get(userAtIndex: indexPath).delete()
         self.usersTableView.reloadData()
 
     }
     
-    func activateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+    func activateHandlerAction(action: SwipeAction, indexPath: IndexPath) -> Void {
         self.usersData?.get(userAtIndex: indexPath).activate()
         self.usersTableView.reloadData()
 
     }
     
-    func deactivateHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+    func deactivateHandlerAction(action: SwipeAction, indexPath: IndexPath) -> Void {
         self.usersData?.get(userAtIndex: indexPath).active = false
         self.usersTableView.reloadData()
-
+    }
+    
+    func makeAdminHandlerAction(action: SwipeAction, indexPath: IndexPath) -> Void {
+        self.usersData?.get(userAtIndex: indexPath).makeAdmin()
+        self.usersTableView.reloadData()
+    }
+    
+    func revokeAdminHandlerAction(action: SwipeAction, indexPath: IndexPath) -> Void {
+        self.usersData?.get(userAtIndex: indexPath).revokeAdmin()
+        self.usersTableView.reloadData()
     }
     
     
@@ -151,4 +147,37 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     
     
     
+}
+
+extension UsersTableViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        switch orientation {
+        case .right:
+            let delete = SwipeAction(style: .destructive, title: "Delete", handler: self.deleteHandlerAction)
+            let activate = SwipeAction(style: .default, title: "Activate", handler: self.activateHandlerAction)
+            let deactivate = SwipeAction(style: .default, title: "Deactivate", handler: self.deactivateHandlerAction)
+            
+            delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
+            activate.backgroundColor = UIColor(red: 0.0/255.0, green: 145.0/255.0, blue: 132.0/255.0, alpha: 1)
+            deactivate.backgroundColor = UIColor.orange
+            if (self.usersData?.get(userAtIndex: indexPath).active)! {
+                return [delete, deactivate]
+            }
+            return [delete, activate]
+        case .left:
+            
+            let makeAdmin = SwipeAction(style: .default, title: "Mettre responsable", handler: self.makeAdminHandlerAction)
+            let revokeAdmin = SwipeAction(style: .destructive, title: "Retirer responsable", handler: self.revokeAdminHandlerAction)
+
+            makeAdmin.backgroundColor = UIColor.orange
+            revokeAdmin.backgroundColor = UIColor.red
+            if (self.usersData?.get(userAtIndex: indexPath).isAdmin)! {
+                return [revokeAdmin]
+            } else {
+                return [makeAdmin]
+            }
+        }
+        
+    }
 }

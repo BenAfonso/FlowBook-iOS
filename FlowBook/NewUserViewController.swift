@@ -66,20 +66,15 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        do {
-            let _ = try User.createTeacher(withFirstName: firstNameTextField.text!, withLastName: lastNameTextField.text!, withEmail: emailTextField.text!, withPassword: passwordTextField.text!,withDepartment: (CurrentUser.get()?.department)!)
+        let _ = User.createTeacher(withFirstName: firstNameTextField.text!, withLastName: lastNameTextField.text!, withEmail: emailTextField.text!, withPassword: passwordTextField.text!,withDepartment: (CurrentUser.get()?.department)!)
 
 
-            self.clearForm()
+        self.clearForm()
+        
+        self.dismiss(animated: true, completion: nil)
+        
             
-            self.dismiss(animated: true, completion: nil)
-            
-            
-        } catch {
-            self.clearForm()
-            // Display error ?
-            print("Erreur lors de la création de l'enseignant")
-        }
+      
         
     }
     

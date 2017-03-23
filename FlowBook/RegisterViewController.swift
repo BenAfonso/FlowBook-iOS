@@ -116,16 +116,27 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         
         // Save user into CoreData
  
-            
-
-        let newUser: Student = Student.create(withFirstName: firstName,
+        
+        if ((self.selectedDepartment?.users?.count)! == 1) {
+            let newUser: Student = Student.create(withFirstName: firstName,
                                                   withLastName: lastName,
                                                   withEmail: email,
                                                   withPassword: password,
                                                   forPromotion: self.selectedPromotion!,
                                                   forDepartment: self.selectedDepartment!)
+            newUser.changeImage(image: self.profileImage.image!)
+
+        } else {
+            let newUser: Teacher = User.createTeacher(withFirstName: firstName,
+                                                  withLastName: lastName,
+                                                  withEmail: email,
+                                                  withPassword: password,
+                                                  withDepartment: self.selectedDepartment!)
+            newUser.changeImage(image: self.profileImage.image!)
+
+        }
         
-        newUser.changeImage(image: self.profileImage.image!)
+        
         self.clearForm()
         performSegue(withIdentifier: "registerSuccess", sender: self)
 

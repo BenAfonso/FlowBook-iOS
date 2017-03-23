@@ -99,6 +99,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isAdmin" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -115,6 +116,7 @@
     <elements>
         <element name="ColorRGB" positionX="-396" positionY="-450" width="128" height="118"/>
         <element name="Department" positionX="-605" positionY="-283" width="128" height="165"/>
+        <element name="Document" positionX="-396" positionY="-450" width="128" height="105"/>
         <element name="Event" positionX="-459" positionY="-432" width="128" height="148"/>
         <element name="File" positionX="349" positionY="-225" width="128" height="118"/>
         <element name="FileType" positionX="484" positionY="18" width="128" height="73"/>
@@ -128,7 +130,6 @@
         <element name="Teacher" positionX="-254" positionY="9" width="128" height="58"/>
         <element name="TeacherFlow" positionX="34" positionY="153" width="128" height="45"/>
         <element name="TypeRight" positionX="-405" positionY="-603" width="128" height="58"/>
-        <element name="User" positionX="-315" positionY="-342" width="128" height="208"/>
-        <element name="Document" positionX="-396" positionY="-450" width="128" height="105"/>
+        <element name="User" positionX="-315" positionY="-342" width="128" height="225"/>
     </elements>
 </model>

@@ -141,7 +141,7 @@ extension MenuViewController: MenuViewProtocol {
     func setUI() {
         let data = self.menuPresenter.getData()
         
-        self.adminPanel.isHidden = !(data.isStudent) // To change to admin later
+        self.adminPanel.isHidden = !(data.isAdmin)
         self.usernameLabel.text = data.username
         
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))

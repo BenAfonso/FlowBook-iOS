@@ -68,10 +68,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         do{
             try User.get(withEmail: "bastien@mail.fr").activate()
+            try User.get(withEmail: "bastien@mail.fr").makeAdmin()
+            try User.get(withEmail: "benjamin.afonso@etu.umontpellier.fr").makeAdmin()
         }
         catch{
             
         }
+        
+        
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
