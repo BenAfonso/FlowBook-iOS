@@ -42,8 +42,12 @@ class EventsTableViewCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM"
         
-        
         self.event = event
+        
+        guard self.event?.dateStart != nil else {
+            return
+        }
+        
         self.eventTitleLabel.text = self.event?.title
         self.descriptionEventLabel.text = self.event?.contains
         self.dateEventLabel.text = dateFormatter.string(from: (self.event?.dateStart)! as Date)

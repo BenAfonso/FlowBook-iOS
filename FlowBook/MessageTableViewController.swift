@@ -17,6 +17,7 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     var flow: Flow?
     var delegate: MessageTableDelegate?
     
+    @IBOutlet weak var searchBar: UISearchBar!
     fileprivate lazy var messagesFetched : NSFetchedResultsController<Message> = {
         let request : NSFetchRequest<Message> = Message.fetchRequest()
 
@@ -115,8 +116,14 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let edit = UITableViewRowAction(style: .default, title: "Edit", handler: self.editHandlerAction)
+        edit.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
+        
+        
         let delete = UITableViewRowAction(style: .default, title: "Delete", handler: self.deleteHandlerAction)
         delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
+        
         return [delete]
     }
 
@@ -167,6 +174,13 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         CoreDataManager.context.delete(message)
     }
     
+    func editHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        
+        let message = self.messagesFetched.object(at: indexPath)
+        delegate?.editMessage(message: message)
+        CoreDataManager.context.delete(message)
+    }
+    
     func addMessage(message: String) throws {
         
         // Check if there is a flow
@@ -195,9 +209,32 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     func previewImage(image: UIImage) {
         delegate?.previewImage(image: image)
     }
+    
+    
+    func filterContent(text: String) {
+        var predicates = [NSPredicate(format: "flow == %@", flow!)]
+        if text != "" {
+            predicates.append(NSPredicate(format: "content CONTAINS[c] %@", text))
+        }
+        let pred: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        self.messagesFetched.fetchRequest.predicate = pred
+        do {try self.messagesFetched.performFetch()}catch{}
+        self.messagesTableView.reloadData()
+        
+    }
+    
+    
 
 }
 
+extension MessageTableViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterContent(text: searchText)
+    }
+    
+}
 protocol MessageTableDelegate {
     func previewImage(image: UIImage)
+    func editMessage(message: Message)
 }

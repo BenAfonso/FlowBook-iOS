@@ -644,15 +644,15 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="168" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XNp-aJ-wZV" customClass="MessageTableView" customModule="FlowBook" customModuleProvider="target">
-                                <rect key="frame" x="8" y="20" width="1008" height="702"/>
+                                <rect key="frame" x="0.0" y="44" width="1024" height="678"/>
                                 <color key="backgroundColor" red="0.44393363229999999" green="1" blue="0.57330418630000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="0.0" maxY="10"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="left" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" rowHeight="168" id="F9y-Dn-RBM" customClass="MessageTableViewCell" customModule="FlowBook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1008" height="168"/>
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="168"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="F9y-Dn-RBM" id="Oeo-Ku-ugo">
-                                            <rect key="frame" x="0.0" y="0.0" width="1008" height="168"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="F9y-Dn-RBM" id="Oeo-Ku-ugo">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="168"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khx-b3-UVe">
@@ -713,7 +713,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4O3-4P-12a">
-                                                    <rect key="frame" x="8" y="102" width="992" height="50"/>
+                                                    <rect key="frame" x="8" y="102" width="1008" height="50"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="yL6-cq-otk"/>
@@ -799,14 +799,24 @@
                                     <outlet property="delegate" destination="JZV-p2-eHd" id="zN1-8O-PQ9"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Hbp-3f-Sef">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8Xt-Fl-5BY"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XNp-aJ-wZV" firstAttribute="leading" secondItem="v20-90-HQN" secondAttribute="leading" constant="8" id="XSp-5V-QoV"/>
-                            <constraint firstItem="XNp-aJ-wZV" firstAttribute="top" secondItem="Pbf-kl-KLG" secondAttribute="bottom" id="bLF-Aq-7ab"/>
+                            <constraint firstItem="Hbp-3f-Sef" firstAttribute="top" secondItem="v20-90-HQN" secondAttribute="top" id="CRx-aa-GgL"/>
+                            <constraint firstItem="Hbp-3f-Sef" firstAttribute="leading" secondItem="v20-90-HQN" secondAttribute="leading" id="FRN-hQ-WHn"/>
+                            <constraint firstItem="XNp-aJ-wZV" firstAttribute="top" secondItem="Hbp-3f-Sef" secondAttribute="bottom" id="IHK-yr-lqE"/>
+                            <constraint firstItem="XNp-aJ-wZV" firstAttribute="leading" secondItem="v20-90-HQN" secondAttribute="leading" id="XSp-5V-QoV"/>
                             <constraint firstItem="r7k-0j-viy" firstAttribute="top" secondItem="JeV-rU-mlx" secondAttribute="bottom" id="cUc-h5-XfH"/>
+                            <constraint firstAttribute="trailing" secondItem="Hbp-3f-Sef" secondAttribute="trailing" id="eQj-Gg-9j2"/>
                             <constraint firstAttribute="trailing" secondItem="JeV-rU-mlx" secondAttribute="trailing" id="h5M-Ru-NO8"/>
-                            <constraint firstAttribute="trailing" secondItem="XNp-aJ-wZV" secondAttribute="trailing" constant="8" id="nym-FC-9Za"/>
+                            <constraint firstAttribute="trailing" secondItem="XNp-aJ-wZV" secondAttribute="trailing" id="nym-FC-9Za"/>
                             <constraint firstItem="JeV-rU-mlx" firstAttribute="top" secondItem="XNp-aJ-wZV" secondAttribute="bottom" id="pBW-Xc-kHE"/>
                             <constraint firstItem="JeV-rU-mlx" firstAttribute="leading" secondItem="v20-90-HQN" secondAttribute="leading" id="rjM-TO-4s4"/>
                         </constraints>
@@ -823,6 +833,7 @@
                 <customObject id="JZV-p2-eHd" customClass="MessageTableViewController" customModule="FlowBook" customModuleProvider="target">
                     <connections>
                         <outlet property="messagesTableView" destination="XNp-aJ-wZV" id="4oh-BD-C9J"/>
+                        <outlet property="searchBar" destination="Hbp-3f-Sef" id="1qD-mQ-atk"/>
                     </connections>
                 </customObject>
                 <swipeGestureRecognizer direction="right" id="5qU-9I-FIs"/>

@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var NewMessageView: UIView!
     @IBOutlet weak var messageTextField: UITextField!
     var flow: Flow?
+
     
     
     @IBAction func sendAction(_ sender: Any) {
@@ -115,6 +116,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         self.messagesTableView.delegate = self
         self.flow = self.messagesTableView.flow
         self.messageTextField.delegate = self
+        self.messagesTableView.searchBar.delegate = self.messagesTableView
         self.scrollToBottom()
         print(self.messagesTableView.messages)
         
@@ -148,6 +150,11 @@ extension HomeViewController: MessageTableDelegate, ImagePreviewerDelegate {
     
     func previewDismissed() {
         (self.parent as? RootViewController)?.hideBlur()
+    }
+    
+    func editMessage(message: Message) {
+        NewMessage.display(withTitle: "Edition", sourceVC: self)
+        NewMessage.newMessage.setMessage(message: message)
     }
 }
 
