@@ -20,6 +20,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
     weak var menuViewController: MenuViewController?
 
     override func viewDidLoad() {
+        
         self.menuViewController = self.storyboard?.instantiateViewController(withIdentifier: "menuView") as! MenuViewController?
     
         self.menuViewController!.view.translatesAutoresizingMaskIntoConstraints = false
@@ -169,6 +170,8 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
     func hideBlur() {
         self.blurView.isHidden = true
     }
+    
+
     
 
     /*
