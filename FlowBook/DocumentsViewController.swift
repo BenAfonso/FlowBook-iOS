@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DocumentsViewViewController: UIViewController {
+class DocumentsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

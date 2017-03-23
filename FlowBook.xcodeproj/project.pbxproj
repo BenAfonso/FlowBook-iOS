@@ -48,7 +48,7 @@
 		6096E2421E773EA200D515BD /* NewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6096E2401E773EA200D515BD /* NewFileViewController.xib */; };
 		6096E2441E77E48100D515BD /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E2431E77E48100D515BD /* NewFile.swift */; };
 		6096E2471E7806FD00D515BD /* AdminDocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E2461E7806FD00D515BD /* AdminDocumentsViewController.swift */; };
-		6096E24A1E78086F00D515BD /* DocumentsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E2491E78086F00D515BD /* DocumentsViewViewController.swift */; };
+		6096E24A1E78086F00D515BD /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E2491E78086F00D515BD /* DocumentsViewController.swift */; };
 		609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AAFA81E52237C00B51AF1 /* CurrentUser.swift */; };
 		60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5151E5434F000684035 /* MessageTableViewController.swift */; };
 		60A5E5181E54394400684035 /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5171E54394400684035 /* MessageTableView.swift */; };
@@ -85,6 +85,7 @@
 		60F808701E59C93000101695 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8086F1E59C93000101695 /* CalendarViewController.swift */; };
 		60F808721E59CBC500101695 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F808711E59CBC500101695 /* CalendarView.swift */; };
 		922A2E5C1E6F5F070073BAD4 /* CustomInputCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */; };
+		923AA8751E840B9B00EABD98 /* NewDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AA8741E840B9B00EABD98 /* NewDocumentViewController.swift */; };
 		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
 		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
@@ -173,7 +174,7 @@
 		6096E2401E773EA200D515BD /* NewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFileViewController.xib; sourceTree = "<group>"; };
 		6096E2431E77E48100D515BD /* NewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
 		6096E2461E7806FD00D515BD /* AdminDocumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDocumentsViewController.swift; sourceTree = "<group>"; };
-		6096E2491E78086F00D515BD /* DocumentsViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsViewViewController.swift; sourceTree = "<group>"; };
+		6096E2491E78086F00D515BD /* DocumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		609AAFA81E52237C00B51AF1 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		60A5E5151E5434F000684035 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		60A5E5171E54394400684035 /* MessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 		60F8086F1E59C93000101695 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		60F808711E59CBC500101695 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputCalendar.swift; sourceTree = "<group>"; };
+		923AA8741E840B9B00EABD98 /* NewDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDocumentViewController.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
 		9281CDA61E81263F0077A03C /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		9291615C1E52755F00D60CD5 /* CustomInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
@@ -456,7 +458,7 @@
 		6096E2481E78086000D515BD /* DocumentsView */ = {
 			isa = PBXGroup;
 			children = (
-				6096E2491E78086F00D515BD /* DocumentsViewViewController.swift */,
+				6096E2491E78086F00D515BD /* DocumentsViewController.swift */,
 			);
 			name = DocumentsView;
 			sourceTree = "<group>";
@@ -526,6 +528,7 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				923AA8731E840B7800EABD98 /* NewDocument */,
 				92ECCF5C1E8122DE0055A840 /* EventsTableView */,
 				6096E2481E78086000D515BD /* DocumentsView */,
 				6096E2451E7806E400D515BD /* AdminDocumentsView */,
@@ -653,6 +656,14 @@
 				60F808711E59CBC500101695 /* CalendarView.swift */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		923AA8731E840B7800EABD98 /* NewDocument */ = {
+			isa = PBXGroup;
+			children = (
+				923AA8741E840B9B00EABD98 /* NewDocumentViewController.swift */,
+			);
+			name = NewDocument;
 			sourceTree = "<group>";
 		};
 		9281CDA51E8126260077A03C /* Events */ = {
@@ -822,6 +833,7 @@
 				6045C3FB1E4DFB2B00970DCF /* MenuViewController.swift in Sources */,
 				6096E2411E773EA200D515BD /* NewFileViewController.swift in Sources */,
 				60D854A51E57336100A9BB73 /* NewPromotionViewController.swift in Sources */,
+				923AA8751E840B9B00EABD98 /* NewDocumentViewController.swift in Sources */,
 				6086D6991E4A81D9007D270F /* HomeViewController.swift in Sources */,
 				60721FF71E7151A4006C0E3A /* TeacherExtension.swift in Sources */,
 				60D8549D1E571CB800A9BB73 /* PromotionsTableViewCell.swift in Sources */,
@@ -845,7 +857,7 @@
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
 				607BED081E50B47C004EB98A /* CoreDataManager.swift in Sources */,
 				92ECCF5E1E8122FD0055A840 /* EventsTableViewController.swift in Sources */,
-				6096E24A1E78086F00D515BD /* DocumentsViewViewController.swift in Sources */,
+				6096E24A1E78086F00D515BD /* DocumentsViewController.swift in Sources */,
 				60A5E52A1E54ED1000684035 /* DepartmentExtension.swift in Sources */,
 				60A5E5261E54A1C700684035 /* RootViewController.swift in Sources */,
 				60A5E5311E54FEE700684035 /* FlowPickerTableViewCell.swift in Sources */,
