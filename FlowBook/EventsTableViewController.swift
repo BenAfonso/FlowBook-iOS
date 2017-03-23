@@ -14,18 +14,10 @@ class EventsTableViewController: NSObject, UITableViewDelegate, UITableViewDataS
     
     
     @IBOutlet weak var eventsTableView: UITableView!
-    var selectedDate : Date?
     
     
     fileprivate lazy var eventsFetched : NSFetchedResultsController<Event> = {
         let request : NSFetchRequest<Event> = Event.fetchRequest()
-        
-        var predicate: NSPredicate? = nil
-        if let selectedDate = self.selectedDate {
-            predicate = NSPredicate(format: "dateStart > %@", selectedDate as NSDate)
-        }
-        //let predicate: NSPredicate = NSPredicate(format: "departement == %@", CurrentUser.get()!.department!)
-        request.predicate = predicate
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Event.title), ascending: true)]
 
         let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
@@ -101,8 +93,6 @@ class EventsTableViewController: NSObject, UITableViewDelegate, UITableViewDataS
     }
     
     func setDate(date: Date){
-        self.selectedDate = date
-        do {
             var calendar = Calendar.current
             calendar.timeZone = NSTimeZone.local
             
@@ -117,7 +107,7 @@ class EventsTableViewController: NSObject, UITableViewDelegate, UITableViewDataS
             self.eventsFetched.fetchRequest.predicate = predicate
             do {try self.eventsFetched.performFetch()}catch{}
             self.eventsTableView.reloadData()
-        } catch {}
+        
 
     }
     
