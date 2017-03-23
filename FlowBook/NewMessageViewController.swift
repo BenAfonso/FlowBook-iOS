@@ -41,6 +41,13 @@ class NewMessageViewController: UIViewController, NewFileDelegate {
     func setFlow(flow: Flow) {
         self.flow = flow
     }
+    
+    func setMessage(message: Message) {
+        self.message = message
+        self.message?.edited = true
+        self.message?.lastedittimestamp = Date() as NSDate?
+        self.messageTextView.text = self.message?.content
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
