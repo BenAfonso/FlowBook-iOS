@@ -117,7 +117,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         // Save user into CoreData
  
         
-        if ((self.selectedDepartment?.users?.count)! == 1) {
+        if ((self.selectedDepartment?.users?.count)! > 1) {
             let newUser: Student = Student.create(withFirstName: firstName,
                                                   withLastName: lastName,
                                                   withEmail: email,
@@ -132,7 +132,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
                                                   withEmail: email,
                                                   withPassword: password,
                                                   withDepartment: self.selectedDepartment!)
+            newUser.makeAdmin()
             newUser.changeImage(image: self.profileImage.image!)
+            CoreDataManager.save()
 
         }
         

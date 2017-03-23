@@ -150,8 +150,18 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
 }
 
 extension UsersTableViewController: SwipeTableViewCellDelegate {
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        
+    /**
+     Asks the delegate for the actions to display in response to a swipe in the specified row.
+     
+     - parameter tableView: The table view object which owns the cell requesting this information.
+     
+     - parameter indexPath: The index path of the row.
+     
+     - parameter orientation: The side of the cell requesting this information.
+     
+     - returns: An array of `SwipeAction` objects representing the actions for the row. Each action you provide is used to create a button that the user can tap.
+     */
+    public func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         switch orientation {
         case .right:
             let delete = SwipeAction(style: .destructive, title: "Delete", handler: self.deleteHandlerAction)
@@ -169,7 +179,7 @@ extension UsersTableViewController: SwipeTableViewCellDelegate {
             
             let makeAdmin = SwipeAction(style: .default, title: "Mettre responsable", handler: self.makeAdminHandlerAction)
             let revokeAdmin = SwipeAction(style: .destructive, title: "Retirer responsable", handler: self.revokeAdminHandlerAction)
-
+            
             makeAdmin.backgroundColor = UIColor.orange
             revokeAdmin.backgroundColor = UIColor.red
             if (self.usersData?.get(userAtIndex: indexPath).isAdmin)! {
@@ -179,5 +189,6 @@ extension UsersTableViewController: SwipeTableViewCellDelegate {
             }
         }
         
-    }
+    }        
+        
 }

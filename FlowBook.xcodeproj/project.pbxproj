@@ -28,8 +28,6 @@
 		6054B8E11E733F6100583F4B /* NewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6054B8E01E733F6100583F4B /* NewMessage.swift */; };
 		6054B8E51E74516700583F4B /* FilesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6054B8E31E74516700583F4B /* FilesCollectionViewCell.swift */; };
 		6054B8E61E74516700583F4B /* FilesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6054B8E41E74516700583F4B /* FilesCollectionViewCell.xib */; };
-		6062E4BE1E84264E002A4FA3 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */; };
-		6062E4BF1E84264E002A4FA3 /* SwipeCellKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		606A6D721E552A8500A0B3B0 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */; };
 		606A6D741E55EC4700A0B3B0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */; };
 		606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */; };
@@ -80,16 +78,14 @@
 		60E682A71E8133F400F0DF6A /* ImagePreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E682A61E8133F400F0DF6A /* ImagePreviewer.swift */; };
 		60F8085F1E5999FB00101695 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8085E1E5999FB00101695 /* ProfilePresenter.swift */; };
 		60F808611E59B70000101695 /* UsersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F808601E59B70000101695 /* UsersData.swift */; };
-		60F808671E59C7B100101695 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F808661E59C7B100101695 /* JTAppleCalendar.framework */; };
-		60F808691E59C7BD00101695 /* JTAppleCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60F808661E59C7B100101695 /* JTAppleCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60F8086C1E59C86000101695 /* CalendarCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F8086B1E59C86000101695 /* CalendarCellView.xib */; };
 		60F8086E1E59C8B400101695 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8086D1E59C8B400101695 /* CalendarCellView.swift */; };
 		60F808701E59C93000101695 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8086F1E59C93000101695 /* CalendarViewController.swift */; };
 		60F808721E59CBC500101695 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F808711E59CBC500101695 /* CalendarView.swift */; };
+		780936745CB9AABC8871C582 /* Pods_FlowBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C37D18C205CD566361DE5C /* Pods_FlowBookTests.framework */; };
+		91E689AD7EBD9928850423DD /* Pods_FlowBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769F4145BCDFF44397EFB316 /* Pods_FlowBook.framework */; };
 		922A2E5C1E6F5F070073BAD4 /* CustomInputCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */; };
 		923AA8751E840B9B00EABD98 /* NewDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923AA8741E840B9B00EABD98 /* NewDocumentViewController.swift */; };
-		9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; };
-		9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 607BED041E509D8A004EB98A /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */; };
 		9281CDA71E81263F0077A03C /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281CDA61E81263F0077A03C /* EventsTableViewCell.swift */; };
 		9291615D1E52755F00D60CD5 /* CustomInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291615C1E52755F00D60CD5 /* CustomInput.swift */; };
@@ -114,23 +110,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		9260BD091E50F81500D32B4D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6062E4BF1E84264E002A4FA3 /* SwipeCellKit.framework in Embed Frameworks */,
-				9260BD081E50F81500D32B4D /* CryptoSwift.framework in Embed Frameworks */,
-				60F808691E59C7BD00101695 /* JTAppleCalendar.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		08C37D18C205CD566361DE5C /* Pods_FlowBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		602C945E1E4DC8CC00A02196 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		602C94601E4DD0CF00A02196 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
@@ -152,7 +133,6 @@
 		6054B8E01E733F6100583F4B /* NewMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessage.swift; sourceTree = "<group>"; };
 		6054B8E31E74516700583F4B /* FilesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesCollectionViewCell.swift; sourceTree = "<group>"; };
 		6054B8E41E74516700583F4B /* FilesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilesCollectionViewCell.xib; sourceTree = "<group>"; };
-		6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwipeCellKit.framework; sourceTree = "<group>"; };
 		606A6D711E552A8500A0B3B0 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		606A6D731E55EC4700A0B3B0 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		606A6D7C1E55F17500A0B3B0 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +140,6 @@
 		60721FF91E7176BE006C0E3A /* NewMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMessageView.xib; sourceTree = "<group>"; };
 		60721FFD1E71793B006C0E3A /* NewMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		607BECF11E4FEFF8004EB98A /* AuthenticateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticateService.swift; sourceTree = "<group>"; };
-		607BED041E509D8A004EB98A /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
 		607BED071E50B47C004EB98A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6086D6681E49CFAD007D270F /* FlowBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6086D66B1E49CFAD007D270F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,11 +187,13 @@
 		60E682A61E8133F400F0DF6A /* ImagePreviewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewer.swift; sourceTree = "<group>"; };
 		60F8085E1E5999FB00101695 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		60F808601E59B70000101695 /* UsersData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersData.swift; sourceTree = "<group>"; };
-		60F808661E59C7B100101695 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JTAppleCalendar.framework; sourceTree = "<group>"; };
 		60F8086B1E59C86000101695 /* CalendarCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCellView.xib; sourceTree = "<group>"; };
 		60F8086D1E59C8B400101695 /* CalendarCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		60F8086F1E59C93000101695 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		60F808711E59CBC500101695 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		6D212C685EC8DD4E0670F879 /* Pods-FlowBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowBook/Pods-FlowBook.release.xcconfig"; sourceTree = "<group>"; };
+		769F4145BCDFF44397EFB316 /* Pods_FlowBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C261C48494156E80DCC166 /* Pods-FlowBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowBookTests/Pods-FlowBookTests.release.xcconfig"; sourceTree = "<group>"; };
 		922A2E5B1E6F5F070073BAD4 /* CustomInputCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputCalendar.swift; sourceTree = "<group>"; };
 		923AA8741E840B9B00EABD98 /* NewDocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDocumentViewController.swift; sourceTree = "<group>"; };
 		92706CBC1E4F65CB00C32830 /* CustomButtonSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonSend.swift; sourceTree = "<group>"; };
@@ -227,6 +208,8 @@
 		92ECCF5D1E8122FD0055A840 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		92FE3A181E51D80700F74D86 /* CustomInputMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputMail.swift; sourceTree = "<group>"; };
 		92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputPassword.swift; sourceTree = "<group>"; };
+		D1511F33B05783FA6DC1B368 /* Pods-FlowBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlowBook/Pods-FlowBook.debug.xcconfig"; sourceTree = "<group>"; };
+		F0FBC4B8C0633077C28AA85E /* Pods-FlowBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlowBookTests/Pods-FlowBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,9 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6062E4BE1E84264E002A4FA3 /* SwipeCellKit.framework in Frameworks */,
-				9260BD071E50F81500D32B4D /* CryptoSwift.framework in Frameworks */,
-				60F808671E59C7B100101695 /* JTAppleCalendar.framework in Frameworks */,
+				91E689AD7EBD9928850423DD /* Pods_FlowBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,12 +225,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780936745CB9AABC8871C582 /* Pods_FlowBookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BE0947FA10C826A29A531EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				769F4145BCDFF44397EFB316 /* Pods_FlowBook.framework */,
+				08C37D18C205CD566361DE5C /* Pods_FlowBookTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		60354D921E6EB31700A524F7 /* AdminPanel */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,12 +390,11 @@
 		6086D65F1E49CFAD007D270F = {
 			isa = PBXGroup;
 			children = (
-				6062E4BC1E842643002A4FA3 /* SwipeCellKit.framework */,
-				60F808661E59C7B100101695 /* JTAppleCalendar.framework */,
-				607BED041E509D8A004EB98A /* CryptoSwift.framework */,
 				6086D66A1E49CFAD007D270F /* FlowBook */,
 				6086D6821E49CFAD007D270F /* FlowBookTests */,
 				6086D6691E49CFAD007D270F /* Products */,
+				9434A27B3FC2E4B687316907 /* Pods */,
+				0BE0947FA10C826A29A531EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -696,6 +686,17 @@
 			name = EventsTableView;
 			sourceTree = "<group>";
 		};
+		9434A27B3FC2E4B687316907 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1511F33B05783FA6DC1B368 /* Pods-FlowBook.debug.xcconfig */,
+				6D212C685EC8DD4E0670F879 /* Pods-FlowBook.release.xcconfig */,
+				F0FBC4B8C0633077C28AA85E /* Pods-FlowBookTests.debug.xcconfig */,
+				84C261C48494156E80DCC166 /* Pods-FlowBookTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -703,10 +704,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6086D6881E49CFAD007D270F /* Build configuration list for PBXNativeTarget "FlowBook" */;
 			buildPhases = (
+				D1EEE941DE5911A73E520FE9 /* [CP] Check Pods Manifest.lock */,
 				6086D6641E49CFAD007D270F /* Sources */,
 				6086D6651E49CFAD007D270F /* Frameworks */,
 				6086D6661E49CFAD007D270F /* Resources */,
-				9260BD091E50F81500D32B4D /* Embed Frameworks */,
+				B574DFF77E78D179C2F23CBE /* [CP] Embed Pods Frameworks */,
+				959878962B2FE64E5281E696 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -721,9 +724,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6086D68B1E49CFAD007D270F /* Build configuration list for PBXNativeTarget "FlowBookTests" */;
 			buildPhases = (
+				42FEF521F3535AB038AE1E85 /* [CP] Check Pods Manifest.lock */,
 				6086D67B1E49CFAD007D270F /* Sources */,
 				6086D67C1E49CFAD007D270F /* Frameworks */,
 				6086D67D1E49CFAD007D270F /* Resources */,
+				34A3F68BBB11F6A894BD19F3 /* [CP] Embed Pods Frameworks */,
+				F4F662BC6900DE3CF4CA7524 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -807,6 +813,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34A3F68BBB11F6A894BD19F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowBookTests/Pods-FlowBookTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42FEF521F3535AB038AE1E85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		959878962B2FE64E5281E696 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowBook/Pods-FlowBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B574DFF77E78D179C2F23CBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowBook/Pods-FlowBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1EEE941DE5911A73E520FE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F4F662BC6900DE3CF4CA7524 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowBookTests/Pods-FlowBookTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6086D6641E49CFAD007D270F /* Sources */ = {
@@ -1018,6 +1117,7 @@
 		};
 		6086D6891E49CFAD007D270F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1511F33B05783FA6DC1B368 /* Pods-FlowBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3EQET6CY44;
@@ -1036,6 +1136,7 @@
 		};
 		6086D68A1E49CFAD007D270F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D212C685EC8DD4E0670F879 /* Pods-FlowBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3EQET6CY44;
@@ -1054,6 +1155,7 @@
 		};
 		6086D68C1E49CFAD007D270F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0FBC4B8C0633077C28AA85E /* Pods-FlowBookTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1069,6 +1171,7 @@
 		};
 		6086D68D1E49CFAD007D270F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84C261C48494156E80DCC166 /* Pods-FlowBookTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
