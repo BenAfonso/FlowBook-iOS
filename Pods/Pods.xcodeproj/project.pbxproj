@@ -1,0 +1,1371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		002583BC1C3E266B241DFF72837B7DB1 /* IntegerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813967A88F4FCD602F20016A99EFC8C /* IntegerConvertible.swift */; };
+		0722631B8A27CA86C38EC986707E927A /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F28C708B2C1D198AB86CB607C16864 /* OFB.swift */; };
+		08211BB94485D57C740422A4E3C0CEB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		09CA1526A7CBD6545CA3F848288E9012 /* SwipeActionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CBD55FD9920AFC174912671FDD6319 /* SwipeActionTransitioning.swift */; };
+		09E2BC033341E41573A3317D63D48007 /* JTAppleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F50C54192BA7A7DD7253F661AA7B /* JTAppleViews.swift */; };
+		0A09FDE133E395DCB2A16F7990C18A09 /* SecureBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4858EE888E93F81BB3D4B83F3260F4C3 /* SecureBytes.swift */; };
+		0CE725310C54DAA2AB6DAF1FA0B57EBE /* RandomBytesSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2188C542AFFAADD8452D583023C86 /* RandomBytesSequence.swift */; };
+		0D2A40FF6B587132DC865D2EFF66EF97 /* JTAppleCalendarDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB085082205056D1E25A3A966248ED1 /* JTAppleCalendarDelegateProtocol.swift */; };
+		0D92D8A32857ADBB9CBDDEF3222CCCB3 /* SwipeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4521C792C426CADE76B56340AED325 /* SwipeTableViewCellDelegate.swift */; };
+		0F4B5F1A93D665E7E9A0B8994EE40FE4 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB4BCFE98BCF325BF4158409772928 /* Data+Extension.swift */; };
+		1049F6F67F08E56321DD2F804A869FD6 /* PBKDF1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624C83F226721FF2EBCEC3C9AC2F63DA /* PBKDF1.swift */; };
+		115908466F681D5D15B9343018CA7B3B /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB7F88CD6AB8C22BDC09C95712EB17 /* Digest.swift */; };
+		1249E54E8E77AAA65774BB72B9364514 /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC2B28EA47AD1592943F67FBE906C6 /* SHA3.swift */; };
+		15178CC13A504C1C847917F313EA4230 /* CFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98B46B44B06CDE28C18E6A17D49EF4 /* CFB.swift */; };
+		1545999141978F143D09974A8BCCE4DF /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A2825B76935C7E319BFB3F86E30E5 /* Checksum.swift */; };
+		1DD06BA0F64D88ABDDE4C775C02C2403 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415D173835B54B80834C2DCC82E93F9 /* Utils.swift */; };
+		23633CC30EB51118AB1396D04F442F78 /* RandomAccessCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CCC1FD7436607A1CCD266D85CCF3A /* RandomAccessCryptor.swift */; };
+		243737C5FB7C80704B2DE24E9E10D18F /* Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8CD980EF987C4968BCE6C39B3FD7E3 /* Cryptors.swift */; };
+		29158860B3135AFFB861FC71A1EF75DE /* JTAppleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FABD7722975D273B71FE083C0CEB9 /* JTAppleCollectionReusableView.swift */; };
+		2AC27B1087A476D84A3B07C6103D0E45 /* RandomAccessBlockModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811E2494ECD3189B18F44A028618141 /* RandomAccessBlockModeWorker.swift */; };
+		2D84A305496F711FD258B3ADF222DDA8 /* UIScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B75DA9897FF07B0A038A633D98E52 /* UIScrollViewDelegates.swift */; };
+		2F0CF5B6432A0E26DD1AE262E2611043 /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC528023FE9D464ACBEA5E7CD031DE4 /* ZeroPadding.swift */; };
+		3377C69F304EA15F943AD3A98C0C1117 /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA41AA76F1A85273AC5D9B4DBCB7A168 /* SwipeTableViewCell.swift */; };
+		36F8A0EBEE24E1ED7DF70B54237C95C5 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DAE64D0D4EFECAD4370D52C4EFFD0D /* Rabbit.swift */; };
+		39E4A1E865DF0F1810C532437AC47625 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CC4875E2C2BD6B462B4112D2BF12A /* Operators.swift */; };
+		3A10DFF27C38D98F5147E47F7189E9CA /* SwipeCellKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5FAAF6A2B0731D53328DF68A1C8AC1 /* SwipeCellKit-dummy.m */; };
+		3A110C8FDA5C94D652BEFC262E077A87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		3F11B5695833097D990E95D92CB5B0FD /* Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A55C18FBB3C639FDABAC2FD101C6 /* Bit.swift */; };
+		4075E4D96C9D6085F0582F057D0FD81C /* JTAppleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AD0536AA82E1BF4B6E582D5B93077B /* JTAppleCalendarView.swift */; };
+		4427C7163AAAD8FD077C3DFBDB86060A /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD631E59441EF4D24D67C1210092972 /* CalendarStructs.swift */; };
+		4523A74B89AC0F94FA52A6601C02A590 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62FECA1DD1184F12709A671D3C431E /* Extensions.swift */; };
+		57A9C011AA78E0DBC2C0E4CCC122B095 /* SwipeTableViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41CF795F00CB97948A7C994450BE638 /* SwipeTableViewCell+Accessibility.swift */; };
+		586006835FA7049B90A8AA48CC9600F5 /* Blowfish+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BB72D606D24DF4472F619F44AC5F6D /* Blowfish+Foundation.swift */; };
+		5A03DAF2DB011D6DDF96F88380A2E216 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA461F84E3DB8FD518A9D5A7068D179A /* HMAC.swift */; };
+		5B14435360F824ED015970005CF9698E /* SwipeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524AB4CCECC2B639AB63B34D1EFF4CC /* SwipeActionButton.swift */; };
+		5D798AA2FE47430AE368A2595E28842A /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA7C2E1DAB07274FFBA98D02F17F85 /* PBKDF2.swift */; };
+		5F14E6CF84864E9A78FBA055D642B67D /* UInt16+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D012FCC8854764F97EA7542FF3075A5 /* UInt16+Extension.swift */; };
+		640A7963CC931FEF6614A5F6445DB78E /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AAFC9B4AEB8387307650F3F6FBBCC2 /* Generics.swift */; };
+		67D7F228DC874108E2DC4E3F98441D6E /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65406F8DB45D130DEDF2745B0789A5DC /* SHA1.swift */; };
+		67DE5BACB678FBE43D8AEA5AA1A84022 /* CTR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F69C2E08D9BBFF034B4359E4A03F76 /* CTR.swift */; };
+		688607711A837F4385072E8180DC5D8D /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8520182DB5C3FA6A8E2A57CB924EA53 /* CustomCollectionView.swift */; };
+		68B01E6BDCA39676E1F6EF4B9BD03834 /* UInt32+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6381D54915B4EF4E1EA58DD92E8A3562 /* UInt32+Extension.swift */; };
+		696B3876E52F3F94E1143277B04C6F2F /* Utils+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3481D3BFB8676DACAFAEF668F5B27D7 /* Utils+Foundation.swift */; };
+		6C7875B138509B5775B52FDED1A49DE6 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF4473C1B680C2D2E7E578C539C167B /* MD5.swift */; };
+		6CA826E9746EFCE4D951148EF037C186 /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F125B5C5F4D601E33856A055DF7B6CB /* PKCS7.swift */; };
+		7573593FBE25F85B79E10A7333E583E7 /* JTAppleCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D61D94CC6B05288D1EFA83743CD417 /* JTAppleCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		781088765761CDED4FEBF362B533C9B0 /* Blowfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92603D6DD98AB9C3517E6A75DEE7E3AB /* Blowfish.swift */; };
+		7DF7189B298926817FF310A48EDFD710 /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723496406D4658AF77D21F40A7393D5C /* ChaCha20+Foundation.swift */; };
+		7EA840578B891D51E4BD10C31D80ABC2 /* SHA2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F607C00AF8539CB7FC00F00D0C5EFF /* SHA2.swift */; };
+		7F4BB87F50EDC8A6675A4260FC6F70CC /* Pods-FlowBookTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F7B79A558FB5E81468FC289A07139A /* Pods-FlowBookTests-dummy.m */; };
+		80C8666E8FDE3AA195DA42C19F9E37B0 /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BAF7FAA640F13432887EBC2DE69155 /* CBC.swift */; };
+		83E872C2FD1F65580B6155EFCF311F15 /* HMAC+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA4312C21BAF164F1E560E16F78633 /* HMAC+Foundation.swift */; };
+		8D090F01E4F8796E73EC85AF84495ED8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		8FBD53C8BBED7B75ED3A9281BE87DC3D /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6286DCA4F2D7E850DA077F0DB681415 /* Authenticator.swift */; };
+		90BC96FFC0BB000C72BA848C6E0F6D21 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6EBC5F1226FEA0920A164C4C87C99A /* Cipher.swift */; };
+		90C0C8655A9E00B5CF1201AC8EE54D5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		94B2942C0620376DDD122A87958F0177 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8EDDD669C45EB7DF7E1A08A8CFE81A /* Collection+Extension.swift */; };
+		96E0CA9E4C801C8B7B7E9F7BCDDFA65D /* SwipeCellKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C90BFFDB58BA01DCBA8813DCC99C0C9 /* SwipeCellKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9788CC579A4E3F5640699C2E6D106116 /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C39DD76C61B30680733D7D5C67291 /* BatchedCollection.swift */; };
+		A07F6CB4A319079E955879AC4B4A95D9 /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9046C2B735975140BBBD4D7C141D1D6E /* CalendarEnums.swift */; };
+		A1CDA47BEDEF48B5634E216B0FE771EE /* CSArrayType+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7F8CAD3607392187FF6E52545C7A5 /* CSArrayType+Foundation.swift */; };
+		A5EE0360D84335DD969967753A86A62E /* BlockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420BEBA9DB7F3A172BBABFD54A15AF46 /* BlockMode.swift */; };
+		A645E29D79C6313C84D474597DB09634 /* CryptoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08500F12845EC1A7E8D12AC550F29551 /* CryptoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A708BE2F3976FD4CA3B6A95AB9EFF6BF /* SwipeExpanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D90295A1BFEDA6ABCBA5B9252EE473 /* SwipeExpanding.swift */; };
+		A7A0F06B21FE95224683B7F8CEC33265 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0DE1224F06BC634F36CE064BA0F74 /* SwipeAction.swift */; };
+		A88F64D3CC1DF4B6620211F2BE8072DE /* UserInteractionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A4CF9BFB3CE74BBD311778C19735D4 /* UserInteractionFunctions.swift */; };
+		ABF65C35FC944F0D114B18386517124E /* JTAppleDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166C8BE9821C2D9E5C2DDAF764158A0E /* JTAppleDayCell.swift */; };
+		AD6EAF637CA5FAF70E0C9C630BDC40CC /* PKCS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDDD78E0B2F9B734F8B1307F3EFE9E4 /* PKCS5.swift */; };
+		B14C7F0E94FB84FFA5EC9AFE2A780316 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2851C83C6C3F986E5D0E83D887D4A303 /* Int+Extension.swift */; };
+		B327C11F8AF53F233A9F19391E0178A2 /* CryptoSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D21A99E0C9CBBEF2268CAD67B65D14 /* CryptoSwift-dummy.m */; };
+		B4DB773FFAF8E5F38067E61D5C141E5E /* Pods-FlowBookTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 342035201C8F4C78F2775B4CA454842F /* Pods-FlowBookTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDEC4F9C7F0C9411EDD447EA09857017 /* PCBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7412A7DCF82A46909194D552B1D2404 /* PCBC.swift */; };
+		C75C8EC0092BEEEFACA666F27E0D6B07 /* SwipeTableOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25DE635DCE4FBA10869BDE9DF9F892 /* SwipeTableOptions.swift */; };
+		C92F54CF0BE7A4EA0594286520E636DD /* UInt64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E8AA957EF739562603DF75B4D4F3E1 /* UInt64+Extension.swift */; };
+		C98F3CCAB191B57095AA51D58A5D4A8B /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E3A2C2C2BEE11C205D0280794B1FD /* SwipeActionsView.swift */; };
+		CB28D743C2031FCC8ED7EFC14D853504 /* BlockModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C56D9BC624427AFDC900FB23E3D07 /* BlockModeWorker.swift */; };
+		CE93E3AE9B2EFC11AF83B7EE082B13BF /* JTCalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D06C0BF3AF81130CAD6670F37718BA2 /* JTCalendarProtocols.swift */; };
+		D2E8B7F1E03CB09E80B1EB1BC2B60039 /* Pods-FlowBook-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2383341F41464FD52B514A8AE41196 /* Pods-FlowBook-dummy.m */; };
+		D5A3B76C0B768AA3BB71840A453277A2 /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAC083DBA166DCA85ECB611B4CDBC96 /* GlobalFunctionsAndExtensions.swift */; };
+		D97F4D9EDDB2AB619E77B72257CDC1E7 /* ECB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD59835E5E017AD9EAB5DE90415B798 /* ECB.swift */; };
+		DB3F30329E398D8A7F54BE1259B02A67 /* UICollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFD5440839D850484016C018576011 /* UICollectionViewDelegates.swift */; };
+		DBA60E90DFFB006CC41283258F53B894 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D78405000A0200F4180F31DB37FF14 /* Updatable.swift */; };
+		DC913E03CCB2DA353ECB3753BB5E46DC /* JTAppleCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A04AC8860C7E26D26A61636D2FA87 /* JTAppleCalendar-dummy.m */; };
+		DE7D8E74AF9285815D84DFD2D3377F44 /* ChaCha20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0D1A7A30AA4CABD07BA747FE22285 /* ChaCha20.swift */; };
+		DFC9D4A8C46758B7DD9149529082FB0C /* Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866350DE5D03F759BD2CD4718253754 /* Poly1305.swift */; };
+		DFD8F04FB1EE0BD3E36EF0F37EF525A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		E0382AFF7B50E826EF8725AD4F1C77E3 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9307E8261ABB7AAE77E3380FDCF35086 /* Padding.swift */; };
+		E220EDDB4669D0E25C9BD36471541672 /* SwipeTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF585F872411A8660F2F3086B347F0 /* SwipeTransitionLayout.swift */; };
+		E28CCD4E05FF0CA245ECCB01421BFBAB /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A167B9C3BEE14EBA131C0E499DDA447 /* Rabbit+Foundation.swift */; };
+		E5441970D4C76B797E24D292CC0EB6F6 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A63E0E2411D2FF8320C84463CB05FA /* AES+Foundation.swift */; };
+		E5F1558B5BE3FBC586158D48DA0D5416 /* BlockModeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2207630BBDA7033D6EF1EA23102314 /* BlockModeOptions.swift */; };
+		E8B910E3B704E2A54613B39342EE6473 /* CSArrayType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56FEABC22657987A99C87634A7E69B1 /* CSArrayType+Extensions.swift */; };
+		E9989A77F5626EB16915E97EFA567B70 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969F60B195573E6E155E333A5D43386B /* Array+Extension.swift */; };
+		E9D87D72E69D71161E555E211501EC1D /* JTAppleCalendarLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29DA1CA8291489380C9495CEDEF85C /* JTAppleCalendarLayoutProtocol.swift */; };
+		EB92575DF7CF0AEBF90595BBCDCCC972 /* JTAppleCalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA7C926119C583C8F78E68B45EB76C /* JTAppleCalendarLayout.swift */; };
+		F4A77B13794405685C1CD20960230096 /* Pods-FlowBook-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4CF84157010B95A8974A4F79F8EBF44 /* Pods-FlowBook-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5AC4DD6EF0B19ABAF7E05D10B9B4C8B /* UInt8+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E273AD15F0E162472B2887CD44332891 /* UInt8+Extension.swift */; };
+		F670E22400A2690708C1D0922B000759 /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A1502052E21788DB3326E7C1A19366 /* DigestType.swift */; };
+		F68E644E39561168C31E1B1F09992AD6 /* JTAppleReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0603AB725D8CBEEE3CBA5C5A23659D20 /* JTAppleReusableViewProtocol.swift */; };
+		F7E1991DFFCE919F5D75D773104B701B /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BC391CBD16A11BE49290AA593AF09D /* AES.swift */; };
+		FADDCBE4D27D93924C165C297FB19AAB /* NoPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE60E2C2B8247A07AEA995618E2F0DD /* NoPadding.swift */; };
+		FAEABCE1E6B28982264E828922580C2D /* BlockCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B98F46FA0FE9F0BAA91F2B091AEB0 /* BlockCipher.swift */; };
+		FB783F6F97FD796CF7B52F1331F6EA3E /* String+FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21FF903899EF611CEEA0C59650D07F0 /* String+FoundationExtension.swift */; };
+		FE9F3F30678CE487A35DBEA2AA2408AC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0023731A121FC32C5775BAC6D78B9C67 /* String+Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		773C2C45F96125F291E8DD0B85221080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BB1C1403B2419F911818DA8413FDA07;
+			remoteInfo = CryptoSwift;
+		};
+		AD4E60683AE50291F84C40E83278AD4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 793ADFCB4F36E6FD2ED6BECCC66166D4;
+			remoteInfo = SwipeCellKit;
+		};
+		ED03589175E9AFC7E314F25002781706 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D5B8B1BE64F80268007C79821DDDC20;
+			remoteInfo = JTAppleCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0023731A121FC32C5775BAC6D78B9C67 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
+		017FABD7722975D273B71FE083C0CEB9 /* JTAppleCollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCollectionReusableView.swift; path = Sources/JTAppleCollectionReusableView.swift; sourceTree = "<group>"; };
+		01A1502052E21788DB3326E7C1A19366 /* DigestType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigestType.swift; path = Sources/CryptoSwift/DigestType.swift; sourceTree = "<group>"; };
+		027BF3C723DE8AF80F42E6C7286964BF /* Pods-FlowBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		0603AB725D8CBEEE3CBA5C5A23659D20 /* JTAppleReusableViewProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleReusableViewProtocol.swift; path = Sources/JTAppleReusableViewProtocol.swift; sourceTree = "<group>"; };
+		0829C73DF15BD5AAF0EBB6DC48536DC5 /* Pods_FlowBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlowBook.framework; path = "Pods-FlowBook.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08500F12845EC1A7E8D12AC550F29551 /* CryptoSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-umbrella.h"; sourceTree = "<group>"; };
+		09AAFC9B4AEB8387307650F3F6FBBCC2 /* Generics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Sources/CryptoSwift/Generics.swift; sourceTree = "<group>"; };
+		0AEA4312C21BAF164F1E560E16F78633 /* HMAC+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HMAC+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/HMAC+Foundation.swift"; sourceTree = "<group>"; };
+		0BAC083DBA166DCA85ECB611B4CDBC96 /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
+		0EB085082205056D1E25A3A966248ED1 /* JTAppleCalendarDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarDelegateProtocol.swift; path = Sources/JTAppleCalendarDelegateProtocol.swift; sourceTree = "<group>"; };
+		0F6629F95F2285B54604BFC706D2C5AE /* Pods-FlowBook.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FlowBook.modulemap"; sourceTree = "<group>"; };
+		0FA99C24F8519189BDB8C3C07D3C579A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FBFD5440839D850484016C018576011 /* UICollectionViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UICollectionViewDelegates.swift; path = Sources/UICollectionViewDelegates.swift; sourceTree = "<group>"; };
+		11F28C708B2C1D198AB86CB607C16864 /* OFB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OFB.swift; path = Sources/CryptoSwift/BlockMode/OFB.swift; sourceTree = "<group>"; };
+		12FB4BCFE98BCF325BF4158409772928 /* Data+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Extension.swift"; path = "Sources/CryptoSwift/Foundation/Data+Extension.swift"; sourceTree = "<group>"; };
+		14F31F7FD5C4E8CF4F0A455816869512 /* Pods-FlowBook-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowBook-resources.sh"; sourceTree = "<group>"; };
+		158C56D9BC624427AFDC900FB23E3D07 /* BlockModeWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockModeWorker.swift; path = Sources/CryptoSwift/BlockMode/BlockModeWorker.swift; sourceTree = "<group>"; };
+		166C8BE9821C2D9E5C2DDAF764158A0E /* JTAppleDayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleDayCell.swift; path = Sources/JTAppleDayCell.swift; sourceTree = "<group>"; };
+		1813967A88F4FCD602F20016A99EFC8C /* IntegerConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerConvertible.swift; path = Sources/CryptoSwift/IntegerConvertible.swift; sourceTree = "<group>"; };
+		1CDC2B28EA47AD1592943F67FBE906C6 /* SHA3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA3.swift; path = Sources/CryptoSwift/SHA3.swift; sourceTree = "<group>"; };
+		1D1EB90E503618151C30B199499B9BAC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E8CD980EF987C4968BCE6C39B3FD7E3 /* Cryptors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cryptors.swift; path = Sources/CryptoSwift/Cryptors.swift; sourceTree = "<group>"; };
+		1F9B75DA9897FF07B0A038A633D98E52 /* UIScrollViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScrollViewDelegates.swift; path = Sources/UIScrollViewDelegates.swift; sourceTree = "<group>"; };
+		22BAF7FAA640F13432887EBC2DE69155 /* CBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBC.swift; path = Sources/CryptoSwift/BlockMode/CBC.swift; sourceTree = "<group>"; };
+		25A4CF9BFB3CE74BBD311778C19735D4 /* UserInteractionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserInteractionFunctions.swift; path = Sources/UserInteractionFunctions.swift; sourceTree = "<group>"; };
+		26D21A99E0C9CBBEF2268CAD67B65D14 /* CryptoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CryptoSwift-dummy.m"; sourceTree = "<group>"; };
+		2811E2494ECD3189B18F44A028618141 /* RandomAccessBlockModeWorker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomAccessBlockModeWorker.swift; path = Sources/CryptoSwift/BlockMode/RandomAccessBlockModeWorker.swift; sourceTree = "<group>"; };
+		2851C83C6C3F986E5D0E83D887D4A303 /* Int+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Extension.swift"; path = "Sources/CryptoSwift/Int+Extension.swift"; sourceTree = "<group>"; };
+		2A2207630BBDA7033D6EF1EA23102314 /* BlockModeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockModeOptions.swift; path = Sources/CryptoSwift/BlockMode/BlockModeOptions.swift; sourceTree = "<group>"; };
+		2BCA8D229A22D6B9CBF274E0225FC7BC /* CryptoSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.xcconfig; sourceTree = "<group>"; };
+		2BD59835E5E017AD9EAB5DE90415B798 /* ECB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ECB.swift; path = Sources/CryptoSwift/BlockMode/ECB.swift; sourceTree = "<group>"; };
+		2CDDD78E0B2F9B734F8B1307F3EFE9E4 /* PKCS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS5.swift; path = Sources/CryptoSwift/PKCS5/PKCS5.swift; sourceTree = "<group>"; };
+		2F7A2825B76935C7E319BFB3F86E30E5 /* Checksum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Checksum.swift; path = Sources/CryptoSwift/Checksum.swift; sourceTree = "<group>"; };
+		342035201C8F4C78F2775B4CA454842F /* Pods-FlowBookTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlowBookTests-umbrella.h"; sourceTree = "<group>"; };
+		37AD0536AA82E1BF4B6E582D5B93077B /* JTAppleCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarView.swift; path = Sources/JTAppleCalendarView.swift; sourceTree = "<group>"; };
+		3BC528023FE9D464ACBEA5E7CD031DE4 /* ZeroPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZeroPadding.swift; path = Sources/CryptoSwift/ZeroPadding.swift; sourceTree = "<group>"; };
+		3C90BFFDB58BA01DCBA8813DCC99C0C9 /* SwipeCellKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-umbrella.h"; sourceTree = "<group>"; };
+		3D06C0BF3AF81130CAD6670F37718BA2 /* JTCalendarProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTCalendarProtocols.swift; path = Sources/JTCalendarProtocols.swift; sourceTree = "<group>"; };
+		3EF4473C1B680C2D2E7E578C539C167B /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/CryptoSwift/MD5.swift; sourceTree = "<group>"; };
+		40B0BB11B4F7261DD17203E8167FA84B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		420BEBA9DB7F3A172BBABFD54A15AF46 /* BlockMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockMode.swift; path = Sources/CryptoSwift/BlockMode/BlockMode.swift; sourceTree = "<group>"; };
+		442E3A2C2C2BEE11C205D0280794B1FD /* SwipeActionsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionsView.swift; path = Source/SwipeActionsView.swift; sourceTree = "<group>"; };
+		47D78405000A0200F4180F31DB37FF14 /* Updatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Updatable.swift; path = Sources/CryptoSwift/Updatable.swift; sourceTree = "<group>"; };
+		4858EE888E93F81BB3D4B83F3260F4C3 /* SecureBytes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureBytes.swift; path = Sources/CryptoSwift/SecureBytes.swift; sourceTree = "<group>"; };
+		489F9B02B0A34E82AE2536BDD0CC7850 /* SwipeCellKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-prefix.pch"; sourceTree = "<group>"; };
+		49F7B79A558FB5E81468FC289A07139A /* Pods-FlowBookTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlowBookTests-dummy.m"; sourceTree = "<group>"; };
+		4AE239CD508E3587338056CE63966722 /* JTAppleCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.xcconfig; sourceTree = "<group>"; };
+		4B29DA1CA8291489380C9495CEDEF85C /* JTAppleCalendarLayoutProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayoutProtocol.swift; path = Sources/JTAppleCalendarLayoutProtocol.swift; sourceTree = "<group>"; };
+		4E8EDDD669C45EB7DF7E1A08A8CFE81A /* Collection+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Collection+Extension.swift"; path = "Sources/CryptoSwift/Collection+Extension.swift"; sourceTree = "<group>"; };
+		4E98B46B44B06CDE28C18E6A17D49EF4 /* CFB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CFB.swift; path = Sources/CryptoSwift/BlockMode/CFB.swift; sourceTree = "<group>"; };
+		4F62FECA1DD1184F12709A671D3C431E /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Source/Extensions.swift; sourceTree = "<group>"; };
+		53BB72D606D24DF4472F619F44AC5F6D /* Blowfish+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Blowfish+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Blowfish+Foundation.swift"; sourceTree = "<group>"; };
+		5524AB4CCECC2B639AB63B34D1EFF4CC /* SwipeActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionButton.swift; path = Source/SwipeActionButton.swift; sourceTree = "<group>"; };
+		55F607C00AF8539CB7FC00F00D0C5EFF /* SHA2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA2.swift; path = Sources/CryptoSwift/SHA2.swift; sourceTree = "<group>"; };
+		57A6A55C18FBB3C639FDABAC2FD101C6 /* Bit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bit.swift; path = Sources/CryptoSwift/Bit.swift; sourceTree = "<group>"; };
+		57CA7C926119C583C8F78E68B45EB76C /* JTAppleCalendarLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayout.swift; path = Sources/JTAppleCalendarLayout.swift; sourceTree = "<group>"; };
+		5866350DE5D03F759BD2CD4718253754 /* Poly1305.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Poly1305.swift; path = Sources/CryptoSwift/Poly1305.swift; sourceTree = "<group>"; };
+		591C39DD76C61B30680733D7D5C67291 /* BatchedCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BatchedCollection.swift; path = Sources/CryptoSwift/BatchedCollection.swift; sourceTree = "<group>"; };
+		5EAF585F872411A8660F2F3086B347F0 /* SwipeTransitionLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTransitionLayout.swift; path = Source/SwipeTransitionLayout.swift; sourceTree = "<group>"; };
+		5F2383341F41464FD52B514A8AE41196 /* Pods-FlowBook-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlowBook-dummy.m"; sourceTree = "<group>"; };
+		5F711CA23D563056E93A79C49170CCDA /* JTAppleCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-prefix.pch"; sourceTree = "<group>"; };
+		624C83F226721FF2EBCEC3C9AC2F63DA /* PBKDF1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF1.swift; path = Sources/CryptoSwift/PKCS5/PBKDF1.swift; sourceTree = "<group>"; };
+		6381D54915B4EF4E1EA58DD92E8A3562 /* UInt32+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt32+Extension.swift"; path = "Sources/CryptoSwift/UInt32+Extension.swift"; sourceTree = "<group>"; };
+		63D90295A1BFEDA6ABCBA5B9252EE473 /* SwipeExpanding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpanding.swift; path = Source/SwipeExpanding.swift; sourceTree = "<group>"; };
+		65406F8DB45D130DEDF2745B0789A5DC /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/CryptoSwift/SHA1.swift; sourceTree = "<group>"; };
+		65A1077AA97737D0126C8AE8F612B4EC /* Pods-FlowBookTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlowBookTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		66DAE64D0D4EFECAD4370D52C4EFFD0D /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
+		6A1CC4875E2C2BD6B462B4112D2BF12A /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/CryptoSwift/Operators.swift; sourceTree = "<group>"; };
+		6ACB7B1EA9530E23AB233AC589B83901 /* Pods-FlowBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		723496406D4658AF77D21F40A7393D5C /* ChaCha20+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ChaCha20+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/ChaCha20+Foundation.swift"; sourceTree = "<group>"; };
+		73CBD55FD9920AFC174912671FDD6319 /* SwipeActionTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionTransitioning.swift; path = Source/SwipeActionTransitioning.swift; sourceTree = "<group>"; };
+		77F69C2E08D9BBFF034B4359E4A03F76 /* CTR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CTR.swift; path = Sources/CryptoSwift/BlockMode/CTR.swift; sourceTree = "<group>"; };
+		7A167B9C3BEE14EBA131C0E499DDA447 /* Rabbit+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Rabbit+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Rabbit+Foundation.swift"; sourceTree = "<group>"; };
+		7B02C697168486A51341250380B3AE25 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C4521C792C426CADE76B56340AED325 /* SwipeTableViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCellDelegate.swift; path = Source/SwipeTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		7DE60E2C2B8247A07AEA995618E2F0DD /* NoPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoPadding.swift; path = Sources/CryptoSwift/NoPadding.swift; sourceTree = "<group>"; };
+		81B0D1A7A30AA4CABD07BA747FE22285 /* ChaCha20.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChaCha20.swift; path = Sources/CryptoSwift/ChaCha20.swift; sourceTree = "<group>"; };
+		82CAA164217A831F7048E1A18197CC00 /* Pods-FlowBookTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowBookTests-resources.sh"; sourceTree = "<group>"; };
+		83D2188C542AFFAADD8452D583023C86 /* RandomBytesSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomBytesSequence.swift; path = Sources/CryptoSwift/RandomBytesSequence.swift; sourceTree = "<group>"; };
+		88A0DE1224F06BC634F36CE064BA0F74 /* SwipeAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAction.swift; path = Source/SwipeAction.swift; sourceTree = "<group>"; };
+		9046C2B735975140BBBD4D7C141D1D6E /* CalendarEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Sources/CalendarEnums.swift; sourceTree = "<group>"; };
+		92603D6DD98AB9C3517E6A75DEE7E3AB /* Blowfish.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Blowfish.swift; path = Sources/CryptoSwift/Blowfish.swift; sourceTree = "<group>"; };
+		9307E8261ABB7AAE77E3380FDCF35086 /* Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = Sources/CryptoSwift/Padding.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		969F60B195573E6E155E333A5D43386B /* Array+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Extension.swift"; path = "Sources/CryptoSwift/Array+Extension.swift"; sourceTree = "<group>"; };
+		9BFA7C2E1DAB07274FFBA98D02F17F85 /* PBKDF2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF2.swift; path = Sources/CryptoSwift/PKCS5/PBKDF2.swift; sourceTree = "<group>"; };
+		9D012FCC8854764F97EA7542FF3075A5 /* UInt16+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt16+Extension.swift"; path = "Sources/CryptoSwift/UInt16+Extension.swift"; sourceTree = "<group>"; };
+		9E6EBC5F1226FEA0920A164C4C87C99A /* Cipher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cipher.swift; path = Sources/CryptoSwift/Cipher.swift; sourceTree = "<group>"; };
+		9F125B5C5F4D601E33856A055DF7B6CB /* PKCS7.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7.swift; path = Sources/CryptoSwift/PKCS7.swift; sourceTree = "<group>"; };
+		A1C7F8CAD3607392187FF6E52545C7A5 /* CSArrayType+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CSArrayType+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/CSArrayType+Foundation.swift"; sourceTree = "<group>"; };
+		A2E8AA957EF739562603DF75B4D4F3E1 /* UInt64+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt64+Extension.swift"; path = "Sources/CryptoSwift/UInt64+Extension.swift"; sourceTree = "<group>"; };
+		A31DA31554D303D9A00E34BEEDDFF5D9 /* SwipeCellKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeCellKit.xcconfig; sourceTree = "<group>"; };
+		A415D173835B54B80834C2DCC82E93F9 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/CryptoSwift/Utils.swift; sourceTree = "<group>"; };
+		A4A3B20CDBE4B7C3CB7D5BA73CCBB2AD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6552FCF5C083B1BD4CB34C87D4A2CEA /* Pods-FlowBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowBook.debug.xcconfig"; sourceTree = "<group>"; };
+		A8520182DB5C3FA6A8E2A57CB924EA53 /* CustomCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomCollectionView.swift; path = Sources/CustomCollectionView.swift; sourceTree = "<group>"; };
+		A8C0459743F18B33926D035523622951 /* JTAppleCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JTAppleCalendar.modulemap; sourceTree = "<group>"; };
+		AD25DE635DCE4FBA10869BDE9DF9F892 /* SwipeTableOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableOptions.swift; path = Source/SwipeTableOptions.swift; sourceTree = "<group>"; };
+		AE7042364B1AB5A2257F86B33E3405A1 /* Pods-FlowBook-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlowBook-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AECB7F88CD6AB8C22BDC09C95712EB17 /* Digest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Digest.swift; path = Sources/CryptoSwift/Digest.swift; sourceTree = "<group>"; };
+		B3566F76697B5FCEDE14E76A1D6FAD77 /* SwipeCellKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwipeCellKit.framework; path = SwipeCellKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3BC391CBD16A11BE49290AA593AF09D /* AES.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AES.swift; path = Sources/CryptoSwift/AES.swift; sourceTree = "<group>"; };
+		B4CF84157010B95A8974A4F79F8EBF44 /* Pods-FlowBook-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlowBook-umbrella.h"; sourceTree = "<group>"; };
+		BF521816A6DBF6B995A4BEFCC95399E8 /* Pods-FlowBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowBook.release.xcconfig"; sourceTree = "<group>"; };
+		BF6A4219BD3E6EE2A4A474626BC500F1 /* Pods-FlowBookTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FlowBookTests.modulemap"; sourceTree = "<group>"; };
+		C21A04AC8860C7E26D26A61636D2FA87 /* JTAppleCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTAppleCalendar-dummy.m"; sourceTree = "<group>"; };
+		C6286DCA4F2D7E850DA077F0DB681415 /* Authenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Authenticator.swift; path = Sources/CryptoSwift/Authenticator.swift; sourceTree = "<group>"; };
+		C6A63E0E2411D2FF8320C84463CB05FA /* AES+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AES+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/AES+Foundation.swift"; sourceTree = "<group>"; };
+		C7412A7DCF82A46909194D552B1D2404 /* PCBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PCBC.swift; path = Sources/CryptoSwift/BlockMode/PCBC.swift; sourceTree = "<group>"; };
+		C95491788FC0893598685157F14A817C /* CryptoSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-prefix.pch"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CDD631E59441EF4D24D67C1210092972 /* CalendarStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Sources/CalendarStructs.swift; sourceTree = "<group>"; };
+		CE5FAAF6A2B0731D53328DF68A1C8AC1 /* SwipeCellKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipeCellKit-dummy.m"; sourceTree = "<group>"; };
+		CF40F50C54192BA7A7DD7253F661AA7B /* JTAppleViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleViews.swift; path = Sources/JTAppleViews.swift; sourceTree = "<group>"; };
+		CFC0305C247A3B381CBBA29D2D217CC6 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CryptoSwift.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D17B98F46FA0FE9F0BAA91F2B091AEB0 /* BlockCipher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockCipher.swift; path = Sources/CryptoSwift/BlockCipher.swift; sourceTree = "<group>"; };
+		D21FF903899EF611CEEA0C59650D07F0 /* String+FoundationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+FoundationExtension.swift"; path = "Sources/CryptoSwift/Foundation/String+FoundationExtension.swift"; sourceTree = "<group>"; };
+		D3481D3BFB8676DACAFAEF668F5B27D7 /* Utils+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Utils+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Utils+Foundation.swift"; sourceTree = "<group>"; };
+		D9D61D94CC6B05288D1EFA83743CD417 /* JTAppleCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-umbrella.h"; sourceTree = "<group>"; };
+		DA41AA76F1A85273AC5D9B4DBCB7A168 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCell.swift; path = Source/SwipeTableViewCell.swift; sourceTree = "<group>"; };
+		DA9CCC1FD7436607A1CCD266D85CCF3A /* RandomAccessCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomAccessCryptor.swift; path = Sources/CryptoSwift/RandomAccessCryptor.swift; sourceTree = "<group>"; };
+		E273AD15F0E162472B2887CD44332891 /* UInt8+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt8+Extension.swift"; path = "Sources/CryptoSwift/UInt8+Extension.swift"; sourceTree = "<group>"; };
+		E70F734031644F030E94BCCB681A3B77 /* Pods-FlowBook-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowBook-frameworks.sh"; sourceTree = "<group>"; };
+		E7B802721BA2551A587F50AFED43C872 /* Pods_FlowBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlowBookTests.framework; path = "Pods-FlowBookTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBC855675C03DCCC5D467AFCCD526A48 /* CryptoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CryptoSwift.modulemap; sourceTree = "<group>"; };
+		ECC781945DA1184E03B26D08A7C74B21 /* SwipeCellKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwipeCellKit.modulemap; sourceTree = "<group>"; };
+		F282B2D512B1D7A62D3C130819829973 /* Pods-FlowBook-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlowBook-acknowledgements.plist"; sourceTree = "<group>"; };
+		F41CF795F00CB97948A7C994450BE638 /* SwipeTableViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Accessibility.swift"; path = "Source/SwipeTableViewCell+Accessibility.swift"; sourceTree = "<group>"; };
+		F56FEABC22657987A99C87634A7E69B1 /* CSArrayType+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CSArrayType+Extensions.swift"; path = "Sources/CryptoSwift/CSArrayType+Extensions.swift"; sourceTree = "<group>"; };
+		F6E25AC78A0CEE8AF66F23C03EAB10FB /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JTAppleCalendar.framework; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA461F84E3DB8FD518A9D5A7068D179A /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/CryptoSwift/HMAC.swift; sourceTree = "<group>"; };
+		FBAA9B48059F60475DD91727C1890DA6 /* Pods-FlowBookTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowBookTests-frameworks.sh"; sourceTree = "<group>"; };
+		FD6B49DE51E5866D2BBF6D5D4A6EF452 /* Pods-FlowBookTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlowBookTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		035C616AD79536BB028E8C83FCD5CB2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08211BB94485D57C740422A4E3C0CEB7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F52A51717EA007CD32A41E453CDF459 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C0C8655A9E00B5CF1201AC8EE54D5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A69EC9C6CD08989BD94EAC0D3D355123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D090F01E4F8796E73EC85AF84495ED8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0C0EFB29D2816200866B6D2AD4C9A34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFD8F04FB1EE0BD3E36EF0F37EF525A0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06808E7550BBA13922344ED95D42FA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A110C8FDA5C94D652BEFC262E077A87 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BF04F94556A2932D7E1D0387694D635 /* JTAppleCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				9046C2B735975140BBBD4D7C141D1D6E /* CalendarEnums.swift */,
+				CDD631E59441EF4D24D67C1210092972 /* CalendarStructs.swift */,
+				A8520182DB5C3FA6A8E2A57CB924EA53 /* CustomCollectionView.swift */,
+				0BAC083DBA166DCA85ECB611B4CDBC96 /* GlobalFunctionsAndExtensions.swift */,
+				0EB085082205056D1E25A3A966248ED1 /* JTAppleCalendarDelegateProtocol.swift */,
+				57CA7C926119C583C8F78E68B45EB76C /* JTAppleCalendarLayout.swift */,
+				4B29DA1CA8291489380C9495CEDEF85C /* JTAppleCalendarLayoutProtocol.swift */,
+				37AD0536AA82E1BF4B6E582D5B93077B /* JTAppleCalendarView.swift */,
+				017FABD7722975D273B71FE083C0CEB9 /* JTAppleCollectionReusableView.swift */,
+				166C8BE9821C2D9E5C2DDAF764158A0E /* JTAppleDayCell.swift */,
+				0603AB725D8CBEEE3CBA5C5A23659D20 /* JTAppleReusableViewProtocol.swift */,
+				CF40F50C54192BA7A7DD7253F661AA7B /* JTAppleViews.swift */,
+				3D06C0BF3AF81130CAD6670F37718BA2 /* JTCalendarProtocols.swift */,
+				0FBFD5440839D850484016C018576011 /* UICollectionViewDelegates.swift */,
+				1F9B75DA9897FF07B0A038A633D98E52 /* UIScrollViewDelegates.swift */,
+				25A4CF9BFB3CE74BBD311778C19735D4 /* UserInteractionFunctions.swift */,
+				7A1C61B2AD88CC5F5BCFBBE4896FF042 /* Support Files */,
+			);
+			name = JTAppleCalendar;
+			path = JTAppleCalendar;
+			sourceTree = "<group>";
+		};
+		1FD5B1B9CAABB3DFC06155D22E71FC56 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B7DFD03CEA3637605B4E6F6D94765B2 /* Pods-FlowBook */,
+				DBE14A14A7452864FB4DCB306C244372 /* Pods-FlowBookTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2B7DFD03CEA3637605B4E6F6D94765B2 /* Pods-FlowBook */ = {
+			isa = PBXGroup;
+			children = (
+				0FA99C24F8519189BDB8C3C07D3C579A /* Info.plist */,
+				0F6629F95F2285B54604BFC706D2C5AE /* Pods-FlowBook.modulemap */,
+				AE7042364B1AB5A2257F86B33E3405A1 /* Pods-FlowBook-acknowledgements.markdown */,
+				F282B2D512B1D7A62D3C130819829973 /* Pods-FlowBook-acknowledgements.plist */,
+				5F2383341F41464FD52B514A8AE41196 /* Pods-FlowBook-dummy.m */,
+				E70F734031644F030E94BCCB681A3B77 /* Pods-FlowBook-frameworks.sh */,
+				14F31F7FD5C4E8CF4F0A455816869512 /* Pods-FlowBook-resources.sh */,
+				B4CF84157010B95A8974A4F79F8EBF44 /* Pods-FlowBook-umbrella.h */,
+				A6552FCF5C083B1BD4CB34C87D4A2CEA /* Pods-FlowBook.debug.xcconfig */,
+				BF521816A6DBF6B995A4BEFCC95399E8 /* Pods-FlowBook.release.xcconfig */,
+			);
+			name = "Pods-FlowBook";
+			path = "Target Support Files/Pods-FlowBook";
+			sourceTree = "<group>";
+		};
+		3382EBE169951579C0A198CBE1C3B373 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFC0305C247A3B381CBBA29D2D217CC6 /* CryptoSwift.framework */,
+				F6E25AC78A0CEE8AF66F23C03EAB10FB /* JTAppleCalendar.framework */,
+				0829C73DF15BD5AAF0EBB6DC48536DC5 /* Pods_FlowBook.framework */,
+				E7B802721BA2551A587F50AFED43C872 /* Pods_FlowBookTests.framework */,
+				B3566F76697B5FCEDE14E76A1D6FAD77 /* SwipeCellKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5961CBCF5853FD576BC5242FC5553F26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFF823890ADC1F7D2244A0570F27A2EA /* CryptoSwift */,
+				1BF04F94556A2932D7E1D0387694D635 /* JTAppleCalendar */,
+				BBC6C8F424760ACD50DACEB4F76CE873 /* SwipeCellKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63AECC139230C823308EFA1C1B3FA1E3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBC855675C03DCCC5D467AFCCD526A48 /* CryptoSwift.modulemap */,
+				2BCA8D229A22D6B9CBF274E0225FC7BC /* CryptoSwift.xcconfig */,
+				26D21A99E0C9CBBEF2268CAD67B65D14 /* CryptoSwift-dummy.m */,
+				C95491788FC0893598685157F14A817C /* CryptoSwift-prefix.pch */,
+				08500F12845EC1A7E8D12AC550F29551 /* CryptoSwift-umbrella.h */,
+				1D1EB90E503618151C30B199499B9BAC /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CryptoSwift";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7A1C61B2AD88CC5F5BCFBBE4896FF042 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B02C697168486A51341250380B3AE25 /* Info.plist */,
+				A8C0459743F18B33926D035523622951 /* JTAppleCalendar.modulemap */,
+				4AE239CD508E3587338056CE63966722 /* JTAppleCalendar.xcconfig */,
+				C21A04AC8860C7E26D26A61636D2FA87 /* JTAppleCalendar-dummy.m */,
+				5F711CA23D563056E93A79C49170CCDA /* JTAppleCalendar-prefix.pch */,
+				D9D61D94CC6B05288D1EFA83743CD417 /* JTAppleCalendar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JTAppleCalendar";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5961CBCF5853FD576BC5242FC5553F26 /* Pods */,
+				3382EBE169951579C0A198CBE1C3B373 /* Products */,
+				1FD5B1B9CAABB3DFC06155D22E71FC56 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9AE5352847572BAE32A1625242652378 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				40B0BB11B4F7261DD17203E8167FA84B /* Info.plist */,
+				ECC781945DA1184E03B26D08A7C74B21 /* SwipeCellKit.modulemap */,
+				A31DA31554D303D9A00E34BEEDDFF5D9 /* SwipeCellKit.xcconfig */,
+				CE5FAAF6A2B0731D53328DF68A1C8AC1 /* SwipeCellKit-dummy.m */,
+				489F9B02B0A34E82AE2536BDD0CC7850 /* SwipeCellKit-prefix.pch */,
+				3C90BFFDB58BA01DCBA8813DCC99C0C9 /* SwipeCellKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwipeCellKit";
+			sourceTree = "<group>";
+		};
+		BBC6C8F424760ACD50DACEB4F76CE873 /* SwipeCellKit */ = {
+			isa = PBXGroup;
+			children = (
+				4F62FECA1DD1184F12709A671D3C431E /* Extensions.swift */,
+				88A0DE1224F06BC634F36CE064BA0F74 /* SwipeAction.swift */,
+				5524AB4CCECC2B639AB63B34D1EFF4CC /* SwipeActionButton.swift */,
+				442E3A2C2C2BEE11C205D0280794B1FD /* SwipeActionsView.swift */,
+				73CBD55FD9920AFC174912671FDD6319 /* SwipeActionTransitioning.swift */,
+				63D90295A1BFEDA6ABCBA5B9252EE473 /* SwipeExpanding.swift */,
+				AD25DE635DCE4FBA10869BDE9DF9F892 /* SwipeTableOptions.swift */,
+				DA41AA76F1A85273AC5D9B4DBCB7A168 /* SwipeTableViewCell.swift */,
+				F41CF795F00CB97948A7C994450BE638 /* SwipeTableViewCell+Accessibility.swift */,
+				7C4521C792C426CADE76B56340AED325 /* SwipeTableViewCellDelegate.swift */,
+				5EAF585F872411A8660F2F3086B347F0 /* SwipeTransitionLayout.swift */,
+				9AE5352847572BAE32A1625242652378 /* Support Files */,
+			);
+			name = SwipeCellKit;
+			path = SwipeCellKit;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFF823890ADC1F7D2244A0570F27A2EA /* CryptoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B3BC391CBD16A11BE49290AA593AF09D /* AES.swift */,
+				C6A63E0E2411D2FF8320C84463CB05FA /* AES+Foundation.swift */,
+				969F60B195573E6E155E333A5D43386B /* Array+Extension.swift */,
+				C6286DCA4F2D7E850DA077F0DB681415 /* Authenticator.swift */,
+				591C39DD76C61B30680733D7D5C67291 /* BatchedCollection.swift */,
+				57A6A55C18FBB3C639FDABAC2FD101C6 /* Bit.swift */,
+				D17B98F46FA0FE9F0BAA91F2B091AEB0 /* BlockCipher.swift */,
+				420BEBA9DB7F3A172BBABFD54A15AF46 /* BlockMode.swift */,
+				2A2207630BBDA7033D6EF1EA23102314 /* BlockModeOptions.swift */,
+				158C56D9BC624427AFDC900FB23E3D07 /* BlockModeWorker.swift */,
+				92603D6DD98AB9C3517E6A75DEE7E3AB /* Blowfish.swift */,
+				53BB72D606D24DF4472F619F44AC5F6D /* Blowfish+Foundation.swift */,
+				22BAF7FAA640F13432887EBC2DE69155 /* CBC.swift */,
+				4E98B46B44B06CDE28C18E6A17D49EF4 /* CFB.swift */,
+				81B0D1A7A30AA4CABD07BA747FE22285 /* ChaCha20.swift */,
+				723496406D4658AF77D21F40A7393D5C /* ChaCha20+Foundation.swift */,
+				2F7A2825B76935C7E319BFB3F86E30E5 /* Checksum.swift */,
+				9E6EBC5F1226FEA0920A164C4C87C99A /* Cipher.swift */,
+				4E8EDDD669C45EB7DF7E1A08A8CFE81A /* Collection+Extension.swift */,
+				1E8CD980EF987C4968BCE6C39B3FD7E3 /* Cryptors.swift */,
+				F56FEABC22657987A99C87634A7E69B1 /* CSArrayType+Extensions.swift */,
+				A1C7F8CAD3607392187FF6E52545C7A5 /* CSArrayType+Foundation.swift */,
+				77F69C2E08D9BBFF034B4359E4A03F76 /* CTR.swift */,
+				12FB4BCFE98BCF325BF4158409772928 /* Data+Extension.swift */,
+				AECB7F88CD6AB8C22BDC09C95712EB17 /* Digest.swift */,
+				01A1502052E21788DB3326E7C1A19366 /* DigestType.swift */,
+				2BD59835E5E017AD9EAB5DE90415B798 /* ECB.swift */,
+				09AAFC9B4AEB8387307650F3F6FBBCC2 /* Generics.swift */,
+				FA461F84E3DB8FD518A9D5A7068D179A /* HMAC.swift */,
+				0AEA4312C21BAF164F1E560E16F78633 /* HMAC+Foundation.swift */,
+				2851C83C6C3F986E5D0E83D887D4A303 /* Int+Extension.swift */,
+				1813967A88F4FCD602F20016A99EFC8C /* IntegerConvertible.swift */,
+				3EF4473C1B680C2D2E7E578C539C167B /* MD5.swift */,
+				7DE60E2C2B8247A07AEA995618E2F0DD /* NoPadding.swift */,
+				11F28C708B2C1D198AB86CB607C16864 /* OFB.swift */,
+				6A1CC4875E2C2BD6B462B4112D2BF12A /* Operators.swift */,
+				9307E8261ABB7AAE77E3380FDCF35086 /* Padding.swift */,
+				624C83F226721FF2EBCEC3C9AC2F63DA /* PBKDF1.swift */,
+				9BFA7C2E1DAB07274FFBA98D02F17F85 /* PBKDF2.swift */,
+				C7412A7DCF82A46909194D552B1D2404 /* PCBC.swift */,
+				2CDDD78E0B2F9B734F8B1307F3EFE9E4 /* PKCS5.swift */,
+				9F125B5C5F4D601E33856A055DF7B6CB /* PKCS7.swift */,
+				5866350DE5D03F759BD2CD4718253754 /* Poly1305.swift */,
+				66DAE64D0D4EFECAD4370D52C4EFFD0D /* Rabbit.swift */,
+				7A167B9C3BEE14EBA131C0E499DDA447 /* Rabbit+Foundation.swift */,
+				2811E2494ECD3189B18F44A028618141 /* RandomAccessBlockModeWorker.swift */,
+				DA9CCC1FD7436607A1CCD266D85CCF3A /* RandomAccessCryptor.swift */,
+				83D2188C542AFFAADD8452D583023C86 /* RandomBytesSequence.swift */,
+				4858EE888E93F81BB3D4B83F3260F4C3 /* SecureBytes.swift */,
+				65406F8DB45D130DEDF2745B0789A5DC /* SHA1.swift */,
+				55F607C00AF8539CB7FC00F00D0C5EFF /* SHA2.swift */,
+				1CDC2B28EA47AD1592943F67FBE906C6 /* SHA3.swift */,
+				0023731A121FC32C5775BAC6D78B9C67 /* String+Extension.swift */,
+				D21FF903899EF611CEEA0C59650D07F0 /* String+FoundationExtension.swift */,
+				9D012FCC8854764F97EA7542FF3075A5 /* UInt16+Extension.swift */,
+				6381D54915B4EF4E1EA58DD92E8A3562 /* UInt32+Extension.swift */,
+				A2E8AA957EF739562603DF75B4D4F3E1 /* UInt64+Extension.swift */,
+				E273AD15F0E162472B2887CD44332891 /* UInt8+Extension.swift */,
+				47D78405000A0200F4180F31DB37FF14 /* Updatable.swift */,
+				A415D173835B54B80834C2DCC82E93F9 /* Utils.swift */,
+				D3481D3BFB8676DACAFAEF668F5B27D7 /* Utils+Foundation.swift */,
+				3BC528023FE9D464ACBEA5E7CD031DE4 /* ZeroPadding.swift */,
+				63AECC139230C823308EFA1C1B3FA1E3 /* Support Files */,
+			);
+			name = CryptoSwift;
+			path = CryptoSwift;
+			sourceTree = "<group>";
+		};
+		DBE14A14A7452864FB4DCB306C244372 /* Pods-FlowBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				A4A3B20CDBE4B7C3CB7D5BA73CCBB2AD /* Info.plist */,
+				BF6A4219BD3E6EE2A4A474626BC500F1 /* Pods-FlowBookTests.modulemap */,
+				FD6B49DE51E5866D2BBF6D5D4A6EF452 /* Pods-FlowBookTests-acknowledgements.markdown */,
+				65A1077AA97737D0126C8AE8F612B4EC /* Pods-FlowBookTests-acknowledgements.plist */,
+				49F7B79A558FB5E81468FC289A07139A /* Pods-FlowBookTests-dummy.m */,
+				FBAA9B48059F60475DD91727C1890DA6 /* Pods-FlowBookTests-frameworks.sh */,
+				82CAA164217A831F7048E1A18197CC00 /* Pods-FlowBookTests-resources.sh */,
+				342035201C8F4C78F2775B4CA454842F /* Pods-FlowBookTests-umbrella.h */,
+				6ACB7B1EA9530E23AB233AC589B83901 /* Pods-FlowBookTests.debug.xcconfig */,
+				027BF3C723DE8AF80F42E6C7286964BF /* Pods-FlowBookTests.release.xcconfig */,
+			);
+			name = "Pods-FlowBookTests";
+			path = "Target Support Files/Pods-FlowBookTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		624A1D074B5061048CE1BF9A9D3490A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A77B13794405685C1CD20960230096 /* Pods-FlowBook-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA8F66A7A2A6CDB15A881AAC90F9195 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4DB773FFAF8E5F38067E61D5C141E5E /* Pods-FlowBookTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA72CC09BB000EA269D2190A0187DD92 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E0CA9E4C801C8B7B7E9F7BCDDFA65D /* SwipeCellKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D072C17A9D7E22B25810B81A357DAE56 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7573593FBE25F85B79E10A7333E583E7 /* JTAppleCalendar-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D09AEE95D06541370627F0981BE61FB1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A645E29D79C6313C84D474597DB09634 /* CryptoSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4D5B8B1BE64F80268007C79821DDDC20 /* JTAppleCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E78F0AF2A8CFF29D1235D29F58A4E06 /* Build configuration list for PBXNativeTarget "JTAppleCalendar" */;
+			buildPhases = (
+				D96095C82543C205AD51797A3FE9C729 /* Sources */,
+				1F52A51717EA007CD32A41E453CDF459 /* Frameworks */,
+				D072C17A9D7E22B25810B81A357DAE56 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JTAppleCalendar;
+			productName = JTAppleCalendar;
+			productReference = F6E25AC78A0CEE8AF66F23C03EAB10FB /* JTAppleCalendar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6BB1C1403B2419F911818DA8413FDA07 /* CryptoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2D4DEFD9716C954D1E8ADC5D5601A5 /* Build configuration list for PBXNativeTarget "CryptoSwift" */;
+			buildPhases = (
+				C805E3F75FFCDA25AEFC97641EE9032C /* Sources */,
+				D06808E7550BBA13922344ED95D42FA3 /* Frameworks */,
+				D09AEE95D06541370627F0981BE61FB1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoSwift;
+			productName = CryptoSwift;
+			productReference = CFC0305C247A3B381CBBA29D2D217CC6 /* CryptoSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		793ADFCB4F36E6FD2ED6BECCC66166D4 /* SwipeCellKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A163E1D0FB0BB04AA0ECE58A664BA49E /* Build configuration list for PBXNativeTarget "SwipeCellKit" */;
+			buildPhases = (
+				5B99069646F1A83F7B6B23425292C83C /* Sources */,
+				A69EC9C6CD08989BD94EAC0D3D355123 /* Frameworks */,
+				BA72CC09BB000EA269D2190A0187DD92 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwipeCellKit;
+			productName = SwipeCellKit;
+			productReference = B3566F76697B5FCEDE14E76A1D6FAD77 /* SwipeCellKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D3A935B81502916C7D40C02674B2BBDA /* Pods-FlowBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B676B9C2DE0A05A81DE3B2A5B19B458F /* Build configuration list for PBXNativeTarget "Pods-FlowBook" */;
+			buildPhases = (
+				74ED7D71995F78CF73558B6E4DEE2645 /* Sources */,
+				C0C0EFB29D2816200866B6D2AD4C9A34 /* Frameworks */,
+				624A1D074B5061048CE1BF9A9D3490A9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A4708FD4F3C9D6BAA5162E4CAFF362B /* PBXTargetDependency */,
+				5AB1B202010BC8C7144EC67C2B58A99F /* PBXTargetDependency */,
+				71E0C2A1B37444B8CFF6CB687DE18DA4 /* PBXTargetDependency */,
+			);
+			name = "Pods-FlowBook";
+			productName = "Pods-FlowBook";
+			productReference = 0829C73DF15BD5AAF0EBB6DC48536DC5 /* Pods_FlowBook.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FC707982E9B7A7D807E07F3C65894F8E /* Pods-FlowBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1017965271707C38CCF8E9D2C10D7D88 /* Build configuration list for PBXNativeTarget "Pods-FlowBookTests" */;
+			buildPhases = (
+				064A5B91670774D4A556154AED85667A /* Sources */,
+				035C616AD79536BB028E8C83FCD5CB2C /* Frameworks */,
+				6CA8F66A7A2A6CDB15A881AAC90F9195 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlowBookTests";
+			productName = "Pods-FlowBookTests";
+			productReference = E7B802721BA2551A587F50AFED43C872 /* Pods_FlowBookTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 3382EBE169951579C0A198CBE1C3B373 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6BB1C1403B2419F911818DA8413FDA07 /* CryptoSwift */,
+				4D5B8B1BE64F80268007C79821DDDC20 /* JTAppleCalendar */,
+				D3A935B81502916C7D40C02674B2BBDA /* Pods-FlowBook */,
+				FC707982E9B7A7D807E07F3C65894F8E /* Pods-FlowBookTests */,
+				793ADFCB4F36E6FD2ED6BECCC66166D4 /* SwipeCellKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		064A5B91670774D4A556154AED85667A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F4BB87F50EDC8A6675A4260FC6F70CC /* Pods-FlowBookTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B99069646F1A83F7B6B23425292C83C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4523A74B89AC0F94FA52A6601C02A590 /* Extensions.swift in Sources */,
+				A7A0F06B21FE95224683B7F8CEC33265 /* SwipeAction.swift in Sources */,
+				5B14435360F824ED015970005CF9698E /* SwipeActionButton.swift in Sources */,
+				C98F3CCAB191B57095AA51D58A5D4A8B /* SwipeActionsView.swift in Sources */,
+				09CA1526A7CBD6545CA3F848288E9012 /* SwipeActionTransitioning.swift in Sources */,
+				3A10DFF27C38D98F5147E47F7189E9CA /* SwipeCellKit-dummy.m in Sources */,
+				A708BE2F3976FD4CA3B6A95AB9EFF6BF /* SwipeExpanding.swift in Sources */,
+				C75C8EC0092BEEEFACA666F27E0D6B07 /* SwipeTableOptions.swift in Sources */,
+				57A9C011AA78E0DBC2C0E4CCC122B095 /* SwipeTableViewCell+Accessibility.swift in Sources */,
+				3377C69F304EA15F943AD3A98C0C1117 /* SwipeTableViewCell.swift in Sources */,
+				0D92D8A32857ADBB9CBDDEF3222CCCB3 /* SwipeTableViewCellDelegate.swift in Sources */,
+				E220EDDB4669D0E25C9BD36471541672 /* SwipeTransitionLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74ED7D71995F78CF73558B6E4DEE2645 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2E8B7F1E03CB09E80B1EB1BC2B60039 /* Pods-FlowBook-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C805E3F75FFCDA25AEFC97641EE9032C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5441970D4C76B797E24D292CC0EB6F6 /* AES+Foundation.swift in Sources */,
+				F7E1991DFFCE919F5D75D773104B701B /* AES.swift in Sources */,
+				E9989A77F5626EB16915E97EFA567B70 /* Array+Extension.swift in Sources */,
+				8FBD53C8BBED7B75ED3A9281BE87DC3D /* Authenticator.swift in Sources */,
+				9788CC579A4E3F5640699C2E6D106116 /* BatchedCollection.swift in Sources */,
+				3F11B5695833097D990E95D92CB5B0FD /* Bit.swift in Sources */,
+				FAEABCE1E6B28982264E828922580C2D /* BlockCipher.swift in Sources */,
+				A5EE0360D84335DD969967753A86A62E /* BlockMode.swift in Sources */,
+				E5F1558B5BE3FBC586158D48DA0D5416 /* BlockModeOptions.swift in Sources */,
+				CB28D743C2031FCC8ED7EFC14D853504 /* BlockModeWorker.swift in Sources */,
+				586006835FA7049B90A8AA48CC9600F5 /* Blowfish+Foundation.swift in Sources */,
+				781088765761CDED4FEBF362B533C9B0 /* Blowfish.swift in Sources */,
+				80C8666E8FDE3AA195DA42C19F9E37B0 /* CBC.swift in Sources */,
+				15178CC13A504C1C847917F313EA4230 /* CFB.swift in Sources */,
+				7DF7189B298926817FF310A48EDFD710 /* ChaCha20+Foundation.swift in Sources */,
+				DE7D8E74AF9285815D84DFD2D3377F44 /* ChaCha20.swift in Sources */,
+				1545999141978F143D09974A8BCCE4DF /* Checksum.swift in Sources */,
+				90BC96FFC0BB000C72BA848C6E0F6D21 /* Cipher.swift in Sources */,
+				94B2942C0620376DDD122A87958F0177 /* Collection+Extension.swift in Sources */,
+				243737C5FB7C80704B2DE24E9E10D18F /* Cryptors.swift in Sources */,
+				B327C11F8AF53F233A9F19391E0178A2 /* CryptoSwift-dummy.m in Sources */,
+				E8B910E3B704E2A54613B39342EE6473 /* CSArrayType+Extensions.swift in Sources */,
+				A1CDA47BEDEF48B5634E216B0FE771EE /* CSArrayType+Foundation.swift in Sources */,
+				67DE5BACB678FBE43D8AEA5AA1A84022 /* CTR.swift in Sources */,
+				0F4B5F1A93D665E7E9A0B8994EE40FE4 /* Data+Extension.swift in Sources */,
+				115908466F681D5D15B9343018CA7B3B /* Digest.swift in Sources */,
+				F670E22400A2690708C1D0922B000759 /* DigestType.swift in Sources */,
+				D97F4D9EDDB2AB619E77B72257CDC1E7 /* ECB.swift in Sources */,
+				640A7963CC931FEF6614A5F6445DB78E /* Generics.swift in Sources */,
+				83E872C2FD1F65580B6155EFCF311F15 /* HMAC+Foundation.swift in Sources */,
+				5A03DAF2DB011D6DDF96F88380A2E216 /* HMAC.swift in Sources */,
+				B14C7F0E94FB84FFA5EC9AFE2A780316 /* Int+Extension.swift in Sources */,
+				002583BC1C3E266B241DFF72837B7DB1 /* IntegerConvertible.swift in Sources */,
+				6C7875B138509B5775B52FDED1A49DE6 /* MD5.swift in Sources */,
+				FADDCBE4D27D93924C165C297FB19AAB /* NoPadding.swift in Sources */,
+				0722631B8A27CA86C38EC986707E927A /* OFB.swift in Sources */,
+				39E4A1E865DF0F1810C532437AC47625 /* Operators.swift in Sources */,
+				E0382AFF7B50E826EF8725AD4F1C77E3 /* Padding.swift in Sources */,
+				1049F6F67F08E56321DD2F804A869FD6 /* PBKDF1.swift in Sources */,
+				5D798AA2FE47430AE368A2595E28842A /* PBKDF2.swift in Sources */,
+				BDEC4F9C7F0C9411EDD447EA09857017 /* PCBC.swift in Sources */,
+				AD6EAF637CA5FAF70E0C9C630BDC40CC /* PKCS5.swift in Sources */,
+				6CA826E9746EFCE4D951148EF037C186 /* PKCS7.swift in Sources */,
+				DFC9D4A8C46758B7DD9149529082FB0C /* Poly1305.swift in Sources */,
+				E28CCD4E05FF0CA245ECCB01421BFBAB /* Rabbit+Foundation.swift in Sources */,
+				36F8A0EBEE24E1ED7DF70B54237C95C5 /* Rabbit.swift in Sources */,
+				2AC27B1087A476D84A3B07C6103D0E45 /* RandomAccessBlockModeWorker.swift in Sources */,
+				23633CC30EB51118AB1396D04F442F78 /* RandomAccessCryptor.swift in Sources */,
+				0CE725310C54DAA2AB6DAF1FA0B57EBE /* RandomBytesSequence.swift in Sources */,
+				0A09FDE133E395DCB2A16F7990C18A09 /* SecureBytes.swift in Sources */,
+				67D7F228DC874108E2DC4E3F98441D6E /* SHA1.swift in Sources */,
+				7EA840578B891D51E4BD10C31D80ABC2 /* SHA2.swift in Sources */,
+				1249E54E8E77AAA65774BB72B9364514 /* SHA3.swift in Sources */,
+				FE9F3F30678CE487A35DBEA2AA2408AC /* String+Extension.swift in Sources */,
+				FB783F6F97FD796CF7B52F1331F6EA3E /* String+FoundationExtension.swift in Sources */,
+				5F14E6CF84864E9A78FBA055D642B67D /* UInt16+Extension.swift in Sources */,
+				68B01E6BDCA39676E1F6EF4B9BD03834 /* UInt32+Extension.swift in Sources */,
+				C92F54CF0BE7A4EA0594286520E636DD /* UInt64+Extension.swift in Sources */,
+				F5AC4DD6EF0B19ABAF7E05D10B9B4C8B /* UInt8+Extension.swift in Sources */,
+				DBA60E90DFFB006CC41283258F53B894 /* Updatable.swift in Sources */,
+				696B3876E52F3F94E1143277B04C6F2F /* Utils+Foundation.swift in Sources */,
+				1DD06BA0F64D88ABDDE4C775C02C2403 /* Utils.swift in Sources */,
+				2F0CF5B6432A0E26DD1AE262E2611043 /* ZeroPadding.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D96095C82543C205AD51797A3FE9C729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A07F6CB4A319079E955879AC4B4A95D9 /* CalendarEnums.swift in Sources */,
+				4427C7163AAAD8FD077C3DFBDB86060A /* CalendarStructs.swift in Sources */,
+				688607711A837F4385072E8180DC5D8D /* CustomCollectionView.swift in Sources */,
+				D5A3B76C0B768AA3BB71840A453277A2 /* GlobalFunctionsAndExtensions.swift in Sources */,
+				DC913E03CCB2DA353ECB3753BB5E46DC /* JTAppleCalendar-dummy.m in Sources */,
+				0D2A40FF6B587132DC865D2EFF66EF97 /* JTAppleCalendarDelegateProtocol.swift in Sources */,
+				EB92575DF7CF0AEBF90595BBCDCCC972 /* JTAppleCalendarLayout.swift in Sources */,
+				E9D87D72E69D71161E555E211501EC1D /* JTAppleCalendarLayoutProtocol.swift in Sources */,
+				4075E4D96C9D6085F0582F057D0FD81C /* JTAppleCalendarView.swift in Sources */,
+				29158860B3135AFFB861FC71A1EF75DE /* JTAppleCollectionReusableView.swift in Sources */,
+				ABF65C35FC944F0D114B18386517124E /* JTAppleDayCell.swift in Sources */,
+				F68E644E39561168C31E1B1F09992AD6 /* JTAppleReusableViewProtocol.swift in Sources */,
+				09E2BC033341E41573A3317D63D48007 /* JTAppleViews.swift in Sources */,
+				CE93E3AE9B2EFC11AF83B7EE082B13BF /* JTCalendarProtocols.swift in Sources */,
+				DB3F30329E398D8A7F54BE1259B02A67 /* UICollectionViewDelegates.swift in Sources */,
+				2D84A305496F711FD258B3ADF222DDA8 /* UIScrollViewDelegates.swift in Sources */,
+				A88F64D3CC1DF4B6620211F2BE8072DE /* UserInteractionFunctions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A4708FD4F3C9D6BAA5162E4CAFF362B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			target = 6BB1C1403B2419F911818DA8413FDA07 /* CryptoSwift */;
+			targetProxy = 773C2C45F96125F291E8DD0B85221080 /* PBXContainerItemProxy */;
+		};
+		5AB1B202010BC8C7144EC67C2B58A99F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JTAppleCalendar;
+			target = 4D5B8B1BE64F80268007C79821DDDC20 /* JTAppleCalendar */;
+			targetProxy = ED03589175E9AFC7E314F25002781706 /* PBXContainerItemProxy */;
+		};
+		71E0C2A1B37444B8CFF6CB687DE18DA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwipeCellKit;
+			target = 793ADFCB4F36E6FD2ED6BECCC66166D4 /* SwipeCellKit */;
+			targetProxy = AD4E60683AE50291F84C40E83278AD4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0539FDDEED3B5CDF059CF23E7C7F9471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AE239CD508E3587338056CE63966722 /* JTAppleCalendar.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JTAppleCalendar/JTAppleCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JTAppleCalendar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JTAppleCalendar/JTAppleCalendar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JTAppleCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		32641AFEC42F37A1E8B6153B5911A361 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF521816A6DBF6B995A4BEFCC95399E8 /* Pods-FlowBook.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlowBook/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlowBook/Pods-FlowBook.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlowBook;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52C586E6B84191B03AAF9AE759B0CF37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A31DA31554D303D9A00E34BEEDDFF5D9 /* SwipeCellKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwipeCellKit/SwipeCellKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwipeCellKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwipeCellKit/SwipeCellKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwipeCellKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		567397522658388494E7B10458D1DEFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 027BF3C723DE8AF80F42E6C7286964BF /* Pods-FlowBookTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlowBookTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlowBookTests/Pods-FlowBookTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlowBookTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		895DB44EC94A59A0E6150AEDC2B94704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ACB7B1EA9530E23AB233AC589B83901 /* Pods-FlowBookTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlowBookTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlowBookTests/Pods-FlowBookTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlowBookTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		985ECDF2D363AE1F0D594D506E6189B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BCA8D229A22D6B9CBF274E0225FC7BC /* CryptoSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CryptoSwift/CryptoSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CryptoSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CryptoSwift/CryptoSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CryptoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AA2E1A7F38C0A0560BB500D04B2DE181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6552FCF5C083B1BD4CB34C87D4A2CEA /* Pods-FlowBook.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlowBook/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlowBook/Pods-FlowBook.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlowBook;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFF2E9F37362CDE2553238C98F8D8165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AE239CD508E3587338056CE63966722 /* JTAppleCalendar.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JTAppleCalendar/JTAppleCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JTAppleCalendar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JTAppleCalendar/JTAppleCalendar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JTAppleCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E294984C6A245FCFE82C5C116835DED0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BCA8D229A22D6B9CBF274E0225FC7BC /* CryptoSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CryptoSwift/CryptoSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CryptoSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CryptoSwift/CryptoSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CryptoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F314ACB00FF2BD91545B98E80A9F8943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A31DA31554D303D9A00E34BEEDDFF5D9 /* SwipeCellKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwipeCellKit/SwipeCellKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwipeCellKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwipeCellKit/SwipeCellKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwipeCellKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1017965271707C38CCF8E9D2C10D7D88 /* Build configuration list for PBXNativeTarget "Pods-FlowBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				895DB44EC94A59A0E6150AEDC2B94704 /* Debug */,
+				567397522658388494E7B10458D1DEFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E78F0AF2A8CFF29D1235D29F58A4E06 /* Build configuration list for PBXNativeTarget "JTAppleCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0539FDDEED3B5CDF059CF23E7C7F9471 /* Debug */,
+				DFF2E9F37362CDE2553238C98F8D8165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
+				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2D4DEFD9716C954D1E8ADC5D5601A5 /* Build configuration list for PBXNativeTarget "CryptoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				985ECDF2D363AE1F0D594D506E6189B8 /* Debug */,
+				E294984C6A245FCFE82C5C116835DED0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A163E1D0FB0BB04AA0ECE58A664BA49E /* Build configuration list for PBXNativeTarget "SwipeCellKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C586E6B84191B03AAF9AE759B0CF37 /* Debug */,
+				F314ACB00FF2BD91545B98E80A9F8943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B676B9C2DE0A05A81DE3B2A5B19B458F /* Build configuration list for PBXNativeTarget "Pods-FlowBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA2E1A7F38C0A0560BB500D04B2DE181 /* Debug */,
+				32641AFEC42F37A1E8B6153B5911A361 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import SwipeCellKit
 
 class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, messageTableDelegate {
     
@@ -234,6 +235,8 @@ extension MessageTableViewController: UISearchBarDelegate {
     }
     
 }
+
+
 protocol MessageTableDelegate {
     func previewImage(image: UIImage)
     func editMessage(message: Message)

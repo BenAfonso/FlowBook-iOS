@@ -19,13 +19,16 @@ extension User {
     static func create(withFirstName firstName: String,
                 withLastName lastName: String,
                 withEmail email: String,
-                withPassword password: String) throws -> User {
+                withPassword password: String,
+                withAdminRights isAdmin: Bool = false) throws -> User {
         
             let user = User(context: CoreDataManager.context)
             user.lastName = lastName
             user.firstName = firstName
             user.email = email
             user.active = false
+            user.isAdmin = isAdmin
+        
             
             // Encrypt password
             user.password = password.sha256()
@@ -39,7 +42,7 @@ extension User {
                               withLastName lastName: String,
                               withEmail email: String,
                               withPassword password: String,
-                              withDepartment department: Department) throws -> Teacher {
+                              withDepartment department: Department) -> Teacher {
         
         let teacher = Teacher(context: CoreDataManager.context)
         teacher.lastName = lastName
@@ -51,9 +54,7 @@ extension User {
         teacher.type = "teacher"
         // Encrypt password
         teacher.password = password.sha256()
-        if let error = CoreDataManager.save() {
-            throw error
-        }
+        CoreDataManager.save()
         return teacher
     }
     
@@ -173,6 +174,16 @@ extension User {
     
     func changeImage(image: UIImage) {
         self.image = UIImageJPEGRepresentation(image, 1.0) as NSData?
+        CoreDataManager.save()
+    }
+    
+    func makeAdmin() {
+        self.isAdmin = true
+        CoreDataManager.save()
+    }
+    
+    func revokeAdmin() {
+        self.isAdmin = false
         CoreDataManager.save()
     }
     
