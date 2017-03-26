@@ -20,10 +20,10 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var studentButton: CustomButton!
     @IBOutlet weak var teacherButton: CustomButton!
     @IBOutlet weak var inactiveButton: CustomButton!
-    
+    var parent: UIViewController?
     @IBOutlet weak var usersData: UsersData!
     
-    
+
 
     
     override init() {
@@ -48,6 +48,7 @@ class UsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userCell = self.usersTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
         userCell.delegate = self
+        userCell.cellDelegate = self
         let user = self.usersData?.get(userAtIndex: indexPath)
         
         userCell.setUser(user: user!)
@@ -189,6 +190,22 @@ extension UsersTableViewController: SwipeTableViewCellDelegate {
             }
         }
         
-    }        
-        
+    }
+    
+ 
+    
+    
+
+    
+}
+
+extension UsersTableViewController: UIGestureRecognizerDelegate, UserCellDelegate {
+    
+    
+    func cellPressed(user: User) {
+        print(user.lastName)
+        EditUser.display(user: user, sourceVC: self.parent!)
+        //EditUser.editUser.setUser(user: user)
+        //EditUser.display(sourceVC: self.parent!)
+    }
 }
