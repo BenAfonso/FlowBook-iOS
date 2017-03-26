@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     let picker = UIImagePickerController()
     var user: User?
+    var delegate: ProfileDelegate?
     
     @IBOutlet var profilePresenter: ProfilePresenter!
    
@@ -53,6 +54,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         AuthenticationService.getUser()?.changeImage(image: chosenImage)
+        self.refreshImage()
 
         dismiss(animated:true, completion: nil) //5
     }
@@ -138,6 +140,16 @@ extension ProfileViewController: ProfileViewProtocol {
     }
     
     func refreshImage() {
-        self.profileImage.image = AuthenticationService.getUser()?.getImage()
+        let image = AuthenticationService.getUser()?.getImage()
+        self.profileImage.image = image
+        
+        // Temporary: DIRTY
+        
+        delegate?.refreshImage(image: image!)
+        
     }
+}
+
+protocol ProfileDelegate {
+    func refreshImage(image: UIImage)
 }

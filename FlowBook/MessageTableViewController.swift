@@ -42,7 +42,7 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
         
 
         if let flows = Flow.get(forDepartment: (CurrentUser.get()?.department)!) {
-            print("Fetching \(flows[0].name) flow")
+            print("Fetching \(flows[0].name ?? "no") flow")
             self.flow = flows[0]
 
             do {

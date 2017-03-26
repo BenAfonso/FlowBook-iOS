@@ -23,7 +23,7 @@ class RoundedImageView: UIImageView {
     }
     
     func rotate(angle: CGFloat) {
-        self.transform = CGAffineTransform(rotationAngle: (angle * CGFloat(M_PI)) / 180.0)
+        self.transform = CGAffineTransform(rotationAngle: (angle * CGFloat(Double.pi)) / 180.0)
     }
     
     func styleImageView() {

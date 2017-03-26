@@ -19,9 +19,14 @@ class FlowPickerTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func setFlow(flow: Flow) {
-        self.flowNameLabel.text = flow.name!
-        print(flow.name!)
+    func setFlow(flow: Flow) {        
+        if ((flow as? StudentFlow) != nil) {
+            self.flowNameLabel.text = "[ETU] "+flow.name!
+        } else if ((flow as? TeacherFlow) != nil) {
+            self.flowNameLabel.text = "[ENS] "+flow.name!
+        } else {
+            self.flowNameLabel.text = "[ALL] "+flow.name!
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
