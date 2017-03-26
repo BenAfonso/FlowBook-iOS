@@ -15,7 +15,7 @@ class DocumentsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var miniatureDocumentImageView: UIImageView!
     @IBOutlet weak var descriptionDocumentLabel: UILabel!
-    @IBOutlet weak var urlDocumentLabel: UILabel!
+    @IBOutlet weak var urlDocumentButton: UIButton!
     
     var document: Document?
     
@@ -35,8 +35,14 @@ class DocumentsTableViewCell: UITableViewCell {
         self.document = document
         self.miniatureDocumentImageView.image = UIImage(data: self.document?.miniature as! Data)
         self.descriptionDocumentLabel.text = (self.document?.descrip)!
-        self.urlDocumentLabel.text = self.document?.url
-        
+        self.urlDocumentButton.setTitle(self.document?.url, for: .normal)
+        self.urlDocumentButton.addTarget(self, action: #selector(openLinkAction(sender:)), for: .touchUpInside)
     }
+    
+    @IBAction func openLinkAction(sender: UIButton) {
+        let url = NSURL(string: (self.document?.url)!)
+        UIApplication.shared.open(url as! URL, options: [:], completionHandler: nil)
+    }
+    
     
 }
