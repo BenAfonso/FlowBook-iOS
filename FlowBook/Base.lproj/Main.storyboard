@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -760,6 +760,13 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JY-n5-dLb">
+                                                    <rect key="frame" x="16" y="16" width="30" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="visitProfile:" destination="F9y-Dn-RBM" eventType="touchUpInside" id="fFd-Uq-Cme"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JQg-rI-mRr" firstAttribute="top" secondItem="Oeo-Ku-ugo" secondAttribute="topMargin" constant="8" id="8SJ-Pu-T6O"/>
@@ -769,13 +776,17 @@
                                                 <constraint firstItem="f8Z-Qb-Ck0" firstAttribute="leading" secondItem="JtP-UB-Ajs" secondAttribute="trailing" constant="70" id="ItG-k3-v7F"/>
                                                 <constraint firstItem="Khx-b3-UVe" firstAttribute="leading" secondItem="JQg-rI-mRr" secondAttribute="trailing" constant="12" id="J37-xJ-QMW"/>
                                                 <constraint firstItem="JtP-UB-Ajs" firstAttribute="top" secondItem="Oeo-Ku-ugo" secondAttribute="topMargin" constant="14" id="JWO-lF-RD1"/>
+                                                <constraint firstItem="4JY-n5-dLb" firstAttribute="top" secondItem="JQg-rI-mRr" secondAttribute="top" id="Lcy-DW-C2s"/>
                                                 <constraint firstItem="4O3-4P-12a" firstAttribute="top" secondItem="ucE-JA-9AK" secondAttribute="bottom" constant="27" id="aLg-YQ-B6v"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="4O3-4P-12a" secondAttribute="bottom" constant="8" id="g5D-kq-GFf"/>
                                                 <constraint firstItem="JtP-UB-Ajs" firstAttribute="leading" secondItem="Khx-b3-UVe" secondAttribute="trailing" constant="18" id="jwH-RK-jp3"/>
+                                                <constraint firstItem="4JY-n5-dLb" firstAttribute="width" secondItem="JQg-rI-mRr" secondAttribute="width" id="kB6-xn-PFx"/>
+                                                <constraint firstItem="4JY-n5-dLb" firstAttribute="leading" secondItem="JQg-rI-mRr" secondAttribute="leading" id="kW7-MM-edb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4O3-4P-12a" secondAttribute="trailing" id="qLU-VE-XyL"/>
                                                 <constraint firstItem="f8Z-Qb-Ck0" firstAttribute="top" secondItem="JtP-UB-Ajs" secondAttribute="top" id="rwS-MD-tWL"/>
                                                 <constraint firstItem="ucE-JA-9AK" firstAttribute="leading" secondItem="Oeo-Ku-ugo" secondAttribute="leadingMargin" constant="8" id="sRE-l0-oRn"/>
                                                 <constraint firstItem="ucE-JA-9AK" firstAttribute="top" secondItem="JQg-rI-mRr" secondAttribute="bottom" constant="8" id="teH-Ak-OkP"/>
+                                                <constraint firstItem="4JY-n5-dLb" firstAttribute="height" secondItem="JQg-rI-mRr" secondAttribute="height" id="zTl-29-oa8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9907407407407407" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1258,7 +1269,7 @@
                                         <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Udy-vY-whF" id="sBB-RK-Gyv">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMr-DL-rhu">

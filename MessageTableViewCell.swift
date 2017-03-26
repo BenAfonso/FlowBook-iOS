@@ -23,6 +23,7 @@ class MessageTableViewCell: UITableViewCell {
     var message: Message?
     var files: NSSet?
     var images: NSSet?
+    var author: User?
     @IBOutlet weak var editedView: UIStackView!
     @IBOutlet weak var editTime: UILabel!
     @IBOutlet weak var editDate: UILabel!
@@ -38,6 +39,7 @@ class MessageTableViewCell: UITableViewCell {
         if let author = author {
             self.authorImage.image = author.getImage()
             self.authorUsername.text = author.getUsername()
+            self.author = author
         }
     }
     
@@ -85,6 +87,13 @@ class MessageTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func visitProfile(_ sender: Any) {
+        if let rootController = self.parentViewController?.parent as? RootViewController {
+            rootController.visitProfile(ofUser: self.author!)
+        }
+    }
+    
+
     
     func swiped(sender: UISwipeGestureRecognizer) {
         delegate?.swippedCell(cell: self)
