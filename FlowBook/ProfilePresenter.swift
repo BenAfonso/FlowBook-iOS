@@ -22,6 +22,7 @@ class ProfilePresenter: NSObject {
                 
                 self.profileViewData.username = user.getUsername()
                 self.profileViewData.nbPosts = String(user.getNbPosts())
+                self.profileViewData.nbEvents = String(user.getNbEvents())
                 self.profileViewData.department = (user.department?.name)!
                 self.profileViewData.profileImage = user.getImage()
                 
@@ -57,6 +58,7 @@ class ProfilePresenter: NSObject {
 struct ProfileViewData {
     var username: String?
     var nbPosts: String?
+    var nbEvents: String?
     var department: String?
     var promotion: String?
     var profileImage: UIImage?

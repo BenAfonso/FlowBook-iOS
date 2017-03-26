@@ -121,13 +121,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 extension ProfileViewController: ProfileViewProtocol {
     func setUI() {
-        self.nbEventsLabel.text = "0"
+        self.nbEventsLabel.text = self.profilePresenter.getData().nbEvents
         self.nbFilesLabel.text = "0"
         self.nbPostsLabel.text = "0"
+        self.nbMessagesLabel.text = self.profilePresenter.getData().nbPosts
         self.usernameLabel.text = self.profilePresenter.getData().username
         self.profileImage.image = self.profilePresenter.getData().profileImage
         self.departmentName.text = self.profilePresenter.getData().department
-        self.nbMessagesLabel.text = self.profilePresenter.getData().nbPosts
         self.promotionLabel.text = self.profilePresenter.getData().promotion
         self.profileImage.addBorders(width: 4.0, color: UIColor(red: 149.0/255.0, green: 152.0/255.0, blue: 154.0/255.0, alpha: 1.0))
         self.roleRibbon.image = self.profilePresenter.getData().ribbon

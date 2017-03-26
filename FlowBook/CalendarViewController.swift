@@ -14,6 +14,7 @@ class CalendarViewController: UIViewController {
     
     @IBOutlet weak var yearLabelHeader: UILabel!
     @IBOutlet weak var monthLabelHeader: UILabel!
+    @IBOutlet weak var addEventButton: UIButton!
     
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var closeEventsTableButton: UIButton!
@@ -32,6 +33,11 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (CurrentUser.user as? Student) != nil {
+            self.addEventButton.isHidden = true
+
+        }
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarCellView")

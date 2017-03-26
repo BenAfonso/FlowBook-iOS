@@ -216,6 +216,18 @@ extension User {
         }
     }
     
+    func getEvents() ->NSSet{
+        if let events = self.events {
+            return events
+        }else{
+            return NSSet()
+        }
+    }
+    
+    func getNbEvents() -> Int {
+        return self.getEvents().count
+    }
+    
     func getNbPosts() -> Int {
         return self.getPosts().count
     }
