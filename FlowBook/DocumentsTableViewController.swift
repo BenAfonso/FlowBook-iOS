@@ -62,14 +62,18 @@ class DocumentsTableViewController: NSObject, UITableViewDelegate, UITableViewDa
     }
     
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .default, title: "Supprimer", handler: self.deleteHandlerAction)
+        delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
+        
+        return [delete]
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            //TO DO 
-        }
+    // MARK: Handlers
+    func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
+        let document = self.documentsFetched.object(at: indexPath)
+        CoreDataManager.context.delete(document)
     }
     
     

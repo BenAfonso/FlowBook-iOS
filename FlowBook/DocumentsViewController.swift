@@ -11,8 +11,10 @@ import UIKit
 
 class DocumentsViewController: UIViewController {
     
+    @IBOutlet var documentOfficialTableView: DocumentsOfficialTableViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.documentOfficialTableView.searchBar.delegate = self.documentOfficialTableView
         
         // Do any additional setup after loading the view.
     }

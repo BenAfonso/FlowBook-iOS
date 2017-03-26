@@ -2680,7 +2680,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Documents officiels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhp-ly-p15">
-                                <rect key="frame" x="50" y="60" width="153" height="24"/>
+                                <rect key="frame" x="50" y="80" width="153" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="L0m-OO-ZhX"/>
                                 </constraints>
@@ -2689,7 +2689,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="220" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jVh-c5-zZQ">
-                                <rect key="frame" x="50" y="114" width="924" height="624"/>
+                                <rect key="frame" x="50" y="134" width="924" height="604"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="documentOfficialCell" rowHeight="220" id="jYv-Rl-M0E" customClass="DocumentsOfficialTableViewCell" customModule="FlowBook" customModuleProvider="target">
@@ -2758,11 +2758,21 @@
                                     <outlet property="delegate" destination="DKI-Vn-VJU" id="lpC-ft-29R"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ySS-bU-gfY">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vRB-Nh-nB5"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ySS-bU-gfY" secondAttribute="trailing" id="GjV-zU-5vF"/>
                             <constraint firstItem="jVh-c5-zZQ" firstAttribute="leading" secondItem="Uod-1x-OSq" secondAttribute="leadingMargin" constant="30" id="RTp-FY-qS7"/>
-                            <constraint firstItem="Rhp-ly-p15" firstAttribute="top" secondItem="T7N-dR-Etp" secondAttribute="bottom" constant="40" id="WKn-v8-WiB"/>
+                            <constraint firstItem="Rhp-ly-p15" firstAttribute="top" secondItem="T7N-dR-Etp" secondAttribute="bottom" constant="60" id="WKn-v8-WiB"/>
+                            <constraint firstItem="ySS-bU-gfY" firstAttribute="top" secondItem="Uod-1x-OSq" secondAttribute="top" id="g1f-v1-ARq"/>
+                            <constraint firstItem="ySS-bU-gfY" firstAttribute="leading" secondItem="Uod-1x-OSq" secondAttribute="leading" id="ii4-ze-iU5"/>
                             <constraint firstItem="jVh-c5-zZQ" firstAttribute="top" secondItem="Rhp-ly-p15" secondAttribute="bottom" constant="30" id="jW5-sJ-uEE"/>
                             <constraint firstItem="Rhp-ly-p15" firstAttribute="leading" secondItem="Uod-1x-OSq" secondAttribute="leadingMargin" constant="30" id="mg6-i8-r3T"/>
                             <constraint firstItem="C49-Pb-Mtg" firstAttribute="top" secondItem="jVh-c5-zZQ" secondAttribute="bottom" constant="30" id="oYX-hB-KSt"/>
@@ -2772,11 +2782,15 @@
                     <value key="contentSizeForViewInPopover" type="size" width="1024" height="768"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="documentOfficialTableView" destination="DKI-Vn-VJU" id="6dK-8w-DPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cv0-DM-7aF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="DKI-Vn-VJU" customClass="DocumentsOfficialTableViewController" customModule="FlowBook" customModuleProvider="target">
                     <connections>
                         <outlet property="documentsOfficialTableView" destination="jVh-c5-zZQ" id="08o-Dr-54Y"/>
+                        <outlet property="searchBar" destination="ySS-bU-gfY" id="otM-Hm-YIV"/>
                     </connections>
                 </customObject>
             </objects>

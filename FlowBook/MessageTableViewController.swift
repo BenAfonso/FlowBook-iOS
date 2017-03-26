@@ -118,11 +118,11 @@ class MessageTableViewController: NSObject, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let edit = UITableViewRowAction(style: .default, title: "Edit", handler: self.editHandlerAction)
+        let edit = UITableViewRowAction(style: .default, title: "Modifier", handler: self.editHandlerAction)
         edit.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
         
         
-        let delete = UITableViewRowAction(style: .default, title: "Delete", handler: self.deleteHandlerAction)
+        let delete = UITableViewRowAction(style: .default, title: "Supprimer", handler: self.deleteHandlerAction)
         delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
         
         return [delete]

@@ -14,6 +14,8 @@ import UIKit
 class DocumentsOfficialTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var documentsOfficialTableView: UITableView!
     
     fileprivate lazy var documentsFetched : NSFetchedResultsController<Document> = {
@@ -95,6 +97,24 @@ class DocumentsOfficialTableViewController: NSObject, UITableViewDelegate, UITab
         }
     }
     
+    func filterContent(text: String) {
+        var predicates = [NSPredicate(format: "department == %@", CurrentUser.get()!.department!)]
+        if text != "" {
+            predicates.append(NSPredicate(format: "descrip CONTAINS[c] %@", text))
+        }
+        let pred: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        self.documentsFetched.fetchRequest.predicate = pred
+        do {try self.documentsFetched.performFetch()}catch{}
+        self.documentsOfficialTableView.reloadData()
+        
+    }
     
+}
+
+extension DocumentsOfficialTableViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterContent(text: searchText)
+    }
     
 }
