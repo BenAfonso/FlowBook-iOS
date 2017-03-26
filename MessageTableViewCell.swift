@@ -150,7 +150,7 @@ extension MessageTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     @IBAction func openLink(sender: UIButton) {
         let file = self.files?.allObjects[sender.tag] as? File
         let url = NSURL(string: (file?.link)!)
-        UIApplication.shared.open(url as! URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

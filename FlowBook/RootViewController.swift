@@ -82,6 +82,13 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
         self.currentViewController = newViewController
         if (identifier == "profileView") {
             
+            guard (self.currentViewController as? ProfileViewController) != nil else {
+                return
+            }
+            let profileVC = (self.currentViewController as? ProfileViewController)
+            
+            profileVC?.delegate = self
+            
             if let user = user {
                 (self.currentViewController as? ProfileViewController)?.setUser(user: user)
                 
@@ -187,6 +194,12 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
 
 
     
+}
+
+extension RootViewController: ProfileDelegate {
+    func refreshImage(image: UIImage) {
+        self.menuViewController?.profileImage.image = image
+    }
 }
 
 

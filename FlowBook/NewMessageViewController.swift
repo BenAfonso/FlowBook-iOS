@@ -217,7 +217,7 @@ extension NewMessageViewController:  UICollectionViewDataSource, UICollectionVie
         if (indexPath.item >= self.images.count) {
             cell.image.image = UIImage(named: "file-icon")
         } else {
-            cell.image.image = UIImage(data: self.images[indexPath.item].image as! Data)
+            cell.image.image = UIImage(data: self.images[indexPath.item].image! as Data)
         }
         
         

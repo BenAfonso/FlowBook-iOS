@@ -14,7 +14,7 @@ class FileCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var targetButton: UIButton!
     
     func setImage(image: Image) {
-        self.fileImage.image = UIImage(data: image.image as! Data)
+        self.fileImage.image = UIImage(data: image.image! as Data)
     }
     
     func setFile(file: File) {
