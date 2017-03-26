@@ -68,6 +68,9 @@
 		60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D71E4EA58D002E9B6D /* RightExtension.swift */; };
 		60C8A2DA1E4EA5A8002E9B6D /* FlowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */; };
 		60C8A2DC1E4EA5B9002E9B6D /* UserCategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */; };
+		60CD2DB81E87FC3500624C70 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CD2DB61E87FC3500624C70 /* EditUserViewController.swift */; };
+		60CD2DB91E87FC3500624C70 /* EditUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60CD2DB71E87FC3500624C70 /* EditUserViewController.xib */; };
+		60CD2DBB1E8801A400624C70 /* EditUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CD2DBA1E8801A400624C70 /* EditUser.swift */; };
 		60D8549D1E571CB800A9BB73 /* PromotionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8549C1E571CB800A9BB73 /* PromotionsTableViewCell.swift */; };
 		60D854A01E571D1F00A9BB73 /* PromotionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D8549F1E571D1F00A9BB73 /* PromotionsTableViewController.swift */; };
 		60D854A21E571D3100A9BB73 /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D854A11E571D3100A9BB73 /* PromotionsViewController.swift */; };
@@ -178,6 +181,9 @@
 		60C8A2D71E4EA58D002E9B6D /* RightExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightExtension.swift; sourceTree = "<group>"; };
 		60C8A2D91E4EA5A8002E9B6D /* FlowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowExtension.swift; sourceTree = "<group>"; };
 		60C8A2DB1E4EA5B9002E9B6D /* UserCategoryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCategoryExtension.swift; sourceTree = "<group>"; };
+		60CD2DB61E87FC3500624C70 /* EditUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		60CD2DB71E87FC3500624C70 /* EditUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditUserViewController.xib; sourceTree = "<group>"; };
+		60CD2DBA1E8801A400624C70 /* EditUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUser.swift; sourceTree = "<group>"; };
 		60D8549C1E571CB800A9BB73 /* PromotionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsTableViewCell.swift; sourceTree = "<group>"; };
 		60D8549F1E571D1F00A9BB73 /* PromotionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsTableViewController.swift; sourceTree = "<group>"; };
 		60D854A11E571D3100A9BB73 /* PromotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 		606A6D6F1E550D2B00A0B3B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				60CD2DB51E87FC0D00624C70 /* EditUser */,
 				9281CDA51E8126260077A03C /* Events */,
 				60D8549B1E571C9900A9BB73 /* Promotions */,
 				60A5E52D1E54FEB100684035 /* Flows */,
@@ -571,6 +578,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		60CD2DB51E87FC0D00624C70 /* EditUser */ = {
+			isa = PBXGroup;
+			children = (
+				60CD2DB61E87FC3500624C70 /* EditUserViewController.swift */,
+				60CD2DB71E87FC3500624C70 /* EditUserViewController.xib */,
+				60CD2DBA1E8801A400624C70 /* EditUser.swift */,
+			);
+			name = EditUser;
+			sourceTree = "<group>";
+		};
 		60D8549B1E571C9900A9BB73 /* Promotions */ = {
 			isa = PBXGroup;
 			children = (
@@ -797,6 +814,7 @@
 				60354D911E6CC10800A524F7 /* ResetPassword.xib in Resources */,
 				6044C5461E577C8500CB0C34 /* PickerTableViewCell.xib in Resources */,
 				92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */,
+				60CD2DB91E87FC3500624C70 /* EditUserViewController.xib in Resources */,
 				6086D6931E4A71C2007D270F /* LaunchScreen.storyboard in Resources */,
 				6044C53A1E576AE400CB0C34 /* PickerViewController.xib in Resources */,
 				6096E2421E773EA200D515BD /* NewFileViewController.xib in Resources */,
@@ -924,6 +942,7 @@
 				60ABEC631E4F339E004B6105 /* RoundedImageView.swift in Sources */,
 				6096E2441E77E48100D515BD /* NewFile.swift in Sources */,
 				60A5E51D1E54422500684035 /* UserTableViewCell.swift in Sources */,
+				60CD2DB81E87FC3500624C70 /* EditUserViewController.swift in Sources */,
 				60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */,
 				60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */,
 				609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */,
@@ -992,6 +1011,7 @@
 				92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */,
 				60F808611E59B70000101695 /* UsersData.swift in Sources */,
 				6044C54A1E5791AF00CB0C34 /* PromotionPickerDataSource.swift in Sources */,
+				60CD2DBB1E8801A400624C70 /* EditUser.swift in Sources */,
 				606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
