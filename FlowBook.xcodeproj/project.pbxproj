@@ -49,7 +49,6 @@
 		6096E2421E773EA200D515BD /* NewFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6096E2401E773EA200D515BD /* NewFileViewController.xib */; };
 		6096E2441E77E48100D515BD /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E2431E77E48100D515BD /* NewFile.swift */; };
 		6096E2471E7806FD00D515BD /* AdminDocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E2461E7806FD00D515BD /* AdminDocumentsViewController.swift */; };
-		6096E24A1E78086F00D515BD /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096E2491E78086F00D515BD /* DocumentsViewController.swift */; };
 		609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AAFA81E52237C00B51AF1 /* CurrentUser.swift */; };
 		60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5151E5434F000684035 /* MessageTableViewController.swift */; };
 		60A5E5181E54394400684035 /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A5E5171E54394400684035 /* MessageTableView.swift */; };
@@ -99,6 +98,9 @@
 		92C9AB9A1E6E112E001AC477 /* EventExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9AB991E6E112E001AC477 /* EventExtension.swift */; };
 		92D2E8F11E6E99EC005B2CFB /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */; };
 		92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E1F1D41E5253A8006C26A5 /* Main.storyboard */; };
+		92E63F4A1E8811C800496AB2 /* DocumentsOfficialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E63F491E8811C800496AB2 /* DocumentsOfficialTableViewController.swift */; };
+		92E63F4E1E8812E400496AB2 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E63F4D1E8812E400496AB2 /* DocumentsViewController.swift */; };
+		92E63F501E88146C00496AB2 /* DocumentsOfficialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E63F4F1E88146C00496AB2 /* DocumentsOfficialTableViewCell.swift */; };
 		92E964021E84680D002E002D /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E964011E84680D002E002D /* DocumentExtension.swift */; };
 		92EBADFB1E853ACC009CF1E9 /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBADFA1E853ACC009CF1E9 /* DocumentsTableViewController.swift */; };
 		92EBAE001E853D71009CF1E9 /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBADFF1E853D71009CF1E9 /* DocumentsTableViewCell.swift */; };
@@ -165,7 +167,6 @@
 		6096E2401E773EA200D515BD /* NewFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewFileViewController.xib; sourceTree = "<group>"; };
 		6096E2431E77E48100D515BD /* NewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
 		6096E2461E7806FD00D515BD /* AdminDocumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminDocumentsViewController.swift; sourceTree = "<group>"; };
-		6096E2491E78086F00D515BD /* DocumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		609AAFA81E52237C00B51AF1 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		60A5E5151E5434F000684035 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		60A5E5171E54394400684035 /* MessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
@@ -216,6 +217,9 @@
 		92C9AB991E6E112E001AC477 /* EventExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventExtension.swift; sourceTree = "<group>"; };
 		92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		92E1F1D51E5253A8006C26A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92E63F491E8811C800496AB2 /* DocumentsOfficialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsOfficialTableViewController.swift; sourceTree = "<group>"; };
+		92E63F4D1E8812E400496AB2 /* DocumentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
+		92E63F4F1E88146C00496AB2 /* DocumentsOfficialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsOfficialTableViewCell.swift; sourceTree = "<group>"; };
 		92E964011E84680D002E002D /* DocumentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
 		92EBADFA1E853ACC009CF1E9 /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
 		92EBADFF1E853D71009CF1E9 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
@@ -477,8 +481,9 @@
 		6096E2481E78086000D515BD /* DocumentsView */ = {
 			isa = PBXGroup;
 			children = (
-				6096E2491E78086F00D515BD /* DocumentsViewController.swift */,
 				92EBADFA1E853ACC009CF1E9 /* DocumentsTableViewController.swift */,
+				92E63F491E8811C800496AB2 /* DocumentsOfficialTableViewController.swift */,
+				92E63F4D1E8812E400496AB2 /* DocumentsViewController.swift */,
 			);
 			name = DocumentsView;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				92EBADFF1E853D71009CF1E9 /* DocumentsTableViewCell.swift */,
+				92E63F4F1E88146C00496AB2 /* DocumentsOfficialTableViewCell.swift */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -801,7 +807,7 @@
 				TargetAttributes = {
 					6086D6671E49CFAD007D270F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 3EQET6CY44;
+						DevelopmentTeam = QW5R6973G4;
 						ProvisioningStyle = Automatic;
 					};
 					6086D67E1E49CFAD007D270F = {
@@ -970,6 +976,7 @@
 				60CD2DB81E87FC3500624C70 /* EditUserViewController.swift in Sources */,
 				60C8A2D81E4EA58D002E9B6D /* RightExtension.swift in Sources */,
 				60354D941E6EB32500A524F7 /* AdminPanelViewController.swift in Sources */,
+				92E63F501E88146C00496AB2 /* DocumentsOfficialTableViewCell.swift in Sources */,
 				609AAFA91E52237C00B51AF1 /* CurrentUser.swift in Sources */,
 				60E682A41E8133D700F0DF6A /* ImagePreviewerViewController.swift in Sources */,
 				92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */,
@@ -1011,8 +1018,8 @@
 				607BECF21E4FEFF8004EB98A /* AuthenticateService.swift in Sources */,
 				60C8A2D41E4EA536002E9B6D /* UserExtension.swift in Sources */,
 				607BED081E50B47C004EB98A /* CoreDataManager.swift in Sources */,
+				92E63F4E1E8812E400496AB2 /* DocumentsViewController.swift in Sources */,
 				92ECCF5E1E8122FD0055A840 /* EventsTableViewController.swift in Sources */,
-				6096E24A1E78086F00D515BD /* DocumentsViewController.swift in Sources */,
 				60A5E52A1E54ED1000684035 /* DepartmentExtension.swift in Sources */,
 				60A5E5261E54A1C700684035 /* RootViewController.swift in Sources */,
 				60A5E5311E54FEE700684035 /* FlowPickerTableViewCell.swift in Sources */,
@@ -1020,6 +1027,7 @@
 				6044C53C1E5771B400CB0C34 /* PickerTableView.swift in Sources */,
 				602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */,
 				60A5E5201E54429300684035 /* UsersTableViewController.swift in Sources */,
+				92E63F4A1E8811C800496AB2 /* DocumentsOfficialTableViewController.swift in Sources */,
 				6054B8DF1E733E1E00583F4B /* NewMessageViewController.swift in Sources */,
 				92706CBD1E4F65CB00C32830 /* CustomButtonSend.swift in Sources */,
 				6044C5481E577FDE00CB0C34 /* Picker.swift in Sources */,
@@ -1172,7 +1180,7 @@
 			baseConfigurationReference = D1511F33B05783FA6DC1B368 /* Pods-FlowBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1180,7 +1188,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1191,7 +1199,7 @@
 			baseConfigurationReference = 6D212C685EC8DD4E0670F879 /* Pods-FlowBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3EQET6CY44;
+				DEVELOPMENT_TEAM = QW5R6973G4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1199,7 +1207,7 @@
 				INFOPLIST_FILE = FlowBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = benjaminafonso.FlowBook;
+				PRODUCT_BUNDLE_IDENTIFIER = bastienricoeur.FlowBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

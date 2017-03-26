@@ -1,8 +1,8 @@
 //
-//  DocumentTableViewController.swift
+//  DocumentsOfficialTableViewController.swift
 //  FlowBook
 //
-//  Created by Bastien Ricoeur on 24/03/2017.
+//  Created by Bastien Ricoeur on 26/03/2017.
 //  Copyright © 2017 Benjamin Afonso. All rights reserved.
 //
 
@@ -11,11 +11,12 @@ import CoreData
 import UIKit
 
 
-class DocumentsTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class DocumentsOfficialTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
-    @IBOutlet weak var documentTableView: UITableView!
 
+    @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var documentsOfficialTableView: UITableView!
     
     fileprivate lazy var documentsFetched : NSFetchedResultsController<Document> = {
         let request : NSFetchRequest<Document> = Document.fetchRequest()
@@ -52,7 +53,7 @@ class DocumentsTableViewController: NSObject, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let documentCell = self.documentTableView.dequeueReusableCell(withIdentifier: "documentCell", for: indexPath) as! DocumentsTableViewCell
+        let documentCell = self.documentsOfficialTableView.dequeueReusableCell(withIdentifier: "documentOfficialCell", for: indexPath) as! DocumentsOfficialTableViewCell
         
         let document = self.documentsFetched.object(at: indexPath)
         
@@ -62,30 +63,15 @@ class DocumentsTableViewController: NSObject, UITableViewDelegate, UITableViewDa
     }
     
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let delete = UITableViewRowAction(style: .default, title: "Supprimer", handler: self.deleteHandlerAction)
-        delete.backgroundColor = UIColor(red: 212.0/255.0, green: 37.0/255.0, blue: 108.0/255.0, alpha: 1)
-        
-        return [delete]
-    }
-    
-    // MARK: Handlers
-    func deleteHandlerAction(action: UITableViewRowAction, indexPath: IndexPath) -> Void {
-        let document = self.documentsFetched.object(at: indexPath)
-        CoreDataManager.context.delete(document)
-    }
-    
-    
     
     // MARK: NSFetchResultsController
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.documentTableView?.beginUpdates()
+        self.documentsOfficialTableView?.beginUpdates()
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.documentTableView?.endUpdates()
+        self.documentsOfficialTableView?.endUpdates()
         CoreDataManager.save()
     }
     
@@ -96,21 +82,39 @@ class DocumentsTableViewController: NSObject, UITableViewDelegate, UITableViewDa
         switch type {
         case .delete:
             if let indexPath = indexPath {
-                self.documentTableView?.deleteRows(at: [indexPath], with: .automatic)
+                self.documentsOfficialTableView?.deleteRows(at: [indexPath], with: .automatic)
             }
         case .insert:
             if let newIndexPath = newIndexPath {
-                self.documentTableView?.insertRows(at: [newIndexPath], with: .fade)
+                self.documentsOfficialTableView?.insertRows(at: [newIndexPath], with: .fade)
             }
         case .update:
             if let indexPath = indexPath {
-                self.documentTableView?.reloadRows(at: [indexPath], with: .automatic)
+                self.documentsOfficialTableView?.reloadRows(at: [indexPath], with: .automatic)
             }
         default:
             break
         }
     }
     
+    func filterContent(text: String) {
+        var predicates = [NSPredicate(format: "department == %@", CurrentUser.get()!.department!)]
+        if text != "" {
+            predicates.append(NSPredicate(format: "descrip CONTAINS[c] %@", text))
+        }
+        let pred: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        self.documentsFetched.fetchRequest.predicate = pred
+        do {try self.documentsFetched.performFetch()}catch{}
+        self.documentsOfficialTableView.reloadData()
+        
+    }
     
+}
+
+extension DocumentsOfficialTableViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterContent(text: searchText)
+    }
     
 }
