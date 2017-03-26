@@ -203,7 +203,6 @@ extension UsersTableViewController: UIGestureRecognizerDelegate, UserCellDelegat
     
     
     func cellPressed(user: User) {
-        print(user.lastName)
         EditUser.display(user: user, sourceVC: self.parent!)
         //EditUser.editUser.setUser(user: user)
         //EditUser.display(sourceVC: self.parent!)

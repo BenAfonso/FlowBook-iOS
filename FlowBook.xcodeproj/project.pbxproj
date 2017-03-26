@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60092BB11E882122000CAB5A /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60092BB01E882122000CAB5A /* PromotionViewController.swift */; };
 		602C945F1E4DC8CC00A02196 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C945E1E4DC8CC00A02196 /* CustomButton.swift */; };
 		602C94611E4DD0CF00A02196 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602C94601E4DD0CF00A02196 /* ProfileViewController.swift */; };
 		60354D8F1E6CBA5400A524F7 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */; };
@@ -120,6 +121,7 @@
 
 /* Begin PBXFileReference section */
 		08C37D18C205CD566361DE5C /* Pods_FlowBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60092BB01E882122000CAB5A /* PromotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
 		602C945E1E4DC8CC00A02196 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		602C94601E4DD0CF00A02196 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		60354D8E1E6CBA5400A524F7 /* MenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
@@ -255,6 +257,14 @@
 				08C37D18C205CD566361DE5C /* Pods_FlowBookTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60092BAF1E882106000CAB5A /* PromotionView */ = {
+			isa = PBXGroup;
+			children = (
+				60092BB01E882122000CAB5A /* PromotionViewController.swift */,
+			);
+			name = PromotionView;
 			sourceTree = "<group>";
 		};
 		60354D921E6EB31700A524F7 /* AdminPanel */ = {
@@ -543,6 +553,7 @@
 		60C8A2D11E4EA4F7002E9B6D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				60092BAF1E882106000CAB5A /* PromotionView */,
 				923AA8731E840B7800EABD98 /* NewDocument */,
 				92ECCF5C1E8122DE0055A840 /* EventsTableView */,
 				6096E2481E78086000D515BD /* DocumentsView */,
@@ -1000,6 +1011,7 @@
 				60A5E5221E54508200684035 /* AlertController.swift in Sources */,
 				604F444D1E4F8AEC00ACFBC3 /* ChangePasswordViewController.swift in Sources */,
 				60A5E5161E5434F000684035 /* MessageTableViewController.swift in Sources */,
+				60092BB11E882122000CAB5A /* PromotionViewController.swift in Sources */,
 				92C427541E71FC490057F97A /* ColorRGBExtension.swift in Sources */,
 				60A5E5181E54394400684035 /* MessageTableView.swift in Sources */,
 				92D2E8F11E6E99EC005B2CFB /* NewEventViewController.swift in Sources */,
