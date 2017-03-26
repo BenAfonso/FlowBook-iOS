@@ -19,15 +19,18 @@ class EditUserViewController: UIViewController {
     @IBOutlet weak var userPromotion: UILabel!
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var promotionLabel: UILabel!
-    @IBOutlet weak var changeStatusButton: UIButton!
-    @IBOutlet weak var makeAdminButton: UIButton!
-    @IBOutlet weak var addDepartmentButton: UIButton!
+    @IBOutlet weak var changeStatusButton: CustomButton!
+    @IBOutlet weak var makeAdminButton: CustomButton!
+    @IBOutlet weak var addDepartmentButton: CustomButton!
     @IBOutlet weak var departmentListTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.present()
+        self.changeStatusButton.styleButton()
+        self.makeAdminButton.styleButton()
+        self.addDepartmentButton.styleButton()
 
         // Do any additional setup after loading the view.
     }
@@ -50,14 +53,25 @@ class EditUserViewController: UIViewController {
             self.user = self.user as? Student
         }
         
+        //self.present()
+        
     }
     
     @IBAction func makeAdmin(_ sender: Any) {
-        self.user?.makeAdmin() // Change to avoid autosaving
+        
+        // Change to avoid autosaving
+        if (self.user?.isAdmin)! {
+            self.user?.revokeAdmin()
+        } else {
+            self.user?.makeAdmin()
+        }
+        
+        self.present()
     }
     
     
     @IBAction func addDepartment(_ sender: Any) {
+        // Display add department popover TODO
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -81,6 +95,17 @@ class EditUserViewController: UIViewController {
 }
 
 
+// MARK: PopoverDelegate
+extension EditUserViewController: UIPopoverPresentationControllerDelegate {
+    
+    
+    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        EditUser.remove()
+        //delegate?.newMessagesDismissed()
+    }
+    
+    
+}
 extension EditUserViewController {
     
     func present() {
@@ -88,23 +113,34 @@ extension EditUserViewController {
         self.userDepartment.text = "\(self.user!.department?.name ?? "")"
         self.userImage.image = UIImage(data: self.user!.image! as Data)
         
-        if (self.user as? Student) != nil {
+        // IF STUDENT
+        if let student = self.user as? Student {
             self.promotionLabel.isHidden = false
             self.userPromotion.isHidden = false
-            self.userPromotion.text = "\((self.user! as? Student)?.promotion?.name ?? "")"
-            
-            self.changeStatusButton.titleLabel?.text = "Mettre enseignant"
+            self.userPromotion.text = "\(student.promotion?.name ?? "")"
+            self.changeStatusButton.setTitle("Mettre enseignant", for: .normal)
+
             
             self.departmentListTableView.isHidden = true
             self.addDepartmentButton.isHidden = true
-        } else if (self.user as? Teacher) != nil {
+            
+
+        }
+        // IF TEACHER
+        if (self.user as? Teacher) != nil {
             self.promotionLabel.isHidden = true
             self.userPromotion.isHidden = true
             
-            self.changeStatusButton.titleLabel?.text = "Mettre étudiant"
+            self.changeStatusButton.setTitle("Mettre étudiant", for: .normal)
             
             self.departmentListTableView.isHidden = false
             self.addDepartmentButton.isHidden = false
+        }
+        
+        if (user?.isAdmin)! {
+            self.makeAdminButton.setTitle("Retirer responsable", for: .normal)
+        } else {
+            self.makeAdminButton.setTitle("Mettre responsable", for: .normal)
         }
     }
 }

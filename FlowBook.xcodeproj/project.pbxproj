@@ -312,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				92EBADFE1E853D35009CF1E9 /* Documents */,
-				60CD2DB51E87FC0D00624C70 /* EditUser */,
 				9281CDA51E8126260077A03C /* Events */,
 				60D8549B1E571C9900A9BB73 /* Promotions */,
 				60A5E52D1E54FEB100684035 /* Flows */,
@@ -660,6 +659,7 @@
 		60F808651E59C5DE00101695 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				60CD2DB51E87FC0D00624C70 /* EditUser */,
 				60E682A11E8133A800F0DF6A /* ImagePreviewer */,
 				6096E23E1E773E6700D515BD /* NewFile */,
 				60721FF81E7176B2006C0E3A /* NewMessage */,

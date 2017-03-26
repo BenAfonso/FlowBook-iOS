@@ -69,7 +69,10 @@ class UserTableViewCell: SwipeTableViewCell {
     }
     
     func longPress(sender: UILongPressGestureRecognizer) {
-        cellDelegate?.cellPressed(user: self.user!)
+        
+        if sender.state == UIGestureRecognizerState.ended {
+            cellDelegate?.cellPressed(user: self.user!)
+        }
     }
     
 }
