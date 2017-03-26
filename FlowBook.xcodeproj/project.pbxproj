@@ -311,6 +311,7 @@
 		606A6D6F1E550D2B00A0B3B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92EBADFE1E853D35009CF1E9 /* Documents */,
 				60CD2DB51E87FC0D00624C70 /* EditUser */,
 				9281CDA51E8126260077A03C /* Events */,
 				60D8549B1E571C9900A9BB73 /* Promotions */,

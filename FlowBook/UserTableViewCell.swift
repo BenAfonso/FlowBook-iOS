@@ -8,6 +8,7 @@
 
 import UIKit
 import SwipeCellKit
+
 class UserTableViewCell: SwipeTableViewCell {
 
     
@@ -17,10 +18,16 @@ class UserTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var activeStatus: UIImageView!
     
+    var cellDelegate: UserCellDelegate?
+    
+    
     var user: User?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(sender:)))
+        addGestureRecognizer(tapGesture)
     }
     
     
@@ -60,5 +67,13 @@ class UserTableViewCell: SwipeTableViewCell {
         }
         
     }
+    
+    func longPress(sender: UILongPressGestureRecognizer) {
+        cellDelegate?.cellPressed(user: self.user!)
+    }
+    
+}
 
+protocol UserCellDelegate {
+    func cellPressed(user: User)
 }

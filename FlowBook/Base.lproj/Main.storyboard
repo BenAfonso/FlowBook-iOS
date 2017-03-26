@@ -2043,6 +2043,10 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="BGh-Wj-N2H" appends="YES" id="ufL-3F-Hh1"/>
+                                                    </connections>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-ra-gYr">
                                                     <rect key="frame" x="956" y="13" width="20" height="20"/>
@@ -2180,6 +2184,11 @@
                         <outlet property="usersTableView" destination="UQa-Lz-yEE" id="4OF-5b-UJP"/>
                     </connections>
                 </customObject>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="BGh-Wj-N2H">
+                    <connections>
+                        <outlet property="delegate" destination="Dt6-Yn-8mK" id="D90-Rp-UuG"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="475.78124999999994" y="-146.09375"/>
         </scene>

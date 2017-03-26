@@ -18,6 +18,9 @@ class UserListViewController: UIViewController {
         super.viewDidLoad()
         tableViewController.usersData.filterWithDepartment(department: (CurrentUser.get()?.department)!)
         tableViewController.usersData.department = CurrentUser.get()?.department
+        tableViewController.parent = self
+
+
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +28,9 @@ class UserListViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
     
 
     /*

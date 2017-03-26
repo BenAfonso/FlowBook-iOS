@@ -14,7 +14,7 @@ class EditUserViewController: UIViewController {
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userStatus: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userImage: RoundedImageView!
     @IBOutlet weak var userDepartment: UILabel!
     @IBOutlet weak var userPromotion: UILabel!
     @IBOutlet weak var departmentLabel: UILabel!
@@ -27,6 +27,7 @@ class EditUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.present()
 
         // Do any additional setup after loading the view.
     }
@@ -83,19 +84,24 @@ class EditUserViewController: UIViewController {
 extension EditUserViewController {
     
     func present() {
-        if (self.user as? Student) {
+        self.userName.text = "\(self.user!.firstName ?? "") \(self.user?.lastName ?? "")"
+        self.userDepartment.text = "\(self.user!.department?.name ?? "")"
+        self.userImage.image = UIImage(data: self.user!.image! as Data)
+        
+        if (self.user as? Student) != nil {
             self.promotionLabel.isHidden = false
             self.userPromotion.isHidden = false
+            self.userPromotion.text = "\((self.user! as? Student)?.promotion?.name ?? "")"
             
-            self.changeStatusButton.text = "Mettre enseignant"
+            self.changeStatusButton.titleLabel?.text = "Mettre enseignant"
             
             self.departmentListTableView.isHidden = true
             self.addDepartmentButton.isHidden = true
-        } else if (self.user as? Teacher) {
+        } else if (self.user as? Teacher) != nil {
             self.promotionLabel.isHidden = true
             self.userPromotion.isHidden = true
             
-            self.changeStatusButton.text = "Mettre étudiant"
+            self.changeStatusButton.titleLabel?.text = "Mettre étudiant"
             
             self.departmentListTableView.isHidden = false
             self.addDepartmentButton.isHidden = false

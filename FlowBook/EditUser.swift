@@ -12,14 +12,14 @@ class EditUser {
     
     static var editUser: EditUserViewController = EditUserViewController(nibName: "EditUserViewController", bundle: nil)
     
-    static func display(withTitle title: String,sourceVC: UIViewController) {
+    static func display(user: User, sourceVC: UIViewController) {
         editUser.modalPresentationStyle = UIModalPresentationStyle.popover
-        editUser.preferredContentSize = CGSize(width: 795, height: 314)
-        
+        //editUser.preferredContentSize = CGSize(width: 795, height: 314)
+        editUser.user = user
         sourceVC.present(editUser, animated: true, completion: remove)
         
         let popoverPresentationController = editUser.popoverPresentationController
-        popoverPresentationController?.delegate = editUser
+        //popoverPresentationController?.delegate = editUser as! UIPopoverPresentationControllerDelegate
         
         popoverPresentationController?.sourceView = sourceVC.view
         popoverPresentationController?.permittedArrowDirections=UIPopoverArrowDirection(rawValue: 0)
