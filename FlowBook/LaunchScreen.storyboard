@@ -28,18 +28,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlowBook" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="20" y="292" width="984" height="91"/>
+                                <rect key="frame" x="20" y="292" width="984" height="90.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="66"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiO-dR-B0n">
-                                <rect key="frame" x="301" y="376" width="422" height="2"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="OJ3-zd-znf"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook ... mais pour les IGs" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="dNi-Lc-Ilb">
                                 <rect key="frame" x="20" y="390" width="984" height="24"/>
                                 <constraints>
@@ -56,19 +49,25 @@
                                     <constraint firstAttribute="height" constant="148" id="qdL-7d-us9"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiO-dR-B0n">
+                                <rect key="frame" x="301" y="376" width="422" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="OJ3-zd-znf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="jcu-cX-Ba5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20758894085884094" green="0.2064862847328186" blue="0.27278512716293335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="obG-Y5-kRd" secondAttribute="trailing" id="46O-vJ-5at"/>
                             <constraint firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
-                            <constraint firstItem="iiO-dR-B0n" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="356" id="Eqs-D5-L5H"/>
                             <constraint firstItem="dNi-Lc-Ilb" firstAttribute="top" secondItem="iiO-dR-B0n" secondAttribute="bottom" constant="12" id="FCP-0k-nrJ"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="dNi-Lc-Ilb" secondAttribute="leading" id="PG4-iE-Ouv"/>
+                            <constraint firstItem="vyG-e9-AFm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SH0-3g-luZ"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
-                            <constraint firstItem="vyG-e9-AFm" firstAttribute="centerX" secondItem="iiO-dR-B0n" secondAttribute="centerX" id="XZX-87-cTw"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="dNi-Lc-Ilb" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="7" id="c0Q-iA-1gc"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="trailing" secondItem="dNi-Lc-Ilb" secondAttribute="trailing" id="feQ-mX-k2S"/>
                             <constraint firstItem="iiO-dR-B0n" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="301" id="lTV-uG-oU1"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="top" secondItem="vyG-e9-AFm" secondAttribute="bottom" constant="59" id="lqz-hU-Nd9"/>
@@ -81,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.734375" y="375"/>
+            <point key="canvasLocation" x="52.34375" y="375"/>
         </scene>
     </scenes>
     <resources>
