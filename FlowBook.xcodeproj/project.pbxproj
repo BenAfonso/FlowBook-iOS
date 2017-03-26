@@ -96,6 +96,8 @@
 		92D2E8F11E6E99EC005B2CFB /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */; };
 		92E1F1D61E5253A8006C26A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E1F1D41E5253A8006C26A5 /* Main.storyboard */; };
 		92E964021E84680D002E002D /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E964011E84680D002E002D /* DocumentExtension.swift */; };
+		92EBADFB1E853ACC009CF1E9 /* DocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBADFA1E853ACC009CF1E9 /* DocumentsTableViewController.swift */; };
+		92EBAE001E853D71009CF1E9 /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EBADFF1E853D71009CF1E9 /* DocumentsTableViewCell.swift */; };
 		92ECCF5E1E8122FD0055A840 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ECCF5D1E8122FD0055A840 /* EventsTableViewController.swift */; };
 		92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A181E51D80700F74D86 /* CustomInputMail.swift */; };
 		92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */; };
@@ -207,6 +209,8 @@
 		92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		92E1F1D51E5253A8006C26A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92E964011E84680D002E002D /* DocumentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
+		92EBADFA1E853ACC009CF1E9 /* DocumentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewController.swift; sourceTree = "<group>"; };
+		92EBADFF1E853D71009CF1E9 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
 		92ECCF5D1E8122FD0055A840 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		92FE3A181E51D80700F74D86 /* CustomInputMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputMail.swift; sourceTree = "<group>"; };
 		92FE3A1A1E51D8C700F74D86 /* CustomInputPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInputPassword.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 		606A6D6F1E550D2B00A0B3B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92EBADFE1E853D35009CF1E9 /* Documents */,
 				9281CDA51E8126260077A03C /* Events */,
 				60D8549B1E571C9900A9BB73 /* Promotions */,
 				60A5E52D1E54FEB100684035 /* Flows */,
@@ -457,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				6096E2491E78086F00D515BD /* DocumentsViewController.swift */,
+				92EBADFA1E853ACC009CF1E9 /* DocumentsTableViewController.swift */,
 			);
 			name = DocumentsView;
 			sourceTree = "<group>";
@@ -679,6 +685,14 @@
 				92D2E8F01E6E99EC005B2CFB /* NewEventViewController.swift */,
 			);
 			name = NewEvent;
+			sourceTree = "<group>";
+		};
+		92EBADFE1E853D35009CF1E9 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				92EBADFF1E853D71009CF1E9 /* DocumentsTableViewCell.swift */,
+			);
+			name = Documents;
 			sourceTree = "<group>";
 		};
 		92ECCF5C1E8122DE0055A840 /* EventsTableView */ = {
@@ -931,6 +945,7 @@
 				92FE3A191E51D80700F74D86 /* CustomInputMail.swift in Sources */,
 				60D854A01E571D1F00A9BB73 /* PromotionsTableViewController.swift in Sources */,
 				60721FFE1E71793B006C0E3A /* NewMessageView.swift in Sources */,
+				92EBADFB1E853ACC009CF1E9 /* DocumentsTableViewController.swift in Sources */,
 				92E964021E84680D002E002D /* DocumentExtension.swift in Sources */,
 				60A5E5241E54535200684035 /* UserListViewController.swift in Sources */,
 				606A6D741E55EC4700A0B3B0 /* UIViewExtension.swift in Sources */,
@@ -990,6 +1005,7 @@
 				60F808721E59CBC500101695 /* CalendarView.swift in Sources */,
 				6096E2471E7806FD00D515BD /* AdminDocumentsViewController.swift in Sources */,
 				92FE3A1B1E51D8C700F74D86 /* CustomInputPassword.swift in Sources */,
+				92EBAE001E853D71009CF1E9 /* DocumentsTableViewCell.swift in Sources */,
 				60F808611E59B70000101695 /* UsersData.swift in Sources */,
 				6044C54A1E5791AF00CB0C34 /* PromotionPickerDataSource.swift in Sources */,
 				606A6D7D1E55F17500A0B3B0 /* MasterViewController.swift in Sources */,
