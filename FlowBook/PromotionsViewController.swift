@@ -10,10 +10,16 @@ import UIKit
 
 class PromotionsViewController: UIViewController {
 
+    @IBOutlet var promotionTableViewController: PromotionsTableViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        promotionTableViewController.parent = self
+    }
+    
+    func goToPromotion(promotion: Promotion) {
+        (self.parent as? AdminPanelViewController)?.goToPromotion(promotion: promotion)
     }
 
     override func didReceiveMemoryWarning() {

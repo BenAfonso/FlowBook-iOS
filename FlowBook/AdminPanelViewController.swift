@@ -66,16 +66,33 @@ class AdminPanelViewController: UIViewController {
         })
     }
     
-    func goToView(withIdentifier identifier: String, forUser user: User? = nil) {
+    func goToView(withIdentifier identifier: String, forUser user: User? = nil, forPromotion promotion: Promotion? = nil) {
         
         let newViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier)
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         
+        
         self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
         self.currentViewController = newViewController
+        
+        if (identifier == "promotionView") {
+            guard (self.currentViewController as? PromotionViewController) != nil else {
+                return
+            }
+            let promotionVC = (self.currentViewController as? PromotionViewController)
+            
+            promotionVC?.setPromotion(promotion: promotion!)
+            
+        }
    
     }
 
+    func goToPromotion(promotion: Promotion) {
+        self.goToView(withIdentifier: "promotionView", forPromotion: promotion)
+        
+        self.setInactive()
+    }
+    
     
     @IBAction func goToUsers(_ sender: Any) {
         self.goToView(withIdentifier: "usersTableView")
@@ -87,6 +104,8 @@ class AdminPanelViewController: UIViewController {
         self.setActive(button: promotionsButton)
     }
     
+    
+    
     @IBAction func goToDocuments(_ sender: Any) {
         self.goToView(withIdentifier: "adminDocumentsView")
         self.setActive(button: documentsButton)
@@ -95,6 +114,7 @@ class AdminPanelViewController: UIViewController {
     
     //var activeButton: UIButton
     var bottomLine: CALayer = CALayer()
+    
     
     func setActive(button: UIButton) {
 
@@ -106,6 +126,7 @@ class AdminPanelViewController: UIViewController {
         button.layer.masksToBounds = true
                 
     }
+    
     
     func setInactive() {
         bottomLine.removeFromSuperlayer()

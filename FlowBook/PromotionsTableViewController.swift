@@ -13,6 +13,7 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var promotionsTableVIew: UITableView!
     
+    var parent: PromotionsViewController?
     
     fileprivate lazy var promotionsFetched : NSFetchedResultsController<Promotion> = {
         let request : NSFetchRequest<Promotion> = Promotion.fetchRequest()
@@ -99,6 +100,9 @@ class PromotionsTableViewController: NSObject, UITableViewDelegate, UITableViewD
 
 extension PromotionsTableViewController: PromotionCellDelegate {
     func goToPromotion(promotion: Promotion) {
+        
+        parent?.goToPromotion(promotion: promotion)
         print("Go to promotion: "+promotion.name!)
     }
 }
+

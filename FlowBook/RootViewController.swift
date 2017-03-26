@@ -73,13 +73,15 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
         })
     }
 
-    func goToView(withIdentifier identifier: String, forUser user: User? = nil) {
+    func goToView(withIdentifier identifier: String, forUser user: User? = nil, forPromotion promotion: Promotion? = nil) {
         
         let newViewController = self.storyboard?.instantiateViewController(withIdentifier: identifier)
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         
         self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
         self.currentViewController = newViewController
+        
+
         if (identifier == "profileView") {
             
             guard (self.currentViewController as? ProfileViewController) != nil else {
@@ -159,7 +161,7 @@ class RootViewController: UIViewController, MenuButtonsDelegate, AdminPanelNavig
         self.goToView(withIdentifier: "adminPanelView")
     }
     
-    
+
     func visitProfile(ofUser user: User) {
         self.goToView(withIdentifier: "profileView", forUser: user)
     }

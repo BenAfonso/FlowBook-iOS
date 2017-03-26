@@ -19,7 +19,7 @@ class EditUser {
         sourceVC.present(editUser, animated: true, completion: remove)
         
         let popoverPresentationController = editUser.popoverPresentationController
-        popoverPresentationController?.delegate = editUser as! UIPopoverPresentationControllerDelegate
+        popoverPresentationController?.delegate = editUser as UIPopoverPresentationControllerDelegate
         
         popoverPresentationController?.sourceView = sourceVC.view
         popoverPresentationController?.permittedArrowDirections=UIPopoverArrowDirection(rawValue: 0)
