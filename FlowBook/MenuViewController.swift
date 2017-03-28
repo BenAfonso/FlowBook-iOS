@@ -109,16 +109,7 @@ class MenuViewController: UIViewController, FlowPickerDelegate {
         menuButtonsDelegate?.goToDocuments()
         self.setActive(button: self.documentsButton)
     }
-    /*
-    @IBAction func usersButtonAction(_ sender: Any) {
-        menuButtonsDelegate?.goToUsers()
-        self.setActive(button: self.usersButton)
-    }
     
-    @IBAction func promotionsButtonAction(_ sender: Any) {
-        menuButtonsDelegate?.goToPromotions()
-        self.setActive(button: self.promotionsButton)
-    }*/
     @IBAction func adminPanelAction(_ sender: Any) {
         menuButtonsDelegate?.goToAdminPanel()
         self.setActive(button: self.adminPanel)
