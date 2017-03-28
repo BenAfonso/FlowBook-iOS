@@ -118,7 +118,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         self.messageTextField.delegate = self
         self.messagesTableView.searchBar.delegate = self.messagesTableView
         self.scrollToBottom()
-        print(self.messagesTableView.messages)
         
     }
     
@@ -164,5 +163,6 @@ extension HomeViewController: NewMessageDelegate {
     
     func newMessagesDismissed() {
         (self.parent as? RootViewController)?.hideBlur()
+        self.messagesTableView.messagesTableView.reloadData()
     }
 }
