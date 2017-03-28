@@ -1,6 +1,6 @@
 # **_FlowBook_**
 ## Projet iOS - IG4
-*Ben Afonso & Bastien Ricoeur*
+*[Ben Afonso](https://github.com/BenAfonso) & [Bastien Ricoeur](https://github.com/bastienricoeur)*
 
 ---
 
